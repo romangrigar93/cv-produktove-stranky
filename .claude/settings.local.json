@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(du:*)",
+      "Bash(dir /s \"c:\\\\xampp\\\\htdocs\\\\cv-web-parts\\\\godlike\")",
+      "WebFetch(domain:www.godlike.gg)",
+      "Bash(dir:*)",
+      "WebFetch(domain:czechvirus.cz)"
+    ]
+  }
+}
