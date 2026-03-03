@@ -1,0 +1,761 @@
+<!--EXPERTMODE-->
+<style>
+    .container-product {
+        max-width: 1000px;
+        border-radius: 8px;
+        margin: 0 auto !important;
+        /* Centers the container */
+        padding: 0;
+        /* Reset default padding */
+        box-sizing: border-box;
+        /* Ensures padding doesn't affect the width */
+        font-family: 'Roboto';
+        margin-top: 30px !important;
+    }
+
+    .container-product:first-child,
+    .container-product:first-of-type {
+        margin-top: 0 !important;
+    }
+
+    .container-product img {
+        border-radius: 8px;
+    }
+
+    .container-product>div:last-child {
+        padding: 0;
+        /* No padding for the image container */
+    }
+
+    .container-product h2 {
+        margin: 0;
+        /* Resets default margin */
+        font-size: 1.8em;
+        /* Default font size for H2 */
+        padding: 50px 20px 20px 20px !important;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .container-product h3 {
+        font-size: 30px;
+        margin-top: 40px !important;
+        font-weight: bold;
+    }
+
+    .container-product p {
+        font-size: 1em;
+        /* Default font size for text */
+    }
+
+    .container-product a {
+        text-decoration: none;
+    }
+
+    .container-product a:hover {
+        text-decoration: underline;
+    }
+
+    .text-product {
+        padding: 0px 50px 0px 50px !important;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .text-product p {
+        margin-bottom: 15px !important;
+    }
+
+    .transparent-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px !important;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition: box-shadow 0.3s;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    .studie {
+        display: flex;       /* nebo: display: grid; */
+        flex-wrap: wrap;     /* pokud chceš zalamovat prvky v øádky */
+        gap: 16px;           /* velikost mezery mezi všemi polokami */  
+        justify-content: center;    
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+        text-align: center;      
+    }
+
+    /* lišty */
+    .container-lista {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto !important;
+        margin-bottom: 15px !important;
+    }
+
+    .label {
+        width: 33.333%;
+        /* label zabírá jednu tøetinu */
+        margin-right: 5px;
+        /* mezera mezi labelem a lištou */
+        text-align: left;
+    }
+
+    .bar-outer {
+        width: 66.666%;
+        /* lišta zabírá dvì tøetiny */
+        background-color: #ddd;
+        overflow: hidden;
+        margin-left: auto;
+    }
+
+    .barva-1 {
+        background-color: #9bcf2b;
+    }
+
+    .barva-2 {
+        background-color: #dccc1f;
+    }
+
+    .barva-3 {
+        background-color: #d08333;
+    }
+
+    .bar-inner {
+        height: 30px;
+        width: 0;
+        /* poèáteèní šíøka */
+        text-align: right;
+        padding-right: 5px;
+        line-height: 30px;
+        color: white;
+        transition: width 1s ease-in-out;
+        /* animace šíøky */
+    }
+
+    /* lišty */
+    /* 1/2 obsah, 1/2 foto */
+    .container-benefity-foto {
+        display: flex;
+        flex-direction: row;
+        /* nebo mùe bıt 'column', pokud to tak chcete pro mobilní zobrazení */
+        align-items: center;
+        /* Toto vycentruje dìtské prvky vertikálnì */
+        width: 90%;
+        margin: 0 auto !important;
+        margin-top: 30px !important;
+    }
+
+    .icons-text {
+        flex: 1;
+        /* Zabere 2/3 šíøky */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Vertikální vycentrování ikonek uvnitø .icons-text */
+        text-align: center;
+    }
+
+    .icon-item {
+        /* ádné specifické styly nejsou potøeba pro vertikální vycentrování, toto zajišuje .icons-text */
+        margin-bottom: 20px !important;
+        /* Odstup mezi polokami */
+    }
+
+    .icon-item img {
+        width: 70px;
+    }
+
+    .icon-item:last-child {
+        margin-bottom: 0;
+        /* Odstraníme margin pro poslední ikonu */
+    }
+
+    .photo {
+        flex: 1;
+        /* Zabere 1/3 šíøky */
+        align-self: flex-end;
+    }
+
+    .photo img {
+        width: 100%;
+        /* Aby fotka vyplnila prostor */
+        height: auto;
+    }
+
+    /* 2/3 obsah, 1/3 foto */
+    /* Responsive design for tablets */
+    @media (max-width: 768px) {
+        .container-product h2 {
+            font-size: 2em;
+            /* Larger font size for H2 on tablets */
+        }
+
+        .container-product p {
+            font-size: 1.0em;
+            /* Larger font size for text on tablets */
+        }
+
+        .transparent-button {
+            font-size: 16px;
+        }
+
+        .container-listy {
+            flex-direction: column;
+        }
+
+        .label {
+            width: auto;
+        }
+
+        .bar-outer {
+            width: 100%;
+        }
+
+        .container-benefity-foto {
+            flex-direction: column;
+        }
+
+        .icons-text,
+        .photo {
+            width: 70%;
+            /* Zabere 100% šíøky */
+            margin: 0 auto !important;
+        }
+
+        .icon-item {
+            flex-direction: row;
+            /* Ikony a text vedle sebe */
+            justify-content: center;
+            /* Horizontální vycentrování */
+            align-items: center;
+            /* Vertikální vycentrování */
+        }
+
+        .photo {
+            order: 2;
+            /* Fotka pùjde pod ikonky */
+            margin: 0 auto !important;
+            margin-top: 20px !important;
+            /* Odstup od pøedchozího obsahu */
+        }
+
+        .container-lista {
+            display: block;
+        }
+
+        .label {
+            width: 100%;
+            /* label zabírá jednu tøetinu */
+        }
+
+        .bar-outer {
+            width: 100%;
+            /* lišta zabírá dvì tøetiny */
+        }
+    }
+
+    /* Responsive design for phones */
+    @media (max-width: 480px) {
+        .container-product h2 {
+            font-size: 2.2em;
+            /* Larger font size for H2 on phones */
+        }
+
+        .container-product p {
+            font-size: 1.25em;
+            /* Larger font size for text on phones */
+        }
+
+        .transparent-button {
+            font-size: 20px;
+        }
+    }
+
+    #c-p-1 {
+        background: linear-gradient(to bottom, #ebebeb 40%, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-1 a {
+        color: #1a5c00;
+    }
+
+    #c-p-1 h2 {
+        color: black;
+    }
+
+    #c-p-1 .zvyrazneni {
+        color: #c60554;
+    }
+
+    #c-p-1 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-1 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-2 {
+        background: linear-gradient(to bottom, #6d1c1c, #b97133);
+        color: white !important;
+    }
+
+    #c-p-2 a {
+        color: #1a5c00;
+    }
+
+    #c-p-2 h2 {
+        color: white;
+    }
+
+    #c-p-2 .zvyrazneni {
+        color: #d8023b;
+    }
+
+    #c-p-2 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-2 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-3 {
+        background: linear-gradient(to bottom, #ebebeb 40%, #bdbdbd);
+        color: black !important;
+    }
+
+    #c-p-3 a {
+        color: #dfb764;
+    }
+
+    #c-p-3 h2 {
+        color: black;
+    }
+
+    #c-p-3 .zvyrazneni {
+        color: #c60554;
+    }
+
+    #c-p-3 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-3 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-4 {
+        background: linear-gradient(to bottom, #f1f1f1 0%, #080808);
+        color: black !important;
+    }
+
+    #c-p-4 a {
+        color: #a99566;
+    }
+
+    #c-p-4 h2 {
+        color: black;
+    }
+
+    #c-p-4 .zvyrazneni {
+        color: #c60554;
+    }
+
+    #c-p-4 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-4 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-5 {
+        background: linear-gradient(to bottom, #e9d380, #fffff2);
+        color: white !important;
+    }
+
+    #c-p-5 a {
+        color: #389edb;
+    }
+
+    #c-p-5 h2 {
+        color: black;
+    }
+
+    #c-p-5 .zvyrazneni {
+        color: #389edb;
+    }
+
+    #c-p-5 .transparent-button {
+        color: #389edb;
+        border: 2px solid #389edb;
+    }
+
+    #c-p-5 .transparent-button:hover {
+        box-shadow: 0 0 10px #389edb;
+    }
+
+    #c-p-6 {
+        background: linear-gradient(to bottom, #236b7a, #fffff2);
+        color: white !important;
+    }
+
+    #c-p-6 a {
+        color: #389edb;
+    }
+
+    #c-p-6 h2 {
+        color: white;
+    }
+
+    #c-p-6 .zvyrazneni {
+        color: #389edb;
+    }
+
+    #c-p-6 .transparent-button {
+        color: #389edb;
+        border: 2px solid #389edb;
+    }
+
+    #c-p-6 .transparent-button:hover {
+        box-shadow: 0 0 10px #389edb;
+    }
+
+    #c-p-7 {
+        background: linear-gradient(to bottom, #d6e4f1, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-7 a {
+        color: #39b400;
+    }
+
+    #c-p-7 h2 {
+        color: black;
+    }
+
+    #c-p-7 .zvyrazneni {
+        color: #39b400;
+    }
+
+    #c-p-7 .transparent-button {
+        color: #39b400;
+        border: 2px solid #39b400;
+    }
+
+    #c-p-7 .transparent-button:hover {
+        box-shadow: 0 0 10px #39b400;
+    }
+
+    #c-p-8 {
+        background: linear-gradient(to bottom, #f8f8f8, #d4d4d4);
+        color: black !important;
+    }
+
+    #c-p-8 a {
+        color: #39b400;
+    }
+
+    #c-p-8 h2 {
+        color: black;
+    }
+
+    #c-p-8 .zvyrazneni {
+        color: #39b400;
+    }
+
+    #c-p-8 .transparent-button {
+        color: #39b400;
+        border: 2px solid #39b400;
+    }
+
+    #c-p-8 .transparent-button:hover {
+        box-shadow: 0 0 10px #39b400;
+    }
+    
+    
+    
+    /*PROFITABUKLA*/
+    .comparison-section .content-module-template {
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 30px !important;
+    }
+
+    .comparison-section .comparison-heading {
+        margin-bottom: 20px !important;
+    }
+
+    .comparison-section .heading-inner h2 {
+        font-size: 24px !important;
+        color: white;
+    }
+
+    .comparison-section .comparison-table-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto !important;
+        overflow-x: auto;
+        border-radius: 20px;
+    }
+
+    .comparison-section .comparison-table tbody {
+        color: white;
+    }
+
+    .comparison-section .table-wrap {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto !important;
+        text-align: center;
+    }
+
+    .comparison-section .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+    }
+
+    .comparison-section .comparison-table th,
+    .comparison-section .comparison-table td {
+        background-color: #b3b3b3;
+        padding: 20px !important;
+        border: 0px solid #ddd;
+        vertical-align: top;
+    }
+
+    .comparison-section .comparison-table th {
+        background-color: #b3b3b3;
+    }
+
+    .comparison-section .comparison-table th:first-child {
+        background-color: #e5be00;
+    }
+
+    .comparison-section .comparison-table img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px !important;
+    }
+
+    .comparison-section .comparison-table h2 {
+        font-size: 18px !important;
+        color: #333;
+    }
+
+    .comparison-section .td-head {
+        font-size: 14px;
+        opacity: 0.6;
+        display: block;
+    }
+
+    .comparison-section .td-content {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        margin-top: 5px !important;
+    }
+
+    .comparison-section .text-center {
+        text-align: center;
+    }
+
+    .comparison-section button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px !important;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .comparison-section button:hover {
+        background-color: #218838;
+    }
+
+    @media (min-width: 640px) {
+        .comparison-section .comparison-table th,
+        .comparison-section .comparison-table td {
+            width: 33.33%;
+        }
+    }
+
+    @media (max-width: 639px) {
+        .comparison-section .comparison-table th,
+        .comparison-section .comparison-table td {
+            width: 208px;
+            min-width: 208px;
+            max-width: 208px;
+        }
+    }
+
+    .comparison-section #comparison-table tr:not(.template-module-compare__rowName) td:nth-child(1) {
+        background-color: #e5be00;
+    }
+
+    .comparison-section #comparison-table tr.template-module-compare__rowName td:nth-child(2) {
+        position: relative;
+    }
+
+    .comparison-section .wooco_component_product_selection label {
+        padding-left: 0px;
+    }
+
+    .comparison-section .wooco_component_desc {
+        margin-bottom: 10px !important;
+        font-size: 12px;
+        color: #eac53e;
+        font-weight: bold;
+    }
+
+    .comparison-section #comparison-table tr.template-module-compare__rowName td:nth-child(2):before {
+        position: absolute;
+        content: '';
+        display: block;
+        right: 100%;
+        top: -12px;
+        bottom: 0;
+        width: 100%;
+        background-color: gray;
+    }
+
+    .comparison-section #comparison-table tr:first-child td:nth-child(1) {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .comparison-section #comparison-table tr:last-child td:nth-child(1) {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+/*PROFITABULKA*/    
+</style>
+<div id="c-p-1" class="container-product">
+    <div class="heading-product">
+        <h2>
+            SuperVita 
+            <span class="zvyrazneni">Essentials</span>
+        </h2>
+    </div>
+    <div class="text-product">
+        <p>SuperVita Essentials je základní multivitaminovı a multiminerální komplex od Czech Virus, navrenı pro kadodenní podporu zdraví. Bez kompromisù na kvalitì, bez zbyteènıch pøíslibù. Vhodnı pro ty, kteøí chtìjí pokrıt esenciální potøeby organismu, ale nepotøebují pokroèilé dávky jako u SuperVita PRO V2.0.</p>  
+    </div>
+    <div>
+        <img title="Fitness dávka Super Vity Essentials" style="width: 100%; height: auto;" alt="Fitness pár v horách" src="supervita-kapsle-davka-fitness.png">
+    </div>
+</div>
+
+<div id="c-p-2" class="container-product">
+    <div class="heading-product">
+        <h2>
+            V kadé <span class="zvyrazneni">dávce</span>
+            najdeš
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+      <p style="text-align: justify;">Základ bez kompromisù. Nic navíc, jen vitamíny a minerály v tìch nejlepších formách.</p>
+      <ul>
+          <li style="margin-bottom: 20px;"><strong>13 základních vitamínù:</strong> v bioaktivních formách, které tìlo umí okamitì vyuít</li>
+          <li><strong>7 minerálù:</strong> pøièem klíèové jsou v chelátovıch vazbách – tedy v podobì, která je pro tìlo maximálnì vstøebatelná a šetrná k trávicímu traktu. Chelátové formy minerálù (napø. bisglycináty) jsou navázány na aminokyseliny a tìlo je pøijímá pøirozenìji, podobnì jako ze stravy.</li>
+      </ul>
+
+    </div>
+        <div class="photo">
+            <img alt="Hymalien Shyalit Czech Virus" src="supervita-essentials_s_kapslemi.png">
+        </div>
+</div>
+
+<div id="c-p-3" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Hlavní vıhody SuperVity 
+            <span class="zvyrazneni">Essentials</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+          <ul>
+  <li style="margin-bottom: 20px;">Základní, ale kvalitní podpora imunitního systému, energie, vitality, zdraví kostí a kognitivních funkcí.</li>
+  <li style="margin-bottom: 20px;">Veganské kapsle – vhodné i pro ty, kdo se vyhıbají ivoèišnım slokám.</li>
+  <li style="margin-bottom: 20px;">Ideální volba pro bìné uivatele a sportovce na zaèátku cesty.</li>
+</ul>
+    </div>
+    <div class="container-benefity-foto">
+        <div class="icons-text">
+            <div class="icon-item">
+                <img alt="Energie a vıdr" src="energie_supervita.png">
+                <p style="font-weight: bold;">ENERGIE A VİDR</p>
+            </div>
+            <div class="icon-item">
+                <img alt="KOGNITIVNÍ FUNKCE A KONCENTRACE" src="mozek_supervita.png">
+                <p style="font-weight: bold;">KOGNITIVNÍ FUNKCE A KONCENTRACE</p>
+            </div>
+            <div class="icon-item">
+                <img alt="Antioxidaèní a detoxikaèní ochrana" src="immunity_supervita.png">
+                <p style="font-weight: bold;">IMUNITNÍ SYSTÉM</p>
+            </div>
+        </div>
+        <div class="photo">
+            <img alt="Hymalien Shyalit Czech Virus" src="supervita-essentials.png">
+        </div>
+    </div>    
+</div>
+
+<div id="c-p-4" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Jakı je rozdíl mezi SuperVitou
+            <span class="zvyrazneni">Essentials</span> a <span class="zvyrazneni">PRO V2.0</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+          <ul>
+            <li style="margin-bottom: 20px;">PRO verze je urèena pro pokroèilé uivatele a sportovce, kteøí chtìjí extra dávku mikronutrientù.</li>
+            <li style="margin-bottom: 20px;">Obsahuje tekutou formu vitamínù a minerálù pro vyšší vstøebatelnost a úèinnost.</li>
+            <li style="margin-bottom: 20px;">Lehèí dávkování – ideální pro ty, kteøí chtìjí mít dávky pøesnì pod kontrolou.</li>
+            <li style="margin-bottom: 20px;">Perfektní pøi nároèném tréninkovém reimu a zvıšenıch nárocích na tìlo.</li>
+          </ul>
+    </div>    
+    <div class="text-product" style="text-align: left;">
+        <p>SuperVita Essentials je tedy skvìlou volbou pro kadodenní péèi, zatímco SuperVita PRO V2.0 posune hranice vıkonu ještì dál. Není tøeba kombinovat, staèí si vybrat.</p>  
+    </div>
+    <div class="studie"><a href="#"><button class="transparent-button">Chci verzi ESSENTIALS!</button></a><a href="https://czechvirus.cz/supervita-pro-v2-0-p1772/?vid=989"><button class="transparent-button">Chci verzi PRO V2.0!</button></a></div>    
+    <div>
+        <img title="Fitness pár v horách" style="width: 100%; height: auto;" alt="Fitness pár v horách" src="supervita-essentials_supervita-pro.png">
+    </div>
+</div>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Roman Grigar</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Roman Grigar</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100FC68353E870F6D4AAA94BE59E40E937C</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>

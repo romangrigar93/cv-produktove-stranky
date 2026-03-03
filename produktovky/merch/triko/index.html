@@ -1,0 +1,687 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+    .sport-page,
+    .sport-page * {
+        box-sizing: border-box !important;
+    }
+
+    .sport-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #1a1a1a !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 960px !important;
+    }
+
+    /* Sekce */
+    .sport-page .sport-section {
+        padding: 70px 50px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Diagonální pozadí */
+    .sport-page .diagonal-bg {
+        position: relative !important;
+    }
+
+    .sport-page .diagonal-bg::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -10% !important;
+        right: -10% !important;
+        bottom: 0 !important;
+        background: linear-gradient(135deg, #e31e24 0%, #c41a1f 100%) !important;
+        transform: skewY(-3deg) !important;
+        transform-origin: top left !important;
+        z-index: 0 !important;
+    }
+
+    .sport-page .diagonal-bg > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .sport-page .diagonal-dark {
+        background: #1a1a1a !important;
+    }
+
+    .sport-page .diagonal-dark::before {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+    }
+
+    .sport-page .diagonal-white {
+        background: #ffffff !important;
+    }
+
+    .sport-page .diagonal-white::before {
+        background: #ffffff !important;
+    }
+
+    .sport-page .diagonal-gray {
+        background: #f5f5f5 !important;
+    }
+
+    .sport-page .diagonal-gray::before {
+        background: #f5f5f5 !important;
+    }
+
+    /* Nadpisy */
+    .sport-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .sport-page h2.white {
+        color: #ffffff !important;
+    }
+
+    .sport-page h2.dark {
+        color: #1a1a1a !important;
+    }
+
+    .sport-page h2 .highlight {
+        color: #e31e24 !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    /* Tag line */
+    .sport-page .tagline {
+        font-family: 'Anton', sans-serif !important;
+        font-size: 0.9em !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Text */
+    .sport-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .sport-page .white-text {
+        color: rgba(255,255,255,0.9) !important;
+    }
+
+    .sport-page .dark-text {
+        color: #1a1a1a !important;
+    }
+
+    .sport-page strong {
+        font-weight: 700 !important;
+    }
+
+    /* Hero */
+    .sport-page .hero-sport {
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 80px !important;
+    }
+
+    .sport-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .sport-page .hero-image img {
+        max-width: 90% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)) !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sport-page .hero-image img:hover {
+        transform: scale(1.05) !important;
+    }
+
+    /* Stats bar */
+    .sport-page .stats-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: rgba(0,0,0,0.3) !important;
+        padding: 25px !important;
+        border-radius: 8px !important;
+        margin-top: 30px !important;
+    }
+
+    .sport-page .stat-item {
+        text-align: center !important;
+    }
+
+    .sport-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.2em !important;
+        color: #e31e24 !important;
+        line-height: 1 !important;
+    }
+
+    .sport-page .stat-label {
+        font-size: 0.8em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255,255,255,0.6) !important;
+        margin-top: 5px !important;
+    }
+
+    /* Feature cards */
+    .sport-page .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .feature-card {
+        background: rgba(255,255,255,0.08) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        border-left: 4px solid #e31e24 !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .sport-page .feature-card:hover {
+        transform: translateX(10px) !important;
+        background: rgba(255,255,255,0.12) !important;
+    }
+
+    .sport-page .feature-card strong {
+        color: #ffffff !important;
+        font-size: 1.1em !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sport-page .feature-card p,
+    .sport-page .feature-card span {
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    /* Split content */
+    .sport-page .split-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .split-content .content-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .split-content .image-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .sport-page .split-content .image-side img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+    }
+
+    .sport-page .split-content .image-side::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -20px !important;
+        left: -20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        border: 3px solid #e31e24 !important;
+        border-radius: 12px !important;
+        z-index: -1 !important;
+    }
+
+    /* Size table */
+    .sport-page .size-table {
+        margin-top: 40px !important;
+        background: rgba(255,255,255,0.05) !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        overflow-x: auto !important;
+    }
+
+    .sport-page .size-table table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        text-align: center !important;
+    }
+
+    .sport-page .size-table th {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #e31e24 !important;
+        padding: 15px !important;
+        border-bottom: 2px solid rgba(227,30,36,0.3) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+    }
+
+    .sport-page .size-table td {
+        color: #1a1a1a !important;
+        padding: 12px !important;
+        border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+        font-size: 1em !important;
+    }
+
+    .sport-page .size-table tr:last-child td {
+        border-bottom: none !important;
+    }
+
+    .sport-page .size-table tr:hover td {
+        background: rgba(227,30,36,0.15) !important;
+    }
+
+    /* Barvy - color swatches */
+    .sport-page .color-variants {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 30px !important;
+        margin-top: 40px !important;
+        justify-content: center !important;
+    }
+
+    .sport-page .color-variant {
+        flex: 1 1 45% !important;
+        max-width: 45% !important;
+        background: rgba(255,255,255,0.05) !important;
+        border-radius: 16px !important;
+        padding: 30px !important;
+        text-align: center !important;
+        transition: all 0.4s ease !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .sport-page .color-variant::before {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: #e31e24 !important;
+        transform: scaleX(0) !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sport-page .color-variant:hover::before {
+        transform: scaleX(1) !important;
+    }
+
+    .sport-page .color-variant:hover {
+        background: rgba(255,255,255,0.1) !important;
+    }
+
+    .sport-page .color-variant img {
+        max-width: 250px !important;
+        height: auto !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sport-page .color-variant:hover img {
+        transform: scale(1.1) !important;
+    }
+
+    .sport-page .color-variant p {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #ffffff !important;
+        margin-top: 20px !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* Benefits strip */
+    .sport-page .benefits-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 40px !important;
+        padding: 35px 0 !important;
+        background: #e31e24 !important;
+        margin: 40px -50px -70px !important;
+    }
+
+    .sport-page .benefit-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .sport-page .benefit-item span {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.2em !important;
+        color: #ffffff !important;
+        letter-spacing: 1px !important;
+    }
+
+    .sport-page .benefit-icon {
+        width: 36px !important;
+        height: 36px !important;
+        background: rgba(255,255,255,0.2) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 16px !important;
+        color: #ffffff !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Image gallery */
+    .sport-page .image-gallery {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .gallery-item {
+        position: relative !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .sport-page .gallery-item:hover {
+        transform: scale(1.03) !important;
+    }
+
+    .sport-page .gallery-item img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        border-radius: 12px !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .sport-page .sport-section {
+            padding: 50px 30px !important;
+        }
+
+        .sport-page h2 {
+            font-size: 2.5em !important;
+        }
+
+        .sport-page .hero-content {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .sport-page .hero-text,
+        .sport-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .hero-image {
+            text-align: center !important;
+        }
+
+        .sport-page .hero-image img {
+            max-width: 70% !important;
+        }
+
+        .sport-page .stats-bar {
+            flex-direction: column !important;
+            gap: 15px !important;
+        }
+
+        .sport-page .features-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sport-page .benefits-strip {
+            flex-direction: column !important;
+            gap: 15px !important;
+            padding: 25px 30px !important;
+            margin: 40px -30px -50px !important;
+        }
+
+        .sport-page .split-content {
+            flex-direction: column !important;
+        }
+
+        .sport-page .split-content .content-side,
+        .sport-page .split-content .image-side {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .split-content .image-side::before {
+            display: none !important;
+        }
+
+        .sport-page .color-variants {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        .sport-page .color-variant {
+            flex: 1 1 100% !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .image-gallery {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sport-page .size-table {
+            padding: 20px !important;
+        }
+
+        .sport-page .size-table th,
+        .sport-page .size-table td {
+            padding: 10px 5px !important;
+            font-size: 0.9em !important;
+        }
+    }
+</style>
+
+<div class="sport-page" style="max-width: 960px !important; margin: 0 auto !important;">
+    <!-- Hero -->
+    <section class="sport-section diagonal-bg diagonal-dark hero-sport">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="tagline white-text">Czech Virus® Merch</p>
+                <h2 class="white">Oversized Triko <span class="highlight">Czech Virus®</span></h2>
+                <p class="white-text"><strong>Oversized triko Czech Virus®</strong> není jen další kousek do šatníku – je to <strong>Statement tvého životního stylu</strong>. Vyrobeno ze <strong>100% prémiové bavlny 300g</strong> s exkluzivním <strong>jumbo sitotiskem na zádech</strong>.</p>
+                <p class="white-text">Volný střih poskytuje <strong>maximální komfort</strong> při tréninku i v běžném životě. Nosíš Czech Virus – <strong>žiješ bez kompromisů</strong>.</p>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Bavlna</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300g</div>
+                        <div class="stat-label">Gramáž</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">40cm</div>
+                        <div class="stat-label">Šíře grafiky</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="lukas-furle-triko (1).jpg" alt="Oversized triko Czech Virus">
+            </div>
+        </div>
+    </section>
+
+    <!-- Proč právě toto triko -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text">Proč zvolit</p>
+        <h2 class="white">Oversized Triko <span class="highlight">Czech Virus®?</span></h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <strong>100% bavlna 300g</strong>
+                <span>Těžká, prémiová bavlna, která drží tvar a nevytahuje se. Žádné tenké hadry, tohle je triko vyrobené na dlouhou trať.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Jumbo sitotisk 40cm</strong>
+                <span>Masivní grafika na zádech vytištěná pokročilou metodou sitotisku. Potisk v barvě triček pro jemný, elegantní efekt, který křičí stylově.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Oversized střih</strong>
+                <span>Volný, moderní střih, který vypadá skvěle a pohltí tě v komfortu. Ideální pro trénink, ulici i chill doma.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Dvoubarevný potisk</strong>
+                <span>Využití dvou barev tisku dodává grafice na zádech hloubku a detail. Není to jen logo – je to umění.</span>
+            </div>
+        </div>
+
+        <div class="benefits-strip">
+            <div class="benefit-item">
+                <div class="benefit-icon">♦</div>
+                <span>Prémiová bavlna</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">★</div>
+                <span>Oversized fit</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <span>Masivní grafika</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail & materiál -->
+    <section class="sport-section diagonal-bg diagonal-white">
+        <div class="split-content">
+            <div class="content-side">
+                <p class="tagline dark-text">Detaily & zpracování</p>
+                <h2 class="dark">Vytvořeno pro <span class="highlight">tvůj styl</span></h2>
+                <p class="dark-text">Každý detail byl promyšlen. <strong>Tisk na zádech je umístěn 12 cm od průkrčníku</strong> – perfektní pozice pro maximální dopad. Sitotisk zajišťuje, že grafika vydrží desítky praní bez ztráty kvality.</p>
+                <p class="dark-text"><strong>300g bavlna</strong> není náhoda. Je to ideální rovnováha mezi <strong>odolností a prodyšností</strong>. Triko drží svůj tvar, neplandá a nosí se samo. Oversized fit znamená volnost tam, kde ji potřebuješ, ale stále vypadáš stylově.</p>
+                <p class="dark-text">Tohle není další "fitness" triko. <strong>Tohle je triko pro ty, co to myslí vážně</strong> – v posilovně i mimo ni.</p>
+            </div>
+            <div class="image-side">
+                <img src="lukas-furle-triko (2).jpg" alt="Czech Virus triko detail">
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text" style="text-align: center !important;">Pohled zblízka</p>
+        <h2 class="white" style="text-align: center !important;">Triko v <span class="highlight">akci</span></h2>
+
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="lukas-furle-triko (3).jpg" alt="Czech Virus triko - pohled 1">
+            </div>
+            <div class="gallery-item">
+                <img src="lukas-furle-triko (4).jpg" alt="Czech Virus triko - pohled 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Velikosti -->
+    <section class="sport-section diagonal-bg diagonal-white">
+        <p class="tagline dark-text" style="text-align: center !important;">Najdi svou velikost</p>
+        <h2 class="dark" style="text-align: center !important;">Tabulka <span class="highlight">velikostí</span></h2>
+        <p class="dark-text" style="text-align: center !important; max-width: 600px !important; margin: 0 auto 10px !important;">Díky oversized střihu vypadá triko skvěle na každém. Zkontroluj si rozměry a vyber velikost, která ti sedne nejlép.</p>
+
+        <div class="size-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Velikost</th>
+                        <th>M</th>
+                        <th>L</th>
+                        <th>XL</th>
+                        <th>XXL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 700 !important; color: #e31e24 !important;">A (šířka)</td>
+                        <td>75,5 cm</td>
+                        <td>77,5 cm</td>
+                        <td>79,5 cm</td>
+                        <td>81,5 cm</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700 !important; color: #e31e24 !important;">B (délka)</td>
+                        <td>67,0 cm</td>
+                        <td>70,0 cm</td>
+                        <td>73,0 cm</td>
+                        <td>78,0 cm</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Barevné varianty -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text" style="text-align: center !important;">Dvě varianty</p>
+        <h2 class="white" style="text-align: center !important;">Vyber si svou <span class="highlight">barvu</span></h2>
+        <p class="white-text" style="text-align: center !important; max-width: 600px !important; margin: 0 auto 10px !important;">Obě varianty mají <strong>identické složení a zpracování</strong>. Liší se jen barvou – černá pro klasiku, béžová pro jedinečný look.</p>
+
+        <div class="color-variants">
+            <div class="color-variant">
+                <img alt="Černé oversized triko Czech Virus" src="cerne-triko-oversize-front.png">
+                <p>Černá</p>
+            </div>
+            <div class="color-variant">
+                <img alt="Béžové oversized triko Czech Virus" src="bezove-triko-oversize-front.png">
+                <p>Béžová</p>
+            </div>
+        </div>
+    </section>
+</div>

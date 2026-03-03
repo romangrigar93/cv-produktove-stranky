@@ -1,0 +1,645 @@
+<!--EXPERTMODE-->
+<style>
+    .container-product {
+        max-width: 1000px;
+        border-radius: 8px;
+        margin: 0 auto !important;
+        /* Centers the container */
+        padding: 0;
+        /* Reset default padding */
+        box-sizing: border-box;
+        /* Ensures padding doesn't affect the width */
+        font-family: 'Roboto';
+        margin-top: 30px !important;
+    }
+
+    .container-product:first-child,
+    .container-product:first-of-type {
+        margin-top: 0 !important;
+    }
+
+    .container-product img {
+        border-radius: 8px;
+    }
+
+    .container-product>div:last-child {
+        padding: 0;
+        /* No padding for the image container */
+    }
+
+    .container-product h2 {
+        margin: 0;
+        /* Resets default margin */
+        font-size: 1.8em;
+        /* Default font size for H2 */
+        padding: 50px 20px 20px 20px !important;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .container-product h3 {
+        font-size: 20px;
+        margin-top: 10px !important;
+        font-weight: bold;
+    }
+
+    .container-product p {
+        font-size: 1em;
+        /* Default font size for text */
+    }
+
+    .container-product a {
+        text-decoration: none;
+    }
+
+    .container-product a:hover {
+        text-decoration: underline;
+    }
+
+    .text-product {
+        padding: 0px 50px 0px 50px !important;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .text-product p {
+        margin-bottom: 15px !important;
+    }
+
+    .transparent-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px !important;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition: box-shadow 0.3s;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    .studie {
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+        text-align: center;
+    }
+
+    /* lišty */
+    .container-lista {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto !important;
+        margin-bottom: 15px !important;
+    }
+
+    .label {
+        width: 33.333%;
+        /* label zabírá jednu tøetinu */
+        margin-right: 5px;
+        /* mezera mezi labelem a lištou */
+        text-align: left;
+    }
+
+    .bar-outer {
+        width: 66.666%;
+        /* lišta zabírá dvì tøetiny */
+        background-color: #ddd;
+        overflow: hidden;
+        margin-left: auto;
+    }
+
+    .barva-1 {
+        background-color: #9bcf2b;
+    }
+
+    .barva-2 {
+        background-color: #dccc1f;
+    }
+
+    .barva-3 {
+        background-color: #d08333;
+    }
+
+    .bar-inner {
+        height: 30px;
+        width: 0;
+        /* poèáteèní šíøka */
+        text-align: right;
+        padding-right: 5px;
+        line-height: 30px;
+        color: white;
+        transition: width 1s ease-in-out;
+        /* animace šíøky */
+    }
+
+    /* lišty */
+    /* 1/2 obsah, 1/2 foto */
+    .container-benefity-foto {
+        display: flex;
+        flex-direction: row;
+        /* nebo mùe bıt 'column', pokud to tak chcete pro mobilní zobrazení */
+        align-items: center;
+        /* Toto vycentruje dìtské prvky vertikálnì */
+        width: 90%;
+        margin: 0 auto !important;
+        margin-top: 30px !important;
+    }
+
+    .icons-text {
+        flex: 1;
+        /* Zabere 2/3 šíøky */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Vertikální vycentrování ikonek uvnitø .icons-text */
+        text-align: center;
+    }
+
+    .icon-item {
+        /* ádné specifické styly nejsou potøeba pro vertikální vycentrování, toto zajišuje .icons-text */
+        margin-bottom: 20px !important;
+        /* Odstup mezi polokami */
+    }
+
+    .icon-item img {
+        width: 70px;
+    }
+
+    .icon-item:last-child {
+        margin-bottom: 0;
+        /* Odstraníme margin pro poslední ikonu */
+    }
+
+    .photo {
+        flex: 1;
+        /* Zabere 1/3 šíøky */
+        align-self: flex-end;
+    }
+
+    .photo img {
+        width: 100%;
+        /* Aby fotka vyplnila prostor */
+        height: auto;
+    }
+
+    /* 2/3 obsah, 1/3 foto */
+    /* Responsive design for tablets */
+    @media (max-width: 768px) {
+        .container-product h2 {
+            font-size: 2em;
+            /* Larger font size for H2 on tablets */
+        }
+
+        .container-product p {
+            font-size: 1.0em;
+            /* Larger font size for text on tablets */
+        }
+
+        .transparent-button {
+            font-size: 16px;
+        }
+
+        .container-listy {
+            flex-direction: column;
+        }
+
+        .label {
+            width: auto;
+        }
+
+        .bar-outer {
+            width: 100%;
+        }
+
+        .container-benefity-foto {
+            flex-direction: column;
+        }
+
+        .icons-text,
+        .photo {
+            width: 70%;
+            /* Zabere 100% šíøky */
+            margin: 0 auto !important;
+        }
+
+        .icon-item {
+            flex-direction: row;
+            /* Ikony a text vedle sebe */
+            justify-content: center;
+            /* Horizontální vycentrování */
+            align-items: center;
+            /* Vertikální vycentrování */
+        }
+
+        .photo {
+            order: 2;
+            /* Fotka pùjde pod ikonky */
+            margin: 0 auto !important;
+            margin-top: 20px !important;
+            /* Odstup od pøedchozího obsahu */
+        }
+
+        .container-lista {
+            display: block;
+        }
+
+        .label {
+            width: 100%;
+            /* label zabírá jednu tøetinu */
+        }
+
+        .bar-outer {
+            width: 100%;
+            /* lišta zabírá dvì tøetiny */
+        }
+    }
+
+    /* Responsive design for phones */
+    @media (max-width: 480px) {
+        .container-product h2 {
+            font-size: 2.2em;
+            /* Larger font size for H2 on phones */
+        }
+
+        .container-product p {
+            font-size: 1.25em;
+            /* Larger font size for text on phones */
+        }
+
+        .transparent-button {
+            font-size: 20px;
+        }
+    }
+
+    #c-p-1 {
+        background: linear-gradient(to bottom, #f3f9ff 40%, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-1 a {
+        color: #1a5c00;
+    }
+
+    #c-p-1 h2 {
+        color: black;
+    }
+
+    #c-p-1 .zvyrazneni {
+        color: #64d7fe;
+    }
+
+    #c-p-1 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-1 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-2 {
+        background: linear-gradient(to bottom, #121211, #1c1c15);
+        color: white !important;
+    }
+
+    #c-p-2 a {
+        color: #1a5c00;
+    }
+
+    #c-p-2 h2 {
+        color: white;
+    }
+
+    #c-p-2 .zvyrazneni {
+        color: #fce000;
+    }
+
+    #c-p-2 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-2 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-3 {
+        background: linear-gradient(to bottom, #010211 70%, #000113);
+        color: white !important;
+    }
+
+    #c-p-3 a {
+        color: #dfb764;
+    }
+
+    #c-p-3 h2 {
+        color: white;
+    }
+
+    #c-p-3 .zvyrazneni {
+        color: #dbd600;
+    }
+
+    #c-p-3 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-3 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-4 {
+        background: linear-gradient(to bottom, #141414 70%, #515151);
+        color: white !important;
+    }
+
+    #c-p-4 a {
+        color: #a99566;
+    }
+
+    #c-p-4 h2 {
+        color: white;
+    }
+
+    #c-p-4 .zvyrazneni {
+        color: #f7b432;
+    }
+
+    #c-p-4 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-4 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-5 {
+        background: linear-gradient(to bottom, #23160e, #14110d);
+        color: #ffffff !important;
+    }
+
+    #c-p-5 a {
+        color: #fce000;
+    }
+
+    #c-p-5 h2 {
+        color: #ffffff;
+    }
+
+    #c-p-5 .zvyrazneni {
+        color: #fce000;
+    }
+
+    #c-p-5 .transparent-button {
+        color: #389edb;
+        border: 2px solid #389edb;
+    }
+
+    #c-p-5 .transparent-button:hover {
+        box-shadow: 0 0 10px #389edb;
+    }
+
+    #c-p-6 {
+        background: linear-gradient(to bottom, #236b7a, #fffff2);
+        color: white !important;
+    }
+
+    #c-p-6 a {
+        color: #389edb;
+    }
+
+    #c-p-6 h2 {
+        color: white;
+    }
+
+    #c-p-6 .zvyrazneni {
+        color: #389edb;
+    }
+
+    #c-p-6 .transparent-button {
+        color: #389edb;
+        border: 2px solid #389edb;
+    }
+
+    #c-p-6 .transparent-button:hover {
+        box-shadow: 0 0 10px #389edb;
+    }
+
+    #c-p-7 {
+        background: linear-gradient(to bottom, #d6e4f1, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-7 a {
+        color: #39b400;
+    }
+
+    #c-p-7 h2 {
+        color: black;
+    }
+
+    #c-p-7 .zvyrazneni {
+        color: #39b400;
+    }
+
+    #c-p-7 .transparent-button {
+        color: #39b400;
+        border: 2px solid #39b400;
+    }
+
+    #c-p-7 .transparent-button:hover {
+        box-shadow: 0 0 10px #39b400;
+    }
+
+    #c-p-8 {
+        background: linear-gradient(to bottom, #f8f8f8, #d4d4d4);
+        color: black !important;
+    }
+
+    #c-p-8 a {
+        color: #39b400;
+    }
+
+    #c-p-8 h2 {
+        color: black;
+    }
+
+    #c-p-8 .zvyrazneni {
+        color: #39b400;
+    }
+
+    #c-p-8 .transparent-button {
+        color: #39b400;
+        border: 2px solid #39b400;
+    }
+
+    #c-p-8 .transparent-button:hover {
+        box-shadow: 0 0 10px #39b400;
+    }
+</style>
+<div id="c-p-4" class="container-product">
+    <div class="heading-product">
+        <h2>Sleep <span class="zvyrazneni">Ritual</span></h2>
+    </div>
+    <div class="text-product">
+        <p style="margin-bottom: 30px;">
+            V dnešním hektickém svìtì je <strong>kvalitní spánek jedním z nejdùleitìjších základù</strong> pro tvoje zdraví, regeneraci a celkovou pohodu. 
+            Sleep Ritual je prémiovì namíchanı nápoj, kterı ti pomùe <strong>pøipravit tìlo i mysl na klidnou noc</strong>. 
+            Spojuje peèlivì vybrané pøírodní sloky v ideálním pomìru, take se stává skvìlım parákem pro chvíle, kdy hledáš <strong>relax a hlubokı noèní odpoèinek</strong>.
+        </p>
+        <p>
+            Pøedstav si, e si veèer pøipravíš <strong>høejivı, lahodnı nápoj s jemnou èokoládovou chutí</strong>, kterı se postará o tvùj veèerní rituál pøed spaním. 
+            Sleep Ritual je navren tak, aby ti pomohl <strong>zpomalit, vypnout a pøipravit se na klidnı spánek</strong>.
+        </p>
+    </div>
+    <div>
+        <img title="Pije Sleep Ritual - Czech Virus" style="width: 100%; height: auto;" alt="Pije Sleep Ritual - Czech Virus" src="holka-pije-sleep-ritual.png">
+    </div>
+</div>
+
+<div id="c-p-5" class="container-product">
+    <div class="heading-product">
+        <h2>Co dìlá <span class="zvyrazneni">Sleep Ritual vıjimeènım?</span></h2>
+    </div>
+    <div class="text-product">
+        <p style="margin-bottom: 15px;">
+            <h3>Preciznì vybrané pøírodní ingredience</h3>
+        </p>
+        <p style="margin-bottom: 30px;">
+            Sleep Ritual obsahuje úèinné sloky známé pro své relaxaèní vlastnosti, které se tradiènì vyuívají ke <strong>zklidnìní tìla i mysli</strong>. 
+            Kadá sloka byla peèlivì vybraná tak, aby ti pomohla <strong>pøispìt k harmonickému veèernímu odpoèinku</strong>.
+        </p>
+    </div>
+    <div>
+        <img title="Sleep Ritual - Czech Virus" style="width: 100%; height: auto;" alt="Sleep Ritual - Czech Virus" src="sleep-ritual-produkt.png">
+    </div>
+</div>
+
+<div id="c-p-2" class="container-product">
+    <div class="heading-product" style="margin-top: 40px;">
+        <h2>Proè si vybrat <span class="zvyrazneni">Sleep Ritual?</span></h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+        <ul>
+            <li style="margin-bottom: 15px;">Vysoce kvalitní sloky v optimálním pomìru</li>
+            <li style="margin-bottom: 15px;">Jemná èokoládová chu pro pøíjemnı veèerní záitek</li>
+            <li style="margin-bottom: 15px;">Pøirozenì sladké bez pøidaného cukru</li>
+            <li style="margin-bottom: 15px;">Peèlivì sestavená receptura bez umìlıch aditiv</li>
+            <li style="margin-bottom: 15px;">Podpora veèerní relaxace a klidného stavu mysli</li>
+        </ul>
+    </div>
+
+    <div class="container-benefity-foto">
+        <div class="icons-text">
+            <div class="icon-item">
+                <img alt="Best Seller" src="moon.png">
+                <p style="font-weight: bold;">RELAXAÈNÍ VLASTNOSTI</p>
+            </div>
+            <div class="icon-item">
+                <img alt="Veganskı" src="leaves.png">
+                <p style="font-weight: bold;">PØÍRODNÍ SLOENÍ</p>
+            </div>
+            <div class="icon-item">
+                <img alt="Skvìlá chu" src="relieved.png">
+                <p style="font-weight: bold;">KVALITNÍ SPÁNEK</p>
+            </div>
+        </div>
+        <div class="photo">
+            <img alt="Sleep Ritual" src="sleepritual.png">
+        </div>
+    </div>
+</div>
+
+<div id="c-p-3" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Klíèové sloky 
+            <span class="zvyrazneni">a jejich pøínosy</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+        <ul>
+            <li style="margin-bottom: 20px;">
+                <strong>Inositol (970 mg)</strong> – Pøirozenì se vyskytuje v tìle a hraje roli v celé øadì biologickıch procesù. Je souèástí bunìènıch membrán a pomáhá pøi komunikaci mezi nervovımi buòkami.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>L-Theanin (300 mg, extrakt ze zeleného èaje)</strong> – Pomáhá uvolnit mysl a sníit napìtí bez toho, aby tì uspával. Pochází z èaje a je známı svou schopností navodit klid.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Hoøèík (100 mg, bisglycinát)</strong> – Dùleitı minerál pro správné fungování nervù a svalù. Tato forma je šetrná k trávení a dobøe vstøebatelná.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>GABA (495 mg)</strong> – Neurotransmiter, kterı pomáhá zklidnit mozek a navodit pocit vnitøního uvolnìní.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Extrakt z kozlíku lékaøského (172 mg)</strong> – Tradièní bylina pro podporu veèerního klidu a zklidnìní pøed spaním.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Extrakt z višnì (Prunus cerasus) (320 mg, 10:1)</strong> – Pøirozenı zdroj antioxidantù a dalších aktivních látek pro veèerní pohodu.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Recoverben® (400 mg, extrakt z listù verbeny citronové)</strong> – Patentovanı extrakt podporující relaxaci a regeneraci tìla.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Extrakt z Reishi (Ganoderma lucidum) (210 mg)</strong> – Tradièní houba s bohatım obsahem bioaktivních látek.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Extrakt z heømánku pravého (150 mg, apigenin-7-apioglukosid 1,5 %)</strong> – Jedna z nejznámìjších bylin pro podporu veèerního klidu a relaxace.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>BIO sušené kokosové mléko (39 %)</strong> – Dodává nápoji krémovou konzistenci a jemnou, pøirozenì lahodnou chu.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Kakaovı prášek se sníenım obsahem tuku</strong> – Pøispívá k bohaté èokoládové chuti a pøíjemnému veèernímu rituálu.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <strong>Sladidlo: steviol-glykosidy ze stévie</strong> – Pøírodní sladidlo, které zajistí jemnou sladkost bez pøidaného cukru.
+            </li>
+        </ul>
+    </div>
+    <div>
+        <img title="Spánek po Sleep Ritualu" style="width: 100%; height: auto;" alt="Spánek po Sleep Ritualu" src="spani-po-sleep-ritualu-2.png">
+    </div>
+</div>
+
+
+<div id="c-p-7" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Neboj se rozmíchat i 
+            <span class="zvyrazneni">v mléku</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+        <h3>Doporuèená pøíprava</h3>
+        <ul>
+            <li style="margin-bottom: 20px;">
+                Rozpus jednu odmìrku (10 g) ve 200 ml horké vody nebo mléka a dobøe promíchej.
+            </li>
+            <li style="margin-bottom: 20px;">
+                Uívejte 30 minut pøed spaním jako souèást vašeho veèerního rituálu.
+            </li>
+        </ul>        
+    </div>
+    <div class="studie">
+        <a href="#">
+            <button class="transparent-button">Chci kvalitní spánek!</button>
+        </a>
+    </div>
+    <div>
+        <img title="Super Greens - zelené zlato pro zdraví a relax - Czechvirus" alt="Super Greens - zelené zlato pro zdraví a relax - Czechvirus" src="$USER-CONTENT/produkty/supergreens-zelene-zlato-relax-zdravi.png">
+    </div>
+</div>
+<script type="text/javascript">
+    function isInViewport(element) { const rect = element.getBoundingClientRect(); return ( rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth) ); } function animateBars() { document.querySelectorAll('.bar-inner').forEach((bar) => { if (isInViewport(bar) && !bar.style.width) { bar.style.width = bar.getAttribute('data-percentage'); } }); } window.addEventListener('scroll', animateBars); animateBars(); // spustí animaci i bez scrollování, v pøípadì, e lišta je ji viditelná
+</script>

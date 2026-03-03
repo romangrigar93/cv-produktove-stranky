@@ -1,0 +1,193 @@
+<style>
+.container-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(1deg, #f9f9f9, white);
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    color: black;
+    border-radius: 10px;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.description-product {
+    width: 80%;
+}
+
+.product h3 {
+    margin: 0 20px 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product p {
+    flex-grow: 1;
+    margin: 0 20px;
+    font-size: 14px;
+}
+
+.product .kosik button {
+    background-color: #dd0a16;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .product img,
+    .product .kosik button {
+        width: 100%;
+        height: 100%;
+        margin: 10px 0;
+    }
+
+    .product h3,
+    .product p {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .description-product {
+        width: 100%;
+    }
+
+    .kosik {
+        width: 100%;
+    }
+}
+</style>
+    <div class="container-products">
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/783bf2c30f20ef02/1/super-greens-pro-v2-0.png?hash=1168318207" alt="Super Greens PRO V2.0">
+            <div class="description-product">
+                <h3>SUPER GREENS PRO V2.0</h3>
+                <p>Originální mix chlorelly, spiruliny, mladého jeèmene a mladé pšenice pro podporu imunity &amp;
+                    trávení.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(197)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/9a0efee488b2602d/1/supervita-pro-v2-0.png?hash=1168318207" alt="SUPERVITA PRO V2.0">
+            <div class="description-product">
+                <h3>SUPERVITA PRO V2.0</h3>
+                <p>Komplexní multivitamín &amp; multiminerál pro doplnìní všech klíèovıch sloek, které zajišují
+                    funkèní a spokojené tìlo.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(1755)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/50766614cc605d28/1/pure-elite-cfm-1000g.png?hash=1168318207" alt="PROTEIN PURE ELITE CFM">
+            <div class="description-product">
+                <h3>PROTEIN PURE ELITE CFM</h3>
+                <p>Prémiovı syrovátkovı protein s vysokım obsahem bílkovin, obsahem probiotik a travicích enzymù, které
+                    podporují maximální vyuitelnost.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(55)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/2eec92b012c0cd0c/1/mps-5-pro-1000g.png?hash=1168318207" alt="PROTEIN MPS-5 PRO">
+            <div class="description-product">
+                <h3>PROTEIN MPS-5 PRO</h3>
+                <p>Víceslokovı protein, kterı má dlouhodobou vstøebatelnost pro maximální vıivu svalù v dlouhém èase.
+                </p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(367)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/7d7c2495f3be6b23/1/beast-virus-v2-0.png?hash=1168318207" alt="NAKOPÁVAÈ BEAST VIRUS V2.0">
+            <div class="description-product">
+                <h3>NAKOPÁVAÈ BEAST VIRUS V2.0</h3>
+                <p>Revoluèní nakopávaè, díky kterému zaiješ trénink, jako nikdy pøedtím. Synergicky pùsobící látky,
+                    které nakopávají, oddalují únavu a podporují svalovou vıdr a vıkon.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(1665)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/a34d92ef813ac31e/1/m3-s-pump.png?hash=1168318207" alt="PUMPA M3/S PUMP">
+            <div class="description-product">
+                <h3>PUMPA M3/S PUMP</h3>
+                <p>Sloení, díky kterému maximalizuješ napumpování svalù. Mùe se pouívat samostatnì nebo i v kombinaci
+                    s Beast Virus. Je vhodnı pro trénink ve veèerních hodinách, protoe neobsahuje stimulanty, které by
+                    narušovaly spánek.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(474)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/86005bf7b0671b3a/1/supreme-creatine.png?hash=1168318207" alt="KREATIN CREAPURE">
+            <div class="description-product">
+                <h3>KREATIN CREAPURE</h3>
+                <p>Nejfunkènìní suplement, kterı umoòuje nabírat více svalù, udrovat svaly v dietì a maximalizovat
+                    sílu v silovıch sportech. Creapure je nejèistìjší forma kreatinu nìmecké kvality!</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(49)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/907e58b51fd71e33/1/supreme-omega-3.png?hash=1168318207" alt="SUPREME OMEGA 3">
+            <div class="description-product">
+                <h3>SUPREME OMEGA 3</h3>
+                <p>Základní suplement, kterı je potøeba zaøazovat do stravy vdy, kdy máme nedostatek OMEGA 3 mastnıch
+                    kyselin, které se vyskytují v rybách. Tento suplement napomáhá obnovovat buòky, podporuje zdraví
+                    srdce, mozku ale i oèí.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(475)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/2eaa3209e6ad1bb3/1/zma-max.png?hash=1168318207" alt="ZMA MAX">
+            <div class="description-product">
+                <h3>ZMA MAX</h3>
+                <p>Kombinace nejvíce deficitního minerálu lidské populace - hoøèíku, se zinkem. Pøi uívání ve veèerních
+                    hodinách docílíme lepšího spánku a lepší regenerace díky optimalizaci vyplavování rùstového hormonu.
+                </p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(3)">Pøidat do košíku</button>
+			</span>
+        </div>
+    </div>

@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <title>Landing – Slidery + Recenze + Nákupní seznam</title>
+  <style>
+    :root { --radius:14px; --btn:#dd0a16; --btnText:#fff; --gap:12px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: 'Roboto',sans-serif;background:#f3f3f3;color:#111}
+    .wrap{max-width:1200px;margin:0 auto;padding:12px}
+    h2 {
+      font-size: 36px;
+      text-align: left;
+      margin-bottom: 20px;
+    }    
+
+    /* ---------- Banner slider ---------- */
+    .swiper-banner{padding:8px 0 18px}
+    .swiper-banner .swiper-slide{height:500px}
+    .banner-card{border-radius:var(--radius);overflow:hidden;background:#e9e9e9;display:flex;flex-direction:column;height:100%;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    .banner-media{position:relative;width:100%;flex:1;overflow:hidden;background:#ddd}
+    .banner-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .banner-content{padding:18px 16px 16px;background:#e5e5e5}
+    .banner-title{font-size:20px;line-height:1.15;margin-bottom:10px;font-weight:800}
+    .banner-text{color:#3b3b3b;margin-bottom:12px; line-height:1.4;}
+    .banner-btn{margin-bottom: 5px; background:#148705;color:#fff;border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer}
+    .banner-btn-transparent{background:transparent;color:#3b3b3b;border:1px solid #148705;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer}
+
+    .divider{height:50px}
+
+    /* BYLO (smazat/nenastavovat pevnou výšku) */
+    /* .swiper-shorts .swiper-slide{height:500px}
+       .video-card{height:100%;} */
+
+    /* NOVĚ – fixní poměr 9:16 */
+    .swiper-shorts .swiper-slide{
+      height:auto;                 /* výška podle obsahu */
+    }
+    .video-card{
+      width:100%;
+      aspect-ratio: 9 / 16;        /* PORTRÉT 9:16 */
+      position:relative;
+      border-radius: var(--radius);
+      overflow:hidden;
+      background:#000;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+      display:block;               /* nepotřebujeme flex-centraci */
+    }
+
+    /* vnitřek natáhni na box 9:16 */
+    .video-frame,
+    .yt-poster{ position:absolute; inset:0; width:100%; height:100%; }
+    .yt-poster img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Fallback pro starší prohlížeče bez aspect-ratio */
+    @supports not (aspect-ratio: 9 / 16) {
+      .video-card::before{ content:""; display:block; padding-top:177.78%; }
+    }
+
+    /* ---------- Recenze ---------- */
+    .reviews-wrap{margin:32px 0 10px}
+    .reviews-title{font-size:36px;text-align:left;margin-bottom:16px}
+    .reviews-flex{display:grid; gap:20px;align-items:start;grid-template-columns:minmax(0,1fr)}
+    @media (min-width:992px){ .reviews-flex{grid-template-columns:340px minmax(0,1fr)} }
+    .heureka-box img{max-width:100%;height:auto;border-radius:10px;display:block}
+    .reviews-carousel{min-width:0}
+    .swiper-reviews{width:100%;overflow:hidden}
+    .swiper-reviews .swiper-wrapper{align-items:stretch;}
+    .swiper-reviews .swiper-slide{height:auto !important;background:#fff;border-radius:10px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+    .rev-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .rev-head h3{font-size:18px;margin:0}
+    .rating{color:gold;margin-bottom:8px}
+    .reviews-note{text-align:center;margin-top:10px;color:#666;font-size:13px}
+    .swiper-reviews .swiper-pagination{position:relative;margin-top:10px}
+    .swiper-reviews .swiper-pagination-bullet{background:#c4c4c4;opacity:1}
+    .swiper-reviews .swiper-pagination-bullet-active{background:#1e1e1e}
+
+    /* ---------- Nákupní seznam (NOVÉ) ---------- */
+    .shoplist-wrap{margin:34px 0 24px}
+    .shoplist-title{font-size:32px;line-height:1.1;margin-bottom:16px}
+    .shoplist{display:grid;gap:16px}
+    .shop-item{
+      background:linear-gradient(1deg,#f9f9f9,#fff);
+      border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);
+      padding:14px;display:block
+    }
+    .shop-media{width:100%;border-radius:10px;overflow:hidden;background:#fff;margin-bottom:12px}
+    .shop-media img{width:100%;height:160px;object-fit:contain;display:block}
+    .shop-content h3{font-size:20px;text-align:center;margin:4px 0 6px}
+    .shop-content p{font-size:14px;color:#444;text-align:center}
+    .shop-cta{margin-top:12px}
+    .shop-btn{margin-bottom: 10px; display:inline-block;width:100%;text-align:center;background:#148705;color:var(--btnText);font-weight:700;border:0;border-radius:10px;padding:12px 16px;cursor:pointer}
+
+    /* Desktop verze seznamu – řádkové karty */
+    @media (min-width:992px){
+      .shop-item{display:flex;align-items:center;gap:20px;padding:20px}
+      .shop-media{flex:0 0 150px;margin:0}
+      .shop-media img{height:150px}
+      .shop-content{flex:1}
+      .shop-content h3{text-align:left;font-size:24px;margin-bottom:8px}
+      .shop-content p{text-align:left}
+      .shop-cta{flex:0 0 auto}
+      .shop-btn{margin: 0px; width:auto;padding:12px 18px}
+    }
+
+    @media (min-width:768px){
+      .wrap{padding:16px}
+      .banner-title{font-size:22px}
+    }
+    
+/* === Naše mise (responsive + obtékání obrázku na desktopu) === */
+  .nase-mise{
+    max-width: 1200px;           /* volitelně podle tvého kontejneru */
+    margin: 28px auto;
+  }
+  .nase-mise h2{ 
+    font-size: 36px; 
+    margin-bottom: 12px;
+  }
+  .nase-mise img{
+    width: 100%;
+    height: auto;
+    border-radius: 14px;          /* požadovaný radius */
+    display: block;
+    margin: 10px 0 14px;          /* mobil: pod nadpisem */
+  }
+  .nase-mise h3{ 
+    font-size: 24px; 
+    margin: 6px 0 10px;
+    text-transform: uppercase;
+  }
+  .nase-mise p{ 
+    font-size: 20px;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  /* desktop: obrázek vlevo, text ho obtéká */
+  @media (min-width: 992px){
+    .nase-mise{ padding: 0 0; }
+    .nase-mise img{
+      float: left;                       /* obtékání */
+      width: min(42%, 420px);            /* uprav podle potřeby */
+      margin: 2px 22px 16px 0;           /* prostor kolem obrázku */
+      border-radius: 16px;
+      shape-outside: inset(0 round 16px);/* kopíruje radius při obtékání */
+    }
+    .nase-mise h3{ margin-top: 0; }      /* u obrázku nechceme velký odsazení */
+    .nase-mise::after{                   /* clearfix pro float */
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  /* (volitelné) lehčí typografie na menších mobilech */
+  @media (max-width: 420px){
+    .nase-mise h2{ font-size: 36px; }
+    .nase-mise h3{ font-size: 20px; }
+  }
+  .nase-mise { perspective: 800px; }
+  .nase-mise .menici-text{
+    display:inline-block;
+    will-change: transform, opacity, filter;
+    transition: transform .45s cubic-bezier(.2,.8,.2,1),
+                opacity .45s, filter .45s;
+  }
+  .nase-mise .menici-text.is-out{
+    opacity:0;
+    transform:translateY(-10px);
+    filter:blur(2px);
+  }
+  .nase-mise .menici-text.is-in{
+    opacity:0;
+    transform:translateY(10px);
+    filter:blur(2px);
+  }
+  
+  .traveni-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .traveni-container p {
+  font-size: 20px;
+  line-height: 1.4;
+  }
+  
+    /* --- HERO SLIDER (Czech Virus) --- */
+    .cv-hero{position:relative;height:70vh;border-radius:18px;overflow:hidden;margin:28px 0;}
+    .cv-bg{
+      position:absolute; inset:0;
+      background:center/cover no-repeat;
+      opacity:0;
+      transform:scale(1.05);
+      transition: opacity 1s ease, transform 8s ease;
+    }
+    .cv-bg.is-active{
+      opacity:1;
+      transform:scale(1.08);
+    }
+    .cv-bg::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.15));
+    }
+    .cv-content{position:relative;z-index:2;height:100%;display:grid;place-items:center;text-align:center;padding:20px;color:#fff;}
+    .cv-text{max-width:700px;opacity:0;transform:translateY(20px);transition:opacity .45s,transform .45s;}
+    .cv-text.in{opacity:1;transform:translateY(0);}
+    .cv-text h3{font-size:36px;margin:10px 0;}
+    .cv-text p{font-size:18px;line-height:1.4;}
+    .cv-text a{display:inline-block;margin-top:18px;background:#148705;color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;}
+    .cv-thumbs{position:absolute;bottom:20px;right:20px;display:flex;gap:14px;z-index:3;}
+    .cv-card{width:150px;aspect-ratio:3/4;background:center/cover no-repeat;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.3);opacity:.8;cursor:pointer;transition:transform .4s,opacity .4s;}
+    .cv-card:hover{opacity:1;transform:translateY(-4px);}  
+    @media (max-width: 768px){
+      .cv-hero {
+        height: 90vh;
+      }
+      .cv-content {
+          align-content: center;
+      }
+    }
+    
+    
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="traveni-container">
+    <h2 style="text-align: center; text-transform: uppercase;">První volba pro tvoje trávení</h2>
+    <!-- === Hero Slider vložený sem === -->
+    <div class="cv-hero">
+      <div class="cv-bg cv-bg-a is-active"></div>
+      <div class="cv-bg cv-bg-b"></div>
+      <div class="cv-content">
+        <div class="cv-text" id="cvText">
+          <h3 id="cvTitle">Akce Czech Virus</h3>
+          <p id="cvDesc">Nejnovější promo akce a bestsellery.</p>
+          <a id="cvCta" href="#">Zjistit víc</a>
+        </div>
+      </div>
+      <div class="cv-thumbs" id="cvThumbs"></div>
+    </div>
+    <!-- === konec slideru === -->    
+    <p>Trávení je základní kámen pohody i výkonu. Proto jsme dali dohromady trojici produktů, které pracují v synergii – prémiová probiotika, kvalitní vláknina a směs zelených superpotravin. Není to jen o doplňku stravy, ale o tom, aby ses každý den cítil lehčí, měl víc energie a tvé tělo fungovalo tak, jak má. </p>
+  </div>
+
+  <!-- SLIDER 1: Bannery -->
+  <div class="swiper swiper-banner">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <article class="banner-card">
+          <div class="banner-media"><img src="img/super-greens_jablko.png" alt="Super Greens PRO V2.0 od Czech Virus" /></div>
+          <div class="banner-content">
+            <h3 class="banner-title">SUPER GREENS PRO</h3>
+            <p class="banner-text">Nejprodávanější první ochucené Greens na našem trhu!</p>
+            <button class="banner-btn">Přidat do košíku</button>
+            <button class="banner-btn-transparent">Zjistit více</button>
+          </div>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="banner-card">
+          <div class="banner-media"><img src="img/box-probio_1.png" alt="Probio 15 od Czech Virus" /></div>
+          <div class="banner-content">
+            <h3 class="banner-title">PROBIO 15</h3>
+            <p class="banner-text">Prémiová probiotika na jejimž vývoji pracovala světová špička!</p>
+            <button class="banner-btn">Přidat do košíku</button>
+            <button class="banner-btn-transparent">Zjistit více</button>
+          </div>
+        </article>
+      </div>
+      <div class="swiper-slide">
+        <article class="banner-card">
+          <div class="banner-media"><img src="img/colon-clean_tresen.png" alt="ColonClean Ultra od Czech Virus" /></div>
+          <div class="banner-content">
+            <h3 class="banner-title">COLONCLEAN ULTRA</h3>
+            <p class="banner-text">5 pečlivě vybraných druhů vlákniny pro skvělé zažívání.</p>
+            <button class="banner-btn">Přidat do košíku</button>
+            <button class="banner-btn-transparent">Zjistit více</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SLIDER 2: Shorts -->
+  <div class="swiper swiper-shorts">
+    <h2>Užívají nás</h2>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="video-card" data-yt="T9dI8S-5VQk">
+          <div class="video-frame"></div>
+          <div class="yt-poster"><img src="img/simona-karesova-super-greens.jpg" alt="Short 1" /><button class="play" type="button">Přehrát</button></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="video-card" data-yt="aqz-KE-bpKQ">
+          <div class="video-frame"></div>
+          <div class="yt-poster"><img src="https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg" alt="Short 2" /><button class="play" type="button">Přehrát</button></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="video-card" data-yt="2Vv-BfVoq4g">
+          <div class="video-frame"></div>
+          <div class="yt-poster"><img src="https://img.youtube.com/vi/2Vv-BfVoq4g/hqdefault.jpg" alt="Short 3" /><button class="play" type="button">Přehrát</button></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="video-card" data-yt="flexxJId0Z4">
+          <div class="video-frame"></div>
+          <div class="yt-poster"><img src="https://img.youtube.com/vi/flexxJId0Z4/hqdefault.jpg" alt="Short 4" /><button class="play" type="button">Přehrát</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  
+  <section class="nase-mise">
+    <h2>Naše mise</h2>
+    <img src="img/zaruba-greens.jpg" alt="Obrázek" />
+    <h3>První<br /> <span class="menici-text">volba pro tvoje trávení</span></h3>
+    <p>Nepřikrášlujeme. Nepoužíváme prázdné slogany. Naší misí je, bylo a vždy bude posouvat hranice funkční výživy a přinášet produkty, které reálně pomůžou – ať už jde o výkon, regeneraci, nebo každodenní pohodu. Jsme tu proto, abys měl jistotu, že to, co do sebe dáš, má skutečný efekt. </p>
+  </section>
+  
+  <div class="divider"></div>  
+
+  <!-- RECENZE -->
+  <section class="reviews-wrap">
+    <h2 class="reviews-title">Jak jste spokojeni vy?</h2>
+    <div class="reviews-flex">
+      <div class="heureka-box">
+        <img src="$USER-CONTENT/sportovci-landing/heureka-spokojenost.jpg" alt="Hodnocení Heureka">
+      </div>
+      <div class="reviews-carousel">
+        <div class="swiper swiper-reviews">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="rev-head"><h3>Ověřený zákazník Monča</h3><img src="$USER-CONTENT/sportovci-landing/nalepka.png" width="28" alt="ověřeno"></div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>Zkusila jsem a nelituji ! :) Líbí se mi že narozdíl od jiných greens je mixem více druhů superpotravin. Každé ráno se na nápoj těším, trávení se zlepšilo, méně pocitu nafouklého bříška.. jestli podpoří i snahu zhubnout se ještě uvidí.</p>
+            </div>
+            <div class="swiper-slide">
+              <div class="rev-head"><h3>Ověřený anonymní zákazník</h3><img src="$USER-CONTENT/sportovci-landing/nalepka.png" width="28" alt="ověřeno"></div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>Neskutečně mi zlepšil trávení a hlavně problém s nafouklým břichem.</p>
+            </div>
+            <div class="swiper-slide">
+              <div class="rev-head"><h3>Ověřený zákazník Nicolette</h3><img src="$USER-CONTENT/sportovci-landing/nalepka.png" width="28" alt="ověřeno"></div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>Mám již 3 balení
+Nejlepší super greens
+Obě dvě příchutě jsou skvělé a dobré, ale za mě určitě vítězí příchuť lesního ovoce - ta je opravdu top a dobrá
++ Pomáhá na nafouknutí bříška</p>
+            </div>
+            <div class="swiper-slide">
+              <div class="rev-head"><h3>Ověřený zákazník Regina</h3><img src="$USER-CONTENT/sportovci-landing/nalepka.png" width="28" alt="ověřeno"></div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>výrobek předčil očekávání, dokonalaá chuť, rozpustnost a funkčnost v trávení doporučuji nakupuji opakovaně</p>
+            </div>
+            <div class="swiper-slide">
+              <div class="rev-head"><h3>Ověřený zákazník Jana</h3><img src="$USER-CONTENT/sportovci-landing/nalepka.png" width="28" alt="ověřeno"></div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>Můj nejoblíbenější produkt,skvělá chuť,na rozdíl od ostatních výborná snasenlivost</p>
+            </div>    
+            <div class="swiper-slide">
+              <div class="rev-head"><h3>Ověřený zákazník Zuzaa</h3><img src="$USER-CONTENT/sportovci-landing/nalepka.png" width="28" alt="ověřeno"></div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <p>Moc doporučuji, vyzkoušela jsem již mnoho Greens a tato mi přijde chuťově nejlepší a všímám si i lepších účinků..</p>
+            </div>                      
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="reviews-note">Ověřené recenze z Heureka.cz</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NÁKUPNÍ SEZNAM (NOVÁ SEKCE) ===== -->
+  <section class="shoplist-wrap">
+    <h2 class="shoplist-title">Vyber si</h2>
+
+    <div class="shoplist">
+
+      <!-- Položka 1 -->
+      <article class="shop-item">
+        <div class="shop-media">
+          <img src="img/super-greens_jablko.png" alt="Super Greens PRO V2.0 Czech Virus">
+        </div>
+        <div class="shop-content">
+          <h3>SUPER GREENS PRO V2.0</h3>
+          <p>Originální mix chlorelly, spiruliny, mladého ječmene a mladé pšenice pro podporu imunity &amp; trávení.</p>
+        </div>
+        <div class="shop-cta">
+          <button class="shop-btn" onclick="CVAddToCart?.(1755)">Chci příchuť jablko</button>
+          <button class="shop-btn" onclick="CVAddToCart?.(1755)">Chci příchuť lesní ovoce</button>
+        </div>
+      </article>
+
+      <!-- Položka 2 -->
+      <article class="shop-item">
+        <div class="shop-media">
+          <img src="img/box-probio_1.png" alt="PROBIO 15 Czech Virus">
+        </div>
+        <div class="shop-content">
+          <h3>PROBIO 15</h3>
+          <p>Komplexní multivitamín &amp; multiminerál pro doplnění všech klíčových složek, které zajišťují funkční a spokojené tělo.</p>
+        </div>
+        <div class="shop-cta">
+          <button class="shop-btn" onclick="CVAddToCart?.(1755)">Chci PROBIO 15</button>
+        </div>
+      </article>
+
+      <!-- Položka 3 -->
+      <article class="shop-item">
+        <div class="shop-media">
+          <img src="img/colon-clean_tresen.png" alt="COLONCLEAN ULTRA Czech Virus">
+        </div>
+        <div class="shop-content">
+          <h3>COLONCLEAN ULTRA</h3>
+          <p>Komplexní multivitamín &amp; multiminerál pro doplnění všech klíčových složek, které zajišťují funkční a spokojené tělo.</p>
+        </div>
+        <div class="shop-cta">
+          <button class="shop-btn" onclick="CVAddToCart?.(1755)">Chci příchuť jablko</button>
+          <button class="shop-btn" onclick="CVAddToCart?.(1755)">Chci příchuť třešeň</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  /* Banner slider */
+  new Swiper('.swiper-banner', {
+    slidesPerView: 1.25, spaceBetween: 12,
+    breakpoints: { 768:{slidesPerView:2.5,spaceBetween:18}, 1024:{slidesPerView:4,spaceBetween:24} }
+  });
+
+  /* Shorts slider */
+  const shortsSwiper = new Swiper('.swiper-shorts', {
+    slidesPerView: 1.25,
+    spaceBetween: 12,
+    breakpoints: {
+      480:  { slidesPerView: 1.5, spaceBetween: 12 },
+      768:  { slidesPerView: 3,   spaceBetween: 18 },
+      1024: { slidesPerView: 4,   spaceBetween: 24 },
+      1280: { slidesPerView: 5,   spaceBetween: 24 } // víc videí vedle sebe
+    }
+  });
+  function playYT(card){
+    const holder = card.querySelector('.video-frame');
+    const id = card.getAttribute('data-yt');
+    if(!holder || holder.querySelector('iframe')) return;
+    const src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=0&playsinline=1&enablejsapi=1&rel=0&modestbranding=1`;
+    const iframe = document.createElement('iframe');
+    iframe.src = src; iframe.allow='autoplay; encrypted-media; picture-in-picture';
+    iframe.allowFullscreen = true; iframe.style.width='100%'; iframe.style.height='100%'; iframe.style.border='0';
+    holder.appendChild(iframe); card.querySelector('.yt-poster').style.display='none';
+  }
+  function stopAll(){
+    document.querySelectorAll('.video-card').forEach(card=>{
+      card.querySelector('.video-frame').innerHTML=''; card.querySelector('.yt-poster').style.display='';
+    });
+  }
+  document.querySelectorAll('.video-card .yt-poster').forEach(p=>{
+    p.addEventListener('click', e=>{ const card=e.currentTarget.closest('.video-card'); stopAll(); playYT(card); });
+  });
+  shortsSwiper.on('slideChange', stopAll);
+
+  /* Recenze */
+  new Swiper('.swiper-reviews', {
+    slidesPerView: 1, spaceBetween: 16,
+    pagination: { el: '.swiper-reviews .swiper-pagination', clickable: true },
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    breakpoints: { 768:{slidesPerView:2,spaceBetween:18}, 1024:{slidesPerView:3,spaceBetween:22}, 1280:{slidesPerView:3,spaceBetween:24} }
+  });
+  
+  /*menici se text*/
+  (function(){
+    const target = document.querySelector('.nase-mise .menici-text');
+    if(!target) return;
+
+    const phrases = [
+      'volba pro tvoje trávení',
+      'ochucená směs super greens',
+      'komplexní probiotika'
+    ];
+
+    const DURATION = 350;    // ms – délka animace ven/dovnitř
+    const INTERVAL = 2000;   // ms – jak často měnit text
+
+    // začneme od další fráze, protože první už v HTML je
+    let i = 0;
+
+    function swap() {
+      // animace „ven“
+      target.classList.add('is-out');
+      setTimeout(() => {
+        // změna textu
+        i = (i + 1) % phrases.length;
+        target.textContent = phrases[i];
+
+        // krátká příprava „dovnitř“ a hned odstartujeme animaci
+        target.classList.remove('is-out');
+        target.classList.add('is-in');
+        void target.offsetWidth;      // force reflow pro spolehlivý start
+        target.classList.remove('is-in');
+      }, DURATION);
+    }
+
+    setInterval(swap, INTERVAL);
+  })();
+  
+</script>
+
+<script>
+const cvSlides = [
+  {
+    bg: 'img/box-probio_1.png',
+    thumb: 'img/box-probio_1.png',
+    title: 'PROBIO15',
+    desc: 'Komplexní Probiotika špičkové kvality.',
+    ctaText: 'Koupit PROBI15',
+    ctaUrl: 'https://czechvirus.cz/immunity-shield-max-p2097/?vid=2094'
+  },
+  {
+    bg: 'img/colon-clean_tresen.png',
+    thumb: 'img/colon-clean_tresen.png',
+    title: 'COLONCLEAN ULTRA',
+    desc: 'Originální komplex vlákniny pro zdraví střeva',
+    ctaText: 'Koupit COLONCLEAN',
+    ctaUrl: 'https://czechvirus.cz/supreme-ashwagandha-7-p2092/'
+  },
+  {
+    bg: 'img/super-greens_jablko.png',
+    thumb: 'img/super-greens_jablko.png',
+    title: 'SUPERGREENS PRO V2.0',
+    desc: 'Nejprodávanější Super Greens na trhu.',
+    ctaText: 'Koupit SUPERGREENS',
+    ctaUrl: 'https://czechvirus.cz/darkovy-balicek-zdravi-a-imunita-p1833/'
+  }
+];
+
+const cvState = { i:0, useA:true };
+const bgA=document.querySelector('.cv-bg-a'), bgB=document.querySelector('.cv-bg-b');
+const t=document.getElementById('cvText'), ti=document.getElementById('cvTitle'), de=document.getElementById('cvDesc'), ct=document.getElementById('cvCta');
+const thumbs=document.getElementById('cvThumbs');
+
+function setBg(el,s){ el.style.backgroundImage=`url('${s.bg}')`; }
+function updateText(s){ ti.textContent=s.title; de.textContent=s.desc; ct.textContent=s.ctaText; ct.href=s.ctaUrl; }
+function renderThumbs(){
+  thumbs.innerHTML='';
+  cvSlides.forEach((s,idx)=>{
+    if(idx===cvState.i) return; // neukazuj aktivní
+    const c=document.createElement('div');
+    c.className='cv-card'; c.style.backgroundImage=`url('${s.thumb}')`;
+    c.addEventListener('click',()=>goTo(idx)); thumbs.appendChild(c);
+  });
+}
+function crossfade(idx){
+  t.classList.remove('in');
+  const slide=cvSlides[idx];
+  const show=cvState.useA?bgB:bgA, hide=cvState.useA?bgA:bgB;
+  setBg(show,slide);
+  show.classList.add('is-active'); hide.classList.remove('is-active');
+  updateText(slide); renderThumbs();
+  cvState.useA=!cvState.useA;
+  setTimeout(()=>t.classList.add('in'),600);
+}
+function goTo(idx){ cvState.i=idx; crossfade(idx); }
+(function init(){
+  setBg(bgA,cvSlides[0]); setBg(bgB,cvSlides[0]); bgA.classList.add('is-active');
+  updateText(cvSlides[0]); renderThumbs(); setTimeout(()=>t.classList.add('in'),300);
+})();
+
+let cvTimer = null;
+
+function crossfade(idx){
+  t.classList.remove('in');
+  const slide=cvSlides[idx];
+  const show=cvState.useA?bgB:bgA, hide=cvState.useA?bgA:bgB;
+
+  show.style.backgroundImage=`url('${slide.bg}')`;
+  show.classList.add('is-active');
+  hide.classList.remove('is-active');
+
+  updateText(slide);
+  renderThumbs();
+  cvState.useA=!cvState.useA;
+
+  setTimeout(()=>t.classList.add('in'),400);
+}
+
+function goTo(idx){
+  cvState.i=(idx+cvSlides.length)%cvSlides.length;
+  crossfade(cvState.i);
+  resetAuto();
+}
+
+function next(){ goTo(cvState.i+1); }
+
+function resetAuto(){
+  if(cvTimer) clearInterval(cvTimer);
+  cvTimer=setInterval(next,5000); // 5 vteřin
+}
+
+(function init(){
+  bgA.style.backgroundImage=`url('${cvSlides[0].bg}')`;
+  bgB.style.backgroundImage=`url('${cvSlides[0].bg}')`;
+  bgA.classList.add('is-active');
+  updateText(cvSlides[0]); renderThumbs();
+  setTimeout(()=>t.classList.add('in'),300);
+  resetAuto(); // spustí autoplay
+})();
+</script>
+
+
+</body>
+</html>
+

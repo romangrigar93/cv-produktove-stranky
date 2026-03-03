@@ -1,0 +1,252 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    :root {
+        --cv-red: #e31e24;
+        --cv-red-dark: #c41a1f;
+        --cv-black: #1a1a1a;
+        --cv-dark-gray: #2d2d2d;
+        --cv-light-gray: #f5f5f5;
+        --cv-white: #ffffff;
+    }
+
+    .composition-page * {
+        box-sizing: border-box;
+    }
+
+    .composition-page {
+        font-family: 'Inter', sans-serif;
+        background: var(--cv-black);
+        width: 100%;
+        padding: 50px;
+        border-radius: 8px;
+    }
+
+    .composition-page h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--cv-white);
+        margin: 0 0 25px 0 !important;
+        padding-bottom: 15px;
+        border-bottom: 3px solid var(--cv-red);
+        display: inline-block;
+    }
+
+    .composition-page h2 .highlight {
+        color: var(--cv-red);
+    }
+
+    .composition-page p {
+        font-size: 1em;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 15px !important;
+    }
+
+    .composition-page strong {
+        color: var(--cv-white);
+        font-weight: 700;
+    }
+
+    /* Flavor tabs */
+    .flavor-composition {
+        background: linear-gradient(135deg, var(--cv-dark-gray) 0%, var(--cv-black) 100%);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .flavor-header {
+        background: var(--cv-red);
+        color: var(--cv-white);
+        padding: 15px 25px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+    }
+
+    .flavor-content {
+        padding: 20px 25px;
+        color: rgba(255,255,255,0.75);
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    /* Tabulka */
+    .info-table-wrapper {
+        margin-top: 40px;
+        overflow-x: auto;
+    }
+
+    .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--cv-dark-gray);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 15px 20px;
+        text-align: left;
+    }
+
+    .info-table th {
+        background: var(--cv-red);
+        color: var(--cv-white);
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .info-table td {
+        color: rgba(255,255,255,0.85);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .info-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .info-table tr:nth-child(even) {
+        background: rgba(0,0,0,0.2);
+    }
+
+    .info-table tr:hover {
+        background: rgba(227,30,36,0.1);
+    }
+
+    .info-table td:last-child {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.2em;
+        color: var(--cv-red);
+        text-align: right;
+    }
+
+    .info-table .sub-row td:first-child {
+        padding-left: 40px;
+        color: rgba(255,255,255,0.6);
+        font-size: 0.95em;
+    }
+
+    .info-table .sub-row td:last-child {
+        color: rgba(255,255,255,0.7);
+        font-size: 1.1em;
+    }
+
+    /* Reference note */
+    .reference-note {
+        font-size: 0.85em;
+        font-style: italic;
+        color: rgba(255,255,255,0.5);
+        margin-top: 15px !important;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .composition-page {
+            padding: 30px 20px;
+        }
+
+        .composition-page h2 {
+            font-size: 2em;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 12px 15px;
+        }
+
+        .info-table .sub-row td:first-child {
+            padding-left: 25px;
+        }
+    }
+</style>
+
+<div class="composition-page">
+    <h2>Složení</h2>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">🍋 Citrus Charge</div>
+        <div class="flavor-content">
+            L-leucin, Cluster Dextrin™, citronan sodný, kyseliny (kyselina jablečná, kyselina citronová), glukonát draselný, L-isoleucin, L-valin, aroma, vápenaté soli kyseliny citronové, inulin, bisglycinát hořečnatý, hořečnaté soli kyseliny citronové, sladidlo (sukralóza).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">🥤 Cola-Lime Fusion</div>
+        <div class="flavor-content">
+            L-leucin, Cluster Dextrin™, citronan sodný, glukonát draselný, kyseliny (kyselina citronová, kyselina jablečná), L-isoleucin, L-valin, aroma, vápenaté soli kyseliny citronové, bisglycinát hořečnatý, inulin, hořečnaté soli kyseliny citronové, barvivo (karamelový amoniakový), sladidlo (sukralóza).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">🍊 Fantastic Orange</div>
+        <div class="flavor-content">
+            L-leucin, Cluster Dextrin™, citronan sodný, kyseliny (kyselina citronová, kyselina jablečná), glukonát draselný, L-isoleucin, L-valin, aroma, vápenaté soli kyseliny citronové, bisglycinát hořečnatý, inulin, hořečnaté soli kyseliny citronové, barvivo (karoteny), sladidlo (sukralóza), barvivo (koncentrát červené řepy v prášku).
+        </div>
+    </div>
+
+    <div class="info-table-wrapper">
+        <h2>Tabulka <span class="highlight">aktivních látek</span></h2>
+
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Látka</th>
+                    <th style="text-align: right;">V 1 dávce</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Fermentované BCAA</strong></td>
+                    <td>6000 mg</td>
+                </tr>
+                <tr class="sub-row">
+                    <td>↳ L-Leucin</td>
+                    <td>3000 mg</td>
+                </tr>
+                <tr class="sub-row">
+                    <td>↳ L-Isoleucin</td>
+                    <td>1500 mg</td>
+                </tr>
+                <tr class="sub-row">
+                    <td>↳ L-Valin</td>
+                    <td>1500 mg</td>
+                </tr>
+                <tr>
+                    <td><strong>Cluster Dextrin™</strong></td>
+                    <td>3000 mg</td>
+                </tr>
+                <tr>
+                    <td><strong>Sodík</strong> (z citrátu)</td>
+                    <td>500 mg</td>
+                </tr>
+                <tr>
+                    <td><strong>Draslík</strong> (z glukonátu)</td>
+                    <td>300 mg (15% RHP*)</td>
+                </tr>
+                <tr>
+                    <td><strong>Vápník</strong> (ze soli kys. citronové)</td>
+                    <td>125 mg (16% RHP*)</td>
+                </tr>
+                <tr>
+                    <td><strong>Hořčík</strong> (z bisglycinátu a soli kys. citronové)</td>
+                    <td>125 mg (33% RHP*)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="reference-note">
+            *RHP = Referenční hodnota příjmu průměrné dospělé osoby (8400 kJ / 2000 kcal)
+        </p>
+    </div>
+</div>

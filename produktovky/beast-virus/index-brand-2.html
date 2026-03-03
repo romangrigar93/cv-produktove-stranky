@@ -1,0 +1,999 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;900&display=swap');
+
+    .bv2-page,
+    .bv2-page * {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .bv2-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #000 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        color: #fff !important;
+    }
+
+    /* === TYPOGRAPHY === */
+    .bv2-page h2 {
+        font-family: 'Modern Gothic Poster', 'Anton', 'Impact', sans-serif !important;
+        font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1.05 !important;
+        border: none !important;
+    }
+
+    .bv2-page h2.bv2-white { color: #fff !important; }
+    .bv2-page h2.bv2-dark { color: #1a1a1a !important; }
+
+    .bv2-page h2 .bv2-highlight {
+        color: #F05A5B !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    .bv2-page .bv2-tagline {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.85em !important;
+        font-weight: 700 !important;
+        letter-spacing: 5px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        display: block !important;
+    }
+
+    .bv2-page .bv2-tagline.bv2-coral { color: #F05A5B !important; }
+    .bv2-page .bv2-tagline.bv2-dark { color: #666 !important; }
+
+    .bv2-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .bv2-page .bv2-text-white { color: rgba(255,255,255,0.85) !important; }
+    .bv2-page .bv2-text-dark { color: #333 !important; }
+
+    .bv2-page strong { font-weight: 700 !important; }
+
+    /* === SECTIONS === */
+    .bv2-section {
+        padding: 80px 40px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    .bv2-section.bv2-bg-black { background: #000 !important; }
+    .bv2-section.bv2-bg-dark { background: #0A0A0A !important; }
+    .bv2-section.bv2-bg-coral { background: #F05A5B !important; }
+    .bv2-section.bv2-bg-white { background: #fff !important; }
+    .bv2-section.bv2-bg-gray { background: #F5F5F5 !important; }
+
+    /* === PATTERN DIVIDER (between sections) === */
+    .bv2-pattern-divider {
+        width: 100% !important;
+        line-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+        z-index: 5 !important;
+        margin-top: -1px !important;
+        margin-bottom: -1px !important;
+    }
+
+    .bv2-pattern-divider img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .bv2-pattern-divider.bv2-flip img {
+        transform: scaleY(-1) !important;
+    }
+
+    .bv2-pattern-divider.bv2-pat-dark img {
+        filter: brightness(0) !important;
+    }
+
+    .bv2-pattern-divider.bv2-pat-dark-semi img {
+        filter: brightness(0) !important;
+        opacity: 0.6 !important;
+    }
+
+    /* === PATTERN OVERLAY ON IMAGES === */
+    .bv2-pat-img {
+        position: relative !important;
+        overflow: hidden !important;
+        border-radius: 16px !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3) !important;
+    }
+
+    .bv2-pat-img img {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .bv2-pat-over {
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        z-index: 5 !important;
+        pointer-events: none !important;
+        display: block !important;
+    }
+
+    .bv2-pat-over.bv2-over-top {
+        top: -1px !important;
+        bottom: auto !important;
+    }
+
+    .bv2-pat-over.bv2-over-bottom {
+        bottom: -1px !important;
+        top: auto !important;
+        transform: scaleY(-1) !important;
+    }
+
+    .bv2-pat-over.bv2-over-dark {
+        filter: brightness(0) !important;
+        opacity: 0.65 !important;
+    }
+
+    .bv2-pat-over.bv2-over-white {
+        filter: brightness(0) invert(1) !important;
+        opacity: 0.85 !important;
+    }
+
+    /* === HERO === */
+    .bv2-hero {
+        min-height: 500px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 80px 40px 60px !important;
+        background: #000 !important;
+        position: relative !important;
+    }
+
+    .bv2-hero::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 60% !important;
+        height: 100% !important;
+        background: radial-gradient(ellipse at 70% 50%, rgba(240,90,91,0.12) 0%, transparent 70%) !important;
+        pointer-events: none !important;
+    }
+
+    .bv2-hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .bv2-hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .bv2-hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        position: relative !important;
+    }
+
+    .bv2-hero-image > img:not(.bv2-pat-over) {
+        max-width: 90% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 60px rgba(240,90,91,0.25)) !important;
+        animation: bv2-float 5s ease-in-out infinite !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    .bv2-hero-glow {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 300px !important;
+        height: 300px !important;
+        background: radial-gradient(circle, rgba(240,90,91,0.35) 0%, rgba(240,90,91,0.1) 40%, transparent 70%) !important;
+        border-radius: 50% !important;
+        animation: bv2-glow-pulse 3s ease-in-out infinite !important;
+        z-index: 1 !important;
+    }
+
+    @keyframes bv2-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    @keyframes bv2-glow-pulse {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    }
+
+    /* === STATS BAR === */
+    .bv2-stats-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: rgba(240,90,91,0.08) !important;
+        border: 1px solid rgba(240,90,91,0.2) !important;
+        padding: 25px !important;
+        border-radius: 12px !important;
+        margin-top: 40px !important;
+    }
+
+    .bv2-stat-item { text-align: center !important; }
+
+    .bv2-stat-number {
+        font-family: 'Modern Gothic Poster', 'Anton', 'Impact', sans-serif !important;
+        font-size: 2.2em !important;
+        color: #F05A5B !important;
+        line-height: 1 !important;
+    }
+
+    .bv2-stat-label {
+        font-size: 0.75em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255,255,255,0.5) !important;
+        margin-top: 5px !important;
+    }
+
+    /* === FEATURE CARDS === */
+    .bv2-features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .bv2-feature-card {
+        background: rgba(255,255,255,0.04) !important;
+        border-radius: 16px !important;
+        padding: 30px !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .bv2-feature-card::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 4px !important;
+        height: 100% !important;
+        background: #F05A5B !important;
+        border-radius: 4px 0 0 4px !important;
+    }
+
+    .bv2-feature-card:hover {
+        background: rgba(255,255,255,0.08) !important;
+        border-color: rgba(240,90,91,0.3) !important;
+        transform: translateY(-4px) !important;
+    }
+
+    .bv2-feature-card.bv2-full-width {
+        grid-column: 1 / -1 !important;
+        background: rgba(240,90,91,0.06) !important;
+        border-color: rgba(240,90,91,0.15) !important;
+    }
+
+    .bv2-feature-card strong {
+        color: #fff !important;
+        font-size: 1.15em !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .bv2-feature-card p,
+    .bv2-feature-card span {
+        color: rgba(255,255,255,0.65) !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    .bv2-feature-card em {
+        display: block !important;
+        margin-top: 15px !important;
+        padding: 15px !important;
+        background: rgba(240,90,91,0.1) !important;
+        border-radius: 8px !important;
+        font-style: normal !important;
+        color: #F05A5B !important;
+        border: 1px solid rgba(240,90,91,0.2) !important;
+    }
+
+    /* === BENEFITS STRIP === */
+    .bv2-benefits-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 40px !important;
+        padding: 45px 40px !important;
+        background: #F05A5B !important;
+        position: relative !important;
+    }
+
+    .bv2-benefit-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .bv2-benefit-item img {
+        width: 36px !important;
+        height: 36px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+
+    .bv2-benefit-item span {
+        font-family: 'Modern Gothic Poster', 'Anton', 'Impact', sans-serif !important;
+        font-size: 1.1em !important;
+        color: #fff !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* === SPLIT CONTENT === */
+    .bv2-split {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .bv2-split .bv2-content-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .bv2-split .bv2-image-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .bv2-split .bv2-image-side img:not(.bv2-pat-over) {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 16px !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3) !important;
+    }
+
+    /* When image-side has pattern overlay, move radius to container */
+    .bv2-split .bv2-image-side.bv2-pat-img img:not(.bv2-pat-over) {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* === INGREDIENTS LIST === */
+    .bv2-ingredients-list {
+        list-style: none !important;
+    }
+
+    .bv2-ingredients-list li {
+        color: #333 !important;
+        padding: 15px 0 15px 45px !important;
+        position: relative !important;
+        border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+        list-style: none !important;
+        font-size: 1.05em !important;
+        line-height: 1.6 !important;
+    }
+
+    .bv2-ingredients-list li:last-child {
+        border-bottom: none !important;
+    }
+
+    .bv2-ingredients-list li::before {
+        content: '✓' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 15px !important;
+        width: 28px !important;
+        height: 28px !important;
+        background: #F05A5B !important;
+        color: #fff !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 13px !important;
+        font-weight: bold !important;
+    }
+
+    /* === AUDIENCE GRID === */
+    .bv2-audience-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 16px !important;
+        margin-top: 40px !important;
+    }
+
+    .bv2-audience-card {
+        background: #fff !important;
+        padding: 30px 20px !important;
+        border-radius: 16px !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        border-bottom: 4px solid transparent !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+    }
+
+    .bv2-audience-card:hover {
+        transform: translateY(-8px) !important;
+        border-bottom-color: #F05A5B !important;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+    }
+
+    .bv2-audience-card strong {
+        display: block !important;
+        font-size: 1.1em !important;
+        color: #1a1a1a !important;
+        margin-bottom: 8px !important;
+    }
+
+    .bv2-audience-card span {
+        font-size: 0.85em !important;
+        color: #666 !important;
+    }
+
+    /* === FLAVORS === */
+    .bv2-flavors {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 20px !important;
+        margin-top: 50px !important;
+    }
+
+    .bv2-flavor {
+        flex: 1 1 33.333% !important;
+        background: rgba(255,255,255,0.04) !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 16px !important;
+        padding: 30px !important;
+        text-align: center !important;
+        transition: all 0.4s ease !important;
+        position: relative !important;
+        overflow: hidden !important;
+        min-height: 120px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .bv2-flavor:hover {
+        background: rgba(240,90,91,0.08) !important;
+        border-color: rgba(240,90,91,0.25) !important;
+    }
+
+    /* Mouth system - top and bottom jaws */
+    .bv2-mouth {
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 3 !important;
+        pointer-events: none !important;
+        background: #F05A5B !important;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    .bv2-mouth img {
+        position: absolute !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .bv2-mouth-top {
+        top: 0 !important;
+        height: 20% !important;
+    }
+
+    .bv2-mouth-top img {
+        bottom: 0 !important;
+        top: auto !important;
+        transform: translateY(calc(100% - 2px)) !important;
+    }
+
+    .bv2-mouth-bottom {
+        bottom: 0 !important;
+        height: 20% !important;
+    }
+
+    .bv2-mouth-bottom img {
+        top: 0 !important;
+        bottom: auto !important;
+        transform: translateY(calc(-100% + 2px)) scaleY(-1) !important;
+    }
+
+    .bv2-flavor:hover .bv2-mouth-top {
+        transform: translateY(-105%) !important;
+    }
+
+    .bv2-flavor:hover .bv2-mouth-bottom {
+        transform: translateY(105%) !important;
+    }
+
+    .bv2-flavor p {
+        font-family: 'Modern Gothic Poster', 'Anton', 'Impact', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #fff !important;
+        margin: 0 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    /* === CTA BUTTON === */
+    .bv2-cta {
+        display: inline-block !important;
+        background: #F05A5B !important;
+        color: #fff !important;
+        padding: 16px 40px !important;
+        border-radius: 8px !important;
+        font-family: 'Modern Gothic Poster', 'Anton', 'Impact', sans-serif !important;
+        font-size: 1.2em !important;
+        letter-spacing: 2px !important;
+        text-decoration: none !important;
+        text-transform: uppercase !important;
+        transition: all 0.3s ease !important;
+        margin-top: 20px !important;
+    }
+
+    .bv2-cta:hover {
+        background: #e04e4f !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 30px rgba(240,90,91,0.35) !important;
+    }
+
+    /* === VIDEO === */
+    .bv2-video-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 800px !important;
+        margin: 40px auto 0 !important;
+        padding-bottom: 45% !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5) !important;
+    }
+
+    .bv2-video-wrapper iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+    }
+
+    /* === TIMELINE === */
+    .bv2-history-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .bv2-history-text {
+        flex: 1 1 55% !important;
+        width: 55% !important;
+        min-width: 0 !important;
+    }
+
+    .bv2-history-image {
+        flex: 1 1 45% !important;
+        width: 45% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .bv2-history-image img:not(.bv2-pat-over) {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 16px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
+    }
+
+    .bv2-history-image.bv2-pat-img img:not(.bv2-pat-over) {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .bv2-timeline-item {
+        position: relative !important;
+        padding-left: 30px !important;
+        margin-bottom: 25px !important;
+        border-left: 3px solid #F05A5B !important;
+    }
+
+    .bv2-timeline-item .bv2-year {
+        font-family: 'Modern Gothic Poster', 'Anton', 'Impact', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #F05A5B !important;
+        margin-bottom: 5px !important;
+    }
+
+    .bv2-timeline-item::before {
+        content: '' !important;
+        position: absolute !important;
+        left: -8px !important;
+        top: 0 !important;
+        width: 13px !important;
+        height: 13px !important;
+        background: #F05A5B !important;
+        border-radius: 50% !important;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+        .bv2-section {
+            padding: 50px 20px !important;
+        }
+
+        .bv2-hero {
+            padding: 60px 20px !important;
+        }
+
+        .bv2-hero-content {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .bv2-hero-text,
+        .bv2-hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .bv2-hero-image > img:not(.bv2-pat-over) {
+            max-width: 70% !important;
+        }
+
+        .bv2-hero-glow {
+            width: 200px !important;
+            height: 200px !important;
+        }
+
+        .bv2-stats-bar {
+            flex-direction: column !important;
+            gap: 20px !important;
+        }
+
+        .bv2-features-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .bv2-benefits-strip {
+            flex-direction: column !important;
+            gap: 20px !important;
+            padding: 35px 20px !important;
+            align-items: center !important;
+        }
+
+        .bv2-split {
+            flex-direction: column !important;
+        }
+
+        .bv2-split .bv2-content-side,
+        .bv2-split .bv2-image-side {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .bv2-audience-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .bv2-flavors {
+            flex-direction: column !important;
+        }
+
+        .bv2-flavor {
+            flex: 1 1 100% !important;
+        }
+
+        .bv2-video-wrapper {
+            padding-bottom: 56.25% !important;
+        }
+
+        .bv2-history-content {
+            flex-direction: column !important;
+        }
+
+        .bv2-history-text,
+        .bv2-history-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .bv2-page h2 {
+            font-size: 2.2rem !important;
+        }
+    }
+</style>
+
+<!-- Max-width wrapper pro náhled - na webu odstraň -->
+<div style="max-width: 960px; margin: 0 auto;">
+<div class="bv2-page">
+
+    <!-- PATTERN: červený patern nahoře, zuby dolů do hero -->
+    <div class="bv2-pattern-divider" style="background: #000 !important;">
+        <img src="patern.png" alt="">
+    </div>
+
+    <!-- Hero -->
+    <section class="bv2-hero">
+        <div class="bv2-hero-content">
+            <div class="bv2-hero-text">
+                <span class="bv2-tagline bv2-coral">Revoluční předtréninkový suplement</span>
+                <h2 class="bv2-white">Beast Virus® <span class="bv2-highlight">V2.0</span></h2>
+                <p class="bv2-text-white"><strong>Beast Virus® V2.0</strong> představuje <strong>revoluční předtréninkový doplněk</strong>, který ti umožní dosáhnout výkonů, o kterých jsi dosud jen snil.</p>
+                <p class="bv2-text-white">Díky unikátní směsi <strong>13 pečlivě vybraných aktivních látek</strong>, včetně <strong>nitrátů z červené řepy nebo inosinu</strong>, transformuje každý tvůj trénink v nezapomenutelný zážitek plný síly, výdrže a nevídaného prokrvení svalů.</p>
+
+                <div class="bv2-stats-bar">
+                    <div class="bv2-stat-item">
+                        <div class="bv2-stat-number">6000mg</div>
+                        <div class="bv2-stat-label">Citrulin-malát</div>
+                    </div>
+                    <div class="bv2-stat-item">
+                        <div class="bv2-stat-number">3000mg</div>
+                        <div class="bv2-stat-label">Beta-alanin</div>
+                    </div>
+                    <div class="bv2-stat-item">
+                        <div class="bv2-stat-number">13</div>
+                        <div class="bv2-stat-label">Aktivních látek</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bv2-hero-image">
+                <div class="bv2-hero-glow"></div>
+                <img src="https://cdn.czechvirus.cz/data/user-content/produkty/beast-virus_grep_.png" alt="Beast Virus V2.0 Czech Virus">
+            </div>
+        </div>
+    </section>
+
+    <!-- PATTERN: decentní černý patern mezi hero a videem -->
+    <div class="bv2-pattern-divider bv2-pat-dark" style="background: #0A0A0A !important;">
+        <img src="patern.png" alt="">
+    </div>
+
+    <!-- Video sekce -->
+    <section class="bv2-section bv2-bg-dark" style="text-align: center !important;">
+        <span class="bv2-tagline bv2-coral">Beast Virus® ve 30 vteřinách</span>
+        <h2 class="bv2-white" style="text-align: center !important;">Podívej se <span class="bv2-highlight">na video</span></h2>
+        <div class="bv2-video-wrapper">
+            <iframe src="https://www.youtube.com/embed/oRARafPCEBE?si=pVQsg8Lne0KiRKTQ" title="Beast Virus YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Proč Beast Virus -->
+    <section class="bv2-section bv2-bg-black">
+        <span class="bv2-tagline bv2-coral">Proč zvolit</span>
+        <h2 class="bv2-white">Beast Virus® <span class="bv2-highlight">V2.0?</span></h2>
+
+        <div class="bv2-features-grid">
+            <div class="bv2-feature-card">
+                <strong>6g Citrulin-malátu</strong>
+                <span>Průkopnická dávka, která nastavila benchmark pro celý český trh předtréninkových doplňků.</span>
+            </div>
+            <div class="bv2-feature-card">
+                <strong>Nitráty z červené řepy</strong>
+                <span>Extrakt standardizovaný na 10% nitrátů pro maximální produkci NO a lepší prokrvení svalů.</span>
+            </div>
+            <div class="bv2-feature-card bv2-full-width">
+                <strong>Maximální výkon bez "crashe"</strong>
+                <span>Nová formule obsahuje 4 nové látky k osvědčenému mixu. Můžeš očekávat maximální výkon bez obávaného pádu energie typického pro běžné energizéry.</span>
+                <em><strong>TIP:</strong> Pro ještě větší pumpu kombinuj s M3/S PUMP nebo Nitro Virus!</em>
+            </div>
+            <div class="bv2-feature-card">
+                <strong>Transparentní složení</strong>
+                <span>Jako první na trhu jsme odhalili kompletní složení. Víš přesně, co do sebe dáváš.</span>
+            </div>
+            <div class="bv2-feature-card">
+                <strong>Skvělé příchutě</strong>
+                <span>Kyselé jablko, malina, mandarinka nebo růžový grep. Výborná chuť bez kompromisů.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits strip (coral) -->
+    <div class="bv2-benefits-strip">
+        <div class="bv2-benefit-item">
+            <img alt="Nakopnutí" src="https://cdn.czechvirus.cz/data/user-content/produkty/beast-first-icon.png">
+            <span>Max. nakopnutí</span>
+        </div>
+        <div class="bv2-benefit-item">
+            <img alt="Pumpa" src="https://cdn.czechvirus.cz/data/user-content/produkty/beast-slozeni-icon.png">
+            <span>Brutální pumpa</span>
+        </div>
+        <div class="bv2-benefit-item">
+            <img alt="Soustředění" src="https://cdn.czechvirus.cz/data/user-content/produkty/beast-thumb-icon.png">
+            <span>Laserové soustředění</span>
+        </div>
+    </div>
+
+    <!-- PATTERN: coral zuby se zahryzávají do bílé sekce pod ní -->
+    <div class="bv2-pattern-divider" style="background: #fff !important;">
+        <img src="patern.png" alt="">
+    </div>
+
+    <!-- Co najdeš uvnitř -->
+    <section class="bv2-section bv2-bg-white">
+        <div class="bv2-split">
+            <div class="bv2-content-side">
+                <span class="bv2-tagline bv2-dark">Revoluční složení</span>
+                <h2 class="bv2-dark">Co najdeš <span class="bv2-highlight">uvnitř?</span></h2>
+                <p class="bv2-text-dark"><strong>Beast Virus® V2.0</strong> kombinuje <strong>13 aktivních látek</strong> v mega dávkách pro maximální efekt na tvůj výkon.</p>
+
+                <ul class="bv2-ingredients-list">
+                    <li><strong>L-citrulin-malát</strong> – 6000 mg pro lepší výkonnost a svalový pump</li>
+                    <li><strong>Beta-alanin</strong> – 3000 mg pro sílu a výbušnost</li>
+                    <li><strong>Taurin</strong> – 1900 mg pro výdrž a svalovou sílu</li>
+                    <li><strong>Nitráty z červené řepy</strong> – pro lepší prokrvení</li>
+                    <li><strong>Kofein + L-Tyrosin</strong> – pro maximální soustředění</li>
+                </ul>
+            </div>
+            <!-- Obrázek s černým patternem nahoře i dole -->
+            <div class="bv2-image-side bv2-pat-img">
+                <img class="bv2-pat-over bv2-over-top bv2-over-dark" src="patern.png" alt="">
+                <img src="https://cdn.czechvirus.cz/data/user-content/produkty/pavel-beran-beast-virus.png" alt="Beast Virus účinky">
+                <img class="bv2-pat-over bv2-over-bottom bv2-over-dark" src="patern.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro koho -->
+    <section class="bv2-section bv2-bg-gray">
+        <span class="bv2-tagline bv2-dark" style="text-align: center !important; display: block !important;">Navrženo pro</span>
+        <h2 class="bv2-dark" style="text-align: center !important;">Pro koho je <span class="bv2-highlight">Beast Virus?</span></h2>
+
+        <div class="bv2-audience-grid">
+            <div class="bv2-audience-card">
+                <strong>Kulturisty</strong>
+                <span>Pro maximální pumpu a svalový růst</span>
+            </div>
+            <div class="bv2-audience-card">
+                <strong>Silové sportovce</strong>
+                <span>Pro explosivní sílu a výkon</span>
+            </div>
+            <div class="bv2-audience-card">
+                <strong>Crossfitery</strong>
+                <span>Pro zvládnutí náročných WODů</span>
+            </div>
+            <div class="bv2-audience-card">
+                <strong>Physique atlety</strong>
+                <span>Pro perfektní napumpování před fotkami</span>
+            </div>
+            <div class="bv2-audience-card">
+                <strong>Fitness nadšence</strong>
+                <span>Pro každého, kdo chce víc ze svého tréninku</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATTERN: černé zuby zahryzávají se nahoru do šedé sekce -->
+    <div class="bv2-pattern-divider bv2-flip bv2-pat-dark" style="background: #F5F5F5 !important;">
+        <img src="patern.png" alt="">
+    </div>
+
+    <!-- Kombinace -->
+    <section class="bv2-section bv2-bg-black">
+        <span class="bv2-tagline bv2-coral">Maximalizuj svůj výkon</span>
+        <h2 class="bv2-white">Vyzkoušej v kombinaci <span class="bv2-highlight">s M3/S PUMP nebo Nitro Virus</span></h2>
+
+        <div class="bv2-split" style="margin-top: 40px !important;">
+            <div class="bv2-content-side">
+                <p class="bv2-text-white"><strong style="color: #F05A5B !important;">M3/S PUMP</strong> je předtréninkový suplement bez stimulantů. Soustředí se na <strong>maximální propumpování svalů</strong> a v kombinaci s Beast Virus® dělá z kulturistického tréninku opravdový zážitek.</p>
+                <a href="$PRODUCT-URL(1724)" class="bv2-cta">Chci M3/S PUMP!</a>
+
+                <p class="bv2-text-white" style="margin-top: 40px !important;"><strong style="color: #F05A5B !important;">Nitro Virus</strong> obsahuje nitráty z červené řepy s 10% obsahem nitrátů (nejvyšší na trhu), díky kterým dochází k lepšímu prokrvení svalu a skvělému napumpování.</p>
+                <a href="$PRODUCT-URL(507)" class="bv2-cta">Chci Nitro Virus!</a>
+            </div>
+            <!-- Obrázek s tmavým patternem zahryzávajícím se shora -->
+            <div class="bv2-image-side bv2-pat-img">
+                <img class="bv2-pat-over bv2-over-top bv2-over-dark" src="patern.png" alt="">
+                <img src="https://cdn.czechvirus.cz/data/user-content/produkty/m3s-pump-a-nitro-virus.png" alt="M3/S PUMP a Nitro Virus">
+            </div>
+        </div>
+    </section>
+
+    <!-- PATTERN: černé zuby zahryzávají se dolů do šedé historie -->
+    <div class="bv2-pattern-divider bv2-pat-dark" style="background: #F5F5F5 !important;">
+        <img src="patern.png" alt="">
+    </div>
+
+    <!-- Historie -->
+    <section class="bv2-section bv2-bg-gray">
+        <!-- Fotka historie nahoře nad vším, bez patternu -->
+        <div style="text-align: center !important; margin-bottom: 40px !important;">
+            <img src="https://cdn.czechvirus.cz/data/user-content/produkty/beast_historie.png" alt="Historie Beast Virus" style="width: 100% !important; max-width: 500px !important; height: auto !important; border-radius: 16px !important; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important;">
+        </div>
+
+        <span class="bv2-tagline bv2-dark">Průkopník na trhu</span>
+        <h2 class="bv2-dark">Historie <span class="bv2-highlight">Beast Virus®</span></h2>
+
+        <div class="bv2-timeline-item">
+            <div class="bv2-year">2012–2013</div>
+            <p class="bv2-text-dark">Zakladatel <strong>Patrik Záruba</strong> a jeho tým začali testovat unikátní kombinaci látek, která se postupně vyvinula v revoluční recepturu.</p>
+        </div>
+
+        <div class="bv2-timeline-item">
+            <div class="bv2-year">První na trhu</div>
+            <p class="bv2-text-dark">Beast Virus® byl <strong>první</strong>, kdo představil obrovské množství <strong>Citrulinu-Malátu</strong> (6g) a kyselou příchuť. Zatímco konkurence se spoléhala na Arginin, my jsme nastavili nový benchmark.</p>
+        </div>
+
+        <div class="bv2-timeline-item">
+            <div class="bv2-year">Transparentní složení</div>
+            <p class="bv2-text-dark">Jako <strong>jedni z prvních</strong> jsme nabídli úplně transparentní složení, umožňující uživatelům vědět přesně, co konzumují. Dnes tento trend přijala většina výrobců v ČR.</p>
+        </div>
+
+        <div class="bv2-timeline-item">
+            <div class="bv2-year">V2.0</div>
+            <p class="bv2-text-dark">S příchodem <strong>Beast Virus® V2.0</strong> přidáváme <strong>4 nové látky</strong> k osvědčenému mixu. Král předtréninkových suplementů je zpět – silnější a inovativnější než kdykoliv předtím!</p>
+        </div>
+    </section>
+
+    <!-- PATTERN: černé zuby zahryzávají se nahoru do šedé historie -->
+    <div class="bv2-pattern-divider bv2-flip bv2-pat-dark" style="background: #F5F5F5 !important; margin-bottom: -2px !important;">
+        <img src="patern.png" alt="">
+    </div>
+
+    <!-- Příchutě -->
+    <section class="bv2-section bv2-bg-black">
+        <span class="bv2-tagline bv2-coral" style="text-align: center !important; display: block !important;">3 skvělé varianty</span>
+        <h2 class="bv2-white" style="text-align: center !important;">Vyber si svou <span class="bv2-highlight">příchuť</span></h2>
+        <p class="bv2-text-white" style="text-align: center !important; max-width: 600px !important; margin: 0 auto 0 !important;"><strong>Beast Virus® V2.0</strong> je dostupný ve <strong>třech výborných příchutích</strong>. Všechny varianty mají <strong>stejně silné složení</strong>.</p>
+
+        <div class="bv2-flavors">
+            <div class="bv2-flavor">
+                <div class="bv2-mouth bv2-mouth-top"><img src="patern.png" alt=""></div>
+                <p>Kyselé jablko & Malina</p>
+                <div class="bv2-mouth bv2-mouth-bottom"><img src="patern.png" alt=""></div>
+            </div>
+            <div class="bv2-flavor">
+                <div class="bv2-mouth bv2-mouth-top"><img src="patern.png" alt=""></div>
+                <p>Mandarinka</p>
+                <div class="bv2-mouth bv2-mouth-bottom"><img src="patern.png" alt=""></div>
+            </div>
+            <div class="bv2-flavor">
+                <div class="bv2-mouth bv2-mouth-top"><img src="patern.png" alt=""></div>
+                <p>Růžový grep</p>
+                <div class="bv2-mouth bv2-mouth-bottom"><img src="patern.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+</div>

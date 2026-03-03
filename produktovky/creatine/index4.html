@@ -1,0 +1,785 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+    .sport-page,
+    .sport-page * {
+        box-sizing: border-box !important;
+    }
+
+    .sport-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #1a1a1a !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Sekce */
+    .sport-page .sport-section {
+        padding: 70px 50px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Diagonální pozadí */
+    .sport-page .diagonal-bg {
+        position: relative !important;
+    }
+
+    .sport-page .diagonal-bg::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -10% !important;
+        right: -10% !important;
+        bottom: 0 !important;
+        background: linear-gradient(135deg, #e31e24 0%, #c41a1f 100%) !important;
+        transform: skewY(-3deg) !important;
+        transform-origin: top left !important;
+        z-index: 0 !important;
+    }
+
+    .sport-page .diagonal-bg > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .sport-page .diagonal-white {
+        background: #ffffff !important;
+    }
+
+    .sport-page .diagonal-white::before {
+        background: #ffffff !important;
+    }
+
+    .sport-page .diagonal-dark {
+        background: #1a1a1a !important;
+    }
+
+    .sport-page .diagonal-dark::before {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+    }
+
+    .sport-page .diagonal-gray {
+        background: #f5f5f5 !important;
+    }
+
+    .sport-page .diagonal-gray::before {
+        background: #f5f5f5 !important;
+    }
+
+    /* Nadpisy */
+    .sport-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .sport-page h2.white {
+        color: #ffffff !important;
+    }
+
+    .sport-page h2.dark {
+        color: #1a1a1a !important;
+    }
+
+    .sport-page h2 .highlight {
+        color: #e31e24 !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    /* Tag line */
+    .sport-page .tagline {
+        font-family: 'Anton', sans-serif !important;
+        font-size: 0.9em !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Text */
+    .sport-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .sport-page .white-text {
+        color: rgba(255,255,255,0.9) !important;
+    }
+
+    .sport-page .dark-text {
+        color: #1a1a1a !important;
+    }
+
+    .sport-page strong {
+        font-weight: 700 !important;
+    }
+
+    /* Hero */
+    .sport-page .hero-sport {
+        min-height: 500px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 80px !important;
+    }
+
+    .sport-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: right !important;
+    }
+
+    .sport-page .hero-image img {
+        max-width: 100% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)) !important;
+        transform: rotate(5deg) !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sport-page .hero-image img:hover {
+        transform: rotate(0deg) scale(1.05) !important;
+    }
+
+    /* Stats bar */
+    .sport-page .stats-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: rgba(0,0,0,0.3) !important;
+        padding: 30px !important;
+        border-radius: 8px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .stat-item {
+        text-align: center !important;
+    }
+
+    .sport-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.5em !important;
+        color: #e31e24 !important;
+        line-height: 1 !important;
+    }
+
+    .sport-page .stat-label {
+        font-size: 0.8em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255,255,255,0.6) !important;
+        margin-top: 5px !important;
+    }
+
+    /* Feature cards */
+    .sport-page .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .feature-card {
+        background: rgba(255,255,255,0.08) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        border-left: 4px solid #e31e24 !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .sport-page .feature-card:hover {
+        transform: translateX(10px) !important;
+        background: rgba(255,255,255,0.12) !important;
+    }
+
+    .sport-page .feature-card.full-width {
+        grid-column: 1 / -1 !important;
+        background: linear-gradient(135deg, rgba(227,30,36,0.15) 0%, rgba(227,30,36,0.05) 100%) !important;
+        border-left-color: #ff3b41 !important;
+    }
+
+    .sport-page .feature-card strong {
+        color: #ffffff !important;
+        font-size: 1.1em !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sport-page .feature-card p,
+    .sport-page .feature-card span {
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    .sport-page .feature-card em {
+        display: block !important;
+        margin-top: 15px !important;
+        padding: 15px !important;
+        background: rgba(0,0,0,0.3) !important;
+        border-radius: 6px !important;
+        font-style: normal !important;
+        color: #ff3b41 !important;
+    }
+
+    /* Benefits strip */
+    .sport-page .benefits-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 50px !important;
+        padding: 40px 0 !important;
+        background: #e31e24 !important;
+        margin: 40px -50px -70px !important;
+    }
+
+    .sport-page .benefit-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .sport-page .benefit-item img {
+        width: 40px !important;
+        height: 40px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+
+    .sport-page .benefit-item span {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #ffffff !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* Split content */
+    .sport-page .split-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .split-content .content-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .split-content .image-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .sport-page .split-content .image-side img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+    }
+
+    .sport-page .split-content .image-side::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -20px !important;
+        left: -20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        border: 3px solid #e31e24 !important;
+        border-radius: 12px !important;
+        z-index: -1 !important;
+    }
+
+    /* Hydration section (reused for Creapure section) */
+    .sport-page .hydration-split {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 50px !important;
+        margin-top: 40px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .hydration-left,
+    .sport-page .hydration-right {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .percent-highlight {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        background: #e31e24 !important;
+        color: #ffffff !important;
+        padding: 20px 30px !important;
+        border-radius: 8px !important;
+        margin: 20px 0 !important;
+    }
+
+    .sport-page .percent-highlight .big-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3em !important;
+        line-height: 1 !important;
+    }
+
+    .sport-page .percent-highlight .desc {
+        font-size: 0.95em !important;
+        max-width: 200px !important;
+    }
+
+    .sport-page .hydration-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sport-page .hydration-list li {
+        color: #ffffff !important;
+        padding: 15px 0 15px 40px !important;
+        position: relative !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        list-style: none !important;
+    }
+
+    .sport-page .hydration-list li:last-child {
+        border-bottom: none !important;
+    }
+
+    .sport-page .hydration-list li::before {
+        content: '✓' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 15px !important;
+        width: 24px !important;
+        height: 24px !important;
+        background: #e31e24 !important;
+        color: #ffffff !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 12px !important;
+        font-weight: bold !important;
+    }
+
+    /* Target audience */
+    .sport-page .audience-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .audience-card {
+        background: #ffffff !important;
+        padding: 30px 20px !important;
+        border-radius: 12px !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        border-bottom: 4px solid transparent !important;
+    }
+
+    .sport-page .audience-card:hover {
+        transform: translateY(-10px) !important;
+        border-bottom-color: #e31e24 !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    }
+
+    .sport-page .audience-card strong {
+        display: block !important;
+        font-size: 1.1em !important;
+        color: #1a1a1a !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sport-page .audience-card span {
+        font-size: 0.9em !important;
+        color: #666666 !important;
+    }
+
+    /* Varianty balení */
+    .sport-page .pack-options {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 30px !important;
+        margin-top: 50px !important;
+        justify-content: center !important;
+    }
+
+    .sport-page .pack-option {
+        flex: 0 1 300px !important;
+        background: rgba(255,255,255,0.05) !important;
+        border-radius: 16px !important;
+        padding: 40px 30px !important;
+        text-align: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.4s ease !important;
+    }
+
+    .sport-page .pack-option::before {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: #e31e24 !important;
+        transform: scaleX(0) !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sport-page .pack-option:hover::before {
+        transform: scaleX(1) !important;
+    }
+
+    .sport-page .pack-option:hover {
+        background: rgba(255,255,255,0.1) !important;
+    }
+
+    .sport-page .pack-option .pack-size {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3em !important;
+        color: #e31e24 !important;
+        line-height: 1 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sport-page .pack-option .pack-servings {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #ffffff !important;
+        letter-spacing: 2px !important;
+        margin-top: 5px !important;
+    }
+
+    .sport-page .pack-option .pack-desc {
+        font-size: 0.9em !important;
+        color: rgba(255,255,255,0.5) !important;
+        margin-top: 10px !important;
+    }
+
+    /* Video embed */
+    .sport-page .video-wrapper {
+        position: relative !important;
+        padding-bottom: 56.25% !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        margin-top: 30px !important;
+    }
+
+    .sport-page .video-wrapper iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        border-radius: 12px !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .sport-page .sport-section {
+            padding: 50px 30px !important;
+        }
+
+        .sport-page h2 {
+            font-size: 2.5em !important;
+        }
+
+        .sport-page .hero-content {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .sport-page .hero-text,
+        .sport-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .hero-image {
+            text-align: center !important;
+        }
+
+        .sport-page .hero-image img {
+            transform: rotate(0) !important;
+            max-width: 80% !important;
+        }
+
+        .sport-page .stats-bar {
+            flex-direction: column !important;
+            gap: 20px !important;
+        }
+
+        .sport-page .features-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sport-page .benefits-strip {
+            flex-direction: column !important;
+            gap: 20px !important;
+            padding: 30px !important;
+            margin: 40px -30px -50px !important;
+        }
+
+        .sport-page .split-content {
+            flex-direction: column !important;
+        }
+
+        .sport-page .split-content .content-side,
+        .sport-page .split-content .image-side {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .split-content .image-side::before {
+            display: none !important;
+        }
+
+        .sport-page .hydration-split {
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+
+        .sport-page .hydration-left,
+        .sport-page .hydration-right {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .audience-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sport-page .pack-options {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        .sport-page .pack-option {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+    }
+</style>
+
+<div class="sport-page">
+    <!-- Hero -->
+    <section class="sport-section diagonal-bg diagonal-dark hero-sport">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="tagline white-text">Premium Quality</p>
+                <h2 class="white">Supreme <span class="highlight">Creatine</span></h2>
+                <p class="white-text"><strong>Supreme Creatine</strong> je <strong>100% ultračistý kreatin monohydrát</strong> z prémové německé suroviny <strong>Creapure®</strong>. Jediný kreatin monohydrát původem z Německa, který je <strong>testován na nečistoty a zakázané látky</strong>.</p>
+                <p class="white-text">Kreatin je <strong>nejzkoumanější doplněk stravy na světě</strong> s prokázanými účinky na zvýšení silového výkonu, nárůst svalové hmoty a celkovou fyzickou výkonnost.</p>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">5000mg</div>
+                        <div class="stat-label">Creapure® / dávka</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Čistota</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100</div>
+                        <div class="stat-label">Dávek v balení</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn.czechvirus.cz/images/0/6a6a21fbd635598b/1/supreme-creatine.png" alt="Supreme Creatine Czech Virus">
+            </div>
+        </div>
+    </section>
+
+    <!-- Proč právě -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text">Proč zvolit</p>
+        <h2 class="white">Supreme <span class="highlight">Creatine?</span></h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <strong>100% Creapure® z Německa</strong>
+                <span>Surovina přímo od německého výrobce AlzChem Trostberg GmbH. Creapure® je světový standard v čistotě kreatin monohydrátu.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Testováno na zakázané látky</strong>
+                <span>Každý batch je testován na nečistoty a zakázané látky – vhodné i pro profesionální sportovce a soutěžící atlety.</span>
+            </div>
+            <div class="feature-card full-width">
+                <strong>Nejzkoumanější doplněk na světě</strong>
+                <span>Kreatin monohydrát má za sebou stovky vědeckých studií potvrzujících jeho účinky na silový výkon, svalovou hmotu a regeneraci.</span>
+                <em><strong>FAKT:</strong> Kreatin zvyšuje fyzický výkon při krátkodobém, vysoce intenzivním cvičení – to je oficiálně schválené zdravotní tvrzení EU.</em>
+            </div>
+            <div class="feature-card">
+                <strong>Perfektní rozpustnost</strong>
+                <span>Rozpouští se snadno i ve studené vodě bez potřeby sójového lecitinu nebo jiných přídatných látek.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Bez příměsí a plnidel</strong>
+                <span>Žádné nečistoty, žádné přídatné látky, žádné alergeny. Pouze 100% čistý kreatin monohydrát.</span>
+            </div>
+        </div>
+
+        <div class="benefits-strip">
+            <div class="benefit-item">
+                <img alt="Síla" src="$USER-CONTENT/produkty/muscle.png">
+                <span>Silový výkon</span>
+            </div>
+            <div class="benefit-item">
+                <img alt="Svaly" src="$USER-CONTENT/produkty/energy.png">
+                <span>Svalová hmota</span>
+            </div>
+            <div class="benefit-item">
+                <img alt="Čistota" src="$USER-CONTENT/produkty/water-drop.png">
+                <span>100% Creapure®</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co je kreatin -->
+    <section class="sport-section diagonal-bg diagonal-white">
+        <div class="split-content">
+            <div class="content-side">
+                <p class="tagline dark-text">Základní stavební kámen</p>
+                <h2 class="dark">Co je to <span class="highlight">kreatin?</span></h2>
+                <p class="dark-text"><strong>Kreatin</strong> je přírodní látka, kterou si tělo vytváří z aminokyselin <strong>glycinu, argininu a methioninu</strong>. Nachází se přirozeně v mase a rybách, ale v malém množství.</p>
+                <p class="dark-text">V těle se přeměňuje na <strong>fosfokreatin</strong>, který slouží jako rychlý zdroj energie pro svaly při intenzivní zátěži. Suplementací kreatinem zvýšíš zásoby fosfokreatinu ve svalech o <strong>20–40 %</strong>, což přímo vede ke zvýšení silového výkonu a lepší regeneraci mezi sériemi.</p>
+            </div>
+            <div class="image-side">
+                <img src="https://cdn.czechvirus.cz/images/0/6a6a21fbd635598b/2/supreme-creatine.png" alt="Supreme Creatine">
+            </div>
+        </div>
+    </section>
+
+    <!-- Proč Creapure -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text">Kvalita na prvním místě</p>
+        <h2 class="white">Proč právě <span class="highlight">Creapure®?</span></h2>
+
+        <div class="hydration-split">
+            <div class="hydration-left">
+                <p class="white-text">Ne všechny kreatiny jsou si rovné. Většina kreatinů na trhu pochází z <strong>Číny</strong> a může obsahovat nežádoucí příměsi jako <strong>dicyandiamid, dihydrotriazin</strong> nebo těžké kovy.</p>
+
+                <div class="percent-highlight">
+                    <span class="big-number">99,99%</span>
+                    <span class="desc">čistota Creapure® garantovaná výrobcem</span>
+                </div>
+
+                <p class="white-text"><strong>Creapure®</strong> je vyráběn v Německu společností <strong>AlzChem Trostberg GmbH</strong> pod přísnými standardy kvality. Každá šarže prochází laboratorními testy.</p>
+            </div>
+            <div class="hydration-right">
+                <ul class="hydration-list">
+                    <li>Vyrobeno v Německu pod přísnými standardy</li>
+                    <li>Testováno na zakázané látky v každém batchi</li>
+                    <li>Žádné nečistoty ani těžké kovy</li>
+                    <li>Vhodné pro profesionální sportovce</li>
+                    <li>Bez alergenů, GMO a přídatných látek</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro koho -->
+    <section class="sport-section diagonal-bg diagonal-gray">
+        <p class="tagline dark-text">Navrženo pro</p>
+        <h2 class="dark">Pro koho je <span class="highlight">Supreme Creatine?</span></h2>
+
+        <div class="audience-grid">
+            <div class="audience-card">
+                <strong>Silové sportovce</strong>
+                <span>Pro zvýšení maximální síly a výbušnosti při těžkých trénincích</span>
+            </div>
+            <div class="audience-card">
+                <strong>Kulturisty</strong>
+                <span>Pro nárůst svalové hmoty a plnější svalový objem</span>
+            </div>
+            <div class="audience-card">
+                <strong>Crossfitery</strong>
+                <span>Pro vyšší výkon při krátkodobých intenzivních WODech</span>
+            </div>
+            <div class="audience-card">
+                <strong>Sprintery</strong>
+                <span>Pro lepší výbušnost a výkon při opakovaných sprintech</span>
+            </div>
+            <div class="audience-card">
+                <strong>Bojové sportovce</strong>
+                <span>Pro sílu a výdrž při intenzivních tréninkových rounds</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text" style="text-align: center !important;">Podívej se</p>
+        <h2 class="white" style="text-align: center !important;">Supreme Creatine <span class="highlight">v akci</span></h2>
+
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hs8-ZnFEv6E?si=-RDEDSdYsHmVz8aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </section>
+
+    <!-- Varianty balení -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text">Vyber si velikost</p>
+        <h2 class="white">Varianty <span class="highlight">balení</span></h2>
+        <p class="white-text" style="text-align: center !important; max-width: 600px !important; margin: 0 auto !important;"><strong>Supreme Creatine</strong> je dostupný ve <strong>dvou velikostech balení</strong>. Obě varianty obsahují <strong>identickou surovinu Creapure®</strong>.</p>
+
+        <div class="pack-options">
+            <div class="pack-option">
+                <div class="pack-size">200g</div>
+                <div class="pack-servings">40 dávek</div>
+                <div class="pack-desc">Ideální na vyzkoušení</div>
+            </div>
+            <div class="pack-option">
+                <div class="pack-size">500g</div>
+                <div class="pack-servings">100 dávek</div>
+                <div class="pack-desc">Nejlepší poměr cena / výkon</div>
+            </div>
+        </div>
+    </section>
+</div>

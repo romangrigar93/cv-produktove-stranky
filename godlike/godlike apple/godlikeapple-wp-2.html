@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godlike Apple – Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset pro preview */
+        * { margin: 0; padding: 0; }
+        body { background: #0b1222; }
+
+        /* ===== GODLIKE PRODUKTOVKY CSS ===== */
+        .gl-v3,
+        .gl-v3 * {
+            box-sizing: border-box !important;
+        }
+
+        .gl-v3 {
+            font-family: 'Poppins', 'Raleway', sans-serif !important;
+            background: #0b1222 !important;
+            width: 100% !important;
+            overflow: hidden !important;
+            position: relative !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            color: #ffffff !important;
+        }
+
+        .gl-v3 .gl-inner {
+            max-width: 980px !important;
+            margin: 0 auto !important;
+        }
+
+        /* ===================== HERO – CINEMATIC ===================== */
+        .gl-v3 .hero-cinema {
+            position: relative !important;
+            min-height: 600px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding: 80px 30px !important;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(216,182,79,0.12) 0%, transparent 60%),
+                linear-gradient(180deg, #0d1525 0%, #0b1222 100%) !important;
+            overflow: hidden !important;
+        }
+
+        .gl-v3 .hero-cinema::before {
+            content: '' !important;
+            position: absolute !important;
+            top: -50% !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 800px !important;
+            height: 800px !important;
+            background: radial-gradient(circle, rgba(216,182,79,0.08) 0%, transparent 70%) !important;
+            pointer-events: none !important;
+        }
+
+        .gl-v3 .hero-cinema .hero-badge {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #d8b64f 0%, #b8962f 100%) !important;
+            color: #0b1222 !important;
+            font-size: 0.75em !important;
+            font-weight: 800 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
+            padding: 8px 24px !important;
+            border-radius: 999px !important;
+            margin-bottom: 30px !important;
+        }
+
+        .gl-v3 .hero-cinema h1 {
+            font-family: 'Raleway', sans-serif !important;
+            font-size: 4em !important;
+            font-weight: 900 !important;
+            line-height: 1.1 !important;
+            margin: 0 0 20px 0 !important;
+            color: #ffffff !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+        }
+
+        .gl-v3 .hero-cinema h1 em {
+            font-style: normal !important;
+            display: block !important;
+            background: linear-gradient(135deg, #d8b64f, #f5e6a3) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+
+        .gl-v3 .hero-cinema .hero-sub {
+            font-size: 1.15em !important;
+            color: rgba(255,255,255,0.65) !important;
+            max-width: 550px !important;
+            margin: 0 auto 40px !important;
+            line-height: 1.7 !important;
+        }
+
+        .gl-v3 .hero-product-img {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .gl-v3 .hero-product-img img {
+            max-width: 380px !important;
+            height: auto !important;
+            filter: drop-shadow(0 30px 60px rgba(216,182,79,0.2)) !important;
+            transition: transform 0.5s ease !important;
+        }
+
+        .gl-v3 .hero-product-img img:hover {
+            transform: scale(1.04) !important;
+        }
+
+        /* ===================== SPECS RIBBON ===================== */
+        .gl-v3 .specs-ribbon {
+            background: linear-gradient(90deg, #cfa72f 0%, #f5e6a3 50%, #cfa72f 100%) !important;
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: center !important;
+            align-items: stretch !important;
+            gap: 0 !important;
+        }
+
+        .gl-v3 .specs-ribbon .spec {
+            flex: 1 !important;
+            text-align: center !important;
+            padding: 28px 20px !important;
+            position: relative !important;
+        }
+
+        .gl-v3 .specs-ribbon .spec:not(:last-child)::after {
+            content: '' !important;
+            position: absolute !important;
+            right: 0 !important;
+            top: 20% !important;
+            bottom: 20% !important;
+            width: 1px !important;
+            background: rgba(11,18,34,0.15) !important;
+        }
+
+        .gl-v3 .specs-ribbon .spec-val {
+            font-family: 'Raleway', sans-serif !important;
+            font-size: 1.8em !important;
+            font-weight: 900 !important;
+            color: #0b1222 !important;
+            line-height: 1 !important;
+            letter-spacing: 1px !important;
+        }
+
+        .gl-v3 .specs-ribbon .spec-lbl {
+            font-size: 0.75em !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            color: rgba(11,18,34,0.55) !important;
+            margin-top: 6px !important;
+        }
+
+        /* ===================== NUMBERED FEATURES ===================== */
+        .gl-v3 .section-block {
+            padding: 80px 40px !important;
+        }
+
+        .gl-v3 .section-label {
+            font-size: 0.8em !important;
+            font-weight: 700 !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase !important;
+            color: #d8b64f !important;
+            margin-bottom: 12px !important;
+        }
+
+        .gl-v3 .section-title {
+            font-family: 'Raleway', sans-serif !important;
+            font-size: 2.6em !important;
+            font-weight: 900 !important;
+            line-height: 1.15 !important;
+            margin: 0 0 50px 0 !important;
+            color: #ffffff !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+
+        .gl-v3 .section-title em {
+            font-style: normal !important;
+            background: linear-gradient(135deg, #d8b64f, #f5e6a3) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+
+        .gl-v3 .numbered-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            counter-reset: features !important;
+        }
+
+        .gl-v3 .numbered-list li {
+            counter-increment: features !important;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            gap: 25px !important;
+            padding: 30px 0 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+        }
+
+        .gl-v3 .numbered-list li:last-child {
+            border-bottom: none !important;
+        }
+
+        .gl-v3 .numbered-list li::before {
+            content: counter(features, decimal-leading-zero) !important;
+            font-family: 'Raleway', sans-serif !important;
+            font-size: 2.5em !important;
+            font-weight: 900 !important;
+            color: rgba(216,182,79,0.2) !important;
+            line-height: 1 !important;
+            min-width: 60px !important;
+            flex-shrink: 0 !important;
+        }
+
+        .gl-v3 .numbered-list li strong {
+            display: block !important;
+            font-size: 1.1em !important;
+            color: #ffffff !important;
+            margin-bottom: 6px !important;
+        }
+
+        .gl-v3 .numbered-list li span {
+            font-size: 0.95em !important;
+            color: rgba(255,255,255,0.6) !important;
+            line-height: 1.6 !important;
+        }
+
+        /* ===================== EDITORIAL SPLIT ===================== */
+        .gl-v3 .editorial-split {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: stretch !important;
+            gap: 0 !important;
+            min-height: 500px !important;
+        }
+
+        .gl-v3 .editorial-split .ed-image {
+            flex: 1 1 45% !important;
+            width: 45% !important;
+            min-width: 0 !important;
+            background: #0d1525 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 40px !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .gl-v3 .editorial-split .ed-image::before {
+            content: '' !important;
+            position: absolute !important;
+            inset: 0 !important;
+            background: radial-gradient(circle at center, rgba(216,182,79,0.06) 0%, transparent 70%) !important;
+        }
+
+        .gl-v3 .editorial-split .ed-image img {
+            max-width: 100% !important;
+            height: auto !important;
+            position: relative !important;
+            z-index: 1 !important;
+            border-radius: 8px !important;
+        }
+
+        .gl-v3 .editorial-split .ed-text {
+            flex: 1 1 55% !important;
+            width: 55% !important;
+            min-width: 0 !important;
+            padding: 60px 50px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            background: #0b1222 !important;
+        }
+
+        .gl-v3 .editorial-split .ed-text p {
+            font-size: 1.05em !important;
+            line-height: 1.8 !important;
+            color: rgba(255,255,255,0.75) !important;
+            margin: 0 0 15px 0 !important;
+        }
+
+        .gl-v3 .editorial-split .ed-text strong {
+            color: #ffffff !important;
+        }
+
+        /* Gold callout box */
+        .gl-v3 .gold-callout {
+            background: linear-gradient(135deg, rgba(216,182,79,0.12) 0%, rgba(216,182,79,0.04) 100%) !important;
+            border-left: 3px solid #d8b64f !important;
+            border-top: none !important;
+            border-right: none !important;
+            border-bottom: none !important;
+            padding: 24px 28px !important;
+            border-radius: 0 10px 10px 0 !important;
+            margin-top: 20px !important;
+        }
+
+        .gl-v3 .gold-callout p {
+            margin: 0 !important;
+            font-size: 0.95em !important;
+            color: rgba(255,255,255,0.8) !important;
+        }
+
+        /* ===================== ICON GRID ===================== */
+        .gl-v3 .icon-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 30px !important;
+            margin-top: 50px !important;
+        }
+
+        .gl-v3 .icon-card {
+            text-align: center !important;
+            padding: 40px 20px !important;
+            border: 1px solid rgba(255,255,255,0.06) !important;
+            border-radius: 16px !important;
+            transition: all 0.3s ease !important;
+            background: transparent !important;
+        }
+
+        .gl-v3 .icon-card:hover {
+            border-color: rgba(216,182,79,0.3) !important;
+            background: rgba(216,182,79,0.04) !important;
+            transform: translateY(-6px) !important;
+        }
+
+        .gl-v3 .icon-card .ic-icon {
+            font-size: 2.2em !important;
+            margin-bottom: 18px !important;
+            display: block !important;
+        }
+
+        .gl-v3 .icon-card strong {
+            display: block !important;
+            font-size: 1em !important;
+            color: #ffffff !important;
+            margin-bottom: 8px !important;
+        }
+
+        .gl-v3 .icon-card span {
+            font-size: 0.85em !important;
+            color: rgba(255,255,255,0.5) !important;
+            line-height: 1.5 !important;
+        }
+
+        /* ===================== COMPARISON – MINIMAL ===================== */
+        .gl-v3 .compare-cards {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 30px !important;
+            margin-top: 50px !important;
+        }
+
+        .gl-v3 .compare-card {
+            flex: 1 !important;
+            border: 1px solid rgba(255,255,255,0.08) !important;
+            border-radius: 16px !important;
+            padding: 40px 30px !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            background: transparent !important;
+        }
+
+        .gl-v3 .compare-card.featured {
+            border-color: rgba(216,182,79,0.4) !important;
+            background: rgba(216,182,79,0.05) !important;
+            position: relative !important;
+        }
+
+        .gl-v3 .compare-card.featured::before {
+            content: 'Doporučujeme' !important;
+            position: absolute !important;
+            top: -12px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            background: linear-gradient(135deg, #d8b64f, #b8962f) !important;
+            color: #0b1222 !important;
+            font-size: 0.7em !important;
+            font-weight: 800 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            padding: 5px 18px !important;
+            border-radius: 999px !important;
+        }
+
+        .gl-v3 .compare-card img {
+            max-width: 140px !important;
+            height: auto !important;
+            margin-bottom: 20px !important;
+        }
+
+        .gl-v3 .compare-card h3 {
+            font-family: 'Raleway', sans-serif !important;
+            font-size: 1.3em !important;
+            font-weight: 800 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            margin: 0 0 25px 0 !important;
+            color: #ffffff !important;
+        }
+
+        .gl-v3 .compare-card .spec-line {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            padding: 12px 0 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+            font-size: 0.9em !important;
+        }
+
+        .gl-v3 .compare-card .spec-line:last-of-type {
+            border-bottom: none !important;
+        }
+
+        .gl-v3 .compare-card .spec-line .sl-label {
+            color: rgba(255,255,255,0.45) !important;
+        }
+
+        .gl-v3 .compare-card .spec-line .sl-value {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+
+        .gl-v3 .compare-card .price-tag {
+            font-family: 'Raleway', sans-serif !important;
+            font-size: 2em !important;
+            font-weight: 900 !important;
+            color: #d8b64f !important;
+            margin: 25px 0 20px !important;
+            letter-spacing: 1px !important;
+        }
+
+        .gl-v3 .btn-gold {
+            display: inline-block !important;
+            background: linear-gradient(135deg, #d8b64f, #b8962f) !important;
+            color: #0b1222 !important;
+            font-weight: 800 !important;
+            font-size: 0.85em !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            padding: 14px 36px !important;
+            border-radius: 999px !important;
+            border: none !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .gl-v3 .btn-gold:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(216,182,79,0.3) !important;
+        }
+
+        /* ===================== WARNING CALLOUT ===================== */
+        .gl-v3 .warning-callout {
+            background: linear-gradient(135deg, rgba(227,30,36,0.12) 0%, rgba(227,30,36,0.04) 100%) !important;
+            border-left: 3px solid #e31e24 !important;
+            border-top: none !important;
+            border-right: none !important;
+            border-bottom: none !important;
+            padding: 24px 28px !important;
+            border-radius: 0 10px 10px 0 !important;
+            margin-top: 20px !important;
+        }
+
+        .gl-v3 .warning-callout p {
+            margin: 0 0 8px 0 !important;
+            font-size: 0.95em !important;
+            color: rgba(255,255,255,0.8) !important;
+        }
+
+        .gl-v3 .warning-callout p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .gl-v3 .warning-callout strong.warn-label {
+            color: #e31e24 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+
+        /* ===================== INSTRUCTION LIST ===================== */
+        .gl-v3 .instruction-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 30px 0 0 0 !important;
+        }
+
+        .gl-v3 .instruction-list li {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            gap: 16px !important;
+            padding: 18px 0 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+            color: rgba(255,255,255,0.75) !important;
+            font-size: 0.95em !important;
+            line-height: 1.6 !important;
+        }
+
+        .gl-v3 .instruction-list li:last-child {
+            border-bottom: none !important;
+        }
+
+        .gl-v3 .instruction-list li::before {
+            content: '\2192' !important;
+            color: #d8b64f !important;
+            font-weight: 700 !important;
+            flex-shrink: 0 !important;
+            margin-top: 1px !important;
+        }
+
+        .gl-v3 .instruction-list li strong {
+            color: #ffffff !important;
+        }
+
+        /* ===================== DISCLAIMER / SUPPLEMENT NOTICE ===================== */
+        .gl-v3 .disclaimer-callout {
+            background: rgba(255,255,255,0.03) !important;
+            border: 1px solid rgba(255,255,255,0.08) !important;
+            padding: 20px 24px !important;
+            border-radius: 10px !important;
+            margin-top: 20px !important;
+        }
+
+        .gl-v3 .disclaimer-callout p {
+            margin: 0 !important;
+            font-size: 0.82em !important;
+            color: rgba(255,255,255,0.4) !important;
+            line-height: 1.6 !important;
+        }
+
+        /* ===================== COMPARE CARDS – 3-col tweaks ===================== */
+        .gl-v3 .compare-cards--3 .compare-card {
+            padding: 30px 22px !important;
+        }
+
+        .gl-v3 .compare-cards--3 .compare-card img {
+            max-width: 120px !important;
+        }
+
+        .gl-v3 .compare-cards--3 .compare-card h3 {
+            font-size: 1.1em !important;
+        }
+
+        /* ===================== SECTION TEXT (prose block) ===================== */
+        .gl-v3 .prose-block p {
+            font-size: 1.05em !important;
+            line-height: 1.8 !important;
+            color: rgba(255,255,255,0.75) !important;
+            margin: 0 0 15px 0 !important;
+        }
+
+        .gl-v3 .prose-block strong {
+            color: #ffffff !important;
+        }
+
+        /* ===================== DOSAGE BOX ===================== */
+        .gl-v3 .dosage-box {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 20px !important;
+            background: rgba(216,182,79,0.06) !important;
+            border: 1px solid rgba(216,182,79,0.15) !important;
+            border-radius: 12px !important;
+            padding: 28px 30px !important;
+            margin-top: 30px !important;
+        }
+
+        .gl-v3 .dosage-box .dosage-icon {
+            font-size: 2em !important;
+            flex-shrink: 0 !important;
+        }
+
+        .gl-v3 .dosage-box p {
+            margin: 0 !important;
+            font-size: 0.95em !important;
+            line-height: 1.6 !important;
+            color: rgba(255,255,255,0.8) !important;
+        }
+
+        .gl-v3 .dosage-box strong {
+            color: #ffffff !important;
+        }
+
+        /* ===================== COMPARE CARDS – 4-col tweaks ===================== */
+        .gl-v3 .compare-cards--4 .compare-card {
+            padding: 25px 16px !important;
+        }
+
+        .gl-v3 .compare-cards--4 .compare-card img {
+            max-width: 100px !important;
+        }
+
+        .gl-v3 .compare-cards--4 .compare-card h3 {
+            font-size: 1em !important;
+        }
+
+        .gl-v3 .compare-cards--4 .compare-card .spec-line {
+            font-size: 0.8em !important;
+            padding: 10px 0 !important;
+        }
+
+        .gl-v3 .compare-cards--4 .compare-card .price-tag {
+            font-size: 1.5em !important;
+        }
+
+        /* ===================== VIDEO EMBED ===================== */
+        .gl-v3 .video-embed {
+            position: relative !important;
+            padding-bottom: 56.25% !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            border-radius: 12px !important;
+            margin-top: 30px !important;
+        }
+
+        .gl-v3 .video-embed iframe {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+            border-radius: 12px !important;
+        }
+
+        /* ===================== ALTERNATE BG ===================== */
+        .gl-v3 .section-block--alt {
+            background: #080e1a !important;
+        }
+
+        /* ===================== FULL-WIDTH IMAGE ===================== */
+        .gl-v3 .fw-image {
+            overflow: hidden !important;
+        }
+
+        .gl-v3 .fw-image img {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            .gl-v3 .hero-cinema {
+                padding: 60px 25px !important;
+                min-height: auto !important;
+            }
+
+            .gl-v3 .hero-cinema h1 {
+                font-size: 2.8em !important;
+            }
+
+            .gl-v3 .hero-product-img img {
+                max-width: 260px !important;
+            }
+
+            .gl-v3 .specs-ribbon {
+                flex-direction: column !important;
+            }
+
+            .gl-v3 .specs-ribbon .spec:not(:last-child)::after {
+                display: none !important;
+            }
+
+            .gl-v3 .section-block {
+                padding: 50px 25px !important;
+            }
+
+            .gl-v3 .section-title {
+                font-size: 2.2em !important;
+            }
+
+            .gl-v3 .numbered-list li::before {
+                font-size: 1.8em !important;
+                min-width: 40px !important;
+            }
+
+            .gl-v3 .editorial-split {
+                flex-direction: column !important;
+            }
+
+            .gl-v3 .editorial-split .ed-image,
+            .gl-v3 .editorial-split .ed-text {
+                flex: 1 1 100% !important;
+                width: 100% !important;
+            }
+
+            .gl-v3 .editorial-split .ed-text {
+                padding: 40px 25px !important;
+            }
+
+            .gl-v3 .icon-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .gl-v3 .compare-cards {
+                flex-direction: column !important;
+            }
+
+            .gl-v3 .warning-callout,
+            .gl-v3 .gold-callout {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .gl-v3 .compare-cards--3 .compare-card {
+                padding: 30px 20px !important;
+            }
+
+            .gl-v3 .compare-cards--3 .compare-card img {
+                max-width: 100px !important;
+            }
+
+            .gl-v3 .dosage-box {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+
+            .gl-v3 .compare-cards--4 {
+                flex-wrap: wrap !important;
+            }
+
+            .gl-v3 .compare-cards--4 .compare-card {
+                flex: 1 1 calc(50% - 15px) !important;
+                min-width: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gl-v3">
+    <div class="gl-inner">
+
+    <!-- HERO -->
+    <section class="hero-cinema">
+        <div>
+            <span class="hero-badge">Výkon</span>
+            <h1>Godlike<br><em>Apple</em></h1>
+            <p class="hero-sub">Nápoj pro maximální výkon a soustředění. 11 aktivních látek s mikroenkapsulovaným kofeinem pro postupné uvolňování energie.</p>
+            <div class="hero-product-img">
+                <img src="https://www.godlike.gg/wp-content/uploads/2024/06/godlike.png" alt="Godlike Apple" width="520" height="520">
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECS RIBBON -->
+    <div class="specs-ribbon">
+        <div class="spec">
+            <div class="spec-val">11 látek</div>
+            <div class="spec-lbl">Aktivní složení</div>
+        </div>
+        <div class="spec">
+            <div class="spec-val">Mikrokofein</div>
+            <div class="spec-lbl">Postupné uvolňování</div>
+        </div>
+        <div class="spec">
+            <div class="spec-val">Bez cukru</div>
+            <div class="spec-lbl">Zero sugar</div>
+        </div>
+    </div>
+
+    <!-- CO JE GODLIKE -->
+    <section class="section-block">
+        <div class="editorial-split">
+            <div class="ed-text">
+                <p class="section-label">O produktu</p>
+                <h2 class="section-title">Pro koho je<br><em>Godlike?</em></h2>
+                <p>GODLIKE je navržen speciálně pro ty, kteří chtějí <strong>posunout svůj výkon</strong> v práci, ve hře nebo studiu na zcela novou úroveň. Je ideální volbou pro <strong>esport hráče, IT profesionály, studenty, manažery</strong> a všechny, kteří chtějí zlepšit svou produktivitu a myšlení.</p>
+                <p>Jedná se o produkt s <strong>přírodním složením a aktivními látkami</strong>, které navíc vyživují tvůj mozek a oči.</p>
+            </div>
+            <div class="ed-image">
+                <img src="https://www.godlike.gg/wp-content/uploads/2024/04/godlike-apple-product-cover.jpg" alt="Godlike Apple">
+            </div>
+        </div>
+    </section>
+
+    <!-- PRO KOHO -->
+    <section class="section-block section-block--alt">
+        <p class="section-label" style="text-align: center !important;">Navrženo pro</p>
+        <h2 class="section-title" style="text-align: center !important;">Kdo si <em>Godlike zamiluje?</em></h2>
+
+        <div class="icon-grid">
+            <div class="icon-card">
+                <span class="ic-icon">🎮</span>
+                <strong>Esport hráči</strong>
+                <span>Maximální soustředění a energie pro dlouhé herní sessions bez crashe.</span>
+            </div>
+            <div class="icon-card">
+                <span class="ic-icon">💻</span>
+                <strong>IT profesionálové</strong>
+                <span>Podpora kognitivních funkcí při náročné práci s kódem a systémy.</span>
+            </div>
+            <div class="icon-card">
+                <span class="ic-icon">📚</span>
+                <strong>Studenti</strong>
+                <span>Lepší soustředění a oddalování únavy při studiu a zkouškách.</span>
+            </div>
+            <div class="icon-card">
+                <span class="ic-icon">📊</span>
+                <strong>Manažeři</strong>
+                <span>Ostrá mysl pro rozhodování a produktivitu po celý pracovní den.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- KLÍČOVÉ VLASTNOSTI -->
+    <section class="section-block">
+        <p class="section-label">Složení</p>
+        <h2 class="section-title">Klíčové <em>vlastnosti</em></h2>
+
+        <ol class="numbered-list">
+            <li>
+                <div>
+                    <strong>Energie a soustředění</strong>
+                    <span>Maximální příval energie pro špičkové výkony díky unikální kombinaci aktivních látek.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Podpora mozku</strong>
+                    <span>Vyživuje mozek a podporuje mysl – cholin, tyrosin a ginko biloba pro kognitivní funkce.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Přírodní složení</strong>
+                    <span>Obsahuje cholin, tyrosin, citrulin, taurin, ginko biloba a další přírodní složky.</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Mikroenkapsulovaný kofein</strong>
+                    <span>Bezpečný příjem a dlouhodobé působení – postupné uvolňování energie bez nepříjemného crashe.</span>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- SROVNÁNÍ -->
+    <section class="section-block section-block--alt">
+        <p class="section-label" style="text-align: center !important;">Porovnání</p>
+        <h2 class="section-title" style="text-align: center !important;">Godlike vs <em>konkurence</em></h2>
+
+        <div class="compare-cards compare-cards--4">
+            <div class="compare-card featured">
+                <img src="https://www.godlike.gg/wp-content/uploads/2024/06/godlike.png" alt="Godlike">
+                <h3>Godlike</h3>
+                <div class="spec-line">
+                    <span>Typ kofeinu</span>
+                    <strong>Mikroenkapsulovaný</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Funkční látky</span>
+                    <strong>11 látek / 4–8 g</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cena / 1 g funkční látky</span>
+                    <strong>1,5 – 3 Kč</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cukry</span>
+                    <strong>Bez cukru</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Přírodní extrakty</span>
+                    <strong>ANO</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Užití</span>
+                    <strong>Namíchat a vypít</strong>
+                </div>
+                <a class="btn-gold" href="#" id="chci-godlike-apple">Chci Godlike</a>
+            </div>
+            <div class="compare-card">
+                <img src="https://www.godlike.gg/wp-content/uploads/2024/06/energy-drink.png" alt="Energy drink">
+                <h3>Energy drink</h3>
+                <div class="spec-line">
+                    <span>Typ kofeinu</span>
+                    <strong>Bezvodý / rychlá absorbce</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Funkční látky</span>
+                    <strong>2–3 látky / 2 g</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cena / 1 g funkční látky</span>
+                    <strong>cca 15 Kč</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cukry</span>
+                    <strong>55 g / plechovka</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Přírodní extrakty</span>
+                    <strong>NE</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Užití</span>
+                    <strong>Vypít</strong>
+                </div>
+            </div>
+            <div class="compare-card">
+                <img src="https://www.godlike.gg/wp-content/uploads/2024/06/tablety.png" alt="Tablety">
+                <h3>Tablety</h3>
+                <div class="spec-line">
+                    <span>Typ kofeinu</span>
+                    <strong>Bezvodý / rychlá absorbce</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Funkční látky</span>
+                    <strong>7–10 látek / 1,8 g</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cena / 1 g funkční látky</span>
+                    <strong>cca 9 Kč</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cukry</span>
+                    <strong>Bez cukru</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Přírodní extrakty</span>
+                    <strong>ANO</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Užití</span>
+                    <strong>Spolknout / cucat</strong>
+                </div>
+            </div>
+            <div class="compare-card">
+                <img src="https://www.godlike.gg/wp-content/uploads/2024/06/kapsle.png" alt="Kapsle">
+                <h3>Kapsle</h3>
+                <div class="spec-line">
+                    <span>Typ kofeinu</span>
+                    <strong>Bezvodý / rychlá absorbce</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Funkční látky</span>
+                    <strong>6–9 látek / 0,5 g</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cena / 1 g funkční látky</span>
+                    <strong>cca 10 Kč</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Cukry</span>
+                    <strong>Bez cukru</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Přírodní extrakty</span>
+                    <strong>ANO</strong>
+                </div>
+                <div class="spec-line">
+                    <span>Užití</span>
+                    <strong>Spolknout</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UŽÍVÁNÍ -->
+    <section class="section-block">
+        <p class="section-label">Dávkování</p>
+        <h2 class="section-title">Jak <em>užívat?</em></h2>
+
+        <div class="dosage-box">
+            <span class="dosage-icon">🥤</span>
+            <p>Užij <strong>1 dávku – cca 3/4 odměrky (10 g)</strong> rozmíchanou ve <strong>400 ml vody</strong> zhruba 15–30 minut před výkonem. Nikdy nepřekračuj 1 dávku denně. Nedoporučujeme produkt míchat s alkoholem a jinými stimulanty.</p>
+        </div>
+
+        <div class="disclaimer-callout">
+            <p>Výrobek není určen pro děti, těhotné a kojící ženy. Uchovávejte mimo dosah dětí. Skladujte v suchu při teplotě do 25 °C mimo dosah přímého slunečního záření. Chraňte před mrazem. Výrobce neručí za škody vzniklé nevhodným použitím nebo skladováním. Výrobek neslouží jako náhrada pestré stravy. Vyrobeno v závodě zpracovávajícím mléko, vejce, sojové boby, korýše, rybí olej, ořechy.</p>
+        </div>
+    </section>
+
+    <!-- HODNOCENÍ -->
+    <section class="section-block section-block--alt">
+        <p class="section-label" style="text-align: center !important;">Recenze</p>
+        <h2 class="section-title" style="text-align: center !important;">Hodnocení</h2>
+        <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.9em;">[WordPress reviews shortcode – nezobrazí se v preview]</p>
+    </section>
+
+    <!-- VIDEO – HODNOCENÍ STUDENTŮ -->
+    <section class="section-block">
+        <p class="section-label" style="text-align: center !important;">Video</p>
+        <h2 class="section-title" style="text-align: center !important;">Jak Godlike hodnotí <em>studenti?</em></h2>
+
+        <div class="prose-block" style="text-align: center !important; max-width: 700px !important; margin: 0 auto 20px !important;">
+            <p>Díky tomu, že Godlike skvěle podporuje soustředění a oddaluje únavu, není žádnou záhadou, že si produkt oblíbili studenti. Jak jej hodnotí?</p>
+        </div>
+
+        <div class="video-embed">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KXIrQsZy0kI?si=TCtqDVZUTtVTq8NL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </section>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,908 @@
+<!--EXPERTMODE-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<title>Layout</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-size: 32px;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+    }
+
+    .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .container-bio {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        border-radius: 15px;
+    }
+
+    .container h3 {
+        margin-bottom: 25px;
+    }
+
+    .left-section {
+        flex: 1;
+        min-width: 33.33%;
+    }
+
+    .left-section img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    .right-section {
+        flex: 2;
+        min-width: 66.67%;
+        padding: 20px;
+    }
+
+    .right-section h3 {
+        margin-bottom: 15px;
+    }
+
+    .right-section p {
+        line-height: 35px;
+        padding-bottom: 30px;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+
+        .left-section,
+        .right-section {
+            min-width: 100%;
+        }
+
+        .left-section img {
+            height: auto;
+        }
+
+        .main-container {
+            padding: 15px;
+        }
+    }
+
+    .timeline-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+
+    .event {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .label {
+        font-size: 22px;
+    }
+
+    .slider {
+        position: relative;
+        width: 350px;
+        overflow: hidden;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .slide {
+        min-width: 350px;
+        height: 600px;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .slide p {
+        padding: 30px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .slide .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #870000, transparent);
+        color: white;
+        display: flex;
+        border-radius: 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .slide:hover .overlay,
+    .slide:focus .overlay {
+        opacity: 1;
+    }
+
+    .slide button {
+        padding: 20px 30px;
+        background-color: #e02833;
+        position: absolute;
+        bottom: 80px;
+        border: 0px;
+        border-radius: 25px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        top: 48%;
+        transform: translateY(-50%);
+    }
+
+    .nav button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .indicator {
+        width: 14px;
+        height: 14px;
+        background-color: gray;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .indicator.active {
+        background-color: black;
+    }
+
+    @media (max-width: 768px) {
+        .timeline-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .timeline {
+            height: 4px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .event {
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .slider {
+            margin: 0;
+        }
+    }
+
+    .container-usps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        background: linear-gradient(184deg, #cd131305, transparent);
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+
+    .usp {
+        flex: 1 1 25%;
+        /* Šíøka na monitoru - 4 ikony vedle sebe */
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .usp img {
+        margin-bottom: 10px;
+    }
+
+    .usp h3 {
+        margin: 10px 0;
+    }
+
+    .usp p {
+        line-height: 24px;
+    }
+
+    @media (max-width: 768px) {
+        .usp {
+            flex: 1 1 100%;
+            /* Šíøka na telefonu - ikony pod sebou */
+        }
+    }
+
+    .container-products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .product {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(1deg, #f9f9f9, white);
+        padding: 20px;
+        margin: 10px 0;
+        width: 100%;
+        color: black;
+        border-radius: 10px;
+    }
+
+    .product img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .description-product {
+        width: 80%;
+    }
+
+    .product h3 {
+        margin: 0 20px 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .product p {
+        flex-grow: 1;
+        margin: 0 20px;
+        font-size: 14px;
+    }
+
+    .product .kosik button {
+        background-color: #dd0a16;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .product {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .product img,
+        .product .kosik button {
+            width: 100%;
+            height: 100%;
+            margin: 10px 0;
+        }
+
+        .product h3,
+        .product p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .description-product {
+            width: 100%;
+        }
+
+        .kosik {
+            width: 100%;
+        }
+    }
+
+    .container-cta {
+        margin-top: 60px;
+        margin-bottom: 30px;
+        background: linear-gradient(184deg, #fbfbfb, transparent);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .container-cta h2 {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container-cta p {
+        width: 80%;
+        padding-bottom: 30px;
+        text-align: justify;
+    }
+
+    .container-cta img {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .container-cta button {
+        width: 300px;
+        height: 60px;
+        background-color: #dd0a16;
+        color: white;
+        font-weight: 700;
+        border-radius: 15px;
+        border: 0px;
+    }
+
+    .container-recenze {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .reviews-container {
+        width: calc(100% - 240px);
+        max-width: 800px;
+        padding: 30px;
+        overflow: hidden;
+    }
+
+    .review-info {
+        text-align: center;
+    }
+
+    .overeno {
+        margin-top: 10px;
+    }
+
+    .swiper-container {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .review-header h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .review-header .rating {
+        color: gold;
+    }
+
+    .review-header .check {
+        width: 30px;
+        height: 30px;
+    }
+
+    .check img {
+        width: 100%;
+        height: auto;
+    }
+
+    .review-body p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .red-box {
+            margin-right: 0;
+        }
+
+        .reviews-container {
+            width: 100%;
+        }
+    }
+</style>
+<div class="main-container">
+    <div class="container-bio">
+        <div class="left-section">
+            <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/lackovic-uvodni-foto.jpg" alt="Peter IdemeHoreBejbe Lackoviè">
+        </div>
+        <div class="right-section">
+            <h3>Jak ses k Czech Virus dostal?</h3>
+            <p>Keï som v roku 2015 zaèínal cvièi, bolo na našom trhu len málo znaèiek doplnkov vıivy a ešte menej tıch
+                kvalitnıch. Czechvirus bol vtedy ve¾mi známy hlavne vïaka Pavlovi Beranovi a Filipovi Grznárovi, ktorí v
+                podstate ovládali cz/sk fitness scénu.</p>
+            <h3>Proè ses rozhodl pro spolupráci s Czech Virus?</h3>
+            <p>Znaèka je pre mòa lovebrandom????, nostalgiou na moje zaèiatky vo fitku?? a vdy som si ju spájal s
+                najkvalitnejšími produktami na trhu. ??(synonymum kvality mono môeme poui len mi to trošku príde ako
+                klišé) preto som sa rozhodol práve pre Czech Virus, a chcem tento brand spoloène s vami posúva ïalej.
+                #idemehorebejbe ??</p>
+            <h3>Kolik supláèù jsi od nás otestoval?</h3>
+            <p>Otestoval som v podstate skoro všetky suplementy, proteíny, preworkouts, produkty pre zdravie a ich
+                príchute pretoe chcem vedie, ako jednotlivé produkty fungujú, preèo ich odporúèam a akú príchu si
+                môete bezpeène vybra. ????????</p>
+        </div>
+    </div>
+    <h2>Moje Rutina</h2>
+    <div class="timeline-container">
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Ráno</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/supergreens-lackovic.jpg" alt="Super Greens PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(197)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/snidane-lackovic.jpg" alt="Snídanì idemehorebejbe">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(55)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/supervita-lackovic.jpg" alt="SuperVita PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1755)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Pøed tréninkem</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/beast-lackovic.jpg" alt="Beast Virus">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1665)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/pumpa-lackovic.jpg" alt="M3/S Pump">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(474)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/creatine-lackovic.jpg" alt="Creatine Creapure">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(49)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Po tréninku</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/protein-lackovic.jpg" alt="Protein Pure Elite CFM">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(55)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Veèer</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/omega-lackovic.jpg" alt="Omega 3">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(67)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/zma-lackovic.jpg" alt="ZMA">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(3)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Proè Czech Virus?</h2>
+    <div class="container-usps">
+        <div class="usp">
+            <img src="$USER-CONTENT/sportovci-landing/medal.png" alt="Medaile">
+            <h3>Kvalita</h3>
+            <p>Základem skuteènì funkèních doplòkù je obsah kvalitních látek a na tìch si v Czech Virus odjakiva zakládáme.</p>
+        </div>
+        <div class="usp">
+            <img src="$USER-CONTENT/sportovci-landing/sports.png" alt="Sporty">
+            <h3>Funènost</h3>
+            <p>Suplementy vyvíjíme na základì vısledkù reálnıch stuidí tak, aby mìly hlavu i patu a obsahovaly funkèní a opravdu vyuitelnı formy látek.
+            </p>
+        </div>
+        <div class="usp">
+            <img src="$USER-CONTENT/sportovci-landing/best-price.png" alt="Nejlepší cena">
+            <h3>Cena &amp; Vıkon</h3>
+            <p>Na první pohled se ti naše doplòky mùou zdát draší, zblízka ale zjistíš, e za svı peníze dostaneš fakt našlapanı a èasto i unikátní sloení.</p>
+        </div>
+        <div class="usp">
+            <img src="$USER-CONTENT/sportovci-landing/review.png" alt="Recenze">
+            <h3>Hodnocení</h3>
+            <p>Pro Virusáky se snaíme dìlat, co jim na oèích vidíme, a díky tomu se mùem pochlubit skvìlou zpìtnou vazbou a témìø 100% hodnocením.
+            </p>
+        </div>
+    </div>
+    <h2>Co o mıch produktech øíkají jiní zákazníci?</h2>
+    <div class="container-products">
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/783bf2c30f20ef02/1/super-greens-pro-v2-0.png?hash=1168318207" alt="Super Greens PRO V2.0">
+            <div class="description-product">
+                <h3>SUPER GREENS PRO V2.0</h3>
+                <p>Originální mix chlorelly, spiruliny, mladého jeèmene a mladé pšenice pro podporu imunity &amp;
+                    trávení.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(197)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/9a0efee488b2602d/1/supervita-pro-v2-0.png?hash=1168318207" alt="SUPERVITA PRO V2.0">
+            <div class="description-product">
+                <h3>SUPERVITA PRO V2.0</h3>
+                <p>Komplexní multivitamín &amp; multiminerál pro doplnìní všech klíèovıch sloek, které zajišují
+                    funkèní a spokojené tìlo.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(1755)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/50766614cc605d28/1/pure-elite-cfm-1000g.png?hash=1168318207" alt="PROTEIN PURE ELITE CFM">
+            <div class="description-product">
+                <h3>PROTEIN PURE ELITE CFM</h3>
+                <p>Prémiovı syrovátkovı protein s vysokım obsahem bílkovin, obsahem probiotik a travicích enzymù, které
+                    podporují maximální vyuitelnost.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(55)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/2eec92b012c0cd0c/1/mps-5-pro-1000g.png?hash=1168318207" alt="PROTEIN MPS-5 PRO">
+            <div class="description-product">
+                <h3>PROTEIN MPS-5 PRO</h3>
+                <p>Víceslokovı protein, kterı má dlouhodobou vstøebatelnost pro maximální vıivu svalù v dlouhém èase.
+                </p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(367)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/7d7c2495f3be6b23/1/beast-virus-v2-0.png?hash=1168318207" alt="NAKOPÁVAÈ BEAST VIRUS V2.0">
+            <div class="description-product">
+                <h3>NAKOPÁVAÈ BEAST VIRUS V2.0</h3>
+                <p>Revoluèní nakopávaè, díky kterému zaiješ trénink, jako nikdy pøedtím. Synergicky pùsobící látky,
+                    které nakopávají, oddalují únavu a podporují svalovou vıdr a vıkon.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(1665)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/a34d92ef813ac31e/1/m3-s-pump.png?hash=1168318207" alt="PUMPA M3/S PUMP">
+            <div class="description-product">
+                <h3>PUMPA M3/S PUMP</h3>
+                <p>Sloení, díky kterému maximalizuješ napumpování svalù. Mùe se pouívat samostatnì nebo i v kombinaci
+                    s Beast Virus. Je vhodnı pro trénink ve veèerních hodinách, protoe neobsahuje stimulanty, které by
+                    narušovaly spánek.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(474)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/86005bf7b0671b3a/1/supreme-creatine.png?hash=1168318207" alt="KREATIN CREAPURE">
+            <div class="description-product">
+                <h3>KREATIN CREAPURE</h3>
+                <p>Nejfunkènìní suplement, kterı umoòuje nabírat více svalù, udrovat svaly v dietì a maximalizovat
+                    sílu v silovıch sportech. Creapure je nejèistìjší forma kreatinu nìmecké kvality!</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(49)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/907e58b51fd71e33/1/supreme-omega-3.png?hash=1168318207" alt="SUPREME OMEGA 3">
+            <div class="description-product">
+                <h3>SUPREME OMEGA 3</h3>
+                <p>Základní suplement, kterı je potøeba zaøazovat do stravy vdy, kdy máme nedostatek OMEGA 3 mastnıch
+                    kyselin, které se vyskytují v rybách. Tento suplement napomáhá obnovovat buòky, podporuje zdraví
+                    srdce, mozku ale i oèí.</p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(475)">Pøidat do košíku</button>
+			</span>
+        </div>
+        <div class="product">
+            <img src="https://cdn.czechvirus.cz/images/0/2eaa3209e6ad1bb3/1/zma-max.png?hash=1168318207" alt="ZMA MAX">
+            <div class="description-product">
+                <h3>ZMA MAX</h3>
+                <p>Kombinace nejvíce deficitního minerálu lidské populace - hoøèíku, se zinkem. Pøi uívání ve veèerních
+                    hodinách docílíme lepšího spánku a lepší regenerace díky optimalizaci vyplavování rùstového hormonu.
+                </p>
+            </div>
+            <span class="kosik">
+				<button onclick="CVAddToCart(3)">Pøidat do košíku</button>
+			</span>
+        </div>
+    </div>
+    <div class="container-recenze">
+        <div class="img-box">
+            <img src="$USER-CONTENT/sportovci-landing/heureka.jpg" alt="Hodnocení Heureka">
+        </div>
+        <div class="reviews-container">
+            <div class="review-info">
+                <h2>Recenze</h2>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>PrenTy</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Naprosto kvalitní a funkèní produkty</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Ovìøenı anonymní zákazník</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Pøípravky mam poprvé a jsem zatim nadšena. Informace a propagace k vırobkùm je skvela.
+                                Dìkuji!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Ovìøenı anonymní zákazník</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Z Czech Virus objednávám pravidelnì. Produkty jsou vysoké kvality. Objednávka je vyøízena
+                                ve velmi krátkém èase. Teï mohu pøidat ještì další zkušenost: pøi poslední objednávce
+                                došlo k pochybení a omylem mi pøišlo jiné zboí (o které jsem ale nakonec projevila sama
+                                zájem). Nejenom e obchod uznal chybu, ale nakonec mi vìnovali omylem zaslané produkty
+                                bez nutnosti úhrady! Tomu øíkám opravdu SERIÓZNÍ PØÍSTUP! Dìkuji!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Abika</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>veliká spokojenost s obchodem, Vše funguje na vıbornou. Mají skvìlé doplòky stravy, které
+                                jsou bájeèné. Jen mohu doporuèit.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Pavel K.</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Skvìlı obchod, kterı nabízí vše, co si gymrat mùe jen pøát. Na jednom místì, pøehlednì a
+                                vìøím, e doporuèené z vlastních zkušeností provozovatelù.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Ovìøenı anonymní zákazník</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Rychlost doruceni, komunikace, skvele zbozi</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Domèa</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Bezproblémovı nákup, balíèek dorazil bleskovou rychlostí, komunikace s obchodem na 1*</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Ovìøenı anonymní zákazník</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Obchod prodává opravdu dobre a kvalitní vìci a jako jeden ze dvou obchodu má slevové body
+                                s nákupu .</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-header">
+                            <h3>Martin Štefan</h3>
+                            <div class="check">
+                                <img src="$USER-CONTENT/sportovci-landing/nalepka.png" alt="Heureka - ovìøeno">
+                            </div>
+                        </div>
+                        <div class="rating">?????</div>
+                        <div class="review-body">
+                            <p>Líbí se mi vìdeckı moderní pøístup a snaha o co nejúèinnìjší a pøírodní produkty bez
+                                zbyteènıch aditiv.Navic kvalita je znatelná a cenová dostupnost je i pøesto pøimìøená.
+                                Zase mùe bıt èlovìk hrdı a ve formì, díky šikovnosti èeského vırobce.</p>
+                        </div>
+                    </div>
+                    <!-- More reviews as needed -->
+                </div>
+                <div class="swiper-pagination">&nbsp;</div>
+                <div class="review-info overeno">Ovìøené recenze z Heureka.cz</div>
+            </div>
+        </div>
+    </div>
+    <div class="container-cta">
+        <h2>Jdeš do toho se mnou?</h2>
+        <p>Ideme hore bejbe vzniklo najprv ako náhodná zábavná hláška, ale èasom spája okrem zábavy aj chu dosiahnu trošku viac, ne sa od nás èaká, malımi krôèikmi pridáva naše znalosti, fyzické vıkony a tie osobnostnı posun. IHB spája nás všetkıch, ktorí chceme nieèo viac a preto suplementujem doplnky vıivy od CzechVirus - jedeme hore bejbe????????</p>
+        <a href="https://czechvirus.cz/produkty-c100/?utm_source=sportovci-landing&amp;utm_medium=lackovic"><button>JÍT NAKUPOVAT!</button></a>
+        <img src="https://via.placeholder.com/900x400" alt="Peter Lackoviè">
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.slider').forEach(slider => { const slides = slider.querySelector('.slides'); const prevButton = slider.querySelector('.prev'); const nextButton = slider.querySelector('.next'); const indicators = slider.querySelectorAll('.indicator'); let index = 0; let startX; let isDragging = false; function updateSlider() { slides.style.transform = `translateX(${-index * 350}px)`; indicators.forEach((indicator, i) => { indicator.classList.toggle('active', i === index); }); } function startDrag(event) { isDragging = true; startX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX; } function drag(event) { if (!isDragging) return; const currentX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX; const diff = currentX - startX; slides.style.transform = `translateX(${diff - index * 350}px)`; } function endDrag(event) { if (!isDragging) return; isDragging = false; const currentX = event.type.includes('touch') ? event.changedTouches[0].clientX : event.clientX; const diff = currentX - startX; if (diff > 100 && index > 0) { index--; } else if (diff < -100 && index < indicators.length - 1) { index++; } updateSlider(); } prevButton.addEventListener('click', () => { index = (index > 0) ? index - 1 : indicators.length - 1; updateSlider(); }); nextButton.addEventListener('click', () => { index = (index < indicators.length - 1) ? index + 1 : 0; updateSlider(); }); indicators.forEach((indicator, i) => { indicator.addEventListener('click', () => { index = i; updateSlider(); }); }); slider.addEventListener('mousedown', startDrag); slider.addEventListener('mousemove', drag); slider.addEventListener('mouseup', endDrag); slider.addEventListener('mouseleave', endDrag); slider.addEventListener('touchstart', startDrag); slider.addEventListener('touchmove', drag); slider.addEventListener('touchend', endDrag); });
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', { slidesPerView: 1, spaceBetween: 10, pagination: { el: '.swiper-pagination', clickable: true, }, autoplay: { delay: 5000, disableOnInteraction: false, }, breakpoints: { 768: { slidesPerView: 2, spaceBetween: 20, }, 1024: { slidesPerView: 3, spaceBetween: 30, }, }, });
+</script>

@@ -1,0 +1,626 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+    .sport-page,
+    .sport-page * {
+        box-sizing: border-box !important;
+    }
+
+    .sport-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #1a1a1a !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 960px !important;
+    }
+
+    /* Sekce */
+    .sport-page .sport-section {
+        padding: 70px 50px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Diagonální pozadí */
+    .sport-page .diagonal-bg {
+        position: relative !important;
+    }
+
+    .sport-page .diagonal-bg::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -10% !important;
+        right: -10% !important;
+        bottom: 0 !important;
+        background: linear-gradient(135deg, #e31e24 0%, #c41a1f 100%) !important;
+        transform: skewY(-3deg) !important;
+        transform-origin: top left !important;
+        z-index: 0 !important;
+    }
+
+    .sport-page .diagonal-bg > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .sport-page .diagonal-dark {
+        background: #1a1a1a !important;
+    }
+
+    .sport-page .diagonal-dark::before {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+    }
+
+    .sport-page .diagonal-white {
+        background: #ffffff !important;
+    }
+
+    .sport-page .diagonal-white::before {
+        background: #ffffff !important;
+    }
+
+    .sport-page .diagonal-gray {
+        background: #f5f5f5 !important;
+    }
+
+    .sport-page .diagonal-gray::before {
+        background: #f5f5f5 !important;
+    }
+
+    /* Nadpisy */
+    .sport-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .sport-page h2.white {
+        color: #ffffff !important;
+    }
+
+    .sport-page h2.dark {
+        color: #1a1a1a !important;
+    }
+
+    .sport-page h2 .highlight {
+        color: #e31e24 !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    /* Tag line */
+    .sport-page .tagline {
+        font-family: 'Anton', sans-serif !important;
+        font-size: 0.9em !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Text */
+    .sport-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .sport-page .white-text {
+        color: rgba(255,255,255,0.9) !important;
+    }
+
+    .sport-page .dark-text {
+        color: #1a1a1a !important;
+    }
+
+    .sport-page strong {
+        font-weight: 700 !important;
+    }
+
+    /* Hero */
+    .sport-page .hero-sport {
+        min-height: 400px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 80px !important;
+    }
+
+    .sport-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .sport-page .hero-image img {
+        max-width: 90% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)) !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sport-page .hero-image img:hover {
+        transform: scale(1.05) !important;
+    }
+
+    /* Stats bar */
+    .sport-page .stats-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: rgba(0,0,0,0.3) !important;
+        padding: 25px !important;
+        border-radius: 8px !important;
+        margin-top: 30px !important;
+    }
+
+    .sport-page .stat-item {
+        text-align: center !important;
+    }
+
+    .sport-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.2em !important;
+        color: #e31e24 !important;
+        line-height: 1 !important;
+    }
+
+    .sport-page .stat-label {
+        font-size: 0.8em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255,255,255,0.6) !important;
+        margin-top: 5px !important;
+    }
+
+    /* Feature cards */
+    .sport-page .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .feature-card {
+        background: rgba(255,255,255,0.08) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        border-left: 4px solid #e31e24 !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .sport-page .feature-card:hover {
+        transform: translateX(10px) !important;
+        background: rgba(255,255,255,0.12) !important;
+    }
+
+    .sport-page .feature-card strong {
+        color: #ffffff !important;
+        font-size: 1.1em !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sport-page .feature-card p,
+    .sport-page .feature-card span {
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    /* Split content */
+    .sport-page .split-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .sport-page .split-content .content-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sport-page .split-content .image-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .sport-page .split-content .image-side img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+    }
+
+    .sport-page .split-content .image-side::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -20px !important;
+        left: -20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        border: 3px solid #e31e24 !important;
+        border-radius: 12px !important;
+        z-index: -1 !important;
+    }
+
+    /* Benefits strip */
+    .sport-page .benefits-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 40px !important;
+        padding: 35px 0 !important;
+        background: #e31e24 !important;
+        margin: 40px -50px -70px !important;
+    }
+
+    .sport-page .benefit-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .sport-page .benefit-item span {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.2em !important;
+        color: #ffffff !important;
+        letter-spacing: 1px !important;
+    }
+
+    .sport-page .benefit-icon {
+        width: 36px !important;
+        height: 36px !important;
+        background: rgba(255,255,255,0.2) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 16px !important;
+        color: #ffffff !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Image gallery */
+    .sport-page .image-gallery {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .sport-page .gallery-item {
+        position: relative !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .sport-page .gallery-item:hover {
+        transform: scale(1.03) !important;
+    }
+
+    .sport-page .gallery-item img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        border-radius: 12px !important;
+    }
+
+    /* Certifikace badges */
+    .sport-page .cert-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        margin-top: 40px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .sport-page .cert-badge {
+        background: rgba(255,255,255,0.08) !important;
+        border: 2px solid rgba(227,30,36,0.3) !important;
+        border-radius: 12px !important;
+        padding: 20px 30px !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .sport-page .cert-badge:hover {
+        border-color: #e31e24 !important;
+        background: rgba(227,30,36,0.1) !important;
+        transform: translateY(-5px) !important;
+    }
+
+    .sport-page .cert-badge span {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.5em !important;
+        color: #1a1a1a !important;
+        letter-spacing: 2px !important;
+        display: block !important;
+    }
+
+    .sport-page .cert-badge small {
+        color: rgba(26,26,26,0.7) !important;
+        font-size: 0.75em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin-top: 5px !important;
+        display: block !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .sport-page .sport-section {
+            padding: 50px 30px !important;
+        }
+
+        .sport-page h2 {
+            font-size: 2.5em !important;
+        }
+
+        .sport-page .hero-content {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .sport-page .hero-text,
+        .sport-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .hero-image {
+            text-align: center !important;
+        }
+
+        .sport-page .hero-image img {
+            max-width: 70% !important;
+        }
+
+        .sport-page .stats-bar {
+            flex-direction: column !important;
+            gap: 15px !important;
+        }
+
+        .sport-page .features-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sport-page .benefits-strip {
+            flex-direction: column !important;
+            gap: 15px !important;
+            padding: 25px 30px !important;
+            margin: 40px -30px -50px !important;
+        }
+
+        .sport-page .split-content {
+            flex-direction: column !important;
+        }
+
+        .sport-page .split-content .content-side,
+        .sport-page .split-content .image-side {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sport-page .split-content .image-side::before {
+            display: none !important;
+        }
+
+        .sport-page .image-gallery {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sport-page .cert-badges {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        .sport-page .cert-badge {
+            width: 100% !important;
+            max-width: 250px !important;
+        }
+    }
+</style>
+
+<div class="sport-page" style="max-width: 960px !important; margin: 0 auto !important;">
+    <!-- Hero -->
+    <section class="sport-section diagonal-bg diagonal-dark hero-sport">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="tagline white-text">Czech Virus® Merch</p>
+                <h2 class="white">Gym Bag Premium <span class="highlight">Czech Virus®</span></h2>
+                <p class="white-text"><strong>Gym Bag Premium</strong> je univerzální společník, který tě neopustí ani v posilovně, ani na cestách. <strong>Lehký, odolný a praktický</strong> – s objemem <strong>12 litrů</strong> a zipovou kapsou pro cennosti.</p>
+                <p class="white-text">Vyrobeno z <strong>recyklovaného rPET materiálu</strong> s honeycomb ripstop tkaninou pro maximální <strong>odolnost proti protržení</strong>. Tohle není jen merch – <strong>je to výbava pro každý den</strong>.</p>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">12L</div>
+                        <div class="stat-label">Objem</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">45cm</div>
+                        <div class="stat-label">Výška</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">rPET</div>
+                        <div class="stat-label">Recyklovaný materiál</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="vak-front.png" alt="Czech Virus Gym Bag Premium">
+            </div>
+        </div>
+    </section>
+
+    <!-- Proč právě tento vak -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text">Proč zvolit</p>
+        <h2 class="white">Gym Bag Premium <span class="highlight">Czech Virus®?</span></h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <strong>Recyklovaný rPET materiál</strong>
+                <span>Vak vyrobený z recyklovaných PET lahví. Ekologický a zároveň extrémně odolný. Žádné kompromisy mezi kvalitou a odpovědností.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Honeycomb ripstop konstrukce</strong>
+                <span>Speciální voštinová tkanina, která výrazně zvyšuje odolnost proti protržení. I při plném zatížení vydrží vak to, co ostatní nezvládnou.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Zipová boční kapsa</strong>
+                <span>Klasický drawstring vak s upgadem – laterální kapsa na zip pro klíče, telefon nebo peněženku. Všechno důležité máš rychle po ruce.</span>
+            </div>
+            <div class="feature-card">
+                <strong>IATA cabin compliant</strong>
+                <span>Rozměry vaku splňují limity pro kabinovou příruční zavazadlo. Dokonalý společník na letadlo, víkendové výlety nebo denní cestování.</span>
+            </div>
+        </div>
+
+        <div class="benefits-strip">
+            <div class="benefit-item">
+                <div class="benefit-icon">♻</div>
+                <span>Recyklovaný materiál</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <span>GRS certifikace</span>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✈</div>
+                <span>IATA cabin size</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail & materiál -->
+    <section class="sport-section diagonal-bg diagonal-white">
+        <div class="split-content">
+            <div class="content-side">
+                <p class="tagline dark-text">Detaily & zpracování</p>
+                <h2 class="dark">Pro tvé <span class="highlight">dobrodružství</span></h2>
+                <p class="dark-text">Drawstring vaky mají reputaci jako lehké, ale křehké tašky na jednorázovky. <strong>Gym Bag Premium to mění</strong>. Díky ripstop materiálu odolá i drsným podmínkám, ať už jdeš z tréninku, na trip nebo prostě jen ven.</p>
+                <p class="dark-text"><strong>Laterální zipová kapsa</strong> znamená, že už nemusíš hrabat se na dně vaku, když hledáš klíče. <strong>Drawstring nosná smyčka</strong> umožňuje pověsit vak kamkoliv – na háček v šatně, na strom při venkovním tréninku, nebo na batoh při cestování.</p>
+                <p class="dark-text">Vak má <strong>rozměry 45,5 × 36,5 cm</strong> a objem <strong>12 litrů</strong> – dost prostoru na tréninkové oblečení, boty, láhev a další nezbytnosti. A protože je vyrobený z <strong>recyklovaného rPET s PVC-free zpracováním</strong>, můžeš se cítit dobře nejen při používání, ale i kvůli ekologii.</p>
+            </div>
+            <div class="image-side">
+                <img src="Lukas-Furle-vak (1).jpg" alt="Czech Virus Gym Bag Premium detail">
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text" style="text-align: center !important;">Pohled zblízka</p>
+        <h2 class="white" style="text-align: center !important;">Vak v <span class="highlight">akci</span></h2>
+
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="Lukas-Furle-vak (2).jpg" alt="Czech Virus Gym Bag Premium - pohled 1">
+            </div>
+            <div class="gallery-item">
+                <img src="Lukas-Furle-vak (3).jpg" alt="Czech Virus Gym Bag Premium - pohled 2">
+            </div>
+            <div class="gallery-item">
+                <img src="Lukas-Furle-vak (4).jpg" alt="Czech Virus Gym Bag Premium - pohled 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifikace & certifikace -->
+    <section class="sport-section diagonal-bg diagonal-white">
+        <p class="tagline dark-text" style="text-align: center !important;">Technické parametry</p>
+        <h2 class="dark" style="text-align: center !important;">Specifikace <span class="highlight">& certifikace</span></h2>
+        <p class="dark-text" style="text-align: center !important; max-width: 600px !important; margin: 0 auto 10px !important;">Gym Bag Premium splňuje přísné standardy kvality a ekologické odpovědnosti. Certifikace GRS garantuje použití recyklovaných materiálů a férovou výrobu.</p>
+
+        <div class="cert-badges">
+            <div class="cert-badge">
+                <span>GRS</span>
+                <small>Certifikace</small>
+            </div>
+            <div class="cert-badge">
+                <span>rPET</span>
+                <small>Materiál</small>
+            </div>
+            <div class="cert-badge">
+                <span>PVC-free</span>
+                <small>Bez škodlivin</small>
+            </div>
+            <div class="cert-badge">
+                <span>Recycled</span>
+                <small>Recyklovaný obsah</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailní rozměry -->
+    <section class="sport-section diagonal-bg diagonal-dark">
+        <p class="tagline white-text" style="text-align: center !important;">Přesné rozměry</p>
+        <h2 class="white" style="text-align: center !important;">Dimenze <span class="highlight">Gym Bag</span></h2>
+        <p class="white-text" style="text-align: center !important; max-width: 600px !important; margin: 0 auto 30px !important;">S rozměry <strong>45,5 × 36,5 cm</strong> a objemem <strong>12 litrů</strong> nabízí Gym Bag Premium dostatek prostoru pro denní použití, trénink i cestování.</p>
+
+        <div class="split-content">
+            <div class="image-side">
+                <img src="vak-side.png" alt="Czech Virus Gym Bag Premium rozměry">
+            </div>
+            <div class="content-side">
+                <div class="features-grid" style="margin-top: 0 !important;">
+                    <div class="feature-card">
+                        <strong>Výška: 45,5 cm</strong>
+                        <span>Ideální výška pro standardní tréninkové oblečení, boty nebo osobní věci.</span>
+                    </div>
+                    <div class="feature-card">
+                        <strong>Šířka: 36,5 cm</strong>
+                        <span>Optimální šířka pro maximální využití prostoru bez zbytečného objemu.</span>
+                    </div>
+                    <div class="feature-card">
+                        <strong>Objem: 12 litrů</strong>
+                        <span>Dostatečná kapacita pro všechny denní potřeby v kompaktním formátu.</span>
+                    </div>
+                    <div class="feature-card">
+                        <strong>IATA kabina: Ano</strong>
+                        <span>Splňuje limity pro kabinovou příruční zavazadlo u většiny leteckých společností.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

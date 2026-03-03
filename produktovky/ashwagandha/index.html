@@ -1,0 +1,793 @@
+<!--EXPERTMODE-->
+<style>
+    .container-product {
+        max-width: 1000px;
+        border-radius: 8px;
+        margin: 0 auto !important;
+        /* Centers the container */
+        padding: 0;
+        /* Reset default padding */
+        box-sizing: border-box;
+        /* Ensures padding doesn't affect the width */
+        font-family: 'Roboto';
+        margin-top: 30px !important;
+    }
+
+    .container-product:first-child,
+    .container-product:first-of-type {
+        margin-top: 0 !important;
+    }
+
+    .container-product img {
+        border-radius: 8px;
+    }
+
+    .container-product>div:last-child {
+        padding: 0;
+        /* No padding for the image container */
+    }
+
+    .container-product h2 {
+        margin: 0;
+        /* Resets default margin */
+        font-size: 1.8em;
+        /* Default font size for H2 */
+        padding: 50px 20px 20px 20px !important;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .container-product h3 {
+        font-size: 30px;
+        margin-top: 40px !important;
+        font-weight: bold;
+    }
+
+    .container-product p {
+        font-size: 1em;
+        /* Default font size for text */
+    }
+
+    .container-product a {
+        text-decoration: none;
+    }
+
+    .container-product a:hover {
+        text-decoration: underline;
+    }
+
+    .text-product {
+        padding: 0px 50px 0px 50px !important;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .text-product p {
+        margin-bottom: 15px !important;
+    }
+
+    .transparent-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 10px 20px !important;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition: box-shadow 0.3s;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    .studie {
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+        text-align: center;
+    }
+
+    /* lišty */
+    .container-lista {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto !important;
+        margin-bottom: 15px !important;
+    }
+
+    .label {
+        width: 33.333%;
+        /* label zabírá jednu tøetinu */
+        margin-right: 5px;
+        /* mezera mezi labelem a lištou */
+        text-align: left;
+    }
+
+    .bar-outer {
+        width: 66.666%;
+        /* lišta zabírá dvì tøetiny */
+        background-color: #ddd;
+        overflow: hidden;
+        margin-left: auto;
+    }
+
+    .barva-1 {
+        background-color: #9bcf2b;
+    }
+
+    .barva-2 {
+        background-color: #dccc1f;
+    }
+
+    .barva-3 {
+        background-color: #d08333;
+    }
+
+    .bar-inner {
+        height: 30px;
+        width: 0;
+        /* poèáteèní šíøka */
+        text-align: right;
+        padding-right: 5px;
+        line-height: 30px;
+        color: white;
+        transition: width 1s ease-in-out;
+        /* animace šíøky */
+    }
+
+    /* lišty */
+    /* 1/2 obsah, 1/2 foto */
+    .container-benefity-foto {
+        display: flex;
+        flex-direction: row;
+        /* nebo mùe bıt 'column', pokud to tak chcete pro mobilní zobrazení */
+        align-items: center;
+        /* Toto vycentruje dìtské prvky vertikálnì */
+        width: 90%;
+        margin: 0 auto !important;
+        margin-top: 30px !important;
+    }
+
+    .icons-text {
+        flex: 1;
+        /* Zabere 2/3 šíøky */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Vertikální vycentrování ikonek uvnitø .icons-text */
+        text-align: center;
+    }
+
+    .icon-item {
+        /* ádné specifické styly nejsou potøeba pro vertikální vycentrování, toto zajišuje .icons-text */
+        margin-bottom: 20px !important;
+        /* Odstup mezi polokami */
+    }
+
+    .icon-item img {
+        width: 70px;
+    }
+
+    .icon-item:last-child {
+        margin-bottom: 0;
+        /* Odstraníme margin pro poslední ikonu */
+    }
+
+    .photo {
+        flex: 1;
+        /* Zabere 1/3 šíøky */
+        align-self: flex-end;
+    }
+
+    .photo img {
+        width: 100%;
+        /* Aby fotka vyplnila prostor */
+        height: auto;
+    }
+
+    /* 2/3 obsah, 1/3 foto */
+    /* Responsive design for tablets */
+    @media (max-width: 768px) {
+        .container-product h2 {
+            font-size: 2em;
+            /* Larger font size for H2 on tablets */
+        }
+
+        .container-product p {
+            font-size: 1.0em;
+            /* Larger font size for text on tablets */
+        }
+
+        .transparent-button {
+            font-size: 16px;
+        }
+
+        .container-listy {
+            flex-direction: column;
+        }
+
+        .label {
+            width: auto;
+        }
+
+        .bar-outer {
+            width: 100%;
+        }
+
+        .container-benefity-foto {
+            flex-direction: column;
+        }
+
+        .icons-text,
+        .photo {
+            width: 70%;
+            /* Zabere 100% šíøky */
+            margin: 0 auto !important;
+        }
+
+        .icon-item {
+            flex-direction: row;
+            /* Ikony a text vedle sebe */
+            justify-content: center;
+            /* Horizontální vycentrování */
+            align-items: center;
+            /* Vertikální vycentrování */
+        }
+
+        .photo {
+            order: 2;
+            /* Fotka pùjde pod ikonky */
+            margin: 0 auto !important;
+            margin-top: 20px !important;
+            /* Odstup od pøedchozího obsahu */
+        }
+
+        .container-lista {
+            display: block;
+        }
+
+        .label {
+            width: 100%;
+            /* label zabírá jednu tøetinu */
+        }
+
+        .bar-outer {
+            width: 100%;
+            /* lišta zabírá dvì tøetiny */
+        }
+    }
+
+    /* Responsive design for phones */
+    @media (max-width: 480px) {
+        .container-product h2 {
+            font-size: 2.2em;
+            /* Larger font size for H2 on phones */
+        }
+
+        .container-product p {
+            font-size: 1.25em;
+            /* Larger font size for text on phones */
+        }
+
+        .transparent-button {
+            font-size: 20px;
+        }
+    }
+
+    #c-p-1 {
+        background: linear-gradient(to bottom, #ebebeb 40%, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-1 a {
+        color: #1a5c00;
+    }
+
+    #c-p-1 h2 {
+        color: black;
+    }
+
+    #c-p-1 .zvyrazneni {
+        color: #63dadf;
+    }
+
+    #c-p-1 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-1 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-2 {
+        background: linear-gradient(to bottom, #7bbcbb, #315646);
+        color: white !important;
+    }
+
+    #c-p-2 a {
+        color: #1a5c00;
+    }
+
+    #c-p-2 h2 {
+        color: white;
+    }
+
+    #c-p-2 .zvyrazneni {
+        color: #414141;
+    }
+
+    #c-p-2 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-2 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-3 {
+        background: linear-gradient(to bottom, #ad6e51 70%, #fffff2);
+        color: white !important;
+    }
+
+    #c-p-3 a {
+        color: #dfb764;
+    }
+
+    #c-p-3 h2 {
+        color: white;
+    }
+
+    #c-p-3 .zvyrazneni {
+        color: #dfb764;
+    }
+
+    #c-p-3 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-3 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-4 {
+        background: linear-gradient(to bottom, #007d84 70%, #007d84);
+        color: white !important;
+    }
+
+    #c-p-4 a {
+        color: #a99566;
+    }
+
+    #c-p-4 h2 {
+        color: white;
+    }
+
+    #c-p-4 .zvyrazneni {
+        color: #2be1f3;
+    }
+
+    #c-p-4 .transparent-button {
+        color: white;
+        border: 2px solid white;
+    }
+
+    #c-p-4 .transparent-button:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    #c-p-5 {
+        background: linear-gradient(to bottom, #e9d380, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-5 a {
+        color: #389edb;
+    }
+
+    #c-p-5 h2 {
+        color: black;
+    }
+
+    #c-p-5 .zvyrazneni {
+        color: #389edb;
+    }
+
+    #c-p-5 .transparent-button {
+        color: #389edb;
+        border: 2px solid #389edb;
+    }
+
+    #c-p-5 .transparent-button:hover {
+        box-shadow: 0 0 10px #389edb;
+    }
+
+    #c-p-6 {
+        background: linear-gradient(to bottom, #236b7a, #fffff2);
+        color: white !important;
+    }
+
+    #c-p-6 a {
+        color: #389edb;
+    }
+
+    #c-p-6 h2 {
+        color: white;
+    }
+
+    #c-p-6 .zvyrazneni {
+        color: #389edb;
+    }
+
+    #c-p-6 .transparent-button {
+        color: #389edb;
+        border: 2px solid #389edb;
+    }
+
+    #c-p-6 .transparent-button:hover {
+        box-shadow: 0 0 10px #389edb;
+    }
+
+    #c-p-7 {
+        background: linear-gradient(to bottom, #d6e4f1, #fffff2);
+        color: black !important;
+    }
+
+    #c-p-7 a {
+        color: #39b400;
+    }
+
+    #c-p-7 h2 {
+        color: black;
+    }
+
+    #c-p-7 .zvyrazneni {
+        color: #39b400;
+    }
+
+    #c-p-7 .transparent-button {
+        color: #39b400;
+        border: 2px solid #39b400;
+    }
+
+    #c-p-7 .transparent-button:hover {
+        box-shadow: 0 0 10px #39b400;
+    }
+
+    #c-p-8 {
+        background: linear-gradient(to bottom, #f8f8f8, #d4d4d4);
+        color: black !important;
+    }
+
+    #c-p-8 a {
+        color: #39b400;
+    }
+
+    #c-p-8 h2 {
+        color: black;
+    }
+
+    #c-p-8 .zvyrazneni {
+        color: #39b400;
+    }
+
+    #c-p-8 .transparent-button {
+        color: #39b400;
+        border: 2px solid #39b400;
+    }
+
+    #c-p-8 .transparent-button:hover {
+        box-shadow: 0 0 10px #39b400;
+    }
+    
+    
+    
+    /*PROFITABUKLA*/
+    .comparison-section .content-module-template {
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 30px;
+    }
+
+    .comparison-section .comparison-heading {
+        margin-bottom: 20px;
+    }
+
+    .comparison-section .heading-inner h2 {
+        font-size: 24px;
+        color: white;
+    }
+
+    .comparison-section .comparison-table-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: auto;
+        border-radius: 20px;
+    }
+
+    .comparison-section .comparison-table tbody {
+        color: white;
+    }
+
+    .comparison-section .table-wrap {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .comparison-section .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+    }
+
+    .comparison-section .comparison-table th,
+    .comparison-section .comparison-table td {
+        background-color: #b3b3b3;
+        padding: 20px;
+        border: 0px solid #ddd;
+        vertical-align: top;
+    }
+
+    .comparison-section .comparison-table th {
+        background-color: #b3b3b3;
+    }
+
+    .comparison-section .comparison-table th:first-child {
+        background-color: #0092a9;
+    }
+
+    .comparison-section .comparison-table img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .comparison-section .comparison-table h2 {
+        font-size: 18px;
+        color: #333;
+    }
+
+    .comparison-section .td-head {
+        font-size: 14px;
+        opacity: 0.6;
+        display: block;
+    }
+
+    .comparison-section .td-content {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .comparison-section .text-center {
+        text-align: center;
+    }
+
+    .comparison-section button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .comparison-section button:hover {
+        background-color: #218838;
+    }
+
+    @media (min-width: 640px) {
+        .comparison-section .comparison-table th,
+        .comparison-section .comparison-table td {
+            width: 33.33%;
+        }
+    }
+
+    @media (max-width: 639px) {
+        .comparison-section .comparison-table th,
+        .comparison-section .comparison-table td {
+            width: 208px;
+            min-width: 208px;
+            max-width: 208px;
+        }
+    }
+
+    .comparison-section #comparison-table tr:not(.template-module-compare__rowName) td:nth-child(1) {
+        background-color: #0092a9;
+    }
+
+    .comparison-section #comparison-table tr.template-module-compare__rowName td:nth-child(2) {
+        position: relative;
+    }
+
+    .comparison-section .wooco_component_product_selection label {
+        padding-left: 0px;
+    }
+
+    .comparison-section .wooco_component_desc {
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #eac53e;
+        font-weight: bold;
+    }
+
+    .comparison-section #comparison-table tr.template-module-compare__rowName td:nth-child(2):before {
+        position: absolute;
+        content: '';
+        display: block;
+        right: 100%;
+        top: -12px;
+        bottom: 0;
+        width: 100%;
+        background-color: gray;
+    }
+
+    .comparison-section #comparison-table tr:first-child td:nth-child(1) {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .comparison-section #comparison-table tr:last-child td:nth-child(1) {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+/*PROFITABULKA*/    
+</style>
+<div id="c-p-1" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Supreme 
+            <span class="zvyrazneni">Ashwagandha 7</span>
+        </h2>
+    </div>
+    <div class="text-product">
+        <p><strong>Supreme Ashwagandha 7</strong> je <strong>prémiovı doplnìk stravy</strong> (adaptogen), kterı byl navren tak, aby podporoval vaše <strong>duševní i fyzické zdraví</strong>. Tento produkt obsahuje <strong>vysoce kvalitní extrakt z koøene ašvagandy</strong> (<em>Withania somnifera</em>), standardizovanı na <strong>7 % withanolidù</strong>, co jej øadí mezi <strong>nejúèinnìjší extrakty na trhu</strong>. Díky této standardizaci poskytuje maximální úèinnost a vırazné pøínosy pro váš organismus.</p>
+    </div>
+    <div>
+        <img title="Ashwagandha" style="width: 100%; height: auto;" alt="ashwagandha-leaves-and-fruits" src="$USER-CONTENT/produkty/ashwagandha-leaves-and-fruits.png">
+    </div>
+</div>
+
+<div id="c-p-2" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Hlavní vıhody 
+            <span class="zvyrazneni">Supreme Ashwagandha 7</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: left;">
+      <ul>
+          <li style="margin-bottom: 20px;"><strong>Podpora duševní pohody a kognitivních funkcí:</strong> Ašvaganda pomáhá zlepšit soustøedìní, zmíròuje únavu a pøispívá k celkovému duševnímu komfortu.</li>
+          <li style="margin-bottom: 20px;"><strong>Sníení stresu a podpora relaxace:</strong> Tato bylina díky svım adaptogenním vlastnostem pomáhá organismu efektivnì zvládat stres a navodit pocit uvolnìní.</li>
+          <li style="margin-bottom: 20px;"><strong>Lepší kvalita spánku:</strong> Pravidelné uívání ašvagandy mùe pøispìt k hlubšímu a klidnìjšímu spánku, co podporuje regeneraci tìla.</li>
+          <li style="margin-bottom: 20px;"><strong>Zvıšení energie a vitality:</strong> Ašvaganda posiluje fyzickou vıdr, svalovou sílu a celkovou energii, co ocení zejména aktivní jedinci.</li>
+          <li><strong>Antioxidaèní vlastnosti:</strong> Díky své schopnosti chránit buòky pøed oxidativním stresem podporuje omlazení a celkové zdraví organismu.</li>
+      </ul>
+
+    </div>
+    <div class="container-benefity-foto">
+        <div class="icons-text">
+            <div class="icon-item">
+                <img alt="Duševní pohoda a relaxace" src="$USER-CONTENT/produkty/yoga.png">
+                <p style="font-weight: bold;">DUŠEVNÍ POHODA A RELAXACE</p>
+            </div>
+            <div class="icon-item">
+                <img alt="Kvalitní spánek" src="$USER-CONTENT/produkty/sleeping.png">
+                <p style="font-weight: bold;">KVALITNÍ SPÁNEK</p>
+            </div>
+            <div class="icon-item">
+                <img alt="Energie a vitalita" src="$USER-CONTENT/produkty/energy.png">
+                <p style="font-weight: bold;">ENERGIE A VITALITA</p>
+            </div>
+        </div>
+        <div class="photo">
+            <img alt="Ashwagandha Czech Virus" src="$USER-CONTENT/produkty/ashwagandha-czech-virus.png">
+        </div>
+    </div>
+</div>
+<div id="c-p-3" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Co jsou to
+            <span class="zvyrazneni">Withanolidy?</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: justify;">
+        <p><strong>Withanolidy</strong> jsou hlavní bioaktivní sloky obsaené v rostlinì <em>Ashwagandha</em> (<em>Withania somnifera</em>), které zodpovídají za její <strong>adaptogenní a prospìšné úèinky na zdraví</strong>. Tyto látky mají <strong>vırazné antioxidaèní vlastnosti</strong>, podporují schopnost tìla zvládat stres a pøispívají k <strong>regeneraci a vitalitì</strong>. Vyšší obsah withanolidù v extraktu znamená <strong>vyšší úèinnost doplòku stravy</strong>.</p>
+    </div>
+    <div>
+        <img title="Withanolidy" style="width: 100%; height: auto;" alt="Withanolidy" src="$USER-CONTENT/produkty/withanolidy.png">
+    </div>
+</div>
+<div id="c-p-4" class="container-product">
+    <div class="heading-product">
+        <h2>
+            Proè si vybrat ASHWAGANDHU s 
+            <span class="zvyrazneni">vyšším podílem withanolidù?</span>
+        </h2>
+    </div>
+    <div class="text-product" style="text-align: justify;">
+            <p><strong>Vyšší koncentrace</strong> znamená, e k dosaení stejného úèinku potøebujete uívat ménì kapslí. I kdy se takovı produkt mùe na první pohled zdát <strong>draší</strong>, ve vısledku nabízí <strong>lepší hodnotu za investované peníze</strong>, protoe za stejnou dávku úèinnıch látek zaplatíte ménì (viz. tabulka). Navíc si ušetøíte <strong>èas</strong> a vyhnete se <strong>nepohodlí</strong> spojenému s uíváním vìtšího mnoství kapslí.</p>
+    </div>
+    <div>
+    <div class="comparison-section">
+        <div class="content-module-template"><section id="comparison-module" class="clearfix mb-24 mb-md-32">
+          <div class="comparison-table-wrapper">
+          <div class="table-wrap">
+          <table id="comparison-table" class="comparison-table">
+          <thead>
+          <tr>
+          <th class="text-center"><img src="$USER-CONTENT/produkty/ashwagandha-czech-virus.png" alt="Ashwagandha Supreme 7 Czech Virus" />
+          <h2>Ashwagandha<br />SUPREME 7</h2>
+          </th>
+          <th class="text-center"><img src="$USER-CONTENT/produkty/ashwagandha-ksm.png" alt="Ashwagandha KSM-66 Czech Virus" />
+          <h2>Ashwagandha KSM-66</h2>
+          </th>
+          <th class="text-center"><img src="$USER-CONTENT/produkty/ashwagandha-basic.png" alt="Ashwagandha Czech Virus" />
+          <h2>Ashwagandha</h2>
+          </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td class="text-center"><span class="td-head">Pøi cenì</span> <span class="td-content">599 Kè</span></td>
+          <td class="text-center"><span class="td-head">Pøi cenì</span> <span class="td-content">499 Kè</span></td>
+          <td class="text-center"><span class="td-head">Pøi cenì</span> <span class="td-content">249 Kè</span></td>
+          </tr>
+          <tr>
+          <td class="text-center"><span class="td-head">% withanolidù</span> <span class="td-content">7 %</span></td>
+          <td class="text-center"><span class="td-head">% withanolidù</span> <span class="td-content">5 %</span></td>
+          <td class="text-center"><span class="td-head">% withanolidù</span> <span class="td-content">2 %</span></td>
+          </tr>
+          <tr>
+          <td class="text-center"><span class="td-head">mg withanolidù</span> <span class="td-content">35 mg v 1 kapsli</span></td>
+          <td class="text-center"><span class="td-head">mg withanolidù</span> <span class="td-content">25 mg v 1 kapsli</span></td>
+          <td class="text-center"><span class="td-head">mg withanolidù</span> <span class="td-content">10 mg v 1 kapsli</span></td>
+          </tr>
+          <tr>
+          <td class="text-center"><span class="td-head">Cena za 1 mg withanolidu</span> <span class="td-content">0,19 Kè</span></td>
+          <td class="text-center"><span class="td-head">Cena za 1 mg withanolidu</span> <span class="td-content">0,22 Kè</span></td>
+          <td class="text-center"><span class="td-head">Cena za 1 mg withanolidu</span> <span class="td-content">0,28 Kè</span></td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          <td class="text-center"><button onclick="CVAddToCart()" id="chci-ashwagandhu-supercharged">Chci SUPREME 7!</button></td>
+          <td class="text-center"><button id="chci-ksm">Chci KSM-66</button></td>
+          <td class="text-center"><button id="chci-ashwu">Chci obyè Ashwu</button></td>
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          </div>
+          </section></div>
+    </div>
+  </div>  
+</div>
+
+<script type="text/javascript">
+    // Pøidání posluchaèe událostí pro tlaèítko "chci-ksm"
+    document.getElementById('chci-ksm').addEventListener('click', function () {
+        alert('KSM-66 má o 2% menší podíl Withanolidù, ne SUPREME 7. Take ji tady nevedeme.');
+    });
+
+    // Pøidání posluchaèe událostí pro tlaèítko "chci-ashwu"
+    document.getElementById('chci-ashwu').addEventListener('click', function () {
+        alert('Bıvá sice levnìjší, ale na pomìr cena/vıkon se nakonec prodraí! V Czech Virus nabízíme kvalitu za nejlepší monou cenu. A tou je Ashwagandha Supreme 7');
+    });
+</script>

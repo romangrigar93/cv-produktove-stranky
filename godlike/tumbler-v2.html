@@ -1,0 +1,776 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&family=Bebas+Neue&display=swap');
+
+    .gl-page,
+    .gl-page * {
+        box-sizing: border-box !important;
+    }
+
+    .gl-page {
+        font-family: 'Raleway', sans-serif !important;
+        background: #0b1222 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Sekce */
+    .gl-page .gl-section {
+        padding: 70px 50px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Diagonální pozadí */
+    .gl-page .diagonal-bg {
+        position: relative !important;
+    }
+
+    .gl-page .diagonal-bg::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -10% !important;
+        right: -10% !important;
+        bottom: 0 !important;
+        transform: skewY(-3deg) !important;
+        transform-origin: top left !important;
+        z-index: 0 !important;
+    }
+
+    .gl-page .diagonal-bg > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    /* Variace pozadí */
+    .gl-page .bg-navy {
+        background: #0b1222 !important;
+    }
+
+    .gl-page .bg-navy::before {
+        background: linear-gradient(135deg, #121a2b 0%, #0b1222 100%) !important;
+    }
+
+    .gl-page .bg-dark {
+        background: #080e1a !important;
+    }
+
+    .gl-page .bg-dark::before {
+        background: linear-gradient(135deg, #0d1525 0%, #080e1a 100%) !important;
+    }
+
+    .gl-page .bg-gold-subtle {
+        background: #0f1829 !important;
+    }
+
+    .gl-page .bg-gold-subtle::before {
+        background: linear-gradient(135deg, #141e33 0%, #0f1829 100%) !important;
+    }
+
+    /* Nadpisy */
+    .gl-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+        color: #ffffff !important;
+    }
+
+    .gl-page h2 .highlight {
+        color: #d8b64f !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    /* Tagline */
+    .gl-page .tagline {
+        font-family: 'Raleway', sans-serif !important;
+        font-size: 0.85em !important;
+        font-weight: 700 !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        color: #d8b64f !important;
+    }
+
+    /* Text */
+    .gl-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+        color: rgba(255,255,255,0.85) !important;
+    }
+
+    .gl-page strong {
+        font-weight: 700 !important;
+        color: #ffffff !important;
+    }
+
+    /* Hero */
+    .gl-page .hero-gl {
+        min-height: 500px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 80px !important;
+    }
+
+    .gl-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+    }
+
+    .gl-page .hero-text {
+        flex: 1 1 55% !important;
+        width: 55% !important;
+        min-width: 0 !important;
+    }
+
+    .gl-page .hero-image {
+        flex: 1 1 45% !important;
+        width: 45% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .gl-page .hero-image img {
+        max-width: 100% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 60px rgba(216, 182, 79, 0.15)) !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .gl-page .hero-image img:hover {
+        transform: scale(1.05) !important;
+    }
+
+    /* Stats bar */
+    .gl-page .stats-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: rgba(216, 182, 79, 0.08) !important;
+        border: 1px solid rgba(216, 182, 79, 0.2) !important;
+        padding: 30px !important;
+        border-radius: 12px !important;
+        margin-top: 40px !important;
+    }
+
+    .gl-page .stat-item {
+        text-align: center !important;
+    }
+
+    .gl-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.5em !important;
+        color: #d8b64f !important;
+        line-height: 1 !important;
+    }
+
+    .gl-page .stat-label {
+        font-size: 0.8em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255,255,255,0.5) !important;
+        margin-top: 5px !important;
+    }
+
+    /* Feature cards */
+    .gl-page .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .gl-page .feature-card {
+        background: rgba(216, 182, 79, 0.05) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        border-left: 4px solid #d8b64f !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .gl-page .feature-card:hover {
+        transform: translateX(10px) !important;
+        background: rgba(216, 182, 79, 0.1) !important;
+    }
+
+    .gl-page .feature-card.full-width {
+        grid-column: 1 / -1 !important;
+        background: linear-gradient(135deg, rgba(216, 182, 79, 0.1) 0%, rgba(216, 182, 79, 0.03) 100%) !important;
+        border-left-color: #eac53e !important;
+    }
+
+    .gl-page .feature-card strong {
+        color: #d8b64f !important;
+        font-size: 1.1em !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gl-page .feature-card p,
+    .gl-page .feature-card span {
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    /* Split content */
+    .gl-page .split-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .gl-page .split-content .content-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .gl-page .split-content .image-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .gl-page .split-content .image-side img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4) !important;
+    }
+
+    .gl-page .split-content .image-side::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -20px !important;
+        left: -20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        border: 2px solid rgba(216, 182, 79, 0.3) !important;
+        border-radius: 12px !important;
+        z-index: -1 !important;
+    }
+
+    /* Benefits strip */
+    .gl-page .benefits-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 50px !important;
+        padding: 40px 0 !important;
+        background: linear-gradient(135deg, #d8b64f 0%, #b8962f 100%) !important;
+        margin: 40px -50px -70px !important;
+        border-radius: 0 !important;
+    }
+
+    .gl-page .benefit-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .gl-page .benefit-item span {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #0b1222 !important;
+        letter-spacing: 1px !important;
+    }
+
+    .gl-page .benefit-icon {
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.5em !important;
+    }
+
+    /* Audience grid */
+    .gl-page .audience-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .gl-page .audience-card {
+        background: rgba(216, 182, 79, 0.06) !important;
+        border: 1px solid rgba(216, 182, 79, 0.15) !important;
+        padding: 30px 20px !important;
+        border-radius: 12px !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+        border-bottom: 3px solid transparent !important;
+    }
+
+    .gl-page .audience-card:hover {
+        transform: translateY(-10px) !important;
+        border-bottom-color: #d8b64f !important;
+        box-shadow: 0 20px 40px rgba(216, 182, 79, 0.1) !important;
+        background: rgba(216, 182, 79, 0.1) !important;
+    }
+
+    .gl-page .audience-card strong {
+        display: block !important;
+        font-size: 1.1em !important;
+        color: #d8b64f !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gl-page .audience-card span {
+        font-size: 0.9em !important;
+        color: rgba(255,255,255,0.6) !important;
+    }
+
+    /* Header image */
+    .gl-page .header-image {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        border-radius: 0 !important;
+    }
+
+    .gl-page .header-image img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Personalization highlight */
+    .gl-page .personalize-highlight {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        background: linear-gradient(135deg, #d8b64f 0%, #b8962f 100%) !important;
+        color: #0b1222 !important;
+        padding: 20px 30px !important;
+        border-radius: 8px !important;
+        margin: 20px 0 !important;
+    }
+
+    .gl-page .personalize-highlight .big-text {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.8em !important;
+        line-height: 1 !important;
+        color: #0b1222 !important;
+    }
+
+    .gl-page .personalize-highlight .desc {
+        font-size: 0.95em !important;
+        max-width: 250px !important;
+        color: #0b1222 !important;
+    }
+
+    /* Upload info */
+    .gl-page .upload-info {
+        background: rgba(216, 182, 79, 0.08) !important;
+        border: 1px solid rgba(216, 182, 79, 0.2) !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        margin-top: 20px !important;
+    }
+
+    .gl-page .upload-info p {
+        margin: 10px 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    /* Comparison table */
+    .gl-page .comparison-wrap {
+        max-width: 700px !important;
+        margin: 40px auto 0 !important;
+    }
+
+    .gl-page .comparison-wrap table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+    }
+
+    .gl-page .comparison-wrap thead th {
+        background: rgba(216, 182, 79, 0.1) !important;
+        padding: 25px 15px !important;
+        text-align: center !important;
+        vertical-align: bottom !important;
+        border-bottom: 2px solid rgba(216, 182, 79, 0.3) !important;
+    }
+
+    .gl-page .comparison-wrap thead th h3 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.6em !important;
+        color: #ffffff !important;
+        margin: 10px 0 0 0 !important;
+        letter-spacing: 1px !important;
+    }
+
+    .gl-page .comparison-wrap thead th img {
+        max-width: 120px !important;
+        height: auto !important;
+    }
+
+    .gl-page .comparison-wrap tbody td {
+        padding: 15px 20px !important;
+        text-align: center !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        color: rgba(255,255,255,0.8) !important;
+        font-size: 0.95em !important;
+    }
+
+    .gl-page .comparison-wrap .td-head {
+        display: block !important;
+        font-size: 0.75em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: rgba(255,255,255,0.4) !important;
+        margin-bottom: 4px !important;
+    }
+
+    .gl-page .comparison-wrap .td-content {
+        font-weight: 600 !important;
+        color: #ffffff !important;
+    }
+
+    .gl-page .comparison-wrap .godlike-col {
+        background: rgba(216, 182, 79, 0.05) !important;
+    }
+
+    .gl-page .comparison-wrap .cta-row td {
+        padding: 25px 15px !important;
+        border-bottom: none !important;
+    }
+
+    .gl-page .gl-button {
+        display: inline-block !important;
+        background: linear-gradient(135deg, #d8b64f 0%, #b8962f 100%) !important;
+        color: #0b1222 !important;
+        font-family: 'Raleway', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 1em !important;
+        padding: 14px 32px !important;
+        border: none !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+
+    .gl-page .gl-button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(216, 182, 79, 0.3) !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .gl-page .gl-section {
+            padding: 50px 25px !important;
+        }
+
+        .gl-page h2 {
+            font-size: 2.5em !important;
+        }
+
+        .gl-page .hero-content {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .gl-page .hero-text,
+        .gl-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .gl-page .hero-image img {
+            max-width: 70% !important;
+        }
+
+        .gl-page .stats-bar {
+            flex-direction: column !important;
+            gap: 20px !important;
+        }
+
+        .gl-page .features-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .gl-page .benefits-strip {
+            flex-direction: column !important;
+            gap: 20px !important;
+            padding: 30px !important;
+            margin: 40px -25px -50px !important;
+        }
+
+        .gl-page .split-content {
+            flex-direction: column !important;
+        }
+
+        .gl-page .split-content .content-side,
+        .gl-page .split-content .image-side {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .gl-page .split-content .image-side::before {
+            display: none !important;
+        }
+
+        .gl-page .audience-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .gl-page .comparison-wrap thead th img {
+            max-width: 80px !important;
+        }
+
+        .gl-page .comparison-wrap thead th h3 {
+            font-size: 1.2em !important;
+        }
+    }
+</style>
+
+<div class="gl-page">
+    <div style="max-width: 980px !important; margin: 0 auto !important;">
+    <!-- Header image -->
+    <div class="header-image">
+        <img src="https://www.godlike.gg/wp-content/uploads/2025/10/vlastnhi-motiv-header-tumbler.png" alt="GODLIKE Luxury Tumbler – vlastní motiv" width="1250" height="650">
+    </div>
+
+    <!-- Hero -->
+    <section class="gl-section diagonal-bg bg-navy hero-gl">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="tagline">Unlock Your Full Potential</p>
+                <h2>Godlike <span class="highlight">Luxury Tumbler</span></h2>
+                <p>Exkluzivní cestovní <strong>hrnek GODLIKE Luxury Tumbler</strong> v limitované edici spojuje prémiový design s nekompromisní odolností. Laserem vypálené logo, ergonomická rukojeť a matný povrch pro pevný úchop – buď stylový, buď Godlike!</p>
+                <p>V nabídce máš také možnost mít <strong>hrnek s vlastní personalizací</strong>. Stačí kliknout na tlačítko "Přidat personalizaci" a vytvořit si na plátno cokoliv, co tě napadne.</p>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">1,18 l</div>
+                        <div class="stat-label">Objem</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7 h</div>
+                        <div class="stat-label">Teplý nápoj</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">11 h</div>
+                        <div class="stat-label">Studený nápoj</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3v1</div>
+                        <div class="stat-label">Víčko</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://www.godlike.gg/wp-content/uploads/2025/06/godlike-tumbler-520x520.png" alt="GODLIKE Luxury Tumbler" width="520" height="520">
+            </div>
+        </div>
+    </section>
+
+    <!-- Klíčové vlastnosti -->
+    <section class="gl-section diagonal-bg bg-dark">
+        <p class="tagline">Prémiová kvalita</p>
+        <h2>Klíčové <span class="highlight">vlastnosti</span></h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <strong>Objem 1,18 l</strong>
+                <span>Dostatek tekutin na celý den – ideální partner na výlety, do práce i do posilovny.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Špičková izolace</strong>
+                <span>Dvojitá vakuová stěna z ECO 18/8 nerezu. Nápoj zůstane teplý až 7 hodin a studený až 11 hodin.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Třípolohové víčko</strong>
+                <span>Možnost klasického napití, pití pomocí brčka nebo úplného uzavření. Jednoduché ovládání a maximální bezpečnost.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Matný povrch</strong>
+                <span>Příjemný na dotek, zajišťuje protiskluzový grip a vysokou odolnost vůči oděrkám.</span>
+            </div>
+            <div class="feature-card full-width">
+                <strong>Stejný jako originál – o pětikilo menší cena</strong>
+                <span>Tento hrnek se nijak neliší od klasických originálních tumblerů. Vlastnosti jsou totožné, logo je jiné, cena je o 500–600 Kč nižší.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Snadná údržba</strong>
+                <span>Plně omyvatelný v myčce. Žádné složité čištění ani speciální péče.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Kompatibilní s držáky</strong>
+                <span>Padne do běžných držáků v autě – praktické řešení pro dojíždění i víkendová dobrodružství.</span>
+            </div>
+        </div>
+
+        <div class="benefits-strip">
+            <div class="benefit-item">
+                <span class="benefit-icon">♨️</span>
+                <span>7h teplý nápoj</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">❄️</span>
+                <span>11h studený nápoj</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">✦</span>
+                <span>Laserové gravírování</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalizace -->
+    <section class="gl-section diagonal-bg bg-navy">
+        <div class="split-content">
+            <div class="content-side">
+                <p class="tagline">Vytvoř si svůj design</p>
+                <h2>Jak <span class="highlight">personalizovat?</span></h2>
+                <p>Personalizace je jednoduchá a intuitivní. Stačí kliknout na tlačítko <strong>"Přidat personalizaci"</strong> a vytvořit si na plátno cokoliv, co tě napadne. Jméno, text, ikonky, kresbu. Cokoliv.</p>
+
+                <div class="personalize-highlight">
+                    <span class="big-text">3 režimy</span>
+                    <span class="desc">Text, ikony a kreslení – vše v jednom editoru</span>
+                </div>
+
+                <p>Se záložkou <strong>"Text"</strong> si napíšeš text a přidáš ho na plátno. Můžeš měnit velikost, pozici, font, tučnost i kurzívu. V záložce <strong>"Ikony"</strong> vybíráš z předpřipravených motivů. A v záložce <strong>"Kreslení"</strong> stačí zapnout a čmárat.</p>
+            </div>
+            <div class="image-side">
+                <img src="https://www.godlike.gg/wp-content/uploads/2025/10/tumble-produktovka.png" alt="GODLIKE Tumbler personalizace" width="520" height="520">
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload vlastní grafiky -->
+    <section class="gl-section diagonal-bg bg-dark">
+        <p class="tagline">Vlastní grafika</p>
+        <h2>Nahraj si <span class="highlight">vlastní logo</span></h2>
+        <p>Máš možnost <strong>nahrát si i vlastní ikony (grafiku) ve formátech JPG, PNG a SVG do 1 MB.</strong></p>
+
+        <div class="upload-info">
+            <p>Pokud se budeš pokoušet přidávat barevné obrázky, tak vše, co nemá v obrázku <strong>bílou barvu</strong>, bude <strong>převedeno do černé</strong>. A mysli na to, že to, co je černé, to se gravíruje.</p>
+            <p>Grafiku tedy přidávej <strong>černou</strong> (například černé logo) na <strong>bílém nebo transparentním pozadí</strong>.</p>
+            <p>Gravírování je proces, při kterém se to, co je na plátně černé, vypálí laserem do hrnku. Pracujeme pouze s <strong>černou</strong> (gravíruje se) a <strong>bílou</strong> (negravíruje se) barvou.</p>
+        </div>
+    </section>
+
+    <!-- Proč si ho zamiluješ -->
+    <section class="gl-section diagonal-bg bg-gold-subtle">
+        <p class="tagline">Navrženo pro tebe</p>
+        <h2>Proč si ho <span class="highlight">zamiluješ?</span></h2>
+
+        <div class="audience-grid">
+            <div class="audience-card">
+                <strong>Unikátní design</strong>
+                <span>Zaujme každého kolegu i přátele. Buď originální.</span>
+            </div>
+            <div class="audience-card">
+                <strong>Prémiová kvalita</strong>
+                <span>Za skvělou cenu – o stovky korun levnější než originální tumblery.</span>
+            </div>
+            <div class="audience-card">
+                <strong>Eco-friendly nerez</strong>
+                <span>Zdravotně nezávadná a recyklovatelná ECO 18/8 nerezová ocel.</span>
+            </div>
+            <div class="audience-card">
+                <strong>Horké i ledové</strong>
+                <span>Společník na cesty po celý rok – v létě i v zimě.</span>
+            </div>
+            <div class="audience-card">
+                <strong>Vlastní personalizace</strong>
+                <span>Vytvoř si svůj motiv – text, ikony nebo vlastní grafiku.</span>
+            </div>
+            <div class="audience-card">
+                <strong>Svislý přenos</strong>
+                <span>Naplněný hrnek je určený pro přenos ve svislé poloze.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Srovnání -->
+    <section class="gl-section diagonal-bg bg-navy">
+        <p class="tagline">Porovnání</p>
+        <h2>Godlike vs. <span class="highlight">Original</span></h2>
+        <p style="text-align: center !important; max-width: 600px !important; margin: 0 auto 10px !important;">Stejná kvalita, stejné vlastnosti, jiná cena. Podívej se na srovnání.</p>
+
+        <div class="comparison-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="godlike-col">
+                            <img src="https://www.godlike.gg/wp-content/uploads/2025/06/godlike-tumbler.png" alt="Godlike Luxury Tumbler">
+                            <h3>Godlike Tumbler</h3>
+                        </th>
+                        <th>
+                            <img src="https://www.godlike.gg/wp-content/uploads/2025/06/original-tumbler.png" alt="Original Tumbler">
+                            <h3>Original Tumbler</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">Materiál</span> <span class="td-content">Nerez, plast</span></td>
+                        <td><span class="td-head">Materiál</span> <span class="td-content">Nerez, plast</span></td>
+                    </tr>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">Objem</span> <span class="td-content">1 180 ml</span></td>
+                        <td><span class="td-head">Objem</span> <span class="td-content">1 180 ml</span></td>
+                    </tr>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">Hmotnost</span> <span class="td-content">650 gramů</span></td>
+                        <td><span class="td-head">Hmotnost</span> <span class="td-content">650 gramů</span></td>
+                    </tr>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">BPA Free</span> <span class="td-content">ANO</span></td>
+                        <td><span class="td-head">BPA Free</span> <span class="td-content">ANO</span></td>
+                    </tr>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">Design</span> <span class="td-content">Čistý a ergonomický</span></td>
+                        <td><span class="td-head">Design</span> <span class="td-content">Čistý a ergonomický</span></td>
+                    </tr>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">Personalizace?</span> <span class="td-content" style="color: #d8b64f !important;">ANO</span></td>
+                        <td><span class="td-head">Personalizace?</span> <span class="td-content">NE</span></td>
+                    </tr>
+                    <tr>
+                        <td class="godlike-col"><span class="td-head">Cena</span> <span class="td-content" style="color: #d8b64f !important; font-size: 1.2em !important;">699 Kč</span></td>
+                        <td><span class="td-head">Cena</span> <span class="td-content">1 299 Kč</span></td>
+                    </tr>
+                    <tr class="cta-row">
+                        <td class="godlike-col"><a class="gl-button" href="#" id="chci-godlike-tumbler">Chci Godlike Tumbler</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    </div>
+</div>

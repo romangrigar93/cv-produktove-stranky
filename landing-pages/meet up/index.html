@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet-Up | Team Progressive Coaches × Czech Virus®</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        .cvmeet-wrapper {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .cvmeet-wrapper * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section */
+        .cvmeet-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding-top: 0;
+        }
+
+        .cvmeet-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(227,30,36,0.1) 0%, transparent 70%);
+            animation: cvmeet-pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes cvmeet-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .cvmeet-hero-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            padding: 20px 20px 40px;
+            margin-top: -40vh;
+        }
+
+        .cvmeet-hero-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .cvmeet-hero-logo {
+            width: 150px;
+            height: auto;
+            opacity: 0;
+            filter: drop-shadow(0 0 30px rgba(227,30,36,0.6));
+            animation: cvmeet-logoFloat 1s ease forwards, cvmeet-float 4s ease-in-out infinite;
+            animation-delay: 0s, 1s;
+        }
+
+        .cvmeet-hero-logo-tp {
+            width: 200px;
+            height: auto;
+            opacity: 0;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+            animation: cvmeet-logoFloat 1s ease 0.3s forwards, cvmeet-float 4s ease-in-out infinite;
+            animation-delay: 0.3s, 1.3s;
+        }
+
+        .cvmeet-logo-divider {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: #e31e24;
+            opacity: 0;
+            animation: cvmeet-fadeIn 1s ease 0.5s forwards;
+        }
+
+        @keyframes cvmeet-logoFloat {
+            0% { opacity: 0; transform: translateY(-50px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes cvmeet-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes cvmeet-fadeIn {
+            to { opacity: 1; }
+        }
+
+        .cvmeet-hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: cvmeet-fadeInUp 1s ease 0.5s forwards;
+            line-height: 1;
+        }
+
+        .cvmeet-hero-title .cvmeet-highlight {
+            color: #e31e24;
+        }
+
+        .cvmeet-hero-subtitle {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            letter-spacing: 6px;
+            color: #e31e24;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: cvmeet-fadeInUp 1s ease 0.7s forwards;
+            text-transform: uppercase;
+        }
+
+        .cvmeet-hero-tagline {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: cvmeet-fadeInUp 1s ease 0.9s forwards;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .cvmeet-hero-date {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: cvmeet-fadeInUp 1s ease 1.1s forwards;
+        }
+
+        .cvmeet-hero-location {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: cvmeet-fadeInUp 1s ease 1.3s forwards;
+        }
+
+        .cvmeet-cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            background: #e31e24;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: cvmeet-fadeInUp 1s ease 1.5s forwards;
+        }
+
+        .cvmeet-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(227,30,36,0.4);
+            background: #c41a1f;
+        }
+
+        .cvmeet-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: cvmeet-fadeIn 1s ease 1.8s forwards, cvmeet-bounce 2s ease infinite;
+        }
+
+        .cvmeet-scroll-indicator svg {
+            width: 30px;
+            height: 50px;
+            stroke: #e31e24;
+        }
+
+        @keyframes cvmeet-fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes cvmeet-bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Stats Section */
+        .cvmeet-stats-section {
+            background: #0a0a0a;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cvmeet-stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .cvmeet-stat-item {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cvmeet-stat-item.cvmeet-animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .cvmeet-stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: #e31e24;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .cvmeet-stat-label {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Section Styling */
+        .cvmeet-section {
+            padding: 100px 20px;
+            position: relative;
+            z-index: 2;
+            background: #000;
+        }
+
+        .cvmeet-section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .cvmeet-section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Program Section */
+        .cvmeet-program-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+        }
+
+        .cvmeet-program-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .cvmeet-program-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 30px;
+            padding: 35px 30px;
+            border-left: 3px solid rgba(227,30,36,0.2);
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .cvmeet-program-item.cvmeet-animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .cvmeet-program-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 42px;
+            width: 13px;
+            height: 13px;
+            background: #e31e24;
+            border-radius: 50%;
+            border: 3px solid #000;
+        }
+
+        .cvmeet-program-item:hover {
+            border-left-color: #e31e24;
+            background: rgba(227,30,36,0.05);
+        }
+
+        .cvmeet-program-time {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: #e31e24;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .cvmeet-program-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .cvmeet-program-content p {
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Speakers Section */
+        .cvmeet-speakers-section {
+            background: linear-gradient(135deg, #e31e24 0%, #c41a1f 100%);
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cvmeet-speakers-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L100 100M100 0L0 100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cvmeet-speakers-section .cvmeet-section-title {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cvmeet-speakers-section .cvmeet-section-subtitle {
+            position: relative;
+            z-index: 1;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .cvmeet-speakers-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cvmeet-speaker-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.5s ease;
+        }
+
+        .cvmeet-speaker-card.cvmeet-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cvmeet-speaker-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .cvmeet-speaker-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .cvmeet-speaker-topic {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Team / Kdo tam bude Section */
+        .cvmeet-team-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            padding: 120px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cvmeet-team-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .cvmeet-team-member {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.5s ease;
+        }
+
+        .cvmeet-team-member.cvmeet-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cvmeet-team-member:hover {
+            transform: translateY(-8px);
+        }
+
+        .cvmeet-team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid rgba(227,30,36,0.5);
+            transition: all 0.4s ease;
+            filter: grayscale(20%);
+        }
+
+        .cvmeet-team-member:hover .cvmeet-team-photo {
+            border-color: #e31e24;
+            box-shadow: 0 0 30px rgba(227,30,36,0.4);
+            filter: grayscale(0%);
+        }
+
+        .cvmeet-team-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+
+        /* Poster Section */
+        .cvmeet-poster-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: #0a0a0a;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cvmeet-poster-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .cvmeet-poster-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        .cvmeet-poster-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(227,30,36,0.2);
+            transition: box-shadow 0.4s ease;
+        }
+
+        .cvmeet-poster-wrapper:hover img {
+            box-shadow: 0 30px 80px rgba(227,30,36,0.35);
+        }
+
+        .cvmeet-poster-hint {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Poster Lightbox */
+        .cvmeet-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+            padding: 40px;
+        }
+
+        .cvmeet-lightbox.cvmeet-active {
+            display: flex;
+        }
+
+        .cvmeet-lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            animation: cvmeet-lightbox-in 0.3s ease;
+        }
+
+        .cvmeet-lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            font-family: sans-serif;
+            line-height: 1;
+        }
+
+        .cvmeet-lightbox-close:hover {
+            color: #e31e24;
+        }
+
+        @keyframes cvmeet-lightbox-in {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* CTA / Registration Section */
+        .cvmeet-cta-section {
+            padding: 150px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cvmeet-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(227,30,36,0.15) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: cvmeet-rotate 20s linear infinite;
+        }
+
+        @keyframes cvmeet-rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .cvmeet-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cvmeet-cta-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .cvmeet-cta-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            color: #e31e24;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .cvmeet-cta-text {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 15px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cvmeet-cta-note {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .cvmeet-cta-btn-large {
+            display: inline-block;
+            padding: 22px 60px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            background: #e31e24;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+        }
+
+        .cvmeet-cta-btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(227,30,36,0.5);
+            background: #c41a1f;
+        }
+
+        /* Included Section */
+        .cvmeet-included-section {
+            background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+            padding: 120px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cvmeet-included-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .cvmeet-included-item {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .cvmeet-included-item.cvmeet-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cvmeet-included-item:hover {
+            border-color: rgba(227,30,36,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(227,30,36,0.15);
+        }
+
+        .cvmeet-included-icon {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .cvmeet-included-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin: 0 auto 18px;
+            display: block;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+            transition: transform 0.4s ease;
+        }
+
+        .cvmeet-included-item:hover .cvmeet-included-img {
+            transform: scale(1.1);
+        }
+
+        .cvmeet-included-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .cvmeet-included-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+
+        .cvmeet-included-badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 4px 14px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(227,30,36,0.15);
+            color: #e31e24;
+            border-radius: 20px;
+            border: 1px solid rgba(227,30,36,0.3);
+        }
+
+        /* Desktop padding */
+        @media (min-width: 1024px) {
+            .cvmeet-hero-content { padding: 0 60px; }
+            .cvmeet-section { padding: 100px 0; }
+            .cvmeet-section-title,
+            .cvmeet-section-subtitle { padding: 0 60px; }
+            .cvmeet-stats-grid { padding: 0 60px; }
+            .cvmeet-program-grid { padding: 0 60px; }
+            .cvmeet-speakers-grid { padding: 0 60px; }
+            .cvmeet-team-grid { padding: 0 60px; }
+            .cvmeet-cta-content { padding: 0 60px; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cvmeet-hero-content { margin-top: -40vh; padding: 15px 15px 30px; }
+            .cvmeet-hero-logos { margin-bottom: 20px; gap: 15px; }
+            .cvmeet-hero-logo { width: 80px; }
+            .cvmeet-hero-logo-tp { width: 120px; }
+            .cvmeet-logo-divider { font-size: 1.5rem; }
+            .cvmeet-hero-title { letter-spacing: 4px; margin-bottom: 5px; }
+            .cvmeet-hero-subtitle { margin-bottom: 8px; letter-spacing: 3px; }
+            .cvmeet-hero-tagline { margin-bottom: 15px; letter-spacing: 1px; }
+            .cvmeet-hero-date { margin-bottom: 5px; }
+            .cvmeet-hero-location { margin-bottom: 20px; }
+            .cvmeet-cta-btn { padding: 14px 40px; font-size: 1.2rem; }
+            .cvmeet-scroll-indicator { bottom: 15px; }
+            .cvmeet-speakers-grid { grid-template-columns: 1fr; }
+            .cvmeet-team-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .cvmeet-team-photo { width: 140px; height: 140px; }
+            .cvmeet-program-item { grid-template-columns: 1fr; gap: 8px; }
+            .cvmeet-section { padding: 60px 20px; }
+            .cvmeet-speakers-section { padding: 80px 20px; }
+            .cvmeet-team-section { padding: 80px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .cvmeet-hero-content { margin-top: -40vh; padding: 10px 10px 20px; }
+            .cvmeet-hero-logos { margin-bottom: 15px; gap: 10px; }
+            .cvmeet-hero-logo { width: 65px; }
+            .cvmeet-hero-logo-tp { width: 100px; }
+            .cvmeet-logo-divider { font-size: 1.2rem; }
+            .cvmeet-hero-subtitle { margin-bottom: 5px; letter-spacing: 2px; }
+            .cvmeet-hero-tagline { margin-bottom: 10px; }
+            .cvmeet-hero-date { margin-bottom: 3px; }
+            .cvmeet-hero-location { margin-bottom: 15px; }
+            .cvmeet-cta-btn { padding: 12px 35px; font-size: 1.1rem; }
+            .cvmeet-scroll-indicator { bottom: 10px; }
+            .cvmeet-scroll-indicator svg { width: 22px; height: 38px; }
+            .cvmeet-team-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .cvmeet-team-photo { width: 110px; height: 110px; }
+            .cvmeet-team-name { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cvmeet-wrapper">
+        <!-- Hero Section -->
+        <section class="cvmeet-hero">
+            <div class="cvmeet-hero-content">
+                <div class="cvmeet-hero-logos">
+                    <img src="$USER-CONTENT/landing-pages/meet up/cv-logo.png" alt="Czech Virus Logo" class="cvmeet-hero-logo">
+                    <span class="cvmeet-logo-divider">&times;</span>
+                    <img src="$USER-CONTENT/landing-pages/meet up/logo_team_progressive.svg" alt="Team Progressive Coaches" class="cvmeet-hero-logo-tp">
+                </div>
+                <h1 class="cvmeet-hero-title">MEET<span class="cvmeet-highlight">-</span>UP</h1>
+                <p class="cvmeet-hero-subtitle">Team Progressive Coaches × Czech Virus®</p>
+                <p class="cvmeet-hero-tagline">Vzdělávací meet-up pro atlety a trenéry</p>
+                <div class="cvmeet-hero-date">15. BŘEZNA 2026 &bull; NEDĚLE</div>
+                <p class="cvmeet-hero-location">Czech Virus Gym &bull; Kubíčkova 6, 635 00 Brno-Bystrc</p>
+                <a href="https://www.instagram.com/czechvirusgym/" target="_blank" class="cvmeet-cta-btn">REGISTROVAT SE</a>
+            </div>
+            <div class="cvmeet-scroll-indicator">
+                <svg viewBox="0 0 30 50" fill="none">
+                    <rect x="1" y="1" width="28" height="48" rx="14" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="15" cy="12" r="4" fill="currentColor">
+                        <animate attributeName="cy" from="12" to="36" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="cvmeet-stats-section">
+            <div class="cvmeet-stats-grid">
+                <div class="cvmeet-stat-item">
+                    <div class="cvmeet-stat-number">5h</div>
+                    <div class="cvmeet-stat-label">Program</div>
+                </div>
+                <div class="cvmeet-stat-item">
+                    <div class="cvmeet-stat-number">4</div>
+                    <div class="cvmeet-stat-label">Přednášející</div>
+                </div>
+                <div class="cvmeet-stat-item">
+                    <div class="cvmeet-stat-number">499,-</div>
+                    <div class="cvmeet-stat-label">Cena vstupu</div>
+                </div>
+                <div class="cvmeet-stat-item">
+                    <div class="cvmeet-stat-number">CV Gym</div>
+                    <div class="cvmeet-stat-label">Brno-Bystrc</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Section -->
+        <section class="cvmeet-section cvmeet-program-section" id="program">
+            <h2 class="cvmeet-section-title">PROGRAM DNE</h2>
+            <p class="cvmeet-section-subtitle">Celý den nabitý přednáškami, tréninkem pod vedením profesionálů a individuálními konzultacemi</p>
+
+            <div class="cvmeet-program-grid">
+                <div class="cvmeet-program-item">
+                    <div class="cvmeet-program-time">12:00</div>
+                    <div class="cvmeet-program-content">
+                        <h3>Začátek akce</h3>
+                        <p>Uvítání a představení programu</p>
+                    </div>
+                </div>
+
+                <div class="cvmeet-program-item">
+                    <div class="cvmeet-program-time">12:10 – 13:30</div>
+                    <div class="cvmeet-program-content">
+                        <h3>Přednášky trenérů</h3>
+                        <p>Odborné přednášky od trenérů Team Progressive na témata výživy, monitoringu zdraví, prevence zranění a plánování tréninku</p>
+                    </div>
+                </div>
+
+                <div class="cvmeet-program-item">
+                    <div class="cvmeet-program-time">13:45 – 15:45</div>
+                    <div class="cvmeet-program-content">
+                        <h3>Trénink pod vedením trenérů Progressive</h3>
+                        <p>Společný trénink pod dohledem profesionálních trenérů s individuálním přístupem</p>
+                    </div>
+                </div>
+
+                <div class="cvmeet-program-item">
+                    <div class="cvmeet-program-time">16:00 – 17:00</div>
+                    <div class="cvmeet-program-content">
+                        <h3>Pozing lekce, konzultace &amp; otázky</h3>
+                        <p>Individuální konzultace, lekce pozingu a prostor pro vaše otázky</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section class="cvmeet-speakers-section" id="prednasky">
+            <h2 class="cvmeet-section-title">PŘEDNÁŠKY</h2>
+            <p class="cvmeet-section-subtitle">Odborníci z Team Progressive vám předají cenné znalosti z praxe</p>
+
+            <div class="cvmeet-speakers-grid">
+                <div class="cvmeet-speaker-card">
+                    <div class="cvmeet-speaker-name">Artur Bartusik</div>
+                    <p class="cvmeet-speaker-topic">Odborník na trávicí trakt a stravu vám přiblíží základy správné výživy a fungování trávicího systému.</p>
+                </div>
+
+                <div class="cvmeet-speaker-card">
+                    <div class="cvmeet-speaker-name">David Procházka</div>
+                    <p class="cvmeet-speaker-topic">Důležitost monitoringu zdraví na týdenní, měsíční a roční bázi. Jak efektivně sledovat své zdravotní ukazatele.</p>
+                </div>
+
+                <div class="cvmeet-speaker-card">
+                    <div class="cvmeet-speaker-name">Pavel Beran</div>
+                    <p class="cvmeet-speaker-topic">Důležitost rozcvičky a práce s pojivovými tkáněmi v rámci prevence zranění. Jak se správně připravit na trénink.</p>
+                </div>
+
+                <div class="cvmeet-speaker-card">
+                    <div class="cvmeet-speaker-name">Daniel Švach</div>
+                    <p class="cvmeet-speaker-topic">Jak si nejvhodněji strukturovat tréninkový plán na míru. Principy individualizace tréninku pro maximální výsledky.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section - S kým se setkáš? -->
+        <section class="cvmeet-team-section" id="tym">
+            <h2 class="cvmeet-section-title">S KÝM SE SETKÁŠ?</h2>
+            <p class="cvmeet-section-subtitle">Poznej tváře Team Progressive Coaches osobně. Zacvič si s nimi a získej cenné tipy do svého tréninku.</p>
+
+            <div class="cvmeet-team-grid">
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/daniel_svach.jpg" alt="Daniel Švach" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Daniel Švach</div>
+                </div>                
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/artur_bartusik.jpg" alt="Artus Bartusik" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Artur Bartusik</div>
+                </div>
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/david_prochazka.jpg" alt="David Procházka" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">David Procházka</div>
+                </div>
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/pavel_beran.jpg" alt="Pavel Beran" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Pavel Beran</div>
+                </div>
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/daniel_brom.jpg" alt="Daniel Brom" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Daniel Brom</div>
+                </div>
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/jakub_zelezny.jpg" alt="Jakub Železňák" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Jakub Železňák</div>
+                </div>
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/jana_pavlovicova.jpg" alt="Jana Pavlovičová" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Jana Pavlovičová</div>
+                </div>
+                <div class="cvmeet-team-member">
+                    <img src="$USER-CONTENT/landing-pages/meet up/lukas_furle.jpg" alt="Lukáš Furle" class="cvmeet-team-photo">
+                    <div class="cvmeet-team-name">Lukáš Fürle</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poster Section -->
+        <section class="cvmeet-poster-section" id="plakat">
+            <h2 class="cvmeet-section-title">PLAKÁT AKCE</h2>
+            <div class="cvmeet-poster-wrapper" onclick="document.getElementById('cvmeetLightbox').classList.add('cvmeet-active')">
+                <img src="$USER-CONTENT/landing-pages/meet up/plakat_meet_up.jpg" alt="Meet-Up Plakát">
+                <div class="cvmeet-poster-hint">Klikni pro zvětšení</div>
+            </div>
+        </section>
+
+        <!-- Lightbox for poster -->
+        <div class="cvmeet-lightbox" id="cvmeetLightbox" onclick="this.classList.remove('cvmeet-active')">
+            <button class="cvmeet-lightbox-close" onclick="event.stopPropagation(); document.getElementById('cvmeetLightbox').classList.remove('cvmeet-active')">&times;</button>
+            <img src="$USER-CONTENT/landing-pages/meet up/plakat_meet_up.jpg" alt="Meet-Up Plakát">
+        </div>
+
+        <!-- What's Included Section -->
+        <section class="cvmeet-section cvmeet-included-section" id="vcene">
+            <h2 class="cvmeet-section-title">V CENĚ ZAHRNUTO</h2>
+            <p class="cvmeet-section-subtitle">Za vstupné 499,- Kč získáš nejen vzdělávací program, ale i dárky přímo od Czech Virus</p>
+
+            <div class="cvmeet-included-grid">
+                <div class="cvmeet-included-item">
+                    <img src="$USER-CONTENT/landing-pages/meet up/czech-virus-gym.png" alt="Czech Virus Gym" class="cvmeet-included-img">
+                    <div class="cvmeet-included-label">Vstup na akci</div>
+                    <div class="cvmeet-included-desc">Vstup do do CV Gym, kde bude událost probíhat.</div>
+                    <span class="cvmeet-included-badge">Czech Virus Gym</span>
+                </div>
+                <div class="cvmeet-included-item">
+                    <img src="$USER-CONTENT/landing-pages/meet up/beast-virus_jablko.png" alt="Beast Virus Předtréninkovka" class="cvmeet-included-img">
+                    <div class="cvmeet-included-label">Předtréninkovka</div>
+                    <div class="cvmeet-included-desc">Nakopneš se dávkou Beast Virus.</div>
+                    <span class="cvmeet-included-badge">Czech Virus</span>
+                </div>
+                <div class="cvmeet-included-item">
+                    <img src="$USER-CONTENT/landing-pages/meet up/pure-elite-1kg_vanilka.png" alt="Pure Elite Protein" class="cvmeet-included-img">
+                    <div class="cvmeet-included-label">Protein</div>
+                    <div class="cvmeet-included-desc">Kvalitní protein pro doplnění bílkovin.</div>
+                    <span class="cvmeet-included-badge">Czech Virus</span>
+                </div>
+                <div class="cvmeet-included-item">
+                    <img src="$USER-CONTENT/landing-pages/meet up/sport-bag.png" alt="Czech Virus Gym Bag" class="cvmeet-included-img">
+                    <div class="cvmeet-included-label">Gym Bag</div>
+                    <div class="cvmeet-included-desc">Aby sis měl do čeho dát své věci.</div>
+                    <span class="cvmeet-included-badge">Czech Virus</span>
+                </div>
+                <div class="cvmeet-included-item">
+                    <img src="$USER-CONTENT/landing-pages/meet up/czech-virus-shaker.png" alt="Czech Virus Shaker" class="cvmeet-included-img">
+                    <div class="cvmeet-included-label">Shaker se vzorky</div>
+                    <div class="cvmeet-included-desc">Vzpomínka na akci s Czech Virus.</div>
+                    <span class="cvmeet-included-badge">Czech Virus</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Registration -->
+        <section class="cvmeet-cta-section">
+            <div class="cvmeet-cta-content">
+                <h2 class="cvmeet-cta-title">PŘIDEJ SE K NÁM</h2>
+                <div class="cvmeet-cta-price">499,- KČ</div>
+                <p class="cvmeet-cta-text">
+                    Kapacita je omezená. Neváhej a zajisti si své místo na vzdělávacím meet-upu s Team Progressive Coaches.
+                </p>
+                <a href="https://www.instagram.com/czechvirusgym/" target="_blank" class="cvmeet-cta-btn-large">REGISTROVAT SE</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const cvmeetObserverOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const cvmeetObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('cvmeet-animate');
+                    }, index * 100);
+                }
+            });
+        }, cvmeetObserverOptions);
+
+        // Observe stat items
+        document.querySelectorAll('.cvmeet-stat-item').forEach((item, index) => {
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('cvmeet-animate');
+                        }, index * 150);
+                    }
+                });
+            }, cvmeetObserverOptions);
+            statObserver.observe(item);
+        });
+
+        // Observe program items
+        document.querySelectorAll('.cvmeet-program-item').forEach((item, index) => {
+            const progObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('cvmeet-animate');
+                        }, index * 200);
+                    }
+                });
+            }, cvmeetObserverOptions);
+            progObserver.observe(item);
+        });
+
+        // Observe speaker cards
+        document.querySelectorAll('.cvmeet-speaker-card').forEach((card, index) => {
+            const speakerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('cvmeet-animate');
+                        }, index * 150);
+                    }
+                });
+            }, cvmeetObserverOptions);
+            speakerObserver.observe(card);
+        });
+
+        // Observe team members
+        document.querySelectorAll('.cvmeet-team-member').forEach((member, index) => {
+            const teamObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('cvmeet-animate');
+                        }, index * 100);
+                    }
+                });
+            }, cvmeetObserverOptions);
+            teamObserver.observe(member);
+        });
+
+        // Observe included items
+        document.querySelectorAll('.cvmeet-included-item').forEach((item, index) => {
+            const inclObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('cvmeet-animate');
+                        }, index * 120);
+                    }
+                });
+            }, cvmeetObserverOptions);
+            inclObserver.observe(item);
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('.cvmeet-wrapper a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.cvmeet-hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('cvmeetLightbox').classList.remove('cvmeet-active');
+            }
+        });
+    </script>
+</body>
+</html>

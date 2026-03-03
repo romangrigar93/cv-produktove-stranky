@@ -1,0 +1,174 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SuperMinerals PRO - prezentace</title>
+<style>
+  :root{--bg:#111;--fg:#fff;--accent:#64d7fe}
+  html,body{height:100%;margin:0;font-family:Inter, Roboto, Arial, sans-serif;background:var(--bg);color:var(--fg)}
+  /* Carousel */
+  .carousel{height:100vh;display:flex;overflow-x:auto;scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+  .carousel::-webkit-scrollbar{display:none}
+  .slide{min-width:100%;height:100vh;box-sizing:border-box;scroll-snap-align:center;display:flex;flex-direction:column;justify-content:space-between;padding:32px}
+  .card{max-width:1100px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:18px}
+  .heading-product h2{margin:0;font-size:clamp(22px,3.5vw,40px);text-transform:uppercase;letter-spacing:0.06em}
+  .zvyrazneni{color:var(--accent)}
+  .text-product{font-size:clamp(15px,1.6vw,18px);line-height:1.45}
+  .card img{width:100%;height:auto;border-radius:12px;object-fit:cover}
+  .transparent-button{background:transparent;border-radius:12px;padding:10px 18px;border:2px solid rgba(255,255,255,0.9);color:inherit;cursor:pointer}
+  .container-benefity-foto{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .icons-text{flex:1;display:flex;flex-direction:column;gap:12px}
+  .icons-text .icon-item{display:flex;align-items:center;gap:12px}
+  .icons-text img{width:56px;height:56px}
+  .photo{flex:1}
+  /* slide color variants (kept from původního stylu) */
+  #c-p-2{background:linear-gradient(180deg,#4860a9,#a94884)}
+  #c-p-3{background:linear-gradient(180deg,#632e5a,#1119a4)}
+  #c-p-4{background:linear-gradient(180deg,#5d0085,#8d659b)}
+  #c-p-5{background:linear-gradient(180deg,#622b47,#8d3f68)}
+  #c-p-7{background:linear-gradient(180deg,#383469,#645f7b)}
+  /* light slide example */
+  .light{background:linear-gradient(180deg,#f8f8f8,#d4d4d4);color:#111}
+
+  /* controls */
+  .controls{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:10px;z-index:40}
+  .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.4);border:none}
+  .dot.active{background:rgba(255,255,255,0.95)}
+  .nav-btn{position:fixed;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.3);border:none;color:white;padding:10px;border-radius:8px;cursor:pointer}
+  .nav-btn.left{left:12px}
+  .nav-btn.right{right:12px}
+
+  /* responsive tweaks */
+  @media (min-width:900px){.card{flex-direction:row;align-items:center}.text-product{flex:1}.photo img{max-width:420px}}
+  @media (max-width:600px){.card{padding:8px}.heading-product h2{font-size:20px}}
+
+  /* prevent text selection while dragging */
+  .no-select{user-select:none;-webkit-user-select:none}
+
+  /* accessibility focus */
+  .nav-btn:focus,.dot:focus{outline:2px solid var(--accent)}
+</style>
+
+<!-- Carousel container: upraveno pro swipe -->
+<div id="carousel" class="carousel no-select" role="region" aria-label="Produktový carousel">
+
+  <section id="c-p-4" class="slide" aria-roledescription="slide">
+    <div class="card">
+      <div class="heading-product">
+        <h2>Super <span class="zvyrazneni">Minerals</span> PRO</h2>
+      </div>
+      <div class="text-product">
+        <p>Vyvážený komplex minerálů a elektrolytů pro každodenní energii, rovnováhu a správné fungování organismu. To je SuperMinerals PRO – moderní multiminerální formule s hořčíkem, draslíkem, vápníkem, zinkem, mědí a Aquaminem® – přírodním zdrojem 72 stopových prvků.</p>
+        <p>Tekutá forma zajišťuje rychlé vstřebání a jednoduché dávkování. Podporuje energii, hydrataci, nervový systém, svalovou činnost i imunitu.</p>
+      </div>
+      <div class="photo"><img src="superminerals-pro-uvodni.png" alt="Super Minerals Pro"></div>
+    </div>
+  </section>
+
+  <section id="c-p-5" class="slide">
+    <div class="card">
+      <div class="heading-product"><h2>Co dělá <span class="zvyrazneni">SuperMinerals PRO výjimečným?</span></h2></div>
+      <div class="text-product"><h3>Vyvážený komplex pro každodenní rovnováhu</h3><p>SuperMinerals PRO je moderní multiminerální formule kombinující <strong>klíčové minerály a elektrolyty</strong> v dobře vstřebatelných formách. Spojuje hořčík, draslík, vápník, zinek, měď a Aquamin® – přírodní komplex 72 stopových prvků – aby podpořil energii, hydrataci, nervový systém, svalovou činnost i imunitu v jedné denní dávce.</p></div>
+      <div class="photo"><img src="superminerals-pro-pink.png" alt="SuperMinerals příchuť"></div>
+    </div>
+  </section>
+
+  <section id="c-p-2" class="slide">
+    <div class="card">
+      <div class="heading-product"><h2>Proč si vybrat <span class="zvyrazneni">SuperMinerals PRO?</span></h2></div>
+      <div class="text-product"><ul><li>Moderní multiminerální formule s hořčíkem, draslíkem, vápníkem, zinkem, mědí a Aquaminem®.</li><li>Tekutá forma pro rychlé vstřebání, přesné a jednoduché dávkování.</li><li>Podpora energie, hydratace, nervové soustavy a správné činnosti svalů.</li></ul></div>
+      <div class="photo"><img src="superminerals_blueberry.png" alt="Produkt foto"></div>
+    </div>
+  </section>
+
+  <section id="c-p-3" class="slide">
+    <div class="card">
+      <div class="heading-product"><h2>Klíčové složky <span class="zvyrazneni">a jejich přínosy</span></h2></div>
+      <div class="text-product"><ul><li><strong>Hořčík</strong> – přispívá ke snížení míry únavy a vyčerpání, k normální činnosti svalů a správné funkci nervové soustavy.</li><li><strong>Zinek</strong> – podporuje imunitní systém a ochranu buněk.</li></ul></div>
+      <div class="photo"><img src="klicove-slozky.png" alt="Klíčové složky"></div>
+    </div>
+  </section>
+
+  <section id="c-p-7" class="slide">
+    <div class="card">
+      <div class="heading-product"><h2>Jednoduché dávkování <span class="zvyrazneni">pro každý den</span></h2></div>
+      <div class="text-product"><h3>Doporučená příprava</h3><ul><li>Standardní dávkování: 12,5 ml kdykoliv během dne.</li><li>Profi dávkování: 25 ml denně (max).</li></ul></div>
+      <div class="photo"><img src="vyvojar-produktu-patrik-zaruba-super-minerals.png" alt="Dávkování obrazek"></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Controls -->
+<button class="nav-btn left" id="prevBtn" aria-label="Předchozí">◀</button>
+<button class="nav-btn right" id="nextBtn" aria-label="Další">▶</button>
+<div class="controls" id="dots" role="tablist" aria-label="Navigace slajdů"></div>
+
+<script>
+  // základní swipe / drag + snap funkce
+  const carousel = document.getElementById('carousel');
+  const slides = Array.from(carousel.querySelectorAll('.slide'));
+  const dotsContainer = document.getElementById('dots');
+  let isDown = false, startX, scrollStart;
+
+  // vytvořit pagination dots
+  slides.forEach((s,i)=>{
+    const d=document.createElement('button');d.className='dot';d.setAttribute('aria-label',`Slide ${i+1}`);d.onclick=()=>scrollToIndex(i);
+    dotsContainer.appendChild(d);
+  });
+
+  const dots = Array.from(dotsContainer.children);
+
+  function updateDots() {
+    const idx = Math.round(carousel.scrollLeft / carousel.clientWidth);
+    dots.forEach((d,i)=>d.classList.toggle('active', i===idx));
+  }
+
+  function scrollToIndex(i){carousel.scrollTo({left: i*carousel.clientWidth, behavior:'smooth'});}
+
+  // pointer drag
+  carousel.addEventListener('pointerdown', (e)=>{
+    isDown=true;carousel.setPointerCapture(e.pointerId);
+    startX = e.clientX; scrollStart = carousel.scrollLeft; carousel.classList.add('dragging');
+  });
+  carousel.addEventListener('pointermove', (e)=>{
+    if(!isDown) return; const dx = startX - e.clientX; carousel.scrollLeft = scrollStart + dx;
+  });
+  ['pointerup','pointercancel','pointerleave'].forEach(ev=>{
+    carousel.addEventListener(ev, ()=>{
+      if(!isDown) return; isDown=false; carousel.classList.remove('dragging');
+      // snap to nearest
+      const idx = Math.round(carousel.scrollLeft / carousel.clientWidth);
+      scrollToIndex(idx);
+    });
+  });
+
+  // nav buttons
+  document.getElementById('prevBtn').addEventListener('click', ()=>{
+    const idx = Math.round(carousel.scrollLeft / carousel.clientWidth) - 1; scrollToIndex(Math.max(0,idx));
+  });
+  document.getElementById('nextBtn').addEventListener('click', ()=>{
+    const idx = Math.round(carousel.scrollLeft / carousel.clientWidth) + 1; scrollToIndex(Math.min(slides.length-1,idx));
+  });
+
+  // update dots on scroll
+  carousel.addEventListener('scroll', ()=>{ window.requestAnimationFrame(updateDots); });
+
+  // keyboard navigation
+  window.addEventListener('keydown',(e)=>{ if(e.key==='ArrowRight') document.getElementById('nextBtn').click(); if(e.key==='ArrowLeft') document.getElementById('prevBtn').click(); });
+
+  // IntersectionObserver pro animace lišt (pokud budou) - připraveno
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.bar-inner').forEach(b=>b.style.width = b.getAttribute('data-percentage')||'100%');
+      }
+    });
+  },{threshold:0.35});
+  document.querySelectorAll('.slide').forEach(s=>io.observe(s));
+
+  // inicializace
+  updateDots();
+  // adaptivní resize: pokud se mění šířka, posuň na aktivní index
+  let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const idx=Math.round(carousel.scrollLeft/carousel.clientWidth);scrollToIndex(idx);},120)});
+
+</script>

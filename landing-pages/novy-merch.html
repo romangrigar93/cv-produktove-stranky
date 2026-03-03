@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nový Merch | Czech Virus®</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(227,30,36,0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: auto;
+            margin: 0 auto 40px;
+            opacity: 0;
+            filter: drop-shadow(0 0 30px rgba(227,30,36,0.6));
+            animation: logoFloat 1s ease forwards, float 4s ease-in-out infinite;
+            animation-delay: 0s, 1s;
+        }
+
+        @keyframes logoFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px) rotate(-10deg) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-subtitle {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(1rem, 3vw, 2rem);
+            letter-spacing: 6px;
+            color: #e31e24;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease 0.9s forwards;
+            padding: 0 20px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeIn 1s ease 1.2s forwards, bounce 2s ease infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 50px;
+            stroke: #e31e24;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 80px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.1);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .product-card.animate {
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(227,30,36,0.3) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #e31e24;
+            box-shadow: 0 20px 60px rgba(227,30,36,0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-image.align-top {
+            object-position: top center;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-category {
+            font-family: 'Anton', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #e31e24;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .product-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .product-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: #e31e24;
+        }
+
+        .product-link:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background: linear-gradient(135deg, #e31e24 0%, #c41a1f 100%);
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L100 100M100 0L0 100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .featured-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .featured-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .featured-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4));
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #0a0a0a;
+            padding: 80px 20px;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-item.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: #e31e24;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 150px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(227,30,36,0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            background: rgba(227,30,36,0.2);
+            border: 2px dashed #e31e24;
+            border-radius: 20px;
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(227,30,36,0.1) 50%, transparent 70%);
+            animation: shine 3s ease infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .coming-soon-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: #e31e24;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .coming-soon h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .coming-soon p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-text {
+                order: 2;
+            }
+
+            .featured-image {
+                order: 1;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="cv-logo.png" alt="Czech Virus Logo" class="hero-logo">
+            <h1 class="hero-title">NOVÝ MERCH</h1>
+            <p class="hero-subtitle">Czech Virus® Collection 2026</p>
+            <p class="hero-description">
+                Představujeme novou kolekci merche vyrobeného s maximálním důrazem na kvalitu,
+                udržitelnost a styl. Pro běžné nošení i na trénink – vybavení pro ty, kdo to myslí vážně.
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 30 50" fill="none">
+                <rect x="1" y="1" width="28" height="48" rx="14" stroke="currentColor" stroke-width="2"/>
+                <circle cx="15" cy="12" r="4" fill="currentColor">
+                    <animate attributeName="cy" from="12" to="36" dur="1.5s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Produktů</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Kvalita</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">rPET</div>
+                <div class="stat-label">Recyklované materiály</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">GRS</div>
+                <div class="stat-label">Certifikace</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clothing Section -->
+    <section>
+        <h2 class="section-title">OBLEČENÍ</h2>
+        <p class="section-subtitle">Prémiové trika a tílka pro trénink i volný čas</p>
+
+        <div class="product-grid">
+            <!-- Triko -->
+            <div class="product-card">
+                <img src="lukas-furle-triko (3).jpg" alt="Czech Virus Triko" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Oblečení</div>
+                    <h3 class="product-name">Triko Czech Virus®</h3>
+                    <p class="product-description">
+                        Prémiové triko z 100% bavlny 300g s masivním sitotiskem.
+                        Oversized střih pro maximální komfort.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tilko -->
+            <div class="product-card">
+                <img src="lukas-furle-tilko (1).jpg" alt="Czech Virus Tílko" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Oblečení</div>
+                    <h3 class="product-name">Oversized Tílko Czech Virus®</h3>
+                    <p class="product-description">
+                        Bez rukávů pro maximální volnost pohybu. 100% bavlna 300g
+                        s jumbo sitotiskem na zádech.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ponožky -->
+            <div class="product-card">
+                <img src="ponozky-czechvirus-bile-oblecene.jpg" alt="Czech Virus Ponožky" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Oblečení</div>
+                    <h3 class="product-name">Vysoké ponožky Czech Virus®</h3>
+                    <p class="product-description">
+                        Vyztužená konstrukce s vyšitým logem.
+                        80% bavlna, 15% polyamid, 5% elastan.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured-section">
+        <div class="featured-content">
+            <div class="featured-text">
+                <h2>UDRŽITELNOST NENÍ KOMPROMIS</h2>
+                <p>
+                    Naše nová kolekce tašek je vyrobena z recyklovaného rPET materiálu
+                    s GRS certifikací. Každý produkt pomáhá redukovat plastový odpad
+                    a zároveň nabízí špičkovou kvalitu a odolnost.
+                </p>
+                <p>
+                    <strong>PVC-free</strong> zpracování, <strong>ripstop konstrukce</strong>
+                    a <strong>IATA cabin compliant</strong> rozměry.
+                </p>
+            </div>
+            <div class="featured-image">
+                <img src="vak-front.png" alt="Czech Virus Vak">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bags Section -->
+    <section>
+        <h2 class="section-title">TAŠKY & DOPLŇKY</h2>
+        <p class="section-subtitle">Funkční vybavení z recyklovaných materiálů</p>
+
+        <div class="product-grid">
+            <!-- Vak -->
+            <div class="product-card">
+                <img src="Lukas-Furle-vak (1).jpg" alt="Czech Virus Vak" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Tašky</div>
+                    <h3 class="product-name">Vak JOIN Czech Virus®</h3>
+                    <p class="product-description">
+                        Drawstring vak z recyklovaného rPET. Honeycomb ripstop konstrukce,
+                        12L objem, zipová kapsa.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Taška -->
+            <div class="product-card">
+                <img src="Lukas-Furle-taska (1).jpg" alt="Czech Virus Taška" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Tašky</div>
+                    <h3 class="product-name">Sportovní taška SPORT Czech Virus®</h3>
+                    <p class="product-description">
+                        Masivní 50L kapacita s polstrovaným popruhem. Ideální pro
+                        víkendové výlety a tréninky.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ledvinka -->
+            <div class="product-card">
+                <img src="Lukas-Furle-Ledvinka (1).jpg" alt="Czech Virus Ledvinka" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Doplňky</div>
+                    <h3 class="product-name">Ledvinka DAILY Czech Virus®</h3>
+                    <p class="product-description">
+                        Ultralehká ledvinka 1,2L. Skrytý zip, dvě kapsy,
+                        IATA cabin compliant. Recyklovaný rPET.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Caps Section -->
+    <section>
+        <h2 class="section-title">KŠILTOVKY</h2>
+        <p class="section-subtitle">Klasika i streetwear - obojí s Czech Virus® stylem</p>
+
+        <div class="product-grid">
+            <!-- Virus Performance Cap -->
+            <div class="product-card">
+                <img src="lukas-furle-ksiltovky-kulate (1).jpg" alt="Czech Virus Performance Cap" class="product-image">
+                <div class="product-info">
+                    <div class="product-category">Kšiltovky</div>
+                    <h3 class="product-name">Virus Performance Cap Czech Virus®</h3>
+                    <p class="product-description">
+                        Klasická baseballka s prohnutým kšiltem. 5-panelová konstrukce,
+                        Flexfit VIZ systém, 3 barvy loga.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Virus Flat Cap -->
+            <div class="product-card">
+                <img src="lukas-furle-ksiltovky-rovne (1).jpg" alt="Czech Virus Flat Cap" class="product-image align-top">
+                <div class="product-info">
+                    <div class="product-category">Kšiltovky</div>
+                    <h3 class="product-name">Virus Flat Cap Czech Virus®</h3>
+                    <p class="product-description">
+                        Moderní flat brim kšiltovka. 5-panelová konstrukce,
+                        Flexfit VIZ systém, 3 barvy loga.
+                    </p>
+                    <a href="" class="product-link">
+                        Zjistit více
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">PŘIPRAVEN NA UPGRADE?</h2>
+            <p class="cta-text">
+                Objevuj celou kolekci nového merche Czech Virus®.
+                Ať se chystáš kamkoliv, tohle je vybavení pro ty, kdo to myslí vážně.
+            </p>
+        </div>
+    </section>
+
+    <!-- Virusak Section -->
+    <section class="virusak-section">
+        <div class="virusak-container">
+            <div class="virusak-content">
+                <h2 class="virusak-title">STYL, KTERÝM<br><span class="highlight">ŽIJEŠ</span></h2>
+                <p class="virusak-text">
+                    Celá kolekce Czech Virus® merche.<br>
+                    Tak si pojď pro upgrade.
+                </p>
+                <button class="virusak-btn" onclick="window.location.href='https://czechvirus.cz/merch-textil-c110/'">
+                    <span>KOUPIT MERCH</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+            <div class="virusak-image-wrapper">
+                <div class="virusak-circle"></div>
+                <img src="virusak.png" alt="Czech Virus Batoh" class="virusak-image">
+                <div class="virusak-particles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .virusak-section {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .virusak-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(227,30,36,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(227,30,36,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .virusak-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .virusak-content {
+            z-index: 2;
+        }
+
+        .virusak-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 72px;
+            line-height: 1.5;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .virusak-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 50px;
+        }
+
+        .virusak-btn {
+            position: relative;
+            padding: 20px 50px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: #ffffff;
+            background: #e31e24;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            letter-spacing: 2px;
+        }
+
+        .virusak-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .virusak-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(227,30,36,0.4);
+        }
+
+        .virusak-btn:hover .btn-glow {
+            width: 300px;
+            height: 300px;
+        }
+
+        .virusak-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .virusak-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+
+        .virusak-circle {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(227,30,36,0.2) 0%, transparent 70%);
+            animation: pulse-circle 4s ease-in-out infinite;
+        }
+
+        .virusak-image {
+            position: relative;
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            z-index: 2;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
+            animation: float-virusak 6s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .virusak-image:hover {
+            transform: scale(1.05) rotateY(10deg) rotateX(-5deg);
+        }
+
+        .virusak-particles span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #e31e24;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particle-float 3s ease-in-out infinite;
+        }
+
+        .virusak-particles span:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .virusak-particles span:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .virusak-particles span:nth-child(3) {
+            top: 40%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float-virusak {
+            0%, 100% {
+                transform: translateY(0) rotateZ(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotateZ(2deg);
+            }
+        }
+
+        @keyframes pulse-circle {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes particle-float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-100px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(0);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .virusak-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .virusak-title {
+                font-size: 56px;
+            }
+
+            .virusak-image-wrapper {
+                height: 500px;
+            }
+
+            .virusak-image {
+                max-width: 350px;
+            }
+
+            .virusak-circle {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .virusak-section {
+                padding: 80px 20px;
+            }
+
+            .virusak-title {
+                font-size: 42px;
+            }
+
+            .virusak-text {
+                font-size: 16px;
+            }
+
+            .virusak-btn {
+                padding: 16px 40px;
+                font-size: 20px;
+            }
+
+            .virusak-image {
+                max-width: 280px;
+            }
+
+            .virusak-circle {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observe stat items
+        document.querySelectorAll('.stat-item').forEach((item, index) => {
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animate');
+                        }, index * 150);
+                    }
+                });
+            }, observerOptions);
+            statObserver.observe(item);
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+
+        // Mouse move effect on product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Add loading effect
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

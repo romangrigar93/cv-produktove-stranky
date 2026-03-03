@@ -1,0 +1,819 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+
+    .gl-v4,
+    .gl-v4 * {
+        box-sizing: border-box !important;
+    }
+
+    .gl-v4 {
+        font-family: 'Raleway', sans-serif !important;
+        background: #0b1222 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: #ffffff !important;
+    }
+
+    .gl-v4 .v4-inner {
+        max-width: 980px !important;
+        margin: 0 auto !important;
+    }
+
+    /* ===================== HERO – Horizontal product card ===================== */
+    .gl-v4 .hero-card {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: linear-gradient(160deg, #121a2b 0%, #0b1222 40%, #151e30 100%) !important;
+        border-bottom: 1px solid rgba(216,182,79,0.15) !important;
+        overflow: hidden !important;
+    }
+
+    .gl-v4 .hero-layout {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: stretch !important;
+        min-height: 480px !important;
+    }
+
+    .gl-v4 .hero-img-col {
+        flex: 0 0 42% !important;
+        width: 42% !important;
+        background:
+            radial-gradient(ellipse at 50% 50%, rgba(216,182,79,0.07) 0%, transparent 70%),
+            #0d1525 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 40px !important;
+        position: relative !important;
+    }
+
+    .gl-v4 .hero-img-col img {
+        max-width: 320px !important;
+        width: 100% !important;
+        height: auto !important;
+        filter: drop-shadow(0 15px 40px rgba(0,0,0,0.4)) !important;
+    }
+
+    .gl-v4 .hero-info-col {
+        flex: 1 !important;
+        padding: 50px 45px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .gl-v4 .pill-badge {
+        display: inline-block !important;
+        background: linear-gradient(135deg, #d8b64f, #b8962f) !important;
+        color: #0b1222 !important;
+        font-size: 0.7em !important;
+        font-weight: 800 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 16px !important;
+        border-radius: 999px !important;
+        margin-bottom: 20px !important;
+        width: fit-content !important;
+    }
+
+    .gl-v4 .hero-info-col h1 {
+        font-size: 2.4em !important;
+        font-weight: 800 !important;
+        line-height: 1.15 !important;
+        margin: 0 0 8px 0 !important;
+        color: #ffffff !important;
+    }
+
+    .gl-v4 .hero-info-col .hero-tagline {
+        font-size: 1em !important;
+        color: #d8b64f !important;
+        font-weight: 600 !important;
+        margin: 0 0 20px 0 !important;
+        font-style: italic !important;
+    }
+
+    .gl-v4 .hero-info-col .hero-desc {
+        font-size: 0.95em !important;
+        line-height: 1.75 !important;
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 0 25px 0 !important;
+    }
+
+    .gl-v4 .mini-specs {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0 !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        margin-top: 5px !important;
+    }
+
+    .gl-v4 .mini-spec {
+        flex: 1 !important;
+        text-align: center !important;
+        padding: 16px 10px !important;
+        border-right: 1px solid rgba(255,255,255,0.08) !important;
+    }
+
+    .gl-v4 .mini-spec:last-child {
+        border-right: none !important;
+    }
+
+    .gl-v4 .mini-spec .ms-val {
+        font-size: 1.3em !important;
+        font-weight: 800 !important;
+        color: #d8b64f !important;
+        line-height: 1 !important;
+    }
+
+    .gl-v4 .mini-spec .ms-lbl {
+        font-size: 0.65em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        color: rgba(255,255,255,0.4) !important;
+        margin-top: 4px !important;
+    }
+
+    /* ===================== TABS section ===================== */
+    .gl-v4 .tabs-section {
+        padding: 50px 40px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    }
+
+    .gl-v4 .tab-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0 !important;
+        border-bottom: 2px solid rgba(255,255,255,0.08) !important;
+        margin-bottom: 40px !important;
+    }
+
+    .gl-v4 .tab-nav span {
+        padding: 12px 24px !important;
+        font-size: 0.85em !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: rgba(255,255,255,0.35) !important;
+        cursor: default !important;
+        position: relative !important;
+    }
+
+    .gl-v4 .tab-nav span.active {
+        color: #d8b64f !important;
+    }
+
+    .gl-v4 .tab-nav span.active::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -2px !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 2px !important;
+        background: #d8b64f !important;
+    }
+
+    /* ===================== Feature tiles ===================== */
+    .gl-v4 .tile-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    .gl-v4 .tile {
+        background: rgba(255,255,255,0.03) !important;
+        border: 1px solid rgba(255,255,255,0.06) !important;
+        border-radius: 10px !important;
+        padding: 24px !important;
+        transition: all 0.25s ease !important;
+    }
+
+    .gl-v4 .tile:hover {
+        background: rgba(216,182,79,0.05) !important;
+        border-color: rgba(216,182,79,0.2) !important;
+    }
+
+    .gl-v4 .tile .tile-head {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gl-v4 .tile .tile-icon {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 8px !important;
+        background: rgba(216,182,79,0.1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1em !important;
+        flex-shrink: 0 !important;
+    }
+
+    .gl-v4 .tile strong {
+        font-size: 0.95em !important;
+        color: #ffffff !important;
+    }
+
+    .gl-v4 .tile p {
+        font-size: 0.85em !important;
+        line-height: 1.6 !important;
+        color: rgba(255,255,255,0.55) !important;
+        margin: 0 !important;
+    }
+
+    /* ===================== Personalization – Steps ===================== */
+    .gl-v4 .steps-section {
+        padding: 60px 40px !important;
+        background: linear-gradient(180deg, #0d1525 0%, #0b1222 100%) !important;
+    }
+
+    .gl-v4 .section-header {
+        margin-bottom: 40px !important;
+    }
+
+    .gl-v4 .section-header .sh-label {
+        font-size: 0.75em !important;
+        font-weight: 700 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: #d8b64f !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gl-v4 .section-header h2 {
+        font-size: 2.2em !important;
+        font-weight: 800 !important;
+        margin: 0 !important;
+        color: #ffffff !important;
+        line-height: 1.15 !important;
+    }
+
+    .gl-v4 .steps-layout {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 40px !important;
+        align-items: center !important;
+    }
+
+    .gl-v4 .steps-image {
+        flex: 0 0 45% !important;
+        width: 45% !important;
+    }
+
+    .gl-v4 .steps-image img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255,255,255,0.06) !important;
+    }
+
+    .gl-v4 .steps-list {
+        flex: 1 !important;
+    }
+
+    .gl-v4 .step-item {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 18px !important;
+        align-items: flex-start !important;
+        padding: 20px 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    }
+
+    .gl-v4 .step-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .gl-v4 .step-num {
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        background: linear-gradient(135deg, #d8b64f, #b8962f) !important;
+        color: #0b1222 !important;
+        font-size: 0.8em !important;
+        font-weight: 800 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        margin-top: 2px !important;
+    }
+
+    .gl-v4 .step-item strong {
+        display: block !important;
+        font-size: 0.95em !important;
+        color: #ffffff !important;
+        margin-bottom: 4px !important;
+    }
+
+    .gl-v4 .step-item span {
+        font-size: 0.85em !important;
+        color: rgba(255,255,255,0.55) !important;
+        line-height: 1.5 !important;
+    }
+
+    /* ===================== Banner full-width ===================== */
+    .gl-v4 .banner-fw {
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .gl-v4 .banner-fw img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* ===================== Info callout ===================== */
+    .gl-v4 .info-callout {
+        margin: 0 40px !important;
+        padding: 30px !important;
+        background: rgba(216,182,79,0.06) !important;
+        border: 1px solid rgba(216,182,79,0.15) !important;
+        border-radius: 10px !important;
+        margin-top: 40px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gl-v4 .info-callout p {
+        font-size: 0.9em !important;
+        color: rgba(255,255,255,0.7) !important;
+        line-height: 1.7 !important;
+        margin: 0 0 8px 0 !important;
+    }
+
+    .gl-v4 .info-callout p:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    /* ===================== Benefits row ===================== */
+    .gl-v4 .benefits-row {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 16px !important;
+        padding: 50px 40px !important;
+    }
+
+    .gl-v4 .benefit-pill {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 30px 16px !important;
+        background: rgba(255,255,255,0.02) !important;
+        border: 1px solid rgba(255,255,255,0.06) !important;
+        border-radius: 12px !important;
+        transition: all 0.25s ease !important;
+    }
+
+    .gl-v4 .benefit-pill:hover {
+        border-color: rgba(216,182,79,0.25) !important;
+        background: rgba(216,182,79,0.04) !important;
+    }
+
+    .gl-v4 .benefit-pill .bp-icon {
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 50% !important;
+        background: rgba(216,182,79,0.1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.3em !important;
+        margin-bottom: 14px !important;
+    }
+
+    .gl-v4 .benefit-pill strong {
+        font-size: 0.9em !important;
+        color: #ffffff !important;
+        margin-bottom: 5px !important;
+    }
+
+    .gl-v4 .benefit-pill span {
+        font-size: 0.78em !important;
+        color: rgba(255,255,255,0.45) !important;
+        line-height: 1.4 !important;
+    }
+
+    /* ===================== Comparison – Inline table ===================== */
+    .gl-v4 .compare-section {
+        padding: 50px 40px 60px !important;
+        background: #080e1a !important;
+    }
+
+    .gl-v4 .compare-table {
+        width: 100% !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        margin-top: 35px !important;
+    }
+
+    .gl-v4 .compare-table thead th {
+        padding: 22px 20px !important;
+        font-size: 0.95em !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        background: rgba(216,182,79,0.08) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        color: #ffffff !important;
+    }
+
+    .gl-v4 .compare-table thead th:first-child {
+        text-align: left !important;
+        color: rgba(255,255,255,0.5) !important;
+        font-weight: 600 !important;
+    }
+
+    .gl-v4 .compare-table thead th.gl-col {
+        color: #d8b64f !important;
+    }
+
+    .gl-v4 .compare-table tbody td {
+        padding: 14px 20px !important;
+        font-size: 0.9em !important;
+        text-align: center !important;
+        border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+        color: rgba(255,255,255,0.75) !important;
+    }
+
+    .gl-v4 .compare-table tbody td:first-child {
+        text-align: left !important;
+        color: rgba(255,255,255,0.45) !important;
+        font-size: 0.82em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    .gl-v4 .compare-table tbody tr:last-child td {
+        border-bottom: none !important;
+    }
+
+    .gl-v4 .compare-table .val-gold {
+        color: #d8b64f !important;
+        font-weight: 700 !important;
+    }
+
+    .gl-v4 .compare-table .val-dim {
+        color: rgba(255,255,255,0.3) !important;
+    }
+
+    .gl-v4 .compare-cta {
+        text-align: center !important;
+        margin-top: 35px !important;
+    }
+
+    .gl-v4 .btn-green {
+        display: inline-block !important;
+        background: #59e391 !important;
+        color: #0b1222 !important;
+        font-weight: 800 !important;
+        font-size: 0.9em !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        padding: 15px 40px !important;
+        border-radius: 999px !important;
+        border: none !important;
+        cursor: pointer !important;
+        text-decoration: none !important;
+        transition: all 0.25s ease !important;
+    }
+
+    .gl-v4 .btn-green:hover {
+        background: #18ff94 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(89,227,145,0.25) !important;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+        .gl-v4 .hero-layout {
+            flex-direction: column !important;
+        }
+
+        .gl-v4 .hero-img-col {
+            flex: none !important;
+            width: 100% !important;
+            padding: 30px !important;
+        }
+
+        .gl-v4 .hero-img-col img {
+            max-width: 240px !important;
+        }
+
+        .gl-v4 .hero-info-col {
+            padding: 30px 25px 40px !important;
+        }
+
+        .gl-v4 .hero-info-col h1 {
+            font-size: 1.8em !important;
+        }
+
+        .gl-v4 .mini-specs {
+            flex-wrap: wrap !important;
+        }
+
+        .gl-v4 .mini-spec {
+            flex: 1 1 45% !important;
+            border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        }
+
+        .gl-v4 .tabs-section,
+        .gl-v4 .steps-section {
+            padding: 40px 25px !important;
+        }
+
+        .gl-v4 .tab-nav {
+            flex-wrap: wrap !important;
+        }
+
+        .gl-v4 .tab-nav span {
+            padding: 10px 14px !important;
+            font-size: 0.75em !important;
+        }
+
+        .gl-v4 .tile-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .gl-v4 .steps-layout {
+            flex-direction: column !important;
+        }
+
+        .gl-v4 .steps-image {
+            flex: none !important;
+            width: 100% !important;
+        }
+
+        .gl-v4 .benefits-row {
+            grid-template-columns: 1fr !important;
+            padding: 40px 25px !important;
+        }
+
+        .gl-v4 .info-callout {
+            margin: 0 25px !important;
+            margin-top: 30px !important;
+        }
+
+        .gl-v4 .compare-section {
+            padding: 40px 25px 50px !important;
+        }
+
+        .gl-v4 .section-header h2 {
+            font-size: 1.8em !important;
+        }
+    }
+</style>
+
+<div class="gl-v4">
+    <div class="v4-inner">
+
+    <!-- HERO – Product card layout -->
+    <section class="hero-card">
+        <div class="hero-layout">
+            <div class="hero-img-col">
+                <img src="https://www.godlike.gg/wp-content/uploads/2025/06/godlike-tumbler-520x520.png" alt="GODLIKE Luxury Tumbler" width="520" height="520">
+            </div>
+            <div class="hero-info-col">
+                <span class="pill-badge">Limitovaná edice</span>
+                <h1>GODLIKE Luxury Tumbler</h1>
+                <p class="hero-tagline">Unlock your full potential.</p>
+                <p class="hero-desc">Vysoce kvalitní bílý termohrnek s laserem vypáleným logem Godlike. V nabídce i s <strong>vlastní personalizací</strong> – vytvoř si svůj originální design.</p>
+
+                <div class="mini-specs">
+                    <div class="mini-spec">
+                        <div class="ms-val">1,18 l</div>
+                        <div class="ms-lbl">Objem</div>
+                    </div>
+                    <div class="mini-spec">
+                        <div class="ms-val">7 h</div>
+                        <div class="ms-lbl">Teplý</div>
+                    </div>
+                    <div class="mini-spec">
+                        <div class="ms-val">11 h</div>
+                        <div class="ms-lbl">Studený</div>
+                    </div>
+                    <div class="mini-spec">
+                        <div class="ms-val">650 g</div>
+                        <div class="ms-lbl">Hmotnost</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VLASTNOSTI – Tabs style -->
+    <section class="tabs-section">
+        <div class="tab-nav">
+            <span class="active">Vlastnosti</span>
+            <span>Personalizace</span>
+            <span>Srovnání</span>
+        </div>
+
+        <div class="tile-grid">
+            <div class="tile">
+                <div class="tile-head">
+                    <div class="tile-icon">♨</div>
+                    <strong>Špičková izolace</strong>
+                </div>
+                <p>Dvojitá vakuová stěna z ECO 18/8 nerezu. Teplý nápoj 7 h, studený 11 h.</p>
+            </div>
+            <div class="tile">
+                <div class="tile-head">
+                    <div class="tile-icon">⟳</div>
+                    <strong>Třípolohové víčko</strong>
+                </div>
+                <p>Klasické napití, brčko nebo uzavření. Snadné ovládání jednou rukou.</p>
+            </div>
+            <div class="tile">
+                <div class="tile-head">
+                    <div class="tile-icon">◈</div>
+                    <strong>Matný povrch</strong>
+                </div>
+                <p>Protiskluzový grip, příjemný na dotek, odolný vůči oděrkám.</p>
+            </div>
+            <div class="tile">
+                <div class="tile-head">
+                    <div class="tile-icon">✧</div>
+                    <strong>Laserové gravírování</strong>
+                </div>
+                <p>Precizní, trvalé logo Godlike vypálené laserem do povrchu.</p>
+            </div>
+            <div class="tile">
+                <div class="tile-head">
+                    <div class="tile-icon">⚙</div>
+                    <strong>Snadná údržba</strong>
+                </div>
+                <p>Plně omyvatelný v myčce. Bez speciální péče a složitého čištění.</p>
+            </div>
+            <div class="tile">
+                <div class="tile-head">
+                    <div class="tile-icon">🚗</div>
+                    <strong>Držák do auta</strong>
+                </div>
+                <p>Kompatibilní s běžnými držáky – na cesty, dojíždění i výlety.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONALIZACE – Steps -->
+    <section class="steps-section">
+        <div class="section-header">
+            <p class="sh-label">Vytvoř si svůj design</p>
+            <h2>Jak personalizovat tumbler?</h2>
+        </div>
+
+        <div class="steps-layout">
+            <div class="steps-image">
+                <img src="https://www.godlike.gg/wp-content/uploads/2025/10/tumble-produktovka.png" alt="GODLIKE Tumbler personalizace">
+            </div>
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        <strong>Klikni na "Přidat personalizaci"</strong>
+                        <span>Otevře se editor, kde si vytvoříš vlastní motiv přímo na plátně.</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        <strong>Přidej text</strong>
+                        <span>Napiš cokoliv – jméno, citát, vzkaz. Zvol font, velikost a styl.</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        <strong>Vyber ikony nebo kresli</strong>
+                        <span>Předpřipravené motivy nebo volné kreslení přímo do plátna.</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div>
+                        <strong>Nahraj vlastní grafiku</strong>
+                        <span>JPG, PNG nebo SVG do 1 MB. Černý motiv na bílém/transparentním pozadí.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-callout">
+            <p>Gravírování vypálí laserem vše, co je na plátně <strong>černé</strong>. Barevné obrázky budou převedeny – vše kromě bílé se stane černým. Přidávej tedy <strong>černou grafiku na bílém nebo transparentním pozadí</strong>.</p>
+        </div>
+    </section>
+
+    <!-- HEADER IMAGE -->
+    <div class="banner-fw">
+        <img src="https://www.godlike.gg/wp-content/uploads/2025/10/vlastnhi-motiv-header-tumbler.png" alt="Vlastní motiv na GODLIKE tumbler" width="1250" height="650">
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="benefits-row">
+        <div class="benefit-pill">
+            <div class="bp-icon">✦</div>
+            <strong>Unikátní design</strong>
+            <span>Zaujme kolegy i přátele</span>
+        </div>
+        <div class="benefit-pill">
+            <div class="bp-icon">♻</div>
+            <strong>ECO 18/8 nerez</strong>
+            <span>Zdravotně nezávadná ocel</span>
+        </div>
+        <div class="benefit-pill">
+            <div class="bp-icon">☀</div>
+            <strong>Horké i ledové</strong>
+            <span>Celý rok, každý den</span>
+        </div>
+        <div class="benefit-pill">
+            <div class="bp-icon">🎨</div>
+            <strong>Personalizace</strong>
+            <span>Text, ikony, vlastní grafika</span>
+        </div>
+        <div class="benefit-pill">
+            <div class="bp-icon">💰</div>
+            <strong>Nižší cena</strong>
+            <span>O 500–600 Kč než originál</span>
+        </div>
+        <div class="benefit-pill">
+            <div class="bp-icon">🧼</div>
+            <strong>Do myčky</strong>
+            <span>Plně omyvatelný</span>
+        </div>
+    </div>
+
+    <!-- SROVNÁNÍ – Clean table -->
+    <section class="compare-section">
+        <div class="section-header" style="text-align: center !important;">
+            <p class="sh-label">Porovnání</p>
+            <h2>Godlike vs. Original</h2>
+        </div>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Parametr</th>
+                    <th class="gl-col">Godlike Tumbler</th>
+                    <th>Original Tumbler</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Materiál</td>
+                    <td>Nerez, plast</td>
+                    <td>Nerez, plast</td>
+                </tr>
+                <tr>
+                    <td>Objem</td>
+                    <td>1 180 ml</td>
+                    <td>1 180 ml</td>
+                </tr>
+                <tr>
+                    <td>Hmotnost</td>
+                    <td>650 g</td>
+                    <td>650 g</td>
+                </tr>
+                <tr>
+                    <td>BPA Free</td>
+                    <td>ANO</td>
+                    <td>ANO</td>
+                </tr>
+                <tr>
+                    <td>Design</td>
+                    <td>Čistý a ergonomický</td>
+                    <td>Čistý a ergonomický</td>
+                </tr>
+                <tr>
+                    <td>Personalizace</td>
+                    <td class="val-gold">ANO</td>
+                    <td class="val-dim">NE</td>
+                </tr>
+                <tr>
+                    <td>Cena</td>
+                    <td class="val-gold" style="font-size: 1.1em !important;">699 Kč</td>
+                    <td class="val-dim">1 299 Kč</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="compare-cta">
+            <a class="btn-green" href="#" id="chci-godlike-tumbler">Chci Godlike Tumbler</a>
+        </div>
+    </section>
+
+    </div>
+</div>

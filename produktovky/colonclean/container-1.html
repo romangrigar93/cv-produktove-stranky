@@ -1,0 +1,674 @@
+<style><!--
+.container-product {
+  max-width: 1000px;
+  border-radius: 8px;
+  margin: 0 auto !important; /* Centers the container */
+  padding: 0; /* Reset default padding */
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+  font-family: 'Roboto';
+  margin-top: 30px !important;
+}
+
+.container-product:first-child,
+.container-product:first-of-type {
+  margin-top: 0 !important;
+}
+
+.container-product img {
+  border-radius: 8px;
+}
+
+.container-product > div:last-child {
+  padding: 0; /* No padding for the image container */
+}
+
+.container-product h2 {
+  margin: 0; /* Resets default margin */
+  font-size: 1.8em; /* Default font size for H2 */
+  padding: 50px 20px 20px 20px !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container-product h3 {
+  font-size: 25px;
+  margin-top: 60px;
+  font-weight: bold;
+}
+
+.tip {
+  padding: 10px 20px;
+  border: 1px solid;
+  margin: 0 auto !important;
+  margin-top: 40px !important;
+}
+
+.container-product p {
+  font-size: 1em; /* Default font size for text */
+}
+
+.container-product a {
+  text-decoration: none;
+}
+
+.container-product a:hover {
+  text-decoration: underline;
+}
+
+.text-product {
+  padding: 0px 80px 0px 80px !important;
+  text-align: justify;
+}
+
+.transparent-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;   
+  border-radius: 15px;
+  padding: 10px 20px !important;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.transparent-button:hover {
+box-shadow: 0 0 10px white;
+}
+
+.studie {
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+/* lišty */
+.container-lista {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 15px;  
+}
+
+.label {
+  width: 33.333%; /* label zabírá jednu tøetinu */
+  margin-right: 5px; /* mezera mezi labelem a lištou */
+  text-align: left;
+}
+
+.bar-outer {
+  width: 66.666%; /* lišta zabírá dvì tøetiny */
+  background-color: #ddd;
+  overflow: hidden;
+  margin-left: auto;
+}
+
+.barva-1 {
+  background-color: #9bcf2b;
+}
+
+.barva-2 {
+  background-color: #dccc1f;
+}
+
+.barva-3 {
+  background-color: #d08333;
+}
+
+.bar-inner {
+  height: 30px;
+  width: 0; /* poèáteèní šíøka */
+  text-align: right;
+  padding-right: 5px;
+  line-height: 30px;
+  color: white;
+  transition: width 1s ease-in-out; /* animace šíøky */
+}
+/* lišty */
+
+/* 1/2 obsah, 1/2 foto */
+.container-benefity-foto {
+  display: flex;
+  flex-direction: row; /* nebo mùže být 'column', pokud to tak chcete pro mobilní zobrazení */
+  align-items: center; /* Toto vycentruje dìtské prvky vertikálnì */
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.icons-text {
+  flex: 1; /* Zabere 2/3 šíøky */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikální vycentrování ikonek uvnitø .icons-text */
+  text-align: center;
+}
+
+.icon-item {
+  /* Žádné specifické styly nejsou potøeba pro vertikální vycentrování, toto zajišuje .icons-text */
+  margin-bottom: 20px; /* Odstup mezi položkami */
+}
+
+.icon-item img {
+    width: 70px;   
+}
+
+.icon-item:last-child {
+  margin-bottom: 0; /* Odstraníme margin pro poslední ikonu */
+}
+
+.photo {
+  flex: 1; /* Zabere 1/3 šíøky */
+  align-self: flex-end;
+}
+
+.photo img {
+  width: 100%; /* Aby fotka vyplnila prostor */
+  height: auto;
+}
+/* 2/3 obsah, 1/3 foto */
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+  .container-product h2 {
+    font-size: 2em; /* Larger font size for H2 on tablets */
+  }
+  .container-product p {
+    font-size: 1.0em; /* Larger font size for text on tablets */
+  }
+  .transparent-button {
+    font-size: 16px;
+  }
+  .container-listy {
+    flex-direction: column;
+  } 
+  .label { width: auto; }
+  .bar-outer { width: 100%; } 
+   
+  .container-benefity-foto {
+    flex-direction: column;
+  }
+
+  .icons-text, .photo {
+    width: 70%; /* Zabere 100% šíøky */
+    margin: 0 auto;
+  }
+
+  .icon-item {
+    flex-direction: row; /* Ikony a text vedle sebe */
+    justify-content: center; /* Horizontální vycentrování */
+    align-items: center; /* Vertikální vycentrování */
+  }
+
+  .photo {
+    order: 2; /* Fotka pùjde pod ikonky */
+    margin-top: 20px; /* Odstup od pøedchozího obsahu */
+  } 
+  .container-lista {
+    display: block;
+  }
+
+  .label {
+    width: 100%; /* label zabírá jednu tøetinu */
+  }
+
+  .bar-outer {
+    width: 100%; /* lišta zabírá dvì tøetiny */
+  }   
+}
+/* Responsive design for phones */
+@media (max-width: 480px) {
+  .container-product h2 {
+    font-size: 2.2em; /* Larger font size for H2 on phones */
+  }   
+  .container-product p {
+    font-size: 1.25em; /* Larger font size for text on phones */
+  }
+  .transparent-button {
+    font-size: 20px;
+  }  
+}
+
+#c-p-1 {
+    background: linear-gradient(to bottom, #9f703d 40%, #fffff2);
+    color: white !important;
+}
+#c-p-1 a {
+    color: #1a5c00;
+}
+#c-p-1 h2 {
+    color: white;
+}
+#c-p-1 .zvyrazneni {
+    color: #ff8080;
+}
+#c-p-1 .tip {
+    background-color: #eda9a9;
+}
+#c-p-1 .transparent-button {
+    color: white;
+    border: 2px solid white;
+}
+
+#c-p-1 .transparent-button:hover {
+box-shadow: 0 0 10px white;
+}
+
+#c-p-2 {
+    background: linear-gradient(to bottom, #408195 , #ffffff);
+    color: white !important;
+}
+#c-p-2 a {
+    color: #1a5c00;
+}
+#c-p-2 h2 {
+    color: white;
+}
+#c-p-2 .zvyrazneni {
+    color: #9bcf2b;
+}
+#c-p-2 .transparent-button {
+    color: white;
+    border: 2px solid white;
+}
+
+#c-p-2 .transparent-button:hover {
+box-shadow: 0 0 10px white;
+}
+
+#c-p-3 {
+    background: linear-gradient(to bottom, #b92974, #54afff);
+    color: white !important;
+}
+#c-p-3 a {
+    color: #4e4e4e;
+}
+#c-p-3 h2 {
+    color: white;
+}
+#c-p-3 .zvyrazneni {
+    color: #17fff3;
+}
+#c-p-3 .transparent-button {
+    color: white;
+    border: 2px solid white;
+}
+
+#c-p-3 .transparent-button:hover {
+box-shadow: 0 0 10px white;
+}
+
+#c-p-4 {
+    background: linear-gradient(to bottom, #5aa9ad , #a7f5ff);
+    color: white !important;
+}
+#c-p-4 a {
+    color: #a99566;
+}
+#c-p-4 h2 {
+    color: white;
+}
+#c-p-4 .zvyrazneni {
+    color: #00ffb3;
+}
+#c-p-4 .transparent-button {
+    color: white;
+    border: 2px solid white;
+}
+
+#c-p-4 .transparent-button:hover {
+box-shadow: 0 0 10px white;
+}
+
+#c-p-5 {
+    background: linear-gradient(to bottom, #e9d380, #fffff2);
+    color: black !important;
+}
+#c-p-5 a {
+    color: #389edb;
+}
+#c-p-5 h2 {
+    color: black;
+}
+#c-p-5 .zvyrazneni {
+    color: #389edb;
+}
+#c-p-5 .transparent-button {
+    color: #389edb;
+    border: 2px solid #389edb;
+}
+
+#c-p-5 .transparent-button:hover {
+box-shadow: 0 0 10px #389edb;
+}
+
+#c-p-6 {
+    background: linear-gradient(to bottom, #236b7a, #fffff2);
+    color: white !important;
+}
+#c-p-6 a {
+    color: #389edb;
+}
+#c-p-6 h2 {
+    color: white;
+}
+#c-p-6 .zvyrazneni {
+    color: #389edb;
+}
+#c-p-6 .transparent-button {
+    color: #389edb;
+    border: 2px solid #389edb;
+}
+
+#c-p-6 .transparent-button:hover {
+box-shadow: 0 0 10px #389edb;
+}
+
+
+#c-p-7 {
+    background: linear-gradient(to bottom, #d6e4f1, #fffff2);
+    color: black !important;
+}
+#c-p-7 a {
+    color: #39b400;
+}
+#c-p-7 h2 {
+    color: black;
+}
+#c-p-7 .zvyrazneni {
+    color: #39b400;
+}
+#c-p-7 .transparent-button {
+    color: #39b400;
+    border: 2px solid #39b400;
+}
+
+#c-p-7 .transparent-button:hover {
+box-shadow: 0 0 10px #39b400;
+}
+
+    #chart-container {
+        width: 100%; /* Set to 100% of container width */          
+        margin: auto;
+    }
+
+    canvas {
+        display: block;             
+        background-color: transparent; /* Background color */
+    }
+    
+    
+.resp_container {
+    width: 80%;
+    margin: auto;
+}
+
+.resp_container-1, .resp_container-2 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.resp_container-1 .resp_image, .resp_container-2 .resp_image {
+    flex: 1; /* 1/4 šíøka */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.resp_container-1 .resp_image img, .resp_container-2 .resp_image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.resp_container-1 .resp_text, .resp_container-2 .resp_text {
+    flex: 3; /* 3/4 šíøka */
+    padding: 20px;
+    text-align: justify;
+}
+
+.resp_text_center {
+    align-self: center;
+}
+
+/* Media Queries pro mobilní zobrazení */
+@media (max-width: 600px) {
+    .resp_container-1, .resp_container-2 {
+        flex-direction: column;
+    }
+
+    .resp_container-1 .resp_image, .resp_container-2 .resp_image {
+        order: -1; /* Obrázek bude vždy první */
+    }
+}
+@media only screen and (max-width: 768px) { /* Nastavení pro mobilní zaøízení */
+    #chart-container {
+        min-height: 600px; /* Minimální výška pro mobilní zaøízení */
+    }
+}
+
+canvas {
+    display: block;
+    background-color: transparent;
+}
+--></style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="c-p-1" class="container-product">
+<div class="heading-product">
+<h2>COLONCLEAN <span class="zvyrazneni">ULTRA</span></h2>
+</div>
+<div class="text-product">
+<p style="margin-bottom: 25px;"><strong>Vláknina</strong> je nezbytná složka nejen pro tvé zdravé fungování støev, ale i celkovou funkci imunitního systému. Prùzkumy ukazují, že <strong>Èeská a Slovenská republika</strong> patøí ke státùm, kde je nejrizikovìjší výskyt rùzných závažných onemocnìní právì díky nedostatku vlákniny. V Czech Virus jsme pøišli s øešením napomáhajícího ke zlepšení tìchto statistik díky produktu <strong>ColonClean Ultra</strong>.</p>
+<p style="margin-bottom: 25px;"><strong>ColonClean Ultra</strong> je odpovìdí na tento problém - klíè k lepšímu trávení a celkovému zdraví v jedné praktické dávce.</p>
+<p style="margin-bottom: 25px;">Jedná se o smìs <strong>5 peèlivì vybraných vláknin a dvou probiotik</strong> pro podporu tvého zdraví zevnitø. Tato smìs je zamìøena primárnì na støeva, ale pøináší celou øadu zdravotních benefitù - mùže pomoci zejména s trávením, pomáhá posilovat imunitní systém a podporuje zdravé hubnutí.</p>
+<div class="tip">
+<p><strong>Extra tip:</strong> doporuèujeme konzumovat <strong>ColonClean Ultra</strong> se <strong>SuperGreens PRO V2.0</strong> pro maximální podporu svého zdraví.
+</div>
+</div>
+<div><img title="ColonClean - Czech Virus" style="width: 100%; height: auto;" alt="ColonClean - Czech Virus" src="colonclean.png"></div>
+</div>
+
+
+
+<div id="c-p-2" class="container-product">
+<div class="heading-product">
+<h2>Proè dbát na <span class="zvyrazneni">pøíjem vlákniny?</span></h2>
+</div>
+<div class="text-product">
+<p><strong>Vláknina</strong> je dùležitá pro <strong>správnou funkci støev</strong>. Dostateèný pøíjem vlákniny je <strong>prevencí nebo úlevou pøi zácpì</strong>. Podporuje také <strong>zdravý støevní mikrobiom</strong> (støevní mikroflóra). Ovlivòuje i <strong>pravidelný pohyb støev</strong> a <strong>urychluje prùchod stolice støevem</strong>.</p>
+</div>
+<div style="text-align: center;" class="text-product">
+<p>Nedostateèný pøíjem vlákniny zvyšuje šanci na výskyt nádorù ve støevech.</p>
+</div>
+<div class="studie"><a target="_blank" href="https://www.idnes.cz/onadnes/zdravi/vlaknina-jidlo-strava-jidelnicek-dieta-nadory.A190418_145125_zdravi_abr#:~:text=Jasn%C3%BDm%20d%C5%AFkazem%20nedostatku%20vl%C3%A1kniny%20ve,produkt%C5%AF%2C%20kter%C3%A9%20neobsahuj%C3%AD%20%C5%BE%C3%A1dnou%20vl%C3%A1kninu"><button class="transparent-button">Odkaz na èlánek...</button></a></div>
+<div style="text-align: center;" class="text-product">
+<p>Øada studií potvrzuje významný protinádorový úèinek vlákniny.</p>
+</div>
+<div class="studie"><a target="_blank" href="https://www.idnes.cz/onadnes/zdravi/vlaknina-jidlo-strava-jidelnicek-dieta-nadory.A190418_145125_zdravi_abr#:~:text=Jasn%C3%BDm%20d%C5%AFkazem%20nedostatku%20vl%C3%A1kniny%20ve,produkt%C5%AF%2C%20kter%C3%A9%20neobsahuj%C3%AD%20%C5%BE%C3%A1dnou%20vl%C3%A1kninu"><button class="transparent-button">Odkaz na studii..</button></a></div>
+<div style="text-align: center;" class="text-product">
+<p>Podle této studie o <strong><a target="_blank" href="https://www.thelancet.com/journals/lancet/article/PIIS0140673603131741/fulltext">vlákninì v potravinách</a></strong> se navíc v závislosti na množství pøíjmu vlákniny také <strong>snižují rizika dalších onemocnìní.</strong></p>
+</div>
+<div class="text-product">
+  <div id="chart-container">
+      <canvas id="myChart"></canvas>
+  </div>
+</div>
+</div>
+
+
+
+
+<div id="c-p-3" class="container-product">
+<div class="heading-product">
+<h2><span class="zvyrazneni">Vlákniny</span> obsažené v ColonClean Ultra</h2>
+</div>
+
+  <div class="resp_container">
+      <div class="resp_container-1">
+          <div class="resp_image"><img title="Psyllium v ColonClean Ultra - Czech Virus" style="width: 100%; height: auto;" alt="Psyllium v ColonClean Ultra - Czech Virus" src="psyllium.png"></div>
+          <div class="resp_text"><h3 style="margin: 0px; margin-bottom: 10px;">Psyllium</h3>Vláknina v Psylliu má schopnost <strong>absorbovat vodu</strong> a tím vytváøet <strong>gelovitou hmotu</strong>, která <strong>podporuje trávení</strong>, <strong>zlepšuje konzistenci stolice</strong> a mùže <strong>pomáhat pøi regulaci hladiny cukru v krvi</strong>. Je forma <strong>rozpustné vlákniny</strong> získávaná z obalù semen rostliny <strong>Plantago ovata</strong>, známé také jako <strong>jitrocel indický</strong>.</div>
+      </div>
+
+      <div class="resp_container-2">
+          <div class="resp_text"><h3 style="margin: 0px; margin-bottom: 10px;">Sunfiber®</h3>Podporuje <strong>zdraví støevní mikroflóry</strong> a mùže <strong>pomáhat v regulaci hladiny cukru v krvi a cholesterolu</strong>. Jedná se o <strong>èásteènì hydrolyzovanou guarovou vlákninu</strong>. Tato vláknina je získávána z rostliny <strong>guarové fazole</strong> a je známá svou <strong>vysokou rozpustností ve vodì</strong> a schopností <strong>pøispívat k lepšímu trávení</strong>.</div>
+          <div class="resp_image resp_text_center"><img title="Sunfiber v ColonClean Ultra - Czech Virus" style="width: 100%; height: auto;" alt="Sunfiber v ColonClean Ultra - Czech Virus" src="sunfiber.png"></div>
+      </div>
+      
+      <div class="resp_container-1">
+          <div class="resp_image"><img title="Glukomannan v ColonClean Ultra - Czech Virus" style="width: 100%; height: auto;" alt="Glukomannan v ColonClean Ultra - Czech Virus" src="glukomannan.png"></div>
+          <div class="resp_text resp_text_center"><h3 style="margin: 0px; margin-bottom: 10px;">Glukomannan</h3>Používá se jako doplnìk stravy pro <strong>podporu hubnutí</strong> a <strong>zlepšení trávení</strong>. Tato vláknina má schopnost <strong>absorbovat velké množství vody</strong>, èímž <strong>zvyšuje pocit sytosti</strong> a pomáhá <strong>regulovat hladinu cukru v krvi</strong>. Glukomannan je <strong>rozpustná vláknina</strong> získávaná z <strong>koøene rostliny konjac</strong>.</div>
+      </div>  
+      
+      <div class="resp_container-2">
+          <div class="resp_text"><h3 style="margin: 0px; margin-bottom: 10px;">Inulin</h3>Mùže <strong>pomoci zlepšit trávení</strong>, <strong>podporovat zdraví støev</strong> a <strong>pøispívat k regulaci hladiny cukru v krvi</strong>. Je typ <strong>rozpustné vlákniny</strong>, který se získává hlavnì z <strong>koøenù èekanky</strong>. Funguje jako <strong>prebiotikum</strong>, což znamená, že <strong>podporuje rùst prospìšných bakterií ve støevì</strong></div>
+          <div class="resp_image resp_text_center"><img title="Inulin v ColonClean Ultra - Czech Virus" style="width: 100%; height: auto;" alt="Inulin v ColonClean Ultra - Czech Virus" src="inulin.png"></div>
+      </div>    
+
+      <div class="resp_container-1">
+          <div class="resp_image"><img title="Rezistetní dextrin v ColonClean Ultra - Czech Virus" style="width: 100%; height: auto;" alt="Rezistetní dextrin v ColonClean Ultra - Czech Virus" src="rezistentni-dextrin.png"></div>
+          <div class="resp_text resp_text_center"><h3 style="margin: 0px; margin-bottom: 10px;">Rezistentní dextrin</h3>Je typ <strong>rozpustné vlákniny</strong>, která není snadno stravitelná. Tato vláknina se èasto používá pro <strong>zlepšení trávicího zdraví</strong>, protože <strong>podporuje rùst prospìšných støevních bakterií</strong> a mùže <strong>pomoci v regulaci hladiny cukru v krvi a cholesterolu</strong>. <strong>Zvyšuje také pocit sytosti</strong>, což mùže být užiteèné pro <strong>kontrolu hmotnosti</strong>.</div>
+      </div>  
+         
+  </div>
+
+</div>
+
+<div id="c-p-4" class="container-product">
+<div class="heading-product">
+<h2><span class="zvyrazneni">Probiotika</span> obsažené v ColonClean Ultra</h2>
+</div>
+<div class="text-product">
+<p style="margin-bottom: 40px;"><strong>Lactobacillus acidophilus</strong> - je <strong>prospìšný mikroorganismus</strong>, který <strong>pomáhá pøi trávení potravin</strong>, <strong>výrobì vitamínu K</strong> a <strong>inhibici rùstu škodlivých bakterií</strong>. Acidophilus také <strong>podporuje zdraví støevní mikroflóry</strong> a mùže <strong>pomáhat pøi problémech</strong> jako je <strong>syndrom dráždivého støeva</strong>, <strong>prùjmy</strong> nebo pøi <strong>vaginální infekci</strong>.</p>
+<p style="margin-bottom: 40px;"><strong>Bifidobacterium lactis</strong> - je druh <strong>probiotické bakterie</strong>, která je souèástí rodiny <strong>Bifidobacterium</strong>. Tato bakterie je známá svými <strong>prospìšnými úèinky na trávicí systém</strong>. <strong>B. lactis</strong> pomáhá <strong>udržovat zdravou støevní mikroflóru</strong>, <strong>podporuje imunitní systém</strong> a mùže <strong>pomáhat pøi trávicích problémech</strong>, jako jsou <strong>zácpa nebo prùjem</strong>. Tato bakterie také hraje roli ve <strong>zlepšení vstøebávání živin</strong> a mùže mít <strong>protizánìtlivé úèinky</strong>.</p>
+  <div class="resp_container" style="border-radius: 5px;width: 100%;background: linear-gradient(to bottom, #ffffff , #cbcbcb);color: #666666;">
+      <div class="resp_container-1">
+          <div class="resp_image"><img title="Psyllium v ColonClean Ultra - Czech Virus" style="width: 100%; height: auto;" alt="Psyllium v ColonClean Ultra - Czech Virus" src="probiotika-probio-15-2-czechvirus.png"></div>
+          <div class="resp_text" style="align-items: top;">
+             <h3 style="margin: 0;">PROBIO 15</h3>
+            <p>Dva kmeny probiotik v <strong>ColonClean Ultra</strong> jsou základní pro podporu mikrobiomu. Pokud chcete svému tìlu dopøát maximální pestrost kmenù, doporuèujeme užívat <strong>Probio15</strong>.</p>
+            <button style="float: right;">Tlaèítko</button>         
+          </div>
+      </div>
+  </div>
+  <div style="margin-bottom: 20px;">&nbsp;</div>
+</div>
+</div>
+
+
+<div id="c-p-5" class="container-product">
+<div class="heading-product">
+<h2>Další látky v <span class="zvyrazneni">SUPER GREENS PRO V2.0</span></h2>
+</div>
+<div class="text-product">
+<p style="margin-bottom: 20px;"><span class="zvyrazneni"><strong>V-AntiOxi-Blend®</strong></span> je mix <strong>extraktù z ovoce, zeleniny a rostlin</strong>. Peèlivì vybrané látky kombinují komplexní spektrum obsahující Rutin, extrakt z moøské borovice, extrakt z hrozen, extrakt z petržele, kvercetin, naringin, extrakt z plodù jalovce, lykopen a extrakt z granátového jablka.</p>
+<p><span class="zvyrazneni"><strong>V-Shrooms-Blend®</strong></span> je smìs hub, které jsou známé tisíce let z <strong>èínské medicíny</strong>. Tato smìs obsahuje houbu <strong>Reishi</strong> (Ganoderma lucidum) a <strong>Cordyceps</strong> (Cordyceps sinensis). Smìs má vliv na <strong>pøirozenou obranyschopnost</strong> - imunitní systém, normální funkci obìhové soustavy a normální hladinu cholesterolu v krvi.</p>
+<p><span class="zvyrazneni"><strong>V-Dige-Blend®</strong></span> je smìs trávících enzymù, které napomáhají lepšímu využití všech obsažených aktivních látek v produktu. Obsahuje <strong>Bromelain</strong> a <strong>Papain</strong>.</p>
+</div>
+<div class="studie"><a href="#"><button class="transparent-button">Chci si poøídit zelené zlato!</button></a></div>
+<div><img title="Super Greens - zelené zlato pro zdraví a relax - Czechvirus" alt="Super Greens - zelené zlato pro zdraví a relax - Czechvirus" src="$USER-CONTENT/produkty/supergreens-zelene-zlato-relax-zdravi.png"></div>
+</div>
+<p><script type="text/javascript">function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function animateBars() {
+  document.querySelectorAll('.bar-inner').forEach((bar) => {
+    if (isInViewport(bar) && !bar.style.width) {
+      bar.style.width = bar.getAttribute('data-percentage');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateBars);
+animateBars(); // spustí animaci i bez scrollování, v pøípadì, že lišta je již viditelná</script></p>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [0, 10, 20, 30, 40, 50, 60], // X-axis labels
+            datasets: [{
+                label: 'Rakovina tlustého støeva',
+                data: [, 1.05, 0.9, 0.75, 0.6],
+                borderColor: 'yellow',
+                fill: false
+            }, {
+                label: 'Onemocnìní koronárních tepen,',
+                data: [, 1.35, 1, 0.9, 0.8, 0.7, 0.6],
+                borderColor: 'blue',
+                fill: false
+            }, {
+                label: 'Kardiovaskulární onemocnìní',
+                data: [, 1.35, 1.1, 1.0, 0.9, 0.8, 0.7],
+                borderColor: 'green',
+                fill: false
+            }, {
+                label: 'Mozková mrtvice',
+                data: [, 1.1, 0.95, 0.9, 0.85, , ],
+                borderColor: 'pink',
+                fill: false
+            }, {
+                label: 'Rakovina prsu',
+                data: [, 1, 1, 0.95, 0.65],
+                borderColor: 'turquoise',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Denní pøíjem vlákniny (g/den)'
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Odhadovaný relativní risk'
+                    },
+                    beginAtZero: true,
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+    function adjustChartHeight() {
+        if (window.innerWidth < 768) {
+            ctx.canvas.style.height = '400px';
+        } else {
+            ctx.canvas.style.height = '400px';
+        }
+    }
+
+    window.addEventListener('resize', adjustChartHeight);
+    adjustChartHeight();
+</script>

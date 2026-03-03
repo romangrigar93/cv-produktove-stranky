@@ -1,0 +1,293 @@
+<style>
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.event {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+}
+
+.label {
+    font-size: 22px;
+}
+
+.slider {
+    position: relative;
+    width: 350px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+    min-width: 350px;
+    height: 600px;
+    position: relative;
+    border-radius: 15px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.slide .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #870000, transparent);
+    color: white;
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.slide:hover .overlay,
+.slide:focus .overlay {
+    opacity: 1;
+}
+
+.slide button {
+    padding: 20px 30px;
+    background-color: #e02833;
+    position: absolute;
+    bottom: 80px;
+    border: 0px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 48%;
+    transform: translateY(-50%);
+}
+
+.nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 14px;
+    height: 14px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .timeline {
+        height: 4px;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .event {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .slider {
+        margin: 0;
+    }
+}
+
+</style>
+
+    <div class="timeline-container">
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Ráno</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="proteiny/mps-5-coko.jpg" alt="Super Greens PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(197)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="proteiny/mps-5-vanilka.jpg" alt="Snídanì idemehorebejbe">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(55)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="proteiny/mps-5-vanilka-2.jpg" alt="SuperVita PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1755)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="proteiny/perfect-milkshake -1.jpg" alt="SuperVita PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1755)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="proteiny/pure-elite.jpg" alt="SuperVita PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1755)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="proteiny/pure-elite-2.jpg" alt="SuperVita PRO V2.0">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1755)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>                       
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Pøed tréninkem</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/beast-lackovic.jpg" alt="Beast Virus">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(1665)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/pumpa-lackovic.jpg" alt="M3/S Pump">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(474)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/creatine-lackovic.jpg" alt="Creatine Creapure">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(49)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Po tréninku</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/protein-lackovic.jpg" alt="Protein Pure Elite CFM">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(55)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">&nbsp;</div>
+        <div class="event">
+            <div class="label">Veèer</div>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/omega-lackovic.jpg" alt="Omega 3">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(67)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="$USER-CONTENT/sportovci-landing/podklady-lackovic/zma-lackovic.jpg" alt="ZMA">
+                        <div class="overlay">
+                            <button onclick="CVAddToCart(3)">PØIDAT DO KOŠÍKU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button class="prev">‹</button>
+                    <button class="next">›</button>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active">&nbsp;</div>
+                    <div class="indicator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    document.querySelectorAll('.slider').forEach(slider => { const slides = slider.querySelector('.slides'); const prevButton = slider.querySelector('.prev'); const nextButton = slider.querySelector('.next'); const indicators = slider.querySelectorAll('.indicator'); let index = 0; let startX; let isDragging = false; function updateSlider() { slides.style.transform = `translateX(${-index * 350}px)`; indicators.forEach((indicator, i) => { indicator.classList.toggle('active', i === index); }); } function startDrag(event) { isDragging = true; startX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX; } function drag(event) { if (!isDragging) return; const currentX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX; const diff = currentX - startX; slides.style.transform = `translateX(${diff - index * 350}px)`; } function endDrag(event) { if (!isDragging) return; isDragging = false; const currentX = event.type.includes('touch') ? event.changedTouches[0].clientX : event.clientX; const diff = currentX - startX; if (diff > 100 && index > 0) { index--; } else if (diff < -100 && index < indicators.length - 1) { index++; } updateSlider(); } prevButton.addEventListener('click', () => { index = (index > 0) ? index - 1 : indicators.length - 1; updateSlider(); }); nextButton.addEventListener('click', () => { index = (index < indicators.length - 1) ? index + 1 : 0; updateSlider(); }); indicators.forEach((indicator, i) => { indicator.addEventListener('click', () => { index = i; updateSlider(); }); }); slider.addEventListener('mousedown', startDrag); slider.addEventListener('mousemove', drag); slider.addEventListener('mouseup', endDrag); slider.addEventListener('mouseleave', endDrag); slider.addEventListener('touchstart', startDrag); slider.addEventListener('touchmove', drag); slider.addEventListener('touchend', endDrag); });
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', { slidesPerView: 1, spaceBetween: 10, pagination: { el: '.swiper-pagination', clickable: true, }, autoplay: { delay: 5000, disableOnInteraction: false, }, breakpoints: { 768: { slidesPerView: 2, spaceBetween: 20, }, 1024: { slidesPerView: 3, spaceBetween: 30, }, }, });
+</script>
+

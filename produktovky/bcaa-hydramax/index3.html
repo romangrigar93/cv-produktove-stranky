@@ -1,0 +1,517 @@
+<meta charset="UTF-8">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+    :root {
+        --white: #ffffff;
+        --off-white: #fafafa;
+        --light-gray: #f5f5f5;
+        --medium-gray: #e0e0e0;
+        --text-dark: #1a1a1a;
+        --text-medium: #4a4a4a;
+        --text-light: #7a7a7a;
+        --accent: #0066cc;
+        --accent-light: #e6f0ff;
+    }
+
+    .minimal-page * {
+        box-sizing: border-box;
+    }
+
+    .minimal-page {
+        font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--white);
+        max-width: 1000px;
+        margin: 0 auto !important;
+        color: var(--text-dark);
+    }
+
+    /* Sekce */
+    .minimal-section {
+        padding: 80px 60px;
+    }
+
+    .minimal-section.gray-bg {
+        background: var(--off-white);
+    }
+
+    /* Nadpisy */
+    .minimal-page h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 2.8em;
+        font-weight: 400;
+        text-align: center;
+        color: var(--text-dark);
+        margin: 0 0 20px 0 !important;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+    }
+
+    .minimal-page h2 .accent {
+        color: var(--accent);
+        font-style: italic;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: var(--text-light);
+        font-size: 1.1em;
+        font-weight: 300;
+        margin-bottom: 50px !important;
+        letter-spacing: 0.5px;
+    }
+
+    /* Divider */
+    .divider {
+        width: 60px;
+        height: 1px;
+        background: var(--medium-gray);
+        margin: 0 auto 50px !important;
+    }
+
+    /* Text */
+    .minimal-page p {
+        font-size: 1.1em;
+        line-height: 1.9;
+        color: var(--text-medium);
+        font-weight: 300;
+    }
+
+    .minimal-page strong {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .content-narrow {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .content-narrow p {
+        margin-bottom: 20px !important;
+    }
+
+    /* Hero */
+    .hero-minimal {
+        padding-top: 100px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .hero-minimal h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 3.5em;
+        font-weight: 700;
+        text-align: center;
+        color: var(--text-dark);
+        margin: 0 0 10px 0 !important;
+        letter-spacing: -1px;
+    }
+
+    .hero-minimal h1 .accent {
+        color: var(--accent);
+        font-style: italic;
+    }
+
+    .hero-image-container {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .hero-image-container img {
+        max-width: 70%;
+        border-radius: 4px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+
+    /* Seznam */
+    .minimal-page ul {
+        list-style: none;
+        padding: 0;
+        margin: 40px 0 0 0;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 35px !important;
+        padding-bottom: 35px;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .feature-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0 !important;
+        padding-bottom: 0;
+    }
+
+    .feature-number {
+        font-family: 'Playfair Display', serif;
+        font-size: 2em;
+        color: var(--accent);
+        font-weight: 600;
+        min-width: 60px;
+        line-height: 1;
+    }
+
+    .feature-content {
+        flex: 1;
+    }
+
+    .feature-content strong {
+        display: block;
+        font-size: 1.15em;
+        margin-bottom: 8px !important;
+    }
+
+    .feature-content p, .feature-content span {
+        color: var(--text-light);
+        font-size: 1em;
+        margin: 0 !important;
+        line-height: 1.7;
+    }
+
+    .feature-tip {
+        display: block;
+        margin-top: 15px !important;
+        padding: 15px 20px;
+        background: var(--accent-light);
+        border-radius: 4px;
+        font-size: 0.95em;
+        color: var(--text-medium);
+    }
+
+    /* Benefity grid */
+    .benefits-row {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-top: 50px;
+    }
+
+    .benefit-minimal {
+        text-align: center;
+        flex: 1;
+        max-width: 200px;
+    }
+
+    .benefit-minimal img {
+        width: 50px;
+        height: 50px;
+        opacity: 0.7;
+        margin-bottom: 20px !important;
+    }
+
+    .benefit-minimal p {
+        font-size: 0.85em !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--text-light) !important;
+        font-weight: 600;
+    }
+
+    /* Citát box */
+    .quote-box {
+        background: var(--light-gray);
+        padding: 40px 50px;
+        border-radius: 4px;
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .quote-box p {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4em;
+        font-style: italic;
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin: 0 !important;
+    }
+
+    .quote-box .stat {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-style: normal;
+        color: var(--accent);
+        font-weight: 700;
+    }
+
+    /* Simple list */
+    .simple-list {
+        columns: 2;
+        column-gap: 40px;
+        margin-top: 30px;
+    }
+
+    .simple-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--light-gray);
+        color: var(--text-medium);
+        font-size: 1em;
+        break-inside: avoid;
+    }
+
+    .simple-list li strong {
+        color: var(--text-dark);
+    }
+
+    /* Příchutě */
+    .flavors-minimal {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    .flavor-minimal {
+        text-align: center;
+        flex: 1;
+        max-width: 280px;
+    }
+
+    .flavor-minimal img {
+        width: 100%;
+        border-radius: 4px;
+        transition: transform 0.4s ease;
+    }
+
+    .flavor-minimal:hover img {
+        transform: translateY(-10px);
+    }
+
+    .flavor-minimal p {
+        margin-top: 25px !important;
+        font-size: 0.9em !important;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--text-light) !important;
+        font-weight: 600;
+    }
+
+    /* Foto s textem */
+    .split-section {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .split-section .split-image {
+        flex: 1;
+    }
+
+    .split-section .split-image img {
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    .split-section .split-content {
+        flex: 1;
+    }
+
+    .split-section .split-content h2 {
+        text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .minimal-section {
+            padding: 50px 30px;
+        }
+
+        .minimal-page h2 {
+            font-size: 2em;
+        }
+
+        .hero-minimal h1 {
+            font-size: 2.5em;
+        }
+
+        .benefits-row {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .simple-list {
+            columns: 1;
+        }
+
+        .flavors-minimal {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flavor-minimal {
+            max-width: 250px;
+        }
+
+        .split-section {
+            flex-direction: column;
+        }
+
+        .split-section .split-image {
+            order: -1;
+        }
+
+        .feature-item {
+            flex-direction: column;
+        }
+
+        .feature-number {
+            margin-bottom: 10px !important;
+        }
+    }
+</style>
+
+<div class="minimal-page">
+    <!-- Hero -->
+    <section class="minimal-section hero-minimal">
+        <h1>Supreme BCAA <span class="accent">Hydramax</span></h1>
+        <div class="content-narrow">
+            <p><strong>Supreme BCAA Hydramax</strong> je <strong>pokročilá formule fermentovaných aminokyselin</strong>, která kombinuje <strong>BCAA v optimálním poměru 2:1:1</strong> s <strong>elektrolyty</strong> a prémiovým sacharidem <strong>Cluster Dextrin™</strong>. Tento unikátní produkt byl navržen pro sportovce, kteří chtějí <strong>maximalizovat regeneraci</strong>, udržet svaly plné energie a tělo <strong>dokonale hydratované</strong> během náročného tréninku.</p>
+            <p>Ať už běháš maratony, zvedáš činky nebo hraješ týmové sporty – <strong>BCAA Hydramax</strong> ti pomůže udržet tempo a <strong>rychleji se zotavit</strong>.</p>
+        </div>
+        <div class="hero-image-container">
+            <img src="supreme-bcaa-hydramax_orange.png" alt="BCAA Hydramax Czech Virus">
+        </div>
+    </section>
+
+    <!-- Proč právě -->
+    <section class="minimal-section gray-bg">
+        <h2>Proč právě <span class="accent">Hydramax?</span></h2>
+        <div class="divider"></div>
+
+        <div class="feature-item">
+            <span class="feature-number">01</span>
+            <div class="feature-content">
+                <strong>Fermentované BCAA 2:1:1</strong>
+                <span>Celých 6000 mg aminokyselin (3000 mg L-Leucin, 1500 mg L-Isoleucin, 1500 mg L-Valin) vyrobených šetrnou metodou fermentace pro maximální čistotu.</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span class="feature-number">02</span>
+            <div class="feature-content">
+                <strong>Pokročilý systém hydratace</strong>
+                <span>Sodík, draslík, vápník a hořčík ve vysoce využitelných formách (citráty, glukonáty, bisglycináty) pro prevenci křečí.</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span class="feature-number">03</span>
+            <div class="feature-content">
+                <strong>Prémiová energie Cluster Dextrin™</strong>
+                <span>Obsahuje 3000 mg značkového cyklického dextrinu. Toto množství slouží jako ideální základ pro energii a transport látek.</span>
+                <span class="feature-tip"><strong>Tip:</strong> Potřebuješ sacharidů více? Pro extrémně náročné výkony připravujeme samostatný čistý Cluster Dextrin, kterým si BCAA Hydramax již brzy budeš moci „dochutit" na potřebné množství energie.</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span class="feature-number">04</span>
+            <div class="feature-content">
+                <strong>Maximální funkčnost</strong>
+                <span>Složení navržené pro skutečnou podporu výkonu při tréninku, nikoliv jen "obarvená voda".</span>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span class="feature-number">05</span>
+            <div class="feature-content">
+                <strong>Skvělá chuť</strong>
+                <span>Dostupné ve třech vyladěných příchutích, které osvěží, ale "nelepí" pusu.</span>
+            </div>
+        </div>
+
+        <div class="benefits-row">
+            <div class="benefit-minimal">
+                <img alt="Regenerace svalů" src="$USER-CONTENT/produkty/energy.png">
+                <p>Regenerace</p>
+            </div>
+            <div class="benefit-minimal">
+                <img alt="Hydratace" src="$USER-CONTENT/produkty/water-drop.png">
+                <p>Hydratace</p>
+            </div>
+            <div class="benefit-minimal">
+                <img alt="Výkon" src="$USER-CONTENT/produkty/muscle.png">
+                <p>Energie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co jsou BCAA -->
+    <section class="minimal-section">
+        <div class="split-section">
+            <div class="split-image">
+                <img src="supreme-bcaa-hydramax_citrus.png" alt="BCAA Hydramax">
+            </div>
+            <div class="split-content">
+                <h2>Co jsou to <span class="accent">BCAA?</span></h2>
+                <p><strong>BCAA</strong> (Branched-Chain Amino Acids) neboli <strong>aminokyseliny s rozvětveným řetězcem</strong> jsou tři esenciální aminokyseliny: <strong>L-Leucin, L-Isoleucin a L-Valin</strong>. Tělo si je nedokáže samo vyrobit, a proto je musíme přijímat ze stravy nebo doplňků.</p>
+                <p>Tyto aminokyseliny tvoří přibližně <strong>35 % svalové hmoty</strong> a hrají klíčovou roli v <strong>syntéze bílkovin</strong>, <strong>regeneraci svalů</strong> a <strong>prevenci svalového katabolismu</strong> během intenzivního cvičení. Leucin je přitom nejdůležitější – funguje jako <strong>hlavní spouštěč svalového růstu</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hydratace -->
+    <section class="minimal-section gray-bg">
+        <h2>Proč je hydratace <span class="accent">tak důležitá?</span></h2>
+        <div class="divider"></div>
+
+        <div class="quote-box">
+            <p>Dehydratace už o <span class="stat">2 %</span> může snížit váš sportovní výkon až o <span class="stat">25 %</span></p>
+        </div>
+
+        <div class="content-narrow">
+            <p>Během tréninku můžete <strong>ztratit velké množství tekutin</strong> a s nimi i cenné <strong>elektrolyty</strong>.</p>
+            <p><strong>BCAA Hydramax</strong> obsahuje <strong>4 klíčové elektrolyty</strong> – sodík (z citrátu), draslík (z glukonátu), vápník a hořčík (mj. v chelátové vazbě bisglycinátu) – které pomáhají:</p>
+        </div>
+
+        <ul class="simple-list">
+            <li>Udržovat <strong>správnou rovnováhu tekutin</strong></li>
+            <li>Předcházet <strong>svalovým křečím</strong></li>
+            <li>Podporovat <strong>nervové impulsy</strong></li>
+            <li>Zlepšit <strong>vstřebávání živin</strong></li>
+        </ul>
+    </section>
+
+    <!-- Pro koho -->
+    <section class="minimal-section">
+        <h2>Pro koho je <span class="accent">Hydramax?</span></h2>
+        <div class="divider"></div>
+        <div class="content-narrow">
+            <p><strong>Supreme BCAA Hydramax</strong> je ideální volbou pro:</p>
+        </div>
+
+        <ul class="simple-list" style="max-width: 700px; margin: 30px auto 0;">
+            <li><strong>Silové sportovce</strong> – pro ochranu svalové hmoty</li>
+            <li><strong>Vytrvalostní atlety</strong> – běžce a cyklisty</li>
+            <li><strong>Týmové sportovce</strong> – fotbalisty či hokejisty</li>
+            <li><strong>Crossfitery</strong> – pro náročné WODy</li>
+            <li><strong>Aktivní lidi v horku</strong> – extrémní ztráta elektrolytů</li>
+        </ul>
+    </section>
+
+    <!-- Příchutě -->
+    <section class="minimal-section gray-bg">
+        <h2>Vyber si svou <span class="accent">příchuť</span></h2>
+        <div class="divider"></div>
+        <div class="content-narrow">
+            <p><strong>BCAA Hydramax</strong> je dostupné ve <strong>třech osvěžujících příchutích</strong>, které ti zpříjemní každý trénink. Všechny varianty mají <strong>stejně silné složení</strong>.</p>
+        </div>
+
+        <div class="flavors-minimal">
+            <div class="flavor-minimal">
+                <img alt="BCAA Hydramax Citrus Charge" src="supreme-bcaa-hydramax_citrus.png">
+                <p>Citrus Charge</p>
+            </div>
+            <div class="flavor-minimal">
+                <img alt="BCAA Hydramax Cola-Lime Fusion" src="supreme-bcaa-hydramax_cola.png">
+                <p>Cola-Lime Fusion</p>
+            </div>
+            <div class="flavor-minimal">
+                <img alt="BCAA Hydramax Fantastic Orange" src="supreme-bcaa-hydramax_orange.png">
+                <p>Fantastic Orange</p>
+            </div>
+        </div>
+    </section>
+</div>
