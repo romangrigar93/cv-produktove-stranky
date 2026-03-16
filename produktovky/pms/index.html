@@ -1,0 +1,975 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+    html, body { margin: 0 !important; padding: 0 !important; }
+
+    .pms-page,
+    .pms-page *,
+    .pms-page *::before,
+    .pms-page *::after {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    .pms-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #0a0a0a !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: #e0e0e0 !important;
+    }
+
+    .pms-page .pms-wrap {
+        max-width: 900px !important;
+        margin: 0 auto !important;
+        padding: 0 30px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .pms-page .pms-section {
+        padding: 70px 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Typography */
+    .pms-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.2em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+        color: #ffffff !important;
+    }
+
+    .pms-page h2 .highlight {
+        color: #d4457a !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    .pms-page h2 .highlight-cream {
+        color: #f5deb3 !important;
+    }
+
+    .pms-page .tagline {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.85em !important;
+        font-weight: 700 !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        color: #d4457a !important;
+        opacity: 0.85 !important;
+    }
+
+    .pms-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+        color: rgba(255,255,255,0.85) !important;
+    }
+
+    /* === HERO === */
+    .pms-page .pms-hero {
+        min-height: 520px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 80px 0 60px !important;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .pms-page .pms-hero::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 50% !important;
+        right: 20% !important;
+        width: 400px !important;
+        height: 400px !important;
+        background: radial-gradient(circle, rgba(212,69,122,0.15) 0%, transparent 70%) !important;
+        transform: translate(50%, -50%) !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        animation: pms-glow-pulse 4s ease-in-out infinite !important;
+    }
+
+    .pms-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .pms-page .hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .pms-page .hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        position: relative !important;
+    }
+
+    .pms-page .hero-image > img {
+        max-width: 85% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 60px rgba(212,69,122,0.25)) !important;
+        animation: pms-float 5s ease-in-out infinite !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    .pms-page .hero-title {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 4em !important;
+        color: #ffffff !important;
+        text-transform: uppercase !important;
+        letter-spacing: 3px !important;
+        margin: 0 0 10px 0 !important;
+        line-height: 1 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .pms-page .hero-title .pink {
+        color: #d4457a !important;
+    }
+
+    .pms-page .hero-subtitle {
+        font-size: 1.1em !important;
+        color: rgba(255,255,255,0.8) !important;
+        line-height: 1.7 !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* Stats bar */
+    .pms-page .stats-bar {
+        display: flex !important;
+        gap: 0 !important;
+        margin-top: 30px !important;
+        border: 1px solid rgba(212,69,122,0.2) !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        background: rgba(255,255,255,0.03) !important;
+    }
+
+    .pms-page .stat-item {
+        flex: 1 !important;
+        text-align: center !important;
+        padding: 18px 10px !important;
+        border-right: 1px solid rgba(212,69,122,0.15) !important;
+    }
+
+    .pms-page .stat-item:last-child {
+        border-right: none !important;
+    }
+
+    .pms-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.2em !important;
+        color: #d4457a !important;
+        line-height: 1 !important;
+        display: block !important;
+    }
+
+    .pms-page .stat-label {
+        font-size: 0.75em !important;
+        color: rgba(255,255,255,0.6) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin-top: 5px !important;
+        display: block !important;
+    }
+
+    /* Animations */
+    @keyframes pms-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+    }
+
+    @keyframes pms-glow-pulse {
+        0%, 100% { opacity: 0.6; transform: translate(50%, -50%) scale(1); }
+        50% { opacity: 1; transform: translate(50%, -50%) scale(1.15); }
+    }
+
+    /* === PRODUCT VARIANTS === */
+    .pms-page .pms-variants {
+        background: #0f0f0f !important;
+    }
+
+    .pms-page .variant-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .pms-page .variant-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%) !important;
+        border: 1px solid rgba(212,69,122,0.12) !important;
+        border-radius: 12px !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: border-color 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .pms-page .variant-card:hover {
+        border-color: rgba(212,69,122,0.35) !important;
+        transform: translateY(-3px) !important;
+    }
+
+    .pms-page .variant-card img {
+        max-width: 80% !important;
+        height: auto !important;
+        margin: 0 auto 15px !important;
+        display: block !important;
+    }
+
+    .pms-page .variant-card .variant-name {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #fff !important;
+        letter-spacing: 1px !important;
+        margin: 0 0 5px 0 !important;
+    }
+
+    .pms-page .variant-card .variant-size {
+        font-size: 0.85em !important;
+        color: #d4457a !important;
+        font-weight: 700 !important;
+    }
+
+    .pms-page .variant-card .variant-flavors {
+        font-size: 0.85em !important;
+        color: rgba(255,255,255,0.5) !important;
+        margin-top: 8px !important;
+    }
+
+    /* NOVINKA badge */
+    .pms-page .badge-new {
+        position: absolute !important;
+        top: 12px !important;
+        right: -30px !important;
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+        color: #fff !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.7em !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 5px 35px !important;
+        transform: rotate(35deg) !important;
+        box-shadow: 0 2px 10px rgba(255,107,53,0.4) !important;
+        z-index: 5 !important;
+    }
+
+    /* === BIO-ACTIVE === */
+    .pms-page .pms-bioactive {
+        background: #111 !important;
+    }
+
+    .pms-page .bio-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+
+    .pms-page .bio-text {
+        flex: 1 1 55% !important;
+        width: 55% !important;
+        min-width: 0 !important;
+    }
+
+    .pms-page .bio-image {
+        flex: 1 1 45% !important;
+        width: 45% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .pms-page .bio-image img {
+        max-width: 90% !important;
+        height: auto !important;
+        filter: drop-shadow(0 15px 40px rgba(212,69,122,0.2)) !important;
+    }
+
+    .pms-page .bio-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 20px 0 0 !important;
+    }
+
+    .pms-page .bio-list li {
+        color: rgba(255,255,255,0.8) !important;
+        padding: 8px 0 8px 20px !important;
+        position: relative !important;
+        font-size: 0.95em !important;
+        line-height: 1.5 !important;
+    }
+
+    .pms-page .bio-list li::before {
+        content: '\2713' !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: #d4457a !important;
+        font-weight: bold !important;
+    }
+
+    .pms-page .bio-list li strong {
+        color: #f5deb3 !important;
+    }
+
+    /* === VIDEO === */
+    .pms-page .pms-video-section {
+        background: #0f0f0f !important;
+        text-align: center !important;
+    }
+
+    .pms-page .pms-video-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        margin: 30px auto 0 !important;
+        padding-bottom: 39.375% !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        box-shadow: 0 15px 50px rgba(212,69,122,0.15) !important;
+    }
+
+    .pms-page .pms-video-wrapper iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+    }
+
+    /* === QUALITY === */
+    .pms-page .pms-quality {
+        background: #0a0a0a !important;
+    }
+
+    .pms-page .quality-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .pms-page .quality-card {
+        background: linear-gradient(180deg, rgba(212,69,122,0.06) 0%, rgba(212,69,122,0.02) 100%) !important;
+        border: 1px solid rgba(212,69,122,0.15) !important;
+        border-radius: 12px !important;
+        padding: 30px 24px !important;
+        text-align: center !important;
+        transition: border-color 0.3s ease !important;
+    }
+
+    .pms-page .quality-card:hover {
+        border-color: rgba(212,69,122,0.4) !important;
+    }
+
+    .pms-page .quality-icon {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        background: rgba(212,69,122,0.1) !important;
+        border: 2px solid rgba(212,69,122,0.3) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto 18px !important;
+        font-size: 1.4em !important;
+    }
+
+    .pms-page .quality-card h3 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #f5deb3 !important;
+        margin: 0 0 10px 0 !important;
+        letter-spacing: 1px !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .pms-page .quality-card p {
+        font-size: 0.92em !important;
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        line-height: 1.6 !important;
+    }
+
+    /* === WHY SECTION === */
+    .pms-page .pms-why {
+        background: #141414 !important;
+    }
+
+    .pms-page .why-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .pms-page .why-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%) !important;
+        border: 1px solid rgba(212,69,122,0.12) !important;
+        border-radius: 12px !important;
+        padding: 28px !important;
+        transition: border-color 0.3s ease !important;
+    }
+
+    .pms-page .why-card:hover {
+        border-color: rgba(212,69,122,0.35) !important;
+    }
+
+    .pms-page .why-card h3 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #d4457a !important;
+        letter-spacing: 1px !important;
+        margin: 0 0 10px 0 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .pms-page .why-card p {
+        font-size: 0.95em !important;
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        line-height: 1.6 !important;
+    }
+
+    /* === AMINO BARS === */
+    .pms-page .pms-amino {
+        background: #0a0a0a !important;
+    }
+
+    .pms-page .pms-bars-wrap {
+        max-width: 700px !important;
+        margin: 40px auto 0 !important;
+    }
+
+    .pms-page .pms-bar-row {
+        display: flex !important;
+        align-items: center !important;
+        margin-bottom: 16px !important;
+        gap: 15px !important;
+    }
+
+    .pms-page .pms-bar-label {
+        flex: 0 0 160px !important;
+        text-align: right !important;
+        font-weight: 700 !important;
+        font-size: 0.95em !important;
+        color: rgba(255,255,255,0.85) !important;
+    }
+
+    .pms-page .pms-bar-outer {
+        flex: 1 !important;
+        background: rgba(255,255,255,0.08) !important;
+        overflow: hidden !important;
+        height: 32px !important;
+        border-radius: 4px !important;
+    }
+
+    .pms-page .pms-bar-inner {
+        height: 100% !important;
+        width: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        padding-right: 12px !important;
+        font-weight: 700 !important;
+        font-size: 0.9em !important;
+        color: #fff !important;
+        transition: width 1.5s ease-in-out !important;
+        border-radius: 4px !important;
+    }
+
+    .pms-page .pms-bar-inner.pms-animated {
+        width: var(--target-width) !important;
+    }
+
+    .pms-page .pms-bar-pink {
+        background: linear-gradient(to right, #6b1d3a 20%, #d4457a) !important;
+    }
+
+    .pms-page .pms-bar-cream {
+        background: linear-gradient(to right, #5a4520 20%, #f5deb3) !important;
+        color: #1a1a1a !important;
+    }
+
+    .pms-page .pms-bcaa-note {
+        text-align: center !important;
+        margin-top: 30px !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.6em !important;
+        color: #f5deb3 !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* === FLAVORS === */
+    .pms-page .pms-flavors {
+        background: #0f0f0f !important;
+    }
+
+    .pms-page .flavor-group-title {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.6em !important;
+        color: rgba(255,255,255,0.6) !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        margin: 40px 0 20px !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .pms-page .flavor-group-title:first-of-type {
+        margin-top: 10px !important;
+    }
+
+    .pms-page .flavor-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 25px !important;
+    }
+
+    .pms-page .flavor-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%) !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 12px !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: border-color 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .pms-page .flavor-card:hover {
+        border-color: rgba(212,69,122,0.3) !important;
+        transform: translateY(-3px) !important;
+    }
+
+    .pms-page .flavor-card img {
+        max-width: 75% !important;
+        height: auto !important;
+        margin: 0 auto 15px !important;
+        display: block !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .pms-page .flavor-card:hover img {
+        transform: scale(1.05) !important;
+    }
+
+    .pms-page .flavor-card .flavor-name {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #fff !important;
+        letter-spacing: 1px !important;
+        margin: 0 !important;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+        .pms-page .pms-wrap {
+            padding: 0 20px !important;
+        }
+
+        .pms-page .pms-section {
+            padding: 50px 0 !important;
+        }
+
+        .pms-page .pms-hero {
+            min-height: auto !important;
+            padding: 50px 0 40px !important;
+        }
+
+        .pms-page .hero-content {
+            flex-direction: column !important;
+        }
+
+        .pms-page .hero-text {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .pms-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .pms-page .hero-image > img {
+            max-width: 60% !important;
+        }
+
+        .pms-page .hero-title {
+            font-size: 3em !important;
+        }
+
+        .pms-page h2 {
+            font-size: 2.4em !important;
+        }
+
+        .pms-page .stats-bar {
+            flex-direction: column !important;
+        }
+
+        .pms-page .stat-item {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(212,69,122,0.15) !important;
+        }
+
+        .pms-page .stat-item:last-child {
+            border-bottom: none !important;
+        }
+
+        .pms-page .variant-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .pms-page .why-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .pms-page .pms-bar-label {
+            flex: 0 0 110px !important;
+            font-size: 0.85em !important;
+        }
+
+        .pms-page .flavor-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .pms-page .pms-hero::before {
+            right: 0 !important;
+            top: 30% !important;
+            width: 300px !important;
+            height: 300px !important;
+        }
+
+        .pms-page .bio-content {
+            flex-direction: column !important;
+        }
+
+        .pms-page .bio-text {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .pms-page .bio-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .pms-page .bio-image img {
+            max-width: 60% !important;
+        }
+
+        .pms-page .quality-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .pms-page .pms-video-wrapper {
+            padding-bottom: 56.25% !important;
+        }
+    }
+</style>
+
+<div class="pms-page">
+
+    <!-- HERO -->
+    <section class="pms-hero pms-section">
+        <div class="pms-wrap">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="tagline">100% syrovátkový protein</div>
+                    <h1 class="hero-title">Perfect <span class="pink">Milkshake</span></h1>
+                    <p class="hero-subtitle">Zlatý standard mezi proteiny. 100% syrovátkový protein zpracovaný šetrnou metodou ultrafiltrace za studena — naprosto bez chemie. S trávicími enzymy pro maximální vstřebání a nejlepším poměrem cena/výkon na trhu.</p>
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <span class="stat-number">21g</span>
+                            <span class="stat-label">Bílkovin na dávku</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Příchutí</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Trávicí enzymy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="PMS-2kg_jahoda.png" alt="Perfect Milkshake - Jahodový Milkshake">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT VARIANTS -->
+    <section class="pms-variants pms-section">
+        <div class="pms-wrap">
+            <div class="tagline">3 velikosti, 6 příchutí</div>
+            <h2>Vyber si <span class="highlight">svůj Milkshake</span></h2>
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <img src="PMS-2kg_citron.png" alt="Perfect Milkshake 2000g">
+                    <div class="variant-name">Perfect Milkshake</div>
+                    <div class="variant-size">2000g (66 dávek)</div>
+                    <div class="variant-flavors">Citron &bull; Jahoda &bull; Třešeň</div>
+                </div>
+                <div class="variant-card">
+                    <span class="badge-new">Novinka</span>
+                    <img src="PMS-900g_banan.png" alt="Perfect Milkshake 900g">
+                    <div class="variant-name">Perfect Milkshake</div>
+                    <div class="variant-size">900g (30 dávek)</div>
+                    <div class="variant-flavors">Banán &bull; Hazelnut &bull; Malina</div>
+                </div>
+                <div class="variant-card">
+                    <img src="milkshake_500g.png" alt="Perfect Milkshake 500g">
+                    <div class="variant-name">Perfect Milkshake</div>
+                    <div class="variant-size">500g (16 dávek)</div>
+                    <div class="variant-flavors">Citron &bull; Jahoda &bull; Třešeň</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIO-ACTIVE FRACTIONS -->
+    <section class="pms-bioactive pms-section">
+        <div class="pms-wrap">
+            <div class="bio-content">
+                <div class="bio-text">
+                    <div class="tagline">Šetrné zpracování, maximální kvalita</div>
+                    <h2>Bio-aktivní <span class="highlight">frakce</span></h2>
+                    <p>Díky šetrné ultrafiltrace za studena si Perfect Milkshake zachovává všechny důležité bio-aktivní frakce syrovátkové bílkoviny:</p>
+                    <ul class="bio-list">
+                        <li><strong>Beta-Lactoglobulin</strong> — hlavní syrovátkový protein, zdroj esenciálních aminokyselin</li>
+                        <li><strong>Alpha-Lactalbumin</strong> — bohatý na tryptofan a cystein</li>
+                        <li><strong>Glycomacropeptide</strong> — podpora trávení a sytosti</li>
+                        <li><strong>Imunoglobuliny G, A</strong> — podpora imunitního systému</li>
+                        <li><strong>Bovine Serum Albumin</strong> — antioxidační vlastnosti</li>
+                        <li><strong>Lactoferrin</strong> — protizánětlivé a antimikrobiální účinky</li>
+                    </ul>
+                </div>
+                <div class="bio-image">
+                    <img src="PMS-2kg_citron.png" alt="Perfect Milkshake - Citrónový Oplatek">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUALITY -->
+    <section class="pms-quality pms-section">
+        <div class="pms-wrap">
+            <h2>Nekompromisní <span class="highlight">kvalita</span></h2>
+            <div class="quality-grid">
+                <div class="quality-card">
+                    <div class="quality-icon">&#9878;</div>
+                    <h3>Ultrafiltrace za studena</h3>
+                    <p>Šetrná metoda zpracování bez chemie zajišťuje vysokou kvalitu proteinu a nízký obsah sacharidů a tuků.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">&#9880;</div>
+                    <h3>Přírodní složení</h3>
+                    <p>Přírodní aroma, přírodní barviva a sladidlo sukralóza. Žádná zbytečná plnidla ani chemické přísady.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">&#9883;</div>
+                    <h3>Testováno</h3>
+                    <p>Produkty Czech Virus pochází z ČR a jsou testovány na zakázané látky. Konzultováno se špičkovými atlety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="pms-video-section pms-section">
+        <div class="pms-wrap">
+            <div class="tagline">Podívej se na Perfect Milkshake</div>
+            <h2>Perfect Milkshake <span class="highlight">v akci</span></h2>
+            <div class="pms-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Yr_Q0Hi1xJA" title="Perfect Milkshake - Czech Virus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="pms-why pms-section">
+        <div class="pms-wrap">
+            <h2>Proč zvolit <span class="highlight">Perfect Milkshake?</span></h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>100% Syrovátka</h3>
+                    <p>Syrovátkový koncentrát zpracovaný ultrafiltrací za studena zachovává všechny bioaktivní frakce a kompletní aminokyselinový profil.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Trávicí enzymy</h3>
+                    <p>Bromelain z ananasu (1200 GDU/g) a Papain z papáji (1,5 FIP U/mg) pro efektivní štěpení bílkovin a maximální vstřebání.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Syrovátkový izolát</h3>
+                    <p>Kombinace koncentrátu a izolátů pro optimální rychlost vstřebání a nízký obsah tuku i laktózy.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Skvělá chuť</h3>
+                    <p>6 příchutí od klasických po nové — citrónový oplatek, jahoda, třešeň, banán, hazelnut a bílá čokoláda s malinou. Jako skutečný milkshake.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMINO ACID PROFILE -->
+    <section class="pms-amino pms-section">
+        <div class="pms-wrap">
+            <h2>Aminokyselinové <span class="highlight">spektrum</span></h2>
+            <div class="pms-bars-wrap">
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Glutamic Acid</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-pink" style="--target-width: 100%;">18.1 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Aspartic Acid</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-cream" style="--target-width: 60.8%;">11.0 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Leucine</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-pink" style="--target-width: 58.6%;">10.6 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Lysine</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-cream" style="--target-width: 53.0%;">9.6 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Threonine</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-pink" style="--target-width: 37.0%;">6.7 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Isoleucine</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-cream" style="--target-width: 35.4%;">6.4 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Valine</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-pink" style="--target-width: 32.6%;">5.9 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Proline</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-cream" style="--target-width: 30.4%;">5.5 %</div>
+                    </div>
+                </div>
+                <div class="pms-bar-row">
+                    <div class="pms-bar-label">Alanine</div>
+                    <div class="pms-bar-outer">
+                        <div class="pms-bar-inner pms-bar-pink" style="--target-width: 27.6%;">5.0 %</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pms-bcaa-note">BCAA celkem: 22.9 %</div>
+        </div>
+    </section>
+
+    <!-- FLAVORS -->
+    <section class="pms-flavors pms-section">
+        <div class="pms-wrap">
+            <h2>Dostupné <span class="highlight">příchutě</span></h2>
+
+            <div class="flavor-group-title">2000g &amp; 500g</div>
+            <div class="flavor-grid">
+                <div class="flavor-card">
+                    <img src="PMS-2kg_citron.png" alt="Citrónový Oplatek">
+                    <p class="flavor-name">Citrónový Oplatek</p>
+                </div>
+                <div class="flavor-card">
+                    <img src="PMS-2kg_jahoda.png" alt="Jahodový Milkshake">
+                    <p class="flavor-name">Jahodový Milkshake</p>
+                </div>
+                <div class="flavor-card">
+                    <img src="PMS-2kg_tresen.png" alt="Jogurtová Třešeň">
+                    <p class="flavor-name">Jogurtová Třešeň</p>
+                </div>
+            </div>
+
+            <div class="flavor-group-title">900g — Nové příchutě</div>
+            <div class="flavor-grid">
+                <div class="flavor-card">
+                    <span class="badge-new">Novinka</span>
+                    <img src="PMS-900g_banan.png" alt="Banán">
+                    <p class="flavor-name">Banán</p>
+                </div>
+                <div class="flavor-card">
+                    <span class="badge-new">Novinka</span>
+                    <img src="PMS-900g_hazelnut.png" alt="Lískooříškové Mléko">
+                    <p class="flavor-name">Lískooříškové Mléko</p>
+                </div>
+                <div class="flavor-card">
+                    <span class="badge-new">Novinka</span>
+                    <img src="PMS-900g_malina.png" alt="Bílá Čokoláda &amp; Malina">
+                    <p class="flavor-name">Bílá Čokoláda &amp; Malina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+(function() {
+    function animateBars() {
+        var bars = document.querySelectorAll('.pms-bar-inner');
+        for (var i = 0; i < bars.length; i++) {
+            var bar = bars[i];
+            var rect = bar.getBoundingClientRect();
+            var viewH = window.innerHeight || document.documentElement.clientHeight;
+            if (rect.top < viewH && rect.bottom > 0 && !bar.classList.contains('pms-animated')) {
+                bar.classList.add('pms-animated');
+            }
+        }
+    }
+    window.addEventListener('scroll', animateBars);
+    window.addEventListener('load', animateBars);
+    setTimeout(animateBars, 500);
+})();
+</script>

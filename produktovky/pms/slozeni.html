@@ -1,0 +1,678 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    html, body { margin: 0 !important; padding: 0 !important; }
+
+    .composition-page *,
+    .composition-page *::before,
+    .composition-page *::after {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    .composition-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #1a1a1a !important;
+        max-width: 100% !important;
+        padding: 50px !important;
+        border-radius: 0 !important;
+        color: #ffffff !important;
+        overflow-x: hidden !important;
+    }
+
+    .composition-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: #ffffff !important;
+        margin: 0 0 25px 0 !important;
+        padding-bottom: 15px !important;
+        border-bottom: 3px solid #d4457a !important;
+        display: inline-block !important;
+    }
+
+    .composition-page h2 .highlight {
+        color: #d4457a !important;
+    }
+
+    .composition-page p {
+        font-size: 1em !important;
+        line-height: 1.8 !important;
+        color: rgba(255,255,255,0.85) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .composition-page strong {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+    }
+
+    /* Flavor tabs */
+    .composition-page .flavor-composition {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+        border-radius: 8px !important;
+        margin-bottom: 15px !important;
+        overflow: hidden !important;
+        border: 1px solid rgba(212,69,122,0.15) !important;
+    }
+
+    .composition-page .flavor-header {
+        background: #d4457a !important;
+        color: #ffffff !important;
+        padding: 15px 25px !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        letter-spacing: 1px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        user-select: none !important;
+        transition: background 0.2s ease !important;
+    }
+
+    .composition-page .flavor-header:hover {
+        background: #b83a68 !important;
+    }
+
+    .composition-page .flavor-header .toggle-icon {
+        font-size: 1.2em !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .composition-page .flavor-header.active .toggle-icon {
+        transform: rotate(180deg) !important;
+    }
+
+    .composition-page .flavor-content {
+        padding: 0 25px !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.4s ease, padding 0.3s ease !important;
+        color: rgba(255,255,255,0.75) !important;
+        font-size: 0.95em !important;
+        line-height: 1.7 !important;
+    }
+
+    .composition-page .flavor-content.open {
+        padding: 20px 25px !important;
+        max-height: 500px !important;
+    }
+
+    .composition-page .badge-new {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+        color: #ffffff !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.55em !important;
+        font-weight: 700 !important;
+        padding: 3px 10px !important;
+        border-radius: 4px !important;
+        margin-left: 12px !important;
+        letter-spacing: 0.5px !important;
+        vertical-align: middle !important;
+        text-transform: uppercase !important;
+    }
+
+    .composition-page .flavor-group-label {
+        font-size: 0.85em !important;
+        color: rgba(255,255,255,0.4) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 30px 0 15px !important;
+        font-weight: 700 !important;
+    }
+
+    /* Nutrition tables */
+    .composition-page .info-table-wrapper {
+        margin-top: 40px !important;
+        overflow-x: auto !important;
+        min-width: 0 !important;
+    }
+
+    .composition-page .info-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #2d2d2d !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        table-layout: fixed !important;
+    }
+
+    .composition-page .info-table colgroup col:first-child {
+        width: 40% !important;
+    }
+
+    .composition-page .info-table th,
+    .composition-page .info-table td {
+        padding: 10px 14px !important;
+        text-align: left !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .composition-page .info-table th {
+        background: #d4457a !important;
+        color: #ffffff !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.1em !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+    }
+
+    .composition-page .info-table td {
+        color: rgba(255,255,255,0.85) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        font-size: 0.92em !important;
+    }
+
+    .composition-page .info-table tr:last-child td {
+        border-bottom: none !important;
+    }
+
+    .composition-page .info-table tr:nth-child(even) {
+        background: rgba(0,0,0,0.2) !important;
+    }
+
+    .composition-page .info-table tr:hover {
+        background: rgba(212,69,122,0.08) !important;
+    }
+
+    .composition-page .info-table td.value {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1em !important;
+        color: #f5deb3 !important;
+        text-align: right !important;
+    }
+
+    .composition-page .info-table td.sub-row {
+        padding-left: 35px !important;
+        color: rgba(255,255,255,0.6) !important;
+        font-size: 0.88em !important;
+    }
+
+    .composition-page .info-table .category-row {
+        background: rgba(212,69,122,0.15) !important;
+    }
+
+    .composition-page .info-table .category-row td {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 0.9em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        border-bottom: 2px solid #d4457a !important;
+    }
+
+    /* Amino table */
+    .composition-page .amino-table td.amino-name {
+        width: 60% !important;
+    }
+
+    .composition-page .amino-table td.amino-value {
+        width: 40% !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.15em !important;
+        color: #f5deb3 !important;
+        text-align: right !important;
+    }
+
+    .composition-page .amino-summary {
+        background: rgba(212,69,122,0.12) !important;
+        border: 1px solid rgba(212,69,122,0.3) !important;
+        border-radius: 8px !important;
+        padding: 15px 25px !important;
+        margin-top: 15px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    .composition-page .amino-summary .bcaa-total {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #f5deb3 !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* Allergen note */
+    .composition-page .allergen-note {
+        background: rgba(245,222,179,0.08) !important;
+        border: 1px solid rgba(245,222,179,0.2) !important;
+        border-radius: 8px !important;
+        padding: 20px 25px !important;
+        margin-top: 40px !important;
+        color: rgba(255,255,255,0.85) !important;
+        font-size: 0.95em !important;
+        line-height: 1.6 !important;
+    }
+
+    .composition-page .allergen-note strong {
+        color: #f5deb3 !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .composition-page {
+            padding: 20px 12px !important;
+        }
+
+        .composition-page h2 {
+            font-size: 1.8em !important;
+        }
+
+        .composition-page .info-table th,
+        .composition-page .info-table td {
+            padding: 8px 10px !important;
+            font-size: 0.82em !important;
+        }
+
+        .composition-page .info-table td.value,
+        .composition-page .amino-table td.amino-value {
+            font-size: 0.9em !important;
+        }
+
+        .composition-page .info-table td.sub-row {
+            padding-left: 20px !important;
+        }
+
+        .composition-page .flavor-header {
+            font-size: 1.1em !important;
+            padding: 12px 15px !important;
+        }
+
+        .composition-page .flavor-content.open {
+            padding: 15px !important;
+        }
+
+        .composition-page .amino-summary {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding: 12px 15px !important;
+        }
+
+        .composition-page .allergen-note {
+            padding: 15px !important;
+        }
+    }
+</style>
+
+<div class="composition-page">
+
+    <h2>Složení <span class="highlight">Perfect Milkshake</span></h2>
+
+    <!-- Original flavors (2000g + 500g) -->
+    <div class="flavor-group-label">2000g &amp; 500g</div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open');">
+            <span>Citrónový Oplatek</span>
+            <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="flavor-content">
+            Syrovátkový koncentrát (mléko), Tvarohový prášek (mléko), Aroma, Jogurtový prášek (mléko), Chlorid sodný, Sukralóza, Xanthanová guma, Syrovátkový izolát (mléko), Papain (1,5 FIP U/mg), Bromelain (1200 GDU/g)
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open');">
+            <span>Jahodový Milkshake</span>
+            <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="flavor-content">
+            Syrovátkový koncentrát (mléko), Aroma, Chlorid sodný, Barvivo (extrakt z červené řepy), Sukralóza, Xanthanová guma, Kyselina citrónová, Syrovátkový izolát (mléko), Papain (1,5 FIP U/mg), Bromelain (1200 GDU/g)
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open');">
+            <span>Jogurtová Třešeň</span>
+            <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="flavor-content">
+            Syrovátkový koncentrát (mléko), Jogurtový prášek (mléko), Aroma, Barvivo (extrakt z červené řepy), Chlorid sodný, Sukralóza, Xanthanová guma, Kyselina citrónová, Syrovátkový izolát (mléko), Papain (1,5 FIP U/mg), Bromelain (1200 GDU/g)
+        </div>
+    </div>
+
+    <!-- New flavors (900g) -->
+    <div class="flavor-group-label">900g — Nové příchutě</div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open');">
+            <span>Lískooříškové Mléko <span class="badge-new">NOVINKA</span></span>
+            <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="flavor-content">
+            Syrovátkový koncentrát (z mléka, emulgátor: lecitiny ze sóji), Aroma, Chlorid sodný, Barvivo (karamel amoniakový), Xanthanová guma, Sladidlo (Sukralóza), Syrovátkový izolát (z mléka), Papain extrahovaný z Carica papaya (1,5 FIP U/mg), Bromelain extrahovaný z Ananas comosus (1200 GDU/g).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open');">
+            <span>Bílá Čokoláda &amp; Malina <span class="badge-new">NOVINKA</span></span>
+            <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="flavor-content">
+            Syrovátkový koncentrát (z mléka, emulgátor: lecitiny ze sóji), Aroma, Barvivo (extrakt z červené řepy), Chlorid sodný, Xanthanová guma, Sladidlo (Sukralóza), Regulátor kyselosti (kyselina citrónová), Syrovátkový izolát (z mléka), Papain extrahovaný z Carica papaya (1,5 FIP U/mg), Bromelain extrahovaný z Ananas comosus (1200 GDU/g).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open');">
+            <span>Banán <span class="badge-new">NOVINKA</span></span>
+            <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="flavor-content">
+            Syrovátkový koncentrát (z mléka, emulgátor: lecitiny ze sóji), Aroma, Chlorid sodný, Xanthanová guma, Sladidlo (Sukralóza), Regulátor kyselosti (kyselina citrónová), Syrovátkový izolát (z mléka), Papain extrahovaný z Carica papaya (1,5 FIP U/mg), Bromelain extrahovaný z Ananas comosus (1200 GDU/g).
+        </div>
+    </div>
+
+    <!-- Nutrition table - Original flavors -->
+    <div class="info-table-wrapper">
+        <h2>Nutriční hodnoty — <span class="highlight">Stávající příchutě</span></h2>
+        <table class="info-table">
+            <colgroup>
+                <col style="width:28% !important;">
+                <col style="width:18% !important;">
+                <col style="width:18% !important;">
+                <col style="width:18% !important;">
+                <col style="width:18% !important;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th style="text-align:right !important;">Citron 100g</th>
+                    <th style="text-align:right !important;">Citron 30g</th>
+                    <th style="text-align:right !important;">Jahoda 100g</th>
+                    <th style="text-align:right !important;">Třešeň 100g</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Energie</td>
+                    <td class="value">382 kcal</td>
+                    <td class="value">115 kcal</td>
+                    <td class="value">385 kcal</td>
+                    <td class="value">382 kcal</td>
+                </tr>
+                <tr>
+                    <td>Tuky</td>
+                    <td class="value">6,3 g</td>
+                    <td class="value">1,9 g</td>
+                    <td class="value">6,7 g</td>
+                    <td class="value">6,3 g</td>
+                </tr>
+                <tr>
+                    <td class="sub-row">z toho nasycené</td>
+                    <td class="value">2,3 g</td>
+                    <td class="value">0,7 g</td>
+                    <td class="value">2,3 g</td>
+                    <td class="value">2,3 g</td>
+                </tr>
+                <tr>
+                    <td>Sacharidy</td>
+                    <td class="value">7,3 g</td>
+                    <td class="value">2,2 g</td>
+                    <td class="value">6,0 g</td>
+                    <td class="value">7,7 g</td>
+                </tr>
+                <tr>
+                    <td class="sub-row">z toho cukry</td>
+                    <td class="value">5,3 g</td>
+                    <td class="value">1,6 g</td>
+                    <td class="value">4,0 g</td>
+                    <td class="value">5,3 g</td>
+                </tr>
+                <tr>
+                    <td><strong>Bílkoviny</strong></td>
+                    <td class="value">74 g</td>
+                    <td class="value">22 g</td>
+                    <td class="value">75 g</td>
+                    <td class="value">74 g</td>
+                </tr>
+                <tr>
+                    <td>Sůl</td>
+                    <td class="value">0,92 g</td>
+                    <td class="value">0,28 g</td>
+                    <td class="value">0,89 g</td>
+                    <td class="value">0,90 g</td>
+                </tr>
+                <tr class="category-row">
+                    <td colspan="5">Trávicí enzymy</td>
+                </tr>
+                <tr>
+                    <td>Bromelain</td>
+                    <td class="value">20 mg</td>
+                    <td class="value">6 mg</td>
+                    <td class="value">20 mg</td>
+                    <td class="value">20 mg</td>
+                </tr>
+                <tr>
+                    <td>Papain</td>
+                    <td class="value">20 mg</td>
+                    <td class="value">6 mg</td>
+                    <td class="value">20 mg</td>
+                    <td class="value">20 mg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Nutrition table - New flavors -->
+    <div class="info-table-wrapper">
+        <h2>Nutriční hodnoty — <span class="highlight">Nové příchutě (900g)</span></h2>
+        <table class="info-table">
+            <colgroup>
+                <col style="width:22% !important;">
+                <col style="width:13% !important;">
+                <col style="width:13% !important;">
+                <col style="width:13% !important;">
+                <col style="width:13% !important;">
+                <col style="width:13% !important;">
+                <col style="width:13% !important;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th style="text-align:right !important;">Hazelnut 100g</th>
+                    <th style="text-align:right !important;">Hazelnut 30g</th>
+                    <th style="text-align:right !important;">Malina 100g</th>
+                    <th style="text-align:right !important;">Malina 30g</th>
+                    <th style="text-align:right !important;">Banán 100g</th>
+                    <th style="text-align:right !important;">Banán 30g</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Energie</td>
+                    <td class="value">381 kcal</td>
+                    <td class="value">114 kcal</td>
+                    <td class="value">381 kcal</td>
+                    <td class="value">114 kcal</td>
+                    <td class="value">381 kcal</td>
+                    <td class="value">114 kcal</td>
+                </tr>
+                <tr>
+                    <td>Tuky</td>
+                    <td class="value">5,4 g</td>
+                    <td class="value">1,6 g</td>
+                    <td class="value">5,3 g</td>
+                    <td class="value">1,6 g</td>
+                    <td class="value">5,4 g</td>
+                    <td class="value">1,6 g</td>
+                </tr>
+                <tr>
+                    <td class="sub-row">z toho nasycené</td>
+                    <td class="value">3,7 g</td>
+                    <td class="value">1,1 g</td>
+                    <td class="value">3,7 g</td>
+                    <td class="value">1,1 g</td>
+                    <td class="value">3,8 g</td>
+                    <td class="value">1,1 g</td>
+                </tr>
+                <tr>
+                    <td>Sacharidy</td>
+                    <td class="value">12 g</td>
+                    <td class="value">3,5 g</td>
+                    <td class="value">13 g</td>
+                    <td class="value">3,9 g</td>
+                    <td class="value">12 g</td>
+                    <td class="value">3,5 g</td>
+                </tr>
+                <tr>
+                    <td class="sub-row">z toho cukry</td>
+                    <td class="value">4,9 g</td>
+                    <td class="value">1,5 g</td>
+                    <td class="value">5,0 g</td>
+                    <td class="value">1,5 g</td>
+                    <td class="value">4,9 g</td>
+                    <td class="value">1,5 g</td>
+                </tr>
+                <tr>
+                    <td><strong>Bílkoviny</strong></td>
+                    <td class="value">71 g</td>
+                    <td class="value">21 g</td>
+                    <td class="value">70 g</td>
+                    <td class="value">21 g</td>
+                    <td class="value">72 g</td>
+                    <td class="value">21 g</td>
+                </tr>
+                <tr>
+                    <td>Sůl</td>
+                    <td class="value">1,1 g</td>
+                    <td class="value">0,33 g</td>
+                    <td class="value">1,1 g</td>
+                    <td class="value">0,33 g</td>
+                    <td class="value">1,1 g</td>
+                    <td class="value">0,33 g</td>
+                </tr>
+                <tr class="category-row">
+                    <td colspan="7">Trávicí enzymy</td>
+                </tr>
+                <tr>
+                    <td>Bromelain</td>
+                    <td class="value">12 mg</td>
+                    <td class="value">3,6 mg</td>
+                    <td class="value">12 mg</td>
+                    <td class="value">3,6 mg</td>
+                    <td class="value">20 mg</td>
+                    <td class="value">6 mg</td>
+                </tr>
+                <tr>
+                    <td>Papain</td>
+                    <td class="value">12 mg</td>
+                    <td class="value">3,6 mg</td>
+                    <td class="value">12 mg</td>
+                    <td class="value">3,6 mg</td>
+                    <td class="value">20 mg</td>
+                    <td class="value">6 mg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Amino acid spectrum -->
+    <div class="info-table-wrapper">
+        <h2>Aminokyselinové <span class="highlight">spektrum</span></h2>
+        <p style="color:rgba(255,255,255,0.5) !important; font-size:0.9em !important; margin-top:-10px !important;">(% z bílkovin, průměrně)</p>
+
+        <table class="info-table amino-table">
+            <thead>
+                <tr>
+                    <th>Aminokyselina</th>
+                    <th style="text-align:right !important;">Obsah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="amino-name">Glutamic Acid</td>
+                    <td class="amino-value">18,1 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Aspartic Acid</td>
+                    <td class="amino-value">11,0 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name"><strong>Leucine *</strong></td>
+                    <td class="amino-value">10,6 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Lysine</td>
+                    <td class="amino-value">9,6 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Threonine</td>
+                    <td class="amino-value">6,7 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name"><strong>Isoleucine *</strong></td>
+                    <td class="amino-value">6,4 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name"><strong>Valine *</strong></td>
+                    <td class="amino-value">5,9 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Proline</td>
+                    <td class="amino-value">5,5 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Alanine</td>
+                    <td class="amino-value">5,0 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Serine</td>
+                    <td class="amino-value">4,6 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Phenylalanine</td>
+                    <td class="amino-value">3,0 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Tyrosine</td>
+                    <td class="amino-value">2,6 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Cystine</td>
+                    <td class="amino-value">2,2 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Methionine</td>
+                    <td class="amino-value">2,2 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Arginine</td>
+                    <td class="amino-value">2,1 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Histidine</td>
+                    <td class="amino-value">1,7 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Glycine</td>
+                    <td class="amino-value">1,4 %</td>
+                </tr>
+                <tr>
+                    <td class="amino-name">Tryptophan</td>
+                    <td class="amino-value">1,4 %</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="amino-summary">
+            <span class="bcaa-total">BCAA celkem: 22,9 %</span>
+            <span style="font-size:0.85em !important; color:rgba(255,255,255,0.5) !important;">* BCAA aminokyseliny (Leucine, Isoleucine, Valine)</span>
+        </div>
+    </div>
+
+    <!-- Allergen note -->
+    <div class="allergen-note">
+        <strong>Obsahuje:</strong> mléčnou bílkovinu, laktózu. Nové příchutě (900g) obsahují navíc sóju (ze sojového lecitinu).
+        <br>Vyrobeno v závodě zpracovávajícím mléko, vajíčka, sojové boby, korýše, rybí olej a ořechy.
+    </div>
+
+</div>
