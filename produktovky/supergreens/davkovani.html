@@ -1,0 +1,279 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    html, body { margin: 0 !important; padding: 0 !important; }
+
+    :root {
+        --sg-green: #2d6a2e;
+        --sg-green-dark: #1a4d1a;
+        --sg-black: #1a1a1a;
+        --sg-dark-gray: #2d2d2d;
+        --sg-white: #ffffff;
+        --sg-accent: #8fdf8f;
+    }
+
+    .dosage-page *,
+    .dosage-page *::before,
+    .dosage-page *::after {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .dosage-page {
+        font-family: 'Inter', sans-serif;
+        background: var(--sg-black);
+        max-width: 100% !important;
+        padding: 50px;
+        border-radius: 0;
+        overflow-x: hidden;
+    }
+
+    .dosage-page h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--sg-white);
+        margin: 0 0 25px 0 !important;
+        padding-bottom: 15px;
+        border-bottom: 3px solid var(--sg-green);
+        display: inline-block;
+    }
+
+    .dosage-page h2 .highlight {
+        color: var(--sg-green);
+    }
+
+    .dosage-page p {
+        font-size: 1.05em;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 15px !important;
+    }
+
+    .dosage-page strong {
+        color: var(--sg-white);
+        font-weight: 700;
+    }
+
+    /* Dosage box */
+    .dosage-box {
+        background: linear-gradient(135deg, var(--sg-dark-gray) 0%, var(--sg-black) 100%);
+        border-left: 4px solid var(--sg-green);
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    .dosage-highlight {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        background: var(--sg-green);
+        color: var(--sg-white);
+        padding: 15px 25px;
+        border-radius: 8px;
+        margin: 15px 0;
+    }
+
+    .dosage-highlight .number {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.5em;
+        line-height: 1;
+    }
+
+    .dosage-highlight .text {
+        font-size: 0.95em;
+    }
+
+    /* Info grid */
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .info-card {
+        background: rgba(255,255,255,0.05);
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .info-card .label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255,255,255,0.5);
+        margin-bottom: 8px;
+    }
+
+    .info-card .value {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2em;
+        color: var(--sg-accent);
+    }
+
+    /* Tips section */
+    .tips-section {
+        background: rgba(45,106,46,0.1);
+        border: 1px solid rgba(45,106,46,0.3);
+        border-radius: 8px;
+        padding: 25px;
+        margin-top: 30px;
+    }
+
+    .tips-section h2 {
+        color: var(--sg-accent);
+        border-bottom-color: rgba(45,106,46,0.3);
+        margin-bottom: 15px !important;
+    }
+
+    .tips-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tips-section ul li {
+        color: rgba(255,255,255,0.8);
+        padding: 10px 0 10px 25px;
+        position: relative;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .tips-section ul li:last-child {
+        border-bottom: none;
+    }
+
+    .tips-section ul li::before {
+        content: '💡';
+        position: absolute;
+        left: 0;
+    }
+
+    /* Warning section */
+    .warning-section {
+        background: rgba(200,150,0,0.08);
+        border: 1px solid rgba(200,150,0,0.2);
+        border-radius: 8px;
+        padding: 25px;
+        margin-top: 30px;
+    }
+
+    .warning-section h2 {
+        color: #e0c040;
+        border-bottom-color: rgba(200,150,0,0.3);
+        margin-bottom: 15px !important;
+    }
+
+    .warning-section p {
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 10px !important;
+        font-size: 0.95em;
+    }
+
+    .warning-section p:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .warning-section em {
+        display: block;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85em;
+        color: rgba(255,255,255,0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .dosage-page {
+            padding: 20px 12px;
+        }
+
+        .dosage-page h2 {
+            font-size: 2em;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .dosage-highlight {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .dosage-box {
+            padding: 20px 15px;
+        }
+
+        .tips-section {
+            padding: 20px 15px;
+        }
+
+        .warning-section {
+            padding: 20px 15px;
+        }
+    }
+</style>
+
+<div class="dosage-page">
+    <h2>Dávkování</h2>
+
+    <div class="dosage-box">
+        <p><strong>Doporučené dávkování:</strong><br>
+        Smíchej 1 dávku (8 g) s 250–350 ml studené vody a důkladně promíchej v šejkru. Užívej 1 dávku denně, nejlépe ráno nalačno nebo kdykoliv během dne.</p>
+
+        <div class="dosage-highlight">
+            <span class="number">8g</span>
+            <span class="text">= 1 dávka (cca 1 odměrka)</span>
+        </div>
+
+        <p style="color: rgba(255,255,255,0.6); font-size: 0.9em; margin-top: 15px !important;">
+            🌿 Tip: Pro nejlepší chuť a rozpustnost použij studený šejkr s ledem!
+        </p>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label">Obsah balení</div>
+            <div class="value">240g</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Počet dávek</div>
+            <div class="value">30</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Příchutí</div>
+            <div class="value">6</div>
+        </div>
+    </div>
+
+    <div class="tips-section">
+        <h2>Tipy pro <span class="highlight">nejlepší výsledky</span></h2>
+        <ul>
+            <li>Užívej pravidelně každý den – účinky se projevují s konzistentním užíváním</li>
+            <li>Nejlepší vstřebání je nalačno, ideálně ráno po probuzení</li>
+            <li>Kombinuj s <strong>ColonClean Ultra</strong> pro komplexní péči o trávení a střeva</li>
+            <li>Používej studenou vodu – lepší chuť a rozpustnost</li>
+        </ul>
+    </div>
+
+    <div class="warning-section">
+        <h2>Upozornění</h2>
+        <p>Uchovávejte mimo dosah dětí. Výrobek není určen pro děti, těhotné a kojící ženy.</p>
+        <p>Neobsahuje látky dopingového charakteru. Skladujte v suchu při teplotě do 25 °C mimo dosah přímého slunečního záření.</p>
+        <p>Chraňte před mrazem. Výrobce neručí za škody vzniklé nevhodným použitím nebo skladováním. Výrobek neslouží jako náhrada pestré stravy.</p>
+        <p>Před užíváním se vždy poraďte se svým ošetřujícím lékařem!</p>
+
+        <em>Datum min. trvanlivosti a šarže: viz obal produktu. Po otevření spotřebujte do 60 dnů.</em>
+    </div>
+</div>

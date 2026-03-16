@@ -1,0 +1,309 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    html, body { margin: 0 !important; padding: 0 !important; }
+
+    :root {
+        --sg-green: #2d6a2e;
+        --sg-green-dark: #1a4d1a;
+        --sg-black: #1a1a1a;
+        --sg-dark-gray: #2d2d2d;
+        --sg-white: #ffffff;
+        --sg-accent: #8fdf8f;
+    }
+
+    .composition-page *,
+    .composition-page *::before,
+    .composition-page *::after {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .composition-page {
+        font-family: 'Inter', sans-serif;
+        background: var(--sg-black);
+        max-width: 100% !important;
+        padding: 50px;
+        border-radius: 0;
+        overflow-x: hidden;
+    }
+
+    .composition-page h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--sg-white);
+        margin: 0 0 25px 0 !important;
+        padding-bottom: 15px;
+        border-bottom: 3px solid var(--sg-green);
+        display: inline-block;
+    }
+
+    .composition-page h2 .highlight {
+        color: var(--sg-green);
+    }
+
+    .composition-page p {
+        font-size: 1em;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 15px !important;
+    }
+
+    .composition-page strong {
+        color: var(--sg-white);
+        font-weight: 700;
+    }
+
+    /* Flavor tabs */
+    .flavor-composition {
+        background: linear-gradient(135deg, var(--sg-dark-gray) 0%, var(--sg-black) 100%);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .flavor-header {
+        background: var(--sg-green);
+        color: var(--sg-white);
+        padding: 15px 25px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .flavor-header .badge-new-inline {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.5em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 4px;
+    }
+
+    .flavor-content {
+        padding: 20px 25px;
+        color: rgba(255,255,255,0.75);
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    /* Key ingredients section */
+    .key-ingredients {
+        margin-top: 40px;
+    }
+
+    .ingredient-category {
+        background: linear-gradient(135deg, var(--sg-dark-gray) 0%, var(--sg-black) 100%);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .category-header {
+        background: rgba(45,106,46,0.3);
+        color: var(--sg-white);
+        padding: 12px 25px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        border-left: 4px solid var(--sg-green);
+    }
+
+    .category-content {
+        padding: 15px 25px 20px;
+    }
+
+    .category-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .category-content ul li {
+        color: rgba(255,255,255,0.8);
+        padding: 8px 0 8px 25px;
+        position: relative;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .category-content ul li:last-child {
+        border-bottom: none;
+    }
+
+    .category-content ul li::before {
+        content: '\2713';
+        position: absolute;
+        left: 0;
+        color: var(--sg-accent);
+        font-weight: bold;
+    }
+
+    .category-content ul li strong {
+        color: var(--sg-accent);
+    }
+
+    /* Reference note */
+    .reference-note {
+        font-size: 0.85em;
+        font-style: italic;
+        color: rgba(255,255,255,0.5);
+        margin-top: 15px !important;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .composition-page {
+            padding: 20px 12px;
+        }
+
+        .composition-page h2 {
+            font-size: 2em;
+        }
+
+        .flavor-content {
+            padding: 15px;
+        }
+
+        .category-content {
+            padding: 12px 15px 15px;
+        }
+
+        .category-content ul li {
+            padding: 8px 0 8px 20px;
+            font-size: 0.9em;
+        }
+    }
+</style>
+
+<div class="composition-page">
+    <h2>Složení <span class="highlight">Super Greens PRO V2.0</span></h2>
+
+    <p>Složení se může mírně lišit dle příchuti. Níže najdeš kompletní seznam ingrediencí pro každou variantu.</p>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">🍏 Jablečný Fresh</div>
+        <div class="flavor-content">
+            Jablečná vláknina, Aroma, Chlorella vulgaris prášek, Spirulina (Arthrospira platensis, extrakt z celé rostliny), Mladý ječmen (Hordeum vulgare, klíčky), prášek z mladé pšenice (Triticum aestivum, klíčky), regulátor kyselosti (kyselina citrónová), xanthanová guma, rutin (Sophora japonica, extrakt z poupěte), extrakt z kůry borovice mořské (Pinus pinaster), houba reishi (Ganoderma lucidum, extrakt z plodů), extrakt ze semen hroznů (Vitis vinifera), extrakt z petržele (Petroselinum crispum), Cordyceps (Cordyceps sinensis, extrakt z mycelia), kvercetin (Sophora japonica, extrakt z poupěte), sladidlo (steviol-glykosidy ze stévie), bromelain z ananasu (1200 GDU/g), papain z papáji (1,5 FIP U/mg), naringin (extrakt z plodů Citrus paradisi macfadyen), jalovec (Juniperus communis, extrakt z plodů), lykopen (Lycopersicon esculentum, extrakt z rajčete), granátové jablko (Punica granatum, extrakt z ovoce)
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">🫐 Lesní ovoce</div>
+        <div class="flavor-content">
+            Jablečná vláknina, Chlorella vulgaris prášek, Spirulina (Arthrospira platensis, extrakt z celé rostliny), Aroma, Mladý ječmen (Hordeum vulgare, klíčky), prášek z mladé pšenice (Triticum aestivum, klíčky), regulátor kyselosti (kyselina citrónová), xanthanová guma, rutin (Sophora japonica, extrakt z poupěte), extrakt z kůry borovice mořské (Pinus pinaster), houba reishi (Ganoderma lucidum, extrakt z plodů), extrakt ze semen hroznů (Vitis vinifera), extrakt z petržele (Petroselinum crispum), Cordyceps (Cordyceps sinensis, extrakt z mycelia), kvercetin (Sophora japonica, extrakt z poupěte), sladidlo (steviol-glykosidy ze stévie), bromelain z ananasu (1200 GDU/g), papain z papáji (1,5 FIP U/mg), naringin (extrakt z plodů Citrus paradisi macfadyen), jalovec (Juniperus communis, extrakt z plodů), lykopen (Lycopersicon esculentum, extrakt z rajčete), granátové jablko (Punica granatum, extrakt z ovoce)
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">
+            🍵 Zelený čaj & Ibišek
+            <span class="badge-new-inline">Novinka</span>
+        </div>
+        <div class="flavor-content">
+            Jablečná vláknina, Chlorella vulgaris prášek, Spirulina (Arthrospira platensis, extrakt z celé rostliny), Aroma, Mladý ječmen (Hordeum vulgare, klíčky), prášek z mladé pšenice (Triticum aestivum, klíčky), regulátor kyselosti (kyselina citrónová), xanthanová guma, extrakt z kůry borovice mořské (Pinus pinaster), rutin (Sophora japonica, extrakt z poupěte), houba reishi (Ganoderma lucidum, extrakt z plodů), extrakt z petržele (Petroselinum crispum), Cordyceps (Cordyceps sinensis, prášek z mycelia), extrakt ze semen hroznů (Vitis vinifera), kvercetin (Sophora japonica, extrakt z poupěte), lykopen (Lycopersicon esculentum, extrakt z rajčete), sladidlo (steviol-glykosidy ze stévie), bromelain z ananasu (1200 GDU/g), papain z papáji (1,5 FIP U/mg), naringin (extrakt z plodů Citrus paradisi macfadyen), jalovec (Juniperus communis, extrakt z plodů), granátové jablko (Punica granatum, prášek z plodu).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">
+            🍊 Grapefruit
+            <span class="badge-new-inline">Novinka</span>
+        </div>
+        <div class="flavor-content">
+            Jablečná vláknina, Chlorella vulgaris prášek, Spirulina (Arthrospira platensis, prášek z celé rostliny), Aroma, regulátor kyselosti (kyselina citrónová), Mladý ječmen (Hordeum vulgare, klíčky), prášek z mladé pšenice (Triticum aestivum, klíčky), xanthanová guma, extrakt z kůry borovice mořské (Pinus pinaster), rutin (Sophora japonica, extrakt z poupěte), houba reishi (Ganoderma lucidum, extrakt z plodů), extrakt z petržele (Petroselinum crispum), Cordyceps (Cordyceps sinensis, prášek z mycelia), extrakt ze semen hroznů (Vitis vinifera), kvercetin (Sophora japonica, extrakt z poupěte), lykopen (Lycopersicon esculentum, extrakt z rajčete), sladidlo (steviol-glykosidy ze stévie), bromelain z ananasu (1200 GDU/g), papain z papáji (1,5 FIP U/mg), naringin (extrakt z plodů Citrus paradisi macfadyen), jalovec (Juniperus communis, extrakt z plodů), granátové jablko (Punica granatum, prášek z plodu).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">
+            🥭 Mango & Maracuja
+            <span class="badge-new-inline">Novinka</span>
+        </div>
+        <div class="flavor-content">
+            Jablečná vláknina, Chlorella vulgaris prášek, Spirulina (Arthrospira platensis, prášek z celé řasy), Aroma, Mladý ječmen (Hordeum vulgare, klíčky), prášek z mladé pšenice (Triticum aestivum, klíčky), regulátor kyselosti (kyselina citrónová), xanthanová guma, extrakt z kůry borovice mořské (Pinus pinaster), rutin (Sophora japonica, extrakt z poupěte), houba reishi (Ganoderma lucidum, extrakt z plodů), extrakt z petržele (Petroselinum crispum), Cordyceps (Cordyceps sinensis, prášek z mycelia), extrakt ze semen hroznů (Vitis vinifera), kvercetin (Sophora japonica, extrakt z poupěte), lykopen (Lycopersicon esculentum, extrakt z plodu rajčete), sladidlo (steviol-glykosidy ze stévie), bromelain z ananasu (1200 GDU/g), papain z papáji (1,5 FIP U/mg), naringin (extrakt z plodů Citrus paradisi macfadyen), jalovec (Juniperus communis, extrakt z plodů), granátové jablko (Punica granatum, prášek z plodu).
+        </div>
+    </div>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">
+            🍋 Fresh Limetka
+            <span class="badge-new-inline">Novinka</span>
+        </div>
+        <div class="flavor-content">
+            Jablečná vláknina, Chlorella vulgaris prášek, Spirulina (Arthrospira platensis, prášek z celé řasy), Aroma, Mladý ječmen (Hordeum vulgare, klíčky), prášek z mladé pšenice (Triticum aestivum, klíčky), regulátor kyselosti (kyselina citrónová), xanthanová guma, extrakt z kůry borovice mořské (Pinus pinaster), rutin (Sophora japonica, extrakt z poupěte), houba reishi (Ganoderma lucidum, extrakt z plodů), extrakt z petržele (Petroselinum crispum), Cordyceps (Cordyceps sinensis, prášek z mycelia), extrakt ze semen hroznů (Vitis vinifera), kvercetin (Sophora japonica, extrakt z poupěte), lykopen (Lycopersicon esculentum, extrakt z rajčete), sladidlo (steviol-glykosidy ze stévie), bromelain z ananasu (1200 GDU/g), papain z papáji (1,5 FIP U/mg), naringin (extrakt z plodů Citrus paradisi macfadyen), jalovec (Juniperus communis, extrakt z plodů), granátové jablko (Punica granatum, prášek z plodu).
+        </div>
+    </div>
+
+    <div class="key-ingredients">
+        <h2>Přehled <span class="highlight">klíčových ingrediencí</span></h2>
+
+        <div class="ingredient-category">
+            <div class="category-header">🌿 Superpotraviny & řasy</div>
+            <div class="category-content">
+                <ul>
+                    <li><strong>Jablečná vláknina</strong> – přírodní prebiotikum pro zdravá střeva</li>
+                    <li><strong>Chlorella vulgaris</strong> – detoxikace a imunitní podpora</li>
+                    <li><strong>Spirulina</strong> – bohatý zdroj bílkovin a antioxidantů</li>
+                    <li><strong>Mladý ječmen</strong> – vitamíny, minerály a chlorofyl</li>
+                    <li><strong>Mladá pšenice</strong> – alkalizace a energetická podpora</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ingredient-category">
+            <div class="category-header">🍄 Adaptogeny & houby</div>
+            <div class="category-content">
+                <ul>
+                    <li><strong>Reishi (Ganoderma lucidum)</strong> – podpora imunity a adaptace na stres</li>
+                    <li><strong>Cordyceps sinensis</strong> – energie, vitalita a výkonnost</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ingredient-category">
+            <div class="category-header">🛡️ Antioxidanty & fytochemikálie</div>
+            <div class="category-content">
+                <ul>
+                    <li><strong>Extrakt z borovice mořské</strong> – silná antioxidační ochrana</li>
+                    <li><strong>Rutin</strong> – podpora cév a kardiovaskulárního systému</li>
+                    <li><strong>Kvercetin</strong> – protizánětlivé a antioxidační účinky</li>
+                    <li><strong>Lykopen</strong> – ochrana buněk před volnými radikály</li>
+                    <li><strong>Naringin</strong> – z grapefruitu, podpora metabolismu</li>
+                    <li><strong>Extrakt ze semen hroznů</strong> – proanthokyanidiny pro zdraví cév</li>
+                    <li><strong>Granátové jablko</strong> – silný přírodní antioxidant</li>
+                    <li><strong>Jalovec</strong> – tradiční bylina s antioxidačními vlastnostmi</li>
+                    <li><strong>Extrakt z petržele</strong> – přirozený zdroj vitamínů a minerálů</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ingredient-category">
+            <div class="category-header">⚡ Trávicí enzymy</div>
+            <div class="category-content">
+                <ul>
+                    <li><strong>Bromelain z ananasu</strong> (1200 GDU/g) – trávení bílkovin a protizánětlivé účinky</li>
+                    <li><strong>Papain z papáji</strong> (1,5 FIP U/mg) – podpora trávení a vstřebávání živin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <p class="reference-note">
+        Sladidlo: steviol-glykosidy ze stévie. Regulátor kyselosti: kyselina citrónová. Zahušťovadlo: xanthanová guma.<br>
+        Složení se může mírně lišit v pořadí ingrediencí dle jednotlivých příchutí.
+    </p>
+</div>

@@ -1,0 +1,888 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+    .mps-page,
+    .mps-page * {
+        box-sizing: border-box !important;
+    }
+
+    .mps-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #0a0a0a !important;
+        width: 100% !important;
+        max-width: none !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: #e0e0e0 !important;
+    }
+
+    /* Wrapper */
+    .mps-page .mps-wrap {
+        max-width: 900px !important;
+        margin: 0 auto !important;
+        padding: 0 30px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    /* Sections */
+    .mps-page .mps-section {
+        padding: 70px 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Typography */
+    .mps-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.2em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+        color: #ffffff !important;
+    }
+
+    .mps-page h2 .highlight {
+        color: #00a8ff !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    .mps-page h2 .highlight-gold {
+        color: #d4a64a !important;
+    }
+
+    .mps-page .tagline {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.85em !important;
+        font-weight: 700 !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        color: #00a8ff !important;
+        opacity: 0.85 !important;
+    }
+
+    .mps-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+        color: rgba(255,255,255,0.85) !important;
+    }
+
+    /* === HERO === */
+    .mps-page .mps-hero {
+        min-height: 520px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 80px 0 60px !important;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .mps-page .mps-hero::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 50% !important;
+        right: 20% !important;
+        width: 400px !important;
+        height: 400px !important;
+        background: radial-gradient(circle, rgba(0,168,255,0.15) 0%, transparent 70%) !important;
+        transform: translate(50%, -50%) !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        animation: mps-glow-pulse 4s ease-in-out infinite !important;
+    }
+
+    .mps-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .mps-page .hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .mps-page .hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        position: relative !important;
+    }
+
+    .mps-page .hero-image > img {
+        max-width: 85% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 60px rgba(0,168,255,0.25)) !important;
+        animation: mps-float 5s ease-in-out infinite !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    .mps-page .hero-title {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 4em !important;
+        color: #ffffff !important;
+        text-transform: uppercase !important;
+        letter-spacing: 3px !important;
+        margin: 0 0 10px 0 !important;
+        line-height: 1 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .mps-page .hero-title .blue {
+        color: #00a8ff !important;
+    }
+
+    .mps-page .hero-subtitle {
+        font-size: 1.1em !important;
+        color: rgba(255,255,255,0.8) !important;
+        line-height: 1.7 !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* Stats bar */
+    .mps-page .stats-bar {
+        display: flex !important;
+        gap: 0 !important;
+        margin-top: 30px !important;
+        border: 1px solid rgba(0,168,255,0.2) !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        background: rgba(255,255,255,0.03) !important;
+    }
+
+    .mps-page .stat-item {
+        flex: 1 !important;
+        text-align: center !important;
+        padding: 18px 10px !important;
+        border-right: 1px solid rgba(0,168,255,0.15) !important;
+    }
+
+    .mps-page .stat-item:last-child {
+        border-right: none !important;
+    }
+
+    .mps-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.2em !important;
+        color: #00a8ff !important;
+        line-height: 1 !important;
+        display: block !important;
+    }
+
+    .mps-page .stat-label {
+        font-size: 0.75em !important;
+        color: rgba(255,255,255,0.6) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin-top: 5px !important;
+        display: block !important;
+    }
+
+    /* Animations */
+    @keyframes mps-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+    }
+
+    @keyframes mps-glow-pulse {
+        0%, 100% { opacity: 0.6; transform: translate(50%, -50%) scale(1); }
+        50% { opacity: 1; transform: translate(50%, -50%) scale(1.15); }
+    }
+
+    /* === PROTEIN SOURCES === */
+    .mps-page .mps-sources {
+        background: #0f0f0f !important;
+    }
+
+    .mps-page .source-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .mps-page .source-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%) !important;
+        border: 1px solid rgba(0,168,255,0.12) !important;
+        border-radius: 12px !important;
+        padding: 28px !important;
+        transition: border-color 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .mps-page .source-card:hover {
+        border-color: rgba(0,168,255,0.35) !important;
+        transform: translateY(-3px) !important;
+    }
+
+    .mps-page .source-card.full-width {
+        grid-column: 1 / -1 !important;
+    }
+
+    .mps-page .source-card-title {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #ffffff !important;
+        letter-spacing: 1px !important;
+        margin: 0 0 5px 0 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .mps-page .source-card-pct {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.8em !important;
+        font-weight: 700 !important;
+        color: #00a8ff !important;
+        margin-bottom: 10px !important;
+        display: inline-block !important;
+    }
+
+    .mps-page .source-card p {
+        font-size: 0.95em !important;
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        line-height: 1.6 !important;
+    }
+
+    /* === PROTEIN CHARTS === */
+    .mps-page .mps-charts {
+        background: #141414 !important;
+    }
+
+    .mps-page .chart-block {
+        margin-bottom: 60px !important;
+    }
+
+    .mps-page .chart-block:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .mps-page .chart-block img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        display: block !important;
+        margin: 30px 0 20px !important;
+    }
+
+    .mps-page .chart-block .chart-caption {
+        font-size: 1em !important;
+        line-height: 1.7 !important;
+        color: rgba(255,255,255,0.8) !important;
+        margin: 0 !important;
+    }
+
+    .mps-page .chart-block .chart-source {
+        font-size: 0.85em !important;
+        font-style: italic !important;
+        color: rgba(255,255,255,0.45) !important;
+        margin-top: 15px !important;
+    }
+
+    /* === ENZYMES === */
+    .mps-page .mps-enzymes {
+        background: #141414 !important;
+    }
+
+    .mps-page .enzyme-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .mps-page .enzyme-card {
+        background: linear-gradient(180deg, rgba(0,168,255,0.06) 0%, rgba(0,168,255,0.02) 100%) !important;
+        border: 1px solid rgba(0,168,255,0.15) !important;
+        border-radius: 12px !important;
+        padding: 30px 24px !important;
+        text-align: center !important;
+        transition: border-color 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .mps-page .enzyme-card:hover {
+        border-color: rgba(212,166,74,0.4) !important;
+        transform: translateY(-3px) !important;
+    }
+
+    .mps-page .enzyme-icon {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        background: rgba(0,168,255,0.1) !important;
+        border: 2px solid rgba(0,168,255,0.3) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto 18px !important;
+        font-size: 1.4em !important;
+    }
+
+    .mps-page .enzyme-card h3 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.5em !important;
+        color: #d4a64a !important;
+        margin: 0 0 10px 0 !important;
+        letter-spacing: 1px !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .mps-page .enzyme-card p {
+        font-size: 0.92em !important;
+        color: rgba(255,255,255,0.7) !important;
+        margin: 0 !important;
+        line-height: 1.6 !important;
+    }
+
+    /* === AMINO ACID BARS === */
+    .mps-page .mps-amino {
+        background: #0a0a0a !important;
+    }
+
+    .mps-page .mps-bars-wrap {
+        max-width: 700px !important;
+        margin: 40px auto 0 !important;
+    }
+
+    .mps-page .mps-bar-row {
+        display: flex !important;
+        align-items: center !important;
+        margin-bottom: 16px !important;
+        gap: 15px !important;
+    }
+
+    .mps-page .mps-bar-label {
+        flex: 0 0 160px !important;
+        text-align: right !important;
+        font-weight: 700 !important;
+        font-size: 0.95em !important;
+        color: rgba(255,255,255,0.85) !important;
+    }
+
+    .mps-page .mps-bar-outer {
+        flex: 1 !important;
+        background: rgba(255,255,255,0.08) !important;
+        overflow: hidden !important;
+        height: 32px !important;
+        border-radius: 4px !important;
+    }
+
+    .mps-page .mps-bar-inner {
+        height: 100% !important;
+        width: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        padding-right: 12px !important;
+        font-weight: 700 !important;
+        font-size: 0.9em !important;
+        color: #fff !important;
+        transition: width 1.5s ease-in-out !important;
+        border-radius: 4px !important;
+    }
+
+    .mps-page .mps-bar-inner.mps-animated {
+        width: var(--target-width) !important;
+    }
+
+    .mps-page .mps-bar-blue {
+        background: linear-gradient(to right, #003d66 20%, #00a8ff) !important;
+    }
+
+    .mps-page .mps-bar-gold {
+        background: linear-gradient(to right, #5a3f10 20%, #d4a64a) !important;
+    }
+
+    .mps-page .mps-bcaa-note {
+        text-align: center !important;
+        margin-top: 30px !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.6em !important;
+        color: #d4a64a !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* === VIDEO === */
+    .mps-page .mps-video-section {
+        background: #111 !important;
+        text-align: center !important;
+    }
+
+    .mps-page .mps-video-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        margin: 30px auto 0 !important;
+        padding-bottom: 39.375% !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        box-shadow: 0 15px 50px rgba(0,168,255,0.15) !important;
+    }
+
+    .mps-page .mps-video-wrapper iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+    }
+
+    /* === FLAVORS === */
+    .mps-page .mps-flavors {
+        background: #0f0f0f !important;
+    }
+
+    .mps-page .flavor-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .mps-page .flavor-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%) !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 12px !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: border-color 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .mps-page .flavor-card:hover {
+        border-color: rgba(0,168,255,0.3) !important;
+        transform: translateY(-3px) !important;
+    }
+
+    .mps-page .flavor-card img {
+        max-width: 75% !important;
+        height: auto !important;
+        margin: 0 auto 15px !important;
+        display: block !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .mps-page .flavor-card:hover img {
+        transform: scale(1.05) !important;
+    }
+
+    .mps-page .flavor-card .flavor-name {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #fff !important;
+        letter-spacing: 1px !important;
+        margin: 0 !important;
+    }
+
+    /* NOVINKA badge */
+    .mps-page .badge-new {
+        position: absolute !important;
+        top: 12px !important;
+        right: -30px !important;
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+        color: #fff !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.7em !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 5px 35px !important;
+        transform: rotate(35deg) !important;
+        box-shadow: 0 2px 10px rgba(255,107,53,0.4) !important;
+        z-index: 5 !important;
+    }
+
+    /* === WHY CHOOSE === */
+    .mps-page .mps-why {
+        background: #1a1a1a !important;
+    }
+
+    .mps-page .why-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+
+    .mps-page .why-text {
+        flex: 1 1 55% !important;
+        width: 55% !important;
+        min-width: 0 !important;
+    }
+
+    .mps-page .why-image {
+        flex: 1 1 45% !important;
+        width: 45% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .mps-page .why-image img {
+        max-width: 90% !important;
+        height: auto !important;
+        filter: drop-shadow(0 15px 40px rgba(0,168,255,0.2)) !important;
+    }
+
+    /* === RESPONSIVE 768px === */
+    @media (max-width: 768px) {
+        .mps-page .mps-wrap {
+            padding: 0 20px !important;
+        }
+
+        .mps-page .mps-section {
+            padding: 50px 0 !important;
+        }
+
+        .mps-page .mps-hero {
+            min-height: auto !important;
+            padding: 50px 0 40px !important;
+        }
+
+        .mps-page .hero-content {
+            flex-direction: column !important;
+        }
+
+        .mps-page .hero-text {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .mps-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .mps-page .hero-image > img {
+            max-width: 60% !important;
+        }
+
+        .mps-page .hero-title {
+            font-size: 3em !important;
+        }
+
+        .mps-page h2 {
+            font-size: 2.4em !important;
+        }
+
+        .mps-page .stats-bar {
+            flex-direction: column !important;
+        }
+
+        .mps-page .stat-item {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(0,168,255,0.15) !important;
+        }
+
+        .mps-page .stat-item:last-child {
+            border-bottom: none !important;
+        }
+
+        .mps-page .source-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .mps-page .enzyme-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .mps-page .mps-bar-label {
+            flex: 0 0 110px !important;
+            font-size: 0.85em !important;
+        }
+
+        .mps-page .flavor-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .mps-page .mps-video-wrapper {
+            padding-bottom: 56.25% !important;
+        }
+
+        .mps-page .why-content {
+            flex-direction: column !important;
+        }
+
+        .mps-page .why-text {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .mps-page .why-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .mps-page .why-image img {
+            max-width: 70% !important;
+        }
+
+        .mps-page .mps-hero::before {
+            right: 0 !important;
+            top: 30% !important;
+            width: 300px !important;
+            height: 300px !important;
+        }
+    }
+</style>
+
+<div class="mps-page">
+
+    <!-- HERO -->
+    <section class="mps-hero mps-section">
+        <div class="mps-wrap">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="tagline">Ultimátní vícesložkový protein</div>
+                    <h1 class="hero-title">MPS-5 <span class="blue">PRO®</span></h1>
+                    <p class="hero-subtitle">MPS-5 PRO je vysoce kvalitní protein složený z 5 různých zdrojů bílkovin. Na základě vědeckých studií doporučujících více zdrojů proteinů pro maximální anabolismus vznikl tento unikátní blend, který ti dodá bílkoviny po celý den.</p>
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <span class="stat-number">22g</span>
+                            <span class="stat-label">Bílkovin na dávku</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Zdrojů proteinu</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Trávicí enzymy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="MPS5-1kg_cokolada.png" alt="MPS-5 PRO - Čokoládová příchuť">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 PROTEIN SOURCES -->
+    <section class="mps-sources mps-section">
+        <div class="mps-wrap">
+            <div class="tagline">5 zdrojů bílkovin v jednom</div>
+            <h2>Co najdeš <span class="highlight">uvnitř?</span></h2>
+            <div class="source-grid">
+                <div class="source-card">
+                    <div class="source-card-title">CFM Whey Concentrate</div>
+                    <span class="source-card-pct">43 %</span>
+                    <p>Metoda Cross Flow Microfiltration přes speciální keramické filtry zajišťuje nejvyšší kvalitu syrovátkového koncentrátu.</p>
+                </div>
+                <div class="source-card">
+                    <div class="source-card-title">Nativní mléčný protein</div>
+                    <span class="source-card-pct">38 %</span>
+                    <p>Micelární kasein zajišťuje pomalé uvolňování aminokyselin a zásobuje svaly po mnoho hodin.</p>
+                </div>
+                <div class="source-card">
+                    <div class="source-card-title">CFM Whey Isolate</div>
+                    <span class="source-card-pct">9 %</span>
+                    <p>Nejčistší forma syrovátkové bílkoviny s minimem tuků a sacharidů.</p>
+                </div>
+                <div class="source-card">
+                    <div class="source-card-title">Hydrolyzovaný protein</div>
+                    <span class="source-card-pct">5 %</span>
+                    <p>Předštěpená forma pro bleskové vstřebání ihned po tréninku.</p>
+                </div>
+                <div class="source-card full-width">
+                    <div class="source-card-title">Vaječný albumin</div>
+                    <span class="source-card-pct">5 %</span>
+                    <p>Bez tuku, cholesterolu a laktózy. Kompletní aminokyselinový profil z vaječných bílků.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROTEIN CHARTS -->
+    <section class="mps-charts mps-section">
+        <div class="mps-wrap">
+
+            <div class="chart-block">
+                <h2>Rozdělení <span class="highlight">proteinů</span></h2>
+                <img src="https://czechvirus.cz/data/user-content/produktove-podklady/graf_rozdeleni_proteinu.png" alt="Rozdělení proteinů v MPS-5 PRO">
+            </div>
+
+            <div class="chart-block">
+                <h2>Profil uvolňování <span class="highlight">bílkovin v čase</span></h2>
+                <img src="https://czechvirus.cz/data/user-content/produktove-podklady/protein_time_release.png" alt="Profil uvolňování bílkovin v čase">
+                <p class="chart-caption">Ve výše vyobrazeném schéma uvolňování různých druhů bílkovin lze vidět, že se jeví jako nejvýhodnější právě směs různých druhů proteinů.</p>
+                <p class="chart-source">Vytvořeno na základě informací ze studie od G. Paul, Journal of American College of Nutrition, 2009</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DIGESTIVE ENZYMES -->
+    <section class="mps-enzymes mps-section">
+        <div class="mps-wrap">
+            <div class="tagline">Lepší trávení, lepší vstřebání</div>
+            <h2>Trávicí enzymy pro <span class="highlight">maximální využití</span></h2>
+            <div class="enzyme-grid">
+                <div class="enzyme-card">
+                    <div class="enzyme-icon">&#9878;</div>
+                    <h3>Tolerase™ L</h3>
+                    <p>Kyselá laktáza pro snadné trávení laktózy. Ideální i pro ty s citlivým trávením.</p>
+                </div>
+                <div class="enzyme-card">
+                    <div class="enzyme-icon">&#9880;</div>
+                    <h3>Papain</h3>
+                    <p>Proteolytický enzym z papáji pro efektivní štěpení bílkovin.</p>
+                </div>
+                <div class="enzyme-card">
+                    <div class="enzyme-icon">&#9883;</div>
+                    <h3>Bromelain</h3>
+                    <p>Enzym z čerstvého ananasu podporující trávení a vstřebávání aminokyselin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMINO ACID PROFILE -->
+    <section class="mps-amino mps-section">
+        <div class="mps-wrap">
+            <h2>Aminokyselinové <span class="highlight">spektrum</span></h2>
+            <div class="mps-bars-wrap">
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Glutamic Acid</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-blue" style="--target-width: 100%;">19.2 %</div>
+                    </div>
+                </div>
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Leucine</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-gold" style="--target-width: 52.6%;">10.1 %</div>
+                    </div>
+                </div>
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Lysine</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-blue" style="--target-width: 45.3%;">8.7 %</div>
+                    </div>
+                </div>
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Proline</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-blue" style="--target-width: 39.1%;">7.5 %</div>
+                    </div>
+                </div>
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Valine</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-gold" style="--target-width: 31.3%;">6.0 %</div>
+                    </div>
+                </div>
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Isoleucine</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-gold" style="--target-width: 29.7%;">5.7 %</div>
+                    </div>
+                </div>
+                <div class="mps-bar-row">
+                    <div class="mps-bar-label">Threonine</div>
+                    <div class="mps-bar-outer">
+                        <div class="mps-bar-inner mps-bar-blue" style="--target-width: 28.6%;">5.5 %</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mps-bcaa-note">BCAA celkem: 21.8 %</div>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="mps-video-section mps-section">
+        <div class="mps-wrap">
+            <span class="mps-tagline">Podívej se na MPS-5 PRO</span>
+            <h2>MPS-5 PRO® <span class="highlight">v akci</span></h2>
+            <div class="mps-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Vzev6Q9nhzs" title="MPS-5 PRO - Czech Virus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLAVORS -->
+    <section class="mps-flavors mps-section">
+        <div class="mps-wrap">
+            <h2>Dostupné <span class="highlight">příchutě</span></h2>
+            <div class="flavor-grid">
+                <div class="flavor-card">
+                    <img src="MPS5-1kg_cokolada.png" alt="MPS-5 PRO - Čokoládová Pralinka">
+                    <p class="flavor-name">Čokoládová Pralinka</p>
+                </div>
+                <div class="flavor-card">
+                    <img src="MPS5-1kg_vanilka.png" alt="MPS-5 PRO - Vanilková Zmrzlina">
+                    <p class="flavor-name">Vanilková Zmrzlina</p>
+                </div>
+                <div class="flavor-card">
+                    <span class="badge-new">Novinka</span>
+                    <img src="MPS5-1kg_caramel.png" alt="MPS-5 PRO - Salted Caramel">
+                    <p class="flavor-name">Salted Caramel</p>
+                </div>
+                <div class="flavor-card">
+                    <span class="badge-new">Novinka</span>
+                    <img src="MPS5-1kg_cocoa.png" alt="MPS-5 PRO - Semolina Porridge with Cocoa">
+                    <p class="flavor-name">Semolina Porridge with Cocoa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="mps-why mps-section">
+        <div class="mps-wrap">
+            <div class="why-content">
+                <div class="why-text">
+                    <h2>Proč zvolit <span class="highlight">MPS-5 PRO?</span></h2>
+                    <p>MPS-5 PRO® není jen obyčejný protein. Je to precizně navržená směs 5 zdrojů bílkovin s trávicími enzymy, která zajistí optimální zásobení svalů aminokyselinami po celý den.</p>
+                </div>
+                <div class="why-image">
+                    <img src="MPS5-2kg_cokolada.png" alt="MPS-5 PRO 2kg balení">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+(function() {
+    function animateBars() {
+        var bars = document.querySelectorAll('.mps-bar-inner');
+        for (var i = 0; i < bars.length; i++) {
+            var bar = bars[i];
+            var rect = bar.getBoundingClientRect();
+            var viewH = window.innerHeight || document.documentElement.clientHeight;
+            if (rect.top < viewH && rect.bottom > 0 && !bar.classList.contains('mps-animated')) {
+                bar.classList.add('mps-animated');
+            }
+        }
+    }
+    window.addEventListener('scroll', animateBars);
+    window.addEventListener('load', animateBars);
+    setTimeout(animateBars, 500);
+})();
+</script>

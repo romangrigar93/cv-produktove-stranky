@@ -6,7 +6,9 @@
       "Bash(dir /s \"c:\\\\xampp\\\\htdocs\\\\cv-web-parts\\\\godlike\")",
       "WebFetch(domain:www.godlike.gg)",
       "Bash(dir:*)",
-      "WebFetch(domain:czechvirus.cz)"
+      "WebFetch(domain:czechvirus.cz)",
+      "Bash(php -r \":*)",
+      "Bash(\"/c/xampp/php/php.exe\" -r \":*)"
     ]
   }
 }

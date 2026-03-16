@@ -1,0 +1,239 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    html, body { margin: 0 !important; padding: 0 !important; }
+
+    :root {
+        --mps-blue: #00a8ff;
+        --mps-blue-dark: #0077b3;
+        --mps-black: #1a1a1a;
+        --mps-dark-gray: #2d2d2d;
+        --mps-white: #ffffff;
+        --mps-gold: #d4a64a;
+    }
+
+    .dosage-page *,
+    .dosage-page *::before,
+    .dosage-page *::after {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    .dosage-page {
+        font-family: 'Inter', sans-serif !important;
+        background: var(--mps-black) !important;
+        max-width: 100% !important;
+        padding: 50px !important;
+        border-radius: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .dosage-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: var(--mps-white) !important;
+        margin: 0 0 25px 0 !important;
+        padding-bottom: 15px !important;
+        border-bottom: 3px solid var(--mps-blue) !important;
+        display: inline-block !important;
+    }
+
+    .dosage-page h2 .highlight {
+        color: var(--mps-blue) !important;
+    }
+
+    .dosage-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        color: rgba(255,255,255,0.85) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .dosage-page strong {
+        color: var(--mps-white) !important;
+        font-weight: 700 !important;
+    }
+
+    /* Dosage box */
+    .dosage-box {
+        background: linear-gradient(135deg, var(--mps-dark-gray) 0%, var(--mps-black) 100%) !important;
+        border-left: 4px solid var(--mps-blue) !important;
+        border-radius: 8px !important;
+        padding: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .dosage-highlight {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+        background: var(--mps-blue) !important;
+        color: var(--mps-white) !important;
+        padding: 15px 25px !important;
+        border-radius: 8px !important;
+        margin: 15px 0 !important;
+    }
+
+    .dosage-highlight .number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.5em !important;
+        line-height: 1 !important;
+    }
+
+    .dosage-highlight .text {
+        font-size: 0.95em !important;
+    }
+
+    /* Info grid */
+    .info-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 20px !important;
+    }
+
+    .info-card {
+        background: rgba(255,255,255,0.05) !important;
+        border-radius: 8px !important;
+        padding: 20px !important;
+        text-align: center !important;
+    }
+
+    .info-card .label {
+        font-size: 0.85em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: rgba(255,255,255,0.5) !important;
+        margin-bottom: 8px !important;
+    }
+
+    .info-card .value {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2em !important;
+        color: var(--mps-gold) !important;
+    }
+
+    /* Warning section */
+    .warning-section {
+        background: rgba(0,168,255,0.1) !important;
+        border: 1px solid rgba(0,168,255,0.3) !important;
+        border-radius: 8px !important;
+        padding: 25px !important;
+        margin-top: 30px !important;
+    }
+
+    .warning-section h2 {
+        color: var(--mps-blue) !important;
+        border-bottom-color: rgba(0,168,255,0.3) !important;
+        margin-bottom: 15px !important;
+    }
+
+    .warning-section p {
+        color: rgba(255,255,255,0.7) !important;
+        margin-bottom: 10px !important;
+        font-size: 0.95em !important;
+    }
+
+    .warning-section p:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .warning-section .important {
+        background: var(--mps-blue) !important;
+        color: var(--mps-white) !important;
+        padding: 15px !important;
+        border-radius: 6px !important;
+        margin-top: 15px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+    }
+
+    .warning-section em {
+        display: block !important;
+        margin-top: 15px !important;
+        padding-top: 15px !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+        font-size: 0.85em !important;
+        color: rgba(255,255,255,0.5) !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .dosage-page {
+            padding: 20px 12px !important;
+        }
+
+        .dosage-page h2 {
+            font-size: 2em !important;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .dosage-highlight {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 10px !important;
+        }
+
+        .dosage-box {
+            padding: 20px 15px !important;
+        }
+
+        .warning-section {
+            padding: 20px 15px !important;
+        }
+    }
+</style>
+
+<div class="dosage-page">
+    <h2>Dávkování</h2>
+
+    <div class="dosage-box">
+        <p><strong>Doporučené dávkování:</strong><br>
+        Rozmíchejte 1 dávku (30 gramů) v 300 ml vody nebo nízkotučného mléka. Použijte mixér nebo šejkr. V závislosti na denní potřebě bílkovin užívejte 2–3 dávky denně.</p>
+
+        <div class="dosage-highlight">
+            <span class="number">30g</span>
+            <span class="text">= 1 dávka (cca 1 vrchovatá odměrka)</span>
+        </div>
+
+        <p style="color: rgba(255,255,255,0.6) !important; font-size: 0.9em !important; margin-top: 15px !important;">
+            Pro nejkrémovější konzistenci doporučujeme mixér nebo šejkr s kuličkou!
+        </p>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label">Obsah balení</div>
+            <div class="value">1000g / 2250g</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Počet dávek</div>
+            <div class="value">33 / 75</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Bílkovin v dávce</div>
+            <div class="value">22g</div>
+        </div>
+    </div>
+
+    <div class="warning-section">
+        <h2>Upozornění</h2>
+        <p>Uchovávejte mimo dosah dětí. Výrobek není určen pro děti, těhotné a kojící ženy.</p>
+        <p>Výrobek vyroben v závodě zpracovávajícím mléko, vajíčka, sojové boby, korýše, rybí olej a ořechy.</p>
+        <p>Neobsahuje látky dopingového charakteru. Skladujte v suchu při teplotě do 25 °C mimo dosah přímého slunečního záření.</p>
+        <p>Chraňte před mrazem. Výrobce neručí za škody vzniklé nevhodným použitím nebo skladováním. Výrobek neslouží jako náhrada pestré stravy.</p>
+
+        <div class="important">
+            Před užíváním se vždy poraďte se svým ošetřujícím lékařem!
+        </div>
+
+        <em>Datum min. trvanlivosti a šarže: viz obal produktu. Po otevření spotřebujte do 60 dnů.</em>
+    </div>
+</div>
