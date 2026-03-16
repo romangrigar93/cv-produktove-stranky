@@ -1,0 +1,200 @@
+<!--EXPERTMODE-->
+<style>
+.cv-promo-banner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border: 2px solid #e30613;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin: 18px 0 10px 0;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+.cv-promo-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: #e30613;
+    border-radius: 12px 0 0 12px;
+}
+.cv-promo-img {
+    flex-shrink: 0;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+}
+.cv-promo-content {
+    flex: 1;
+    min-width: 0;
+}
+.cv-promo-badge {
+    display: inline-block;
+    background: #e30613;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 3px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.cv-promo-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+}
+.cv-promo-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+.cv-promo-title a:hover {
+    text-decoration: underline;
+}
+.cv-promo-text {
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+}
+.cv-promo-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.cv-promo-price-old {
+    font-size: 15px;
+    color: #999;
+    text-decoration: line-through;
+}
+.cv-promo-price-new {
+    font-size: 22px;
+    font-weight: 800;
+    color: #e30613;
+}
+.cv-promo-btn {
+    display: inline-block;
+    background: #3aaa35;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+.cv-promo-btn:hover {
+    background: #2e8d2a;
+}
+.cv-promo-flavors {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.cv-promo-flavor {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    padding: 6px 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.2s, background 0.2s;
+}
+.cv-promo-flavor:hover {
+    border-color: #e30613;
+}
+.cv-promo-flavor input[type="radio"] {
+    accent-color: #e30613;
+    margin: 0;
+    cursor: pointer;
+}
+.cv-promo-flavor.active {
+    border-color: #e30613;
+    background: #fff0f0;
+}
+@media (max-width: 600px) {
+    .cv-promo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+        gap: 12px;
+    }
+    .cv-promo-prices {
+        justify-content: center;
+    }
+    .cv-promo-flavors {
+        justify-content: center;
+    }
+    .cv-promo-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+</style>
+<div class="cv-promo-banner">
+    <a href="https://czechvirus.cz/immunity-shield-max-p2097/?vid=2094" id="cv-promo-link">
+        <img class="cv-promo-img" id="cv-promo-image" src="https://cdn.czechvirus.cz/images/0/34a01d1ec47ded82/1/immunity-shield-max.png?hash=1776944331" alt="Immunity Shield MAX">
+    </a>
+    <div class="cv-promo-content">
+        <span class="cv-promo-badge" id="cv-promo-badge">Sleva 38 %</span>
+        <h3 class="cv-promo-title"><a href="https://czechvirus.cz/immunity-shield-max-p2097/?vid=2094">Immunity Shield MAX</a></h3>
+        <p class="cv-promo-text">Komplexní podpora imunity v kapslích s vysokou dávkou bovinního colostra. Posilni svou obranyschopnost se <strong>slevou až 43 %</strong>!</p>
+        <div class="cv-promo-flavors">
+            <label class="cv-promo-flavor active" id="cv-flavor-small" onclick="cvSelectVariant('small')">
+                <input type="radio" name="cv-variant" value="small" checked=""> 30 kapslí
+            </label>
+            <label class="cv-promo-flavor" id="cv-flavor-large" onclick="cvSelectVariant('large')">
+                <input type="radio" name="cv-variant" value="large"> 60 kapslí
+            </label>
+        </div>
+        <div class="cv-promo-prices">
+            <span class="cv-promo-price-old" id="cv-promo-price-old">399 Kč</span>
+            <span class="cv-promo-price-new" id="cv-promo-price-new">249 Kč</span>
+        </div>
+        <button class="cv-promo-btn" id="cv-promo-cart-btn" onclick="CVAddToCart(2094)">Přidat do košíku</button>
+    </div>
+</div>
+<script>
+function cvSelectVariant(variant) {
+    var img = document.getElementById('cv-promo-image');
+    var btn = document.getElementById('cv-promo-cart-btn');
+    var badge = document.getElementById('cv-promo-badge');
+    var priceOld = document.getElementById('cv-promo-price-old');
+    var priceNew = document.getElementById('cv-promo-price-new');
+    var labelSmall = document.getElementById('cv-flavor-small');
+    var labelLarge = document.getElementById('cv-flavor-large');
+
+    if (variant === 'small') {
+        img.src = 'https://cdn.czechvirus.cz/images/0/34a01d1ec47ded82/1/immunity-shield-max.png?hash=1776944331';
+        btn.setAttribute('onclick', 'CVAddToCart(2094)');
+        badge.textContent = 'Sleva 38 %';
+        priceOld.textContent = '399 Kč';
+        priceNew.textContent = '249 Kč';
+        labelSmall.classList.add('active');
+        labelLarge.classList.remove('active');
+    } else {
+        img.src = 'https://cdn.czechvirus.cz/images/0/7b392bbaa72fac0d/1/immunity-shield-max.png?hash=1776944331';
+        btn.setAttribute('onclick', 'CVAddToCart(2096)');
+        badge.textContent = 'Sleva 43 %';
+        priceOld.textContent = '699 Kč';
+        priceNew.textContent = '399 Kč';
+        labelLarge.classList.add('active');
+        labelSmall.classList.remove('active');
+    }
+}
+</script>
