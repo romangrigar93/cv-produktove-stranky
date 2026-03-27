@@ -1,0 +1,761 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap');
+
+    .sg-page,
+    .sg-page * {
+        box-sizing: border-box !important;
+    }
+
+    .sg-page {
+        font-family: 'Inter', sans-serif !important;
+        background: #f5f0e8 !important;
+        width: 100% !important;
+        max-width: none !important;
+        overflow: hidden !important;
+        position: relative !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sg-page .sg-section {
+        padding: 70px 50px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    .sg-page .diagonal-bg {
+        position: relative !important;
+    }
+
+    .sg-page .diagonal-bg::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -10% !important;
+        right: -10% !important;
+        bottom: 0 !important;
+        transform: skewY(-3deg) !important;
+        transform-origin: top left !important;
+        z-index: 0 !important;
+    }
+
+    .sg-page .diagonal-bg > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    .sg-page .bg-green::before {
+        background: linear-gradient(135deg, #3a7d3b 0%, #1e5a1f 100%) !important;
+    }
+
+    .sg-page .bg-cream {
+        background: #f5f0e8 !important;
+    }
+    .sg-page .bg-cream::before {
+        background: linear-gradient(135deg, #faf9f6 0%, #f0ebe3 100%) !important;
+    }
+
+    .sg-page .bg-soft-green {
+        background: #e0f0e0 !important;
+    }
+    .sg-page .bg-soft-green::before {
+        background: linear-gradient(135deg, #e5f5e5 0%, #d0e8d0 100%) !important;
+    }
+
+    .sg-page .bg-dark-green {
+        background: #1a4d1a !important;
+    }
+    .sg-page .bg-dark-green::before {
+        background: linear-gradient(135deg, #245d24 0%, #143d14 100%) !important;
+    }
+
+    /* Typography */
+    .sg-page h2 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.5em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        margin: 0 0 30px 0 !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .sg-page h2.light { color: #ffffff !important; }
+    .sg-page h2.dark { color: #3d3d3d !important; }
+
+    .sg-page h2 .highlight {
+        color: #2d6a2e !important;
+        display: block !important;
+        font-size: 1.2em !important;
+    }
+
+    .sg-page h2 .highlight-light {
+        color: #8fdf8f !important;
+    }
+
+    .sg-page .tagline {
+        font-family: 'Anton', sans-serif !important;
+        font-size: 0.9em !important;
+        letter-spacing: 4px !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        opacity: 0.7 !important;
+    }
+
+    .sg-page p {
+        font-size: 1.05em !important;
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .sg-page .light-text { color: rgba(255,255,255,0.9) !important; }
+    .sg-page .dark-text { color: #4a4a4a !important; }
+    .sg-page strong { font-weight: 700 !important; }
+
+    /* === HERO === */
+    .sg-page .sg-hero {
+        min-height: 520px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 80px !important;
+        background: #2d6a2e !important;
+        position: relative !important;
+    }
+
+    .sg-page .sg-hero::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 60% !important;
+        height: 100% !important;
+        background: radial-gradient(ellipse at 70% 50%, rgba(100,220,100,0.12) 0%, transparent 70%) !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+    }
+
+    .sg-page .hero-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .sg-page .hero-text {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sg-page .hero-image {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        position: relative !important;
+    }
+
+    .sg-page .hero-image > img {
+        max-width: 85% !important;
+        height: auto !important;
+        filter: drop-shadow(0 20px 60px rgba(30,90,30,0.35)) !important;
+        animation: sg-float 5s ease-in-out infinite !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    @keyframes sg-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-18px); }
+    }
+
+    /* Price badge */
+    .sg-page .price-badge {
+        display: inline-flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+        color: #fff !important;
+        padding: 20px 35px !important;
+        border-radius: 12px !important;
+        margin: 25px 0 !important;
+        box-shadow: 0 8px 30px rgba(255,107,53,0.4) !important;
+        position: relative !important;
+    }
+
+    .sg-page .price-badge .old-price {
+        font-size: 1.1em !important;
+        text-decoration: line-through !important;
+        opacity: 0.7 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .sg-page .price-badge .new-price {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 3.5em !important;
+        line-height: 1 !important;
+        letter-spacing: 2px !important;
+    }
+
+    .sg-page .price-badge .price-note {
+        font-size: 0.8em !important;
+        opacity: 0.85 !important;
+        margin-top: 4px !important;
+    }
+
+    .sg-page .discount-tag {
+        position: absolute !important;
+        top: -12px !important;
+        right: -12px !important;
+        background: #c0392b !important;
+        color: #fff !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        padding: 6px 14px !important;
+        border-radius: 6px !important;
+        transform: rotate(5deg) !important;
+        box-shadow: 0 4px 12px rgba(192,57,43,0.4) !important;
+    }
+
+    /* Stats bar */
+    .sg-page .stats-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: rgba(0,0,0,0.2) !important;
+        border: 1px solid rgba(140,220,140,0.15) !important;
+        padding: 25px !important;
+        border-radius: 12px !important;
+        margin-top: 35px !important;
+    }
+
+    .sg-page .stat-item { text-align: center !important; }
+
+    .sg-page .stat-number {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 2.3em !important;
+        color: #8fdf8f !important;
+        line-height: 1 !important;
+    }
+
+    .sg-page .stat-label {
+        font-size: 0.8em !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: rgba(255,255,255,0.6) !important;
+        margin-top: 5px !important;
+    }
+
+    /* Feature cards */
+    .sg-page .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 40px !important;
+    }
+
+    .sg-page .feature-card {
+        background: #ffffff !important;
+        border-radius: 12px !important;
+        padding: 30px !important;
+        border-left: 4px solid #2d6a2e !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .sg-page .feature-card:hover {
+        transform: translateX(10px) !important;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important;
+    }
+
+    .sg-page .feature-card.full-width {
+        grid-column: 1 / -1 !important;
+        background: linear-gradient(135deg, rgba(45,106,46,0.1) 0%, rgba(45,106,46,0.05) 100%) !important;
+    }
+
+    .sg-page .feature-card strong {
+        color: #3d3d3d !important;
+        font-size: 1.1em !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .sg-page .feature-card p,
+    .sg-page .feature-card span {
+        color: #666666 !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    /* Benefits strip */
+    .sg-page .benefits-strip {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 50px !important;
+        padding: 40px 0 !important;
+        background: #1e5a1f !important;
+        margin: 40px -50px -70px !important;
+    }
+
+    .sg-page .benefit-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .sg-page .benefit-item span {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #ffffff !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* Split content */
+    .sg-page .split-content {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+    }
+
+    .sg-page .split-content .content-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+    }
+
+    .sg-page .split-content .image-side {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        position: relative !important;
+    }
+
+    .sg-page .split-content .image-side img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important;
+    }
+
+    .sg-page .split-content .image-side::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -20px !important;
+        left: -20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        border: 3px solid #2d6a2e !important;
+        border-radius: 12px !important;
+        z-index: -1 !important;
+    }
+
+    /* Check list */
+    .sg-page .check-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sg-page .check-list li {
+        color: #4a4a4a !important;
+        padding: 15px 0 15px 40px !important;
+        position: relative !important;
+        border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+        list-style: none !important;
+    }
+
+    .sg-page .check-list li:last-child { border-bottom: none !important; }
+
+    .sg-page .check-list li::before {
+        content: '\2713' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 15px !important;
+        width: 24px !important;
+        height: 24px !important;
+        background: #2d6a2e !important;
+        color: #ffffff !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 12px !important;
+        font-weight: bold !important;
+    }
+
+    /* Flavors grid */
+    .sg-page .flavors-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+    }
+
+    .sg-page .flavor-card {
+        background: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        border-radius: 16px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        transition: all 0.4s ease !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .sg-page .flavor-card:hover {
+        background: rgba(80,200,80,0.1) !important;
+        border-color: rgba(80,200,80,0.3) !important;
+        transform: translateY(-6px) !important;
+    }
+
+    .sg-page .flavor-card img {
+        width: 100% !important;
+        max-width: 200px !important;
+        height: auto !important;
+        margin: 0 auto 15px !important;
+        display: block !important;
+        transition: transform 0.4s ease !important;
+    }
+
+    .sg-page .flavor-card:hover img {
+        transform: scale(1.05) !important;
+    }
+
+    .sg-page .flavor-card .flavor-name {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.3em !important;
+        color: #fff !important;
+        letter-spacing: 1px !important;
+        margin: 0 !important;
+    }
+
+/* Countdown-style urgency */
+    .sg-page .urgency-bar {
+        background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important;
+        color: #fff !important;
+        text-align: center !important;
+        padding: 18px 30px !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* Tip box */
+    .sg-page .tip-box {
+        background: rgba(255,255,255,0.15) !important;
+        border-left: 4px solid #8fdf8f !important;
+        padding: 20px 25px !important;
+        border-radius: 0 8px 8px 0 !important;
+        margin-top: 25px !important;
+    }
+
+    .sg-page .tip-box p { margin: 0 !important; }
+
+    /* How it works steps */
+    .sg-page .steps-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px !important;
+        margin-top: 40px !important;
+        counter-reset: step-counter !important;
+    }
+
+    .sg-page .step-card {
+        background: #ffffff !important;
+        border-radius: 12px !important;
+        padding: 35px 30px !important;
+        text-align: center !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08) !important;
+        position: relative !important;
+        counter-increment: step-counter !important;
+    }
+
+    .sg-page .step-card::before {
+        content: counter(step-counter) !important;
+        position: absolute !important;
+        top: -18px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: #2d6a2e !important;
+        color: #fff !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .sg-page .step-card h3 {
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 1.4em !important;
+        color: #3d3d3d !important;
+        margin: 10px 0 8px 0 !important;
+        letter-spacing: 1px !important;
+    }
+
+    .sg-page .step-card p {
+        color: #666 !important;
+        margin: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .sg-page .sg-section {
+            padding: 50px 30px !important;
+        }
+
+        .sg-page h2 { font-size: 2.5em !important; }
+
+        .sg-page .hero-content {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .sg-page .hero-text,
+        .sg-page .hero-image {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sg-page .hero-image > img {
+            max-width: 70% !important;
+        }
+
+        .sg-page .stats-bar {
+            flex-direction: column !important;
+            gap: 20px !important;
+        }
+
+        .sg-page .features-grid,
+        .sg-page .steps-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .sg-page .benefits-strip {
+            flex-direction: column !important;
+            gap: 20px !important;
+            padding: 30px !important;
+            margin: 40px -30px -50px !important;
+            align-items: center !important;
+        }
+
+        .sg-page .split-content {
+            flex-direction: column !important;
+        }
+
+        .sg-page .split-content .content-side,
+        .sg-page .split-content .image-side {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+        }
+
+        .sg-page .split-content .image-side::before {
+            display: none !important;
+        }
+
+        .sg-page .flavors-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        .sg-page .gallery-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .sg-page .flavors-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
+
+<div class="sg-page">
+
+    <!-- Urgency bar -->
+    <div class="urgency-bar">
+        Akce -50 % | Ochutnávkový balíček za 99 Kč | Max. 2 ks na osobu
+    </div>
+
+    <!-- Hero -->
+    <section class="sg-section sg-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="tagline light-text">Ochutnej všech 6 příchutí</p>
+                <h2 class="light">Ochutnávkový balíček <span class="highlight-light">Super Greens PRO V2.0</span></h2>
+                <p class="light-text">Nevíš, která příchuť ti bude chutnat nejvíc? <strong>Vyzkoušej všech 6 příchutí</strong> v jednom balení a najdi svého favorita. Každý sáček = 1 porce jiné příchutě.</p>
+
+                <div class="price-badge">
+                    <span class="discount-tag">-50 %</span>
+                    <span class="old-price">199 Kč</span>
+                    <span class="new-price">99 Kč</span>
+                    <span class="price-note">Max. 2 ks na osobu</span>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Příchutí</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Porcí</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">-50 %</div>
+                        <div class="stat-label">Sleva</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="mockup-sample-pack-greens.png" alt="Super Greens PRO V2.0 - Ochutnávkový balíček">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro koho je balíček -->
+    <section class="sg-section diagonal-bg bg-cream">
+        <p class="tagline dark-text">Ideální start se Super Greens</p>
+        <h2 class="dark">Pro koho je <span class="highlight">ochutnávkový balíček?</span></h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <strong>Chceš Super Greens poprvé vyzkoušet</strong>
+                <span>Slyšíš o Super Greens, ale nechceš hned kupovat velké balení? Vyzkoušej za 99 Kč a přesvědč se sám/sama.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Nevíš, která příchuť je pro tebe</strong>
+                <span>Máme 6 příchutí a každá je jiná. Ochutnávkový balíček ti pomůže najít tu pravou, než si koupíš velké balení.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Hledáš dárek nebo tip pro kamarádku</strong>
+                <span>Malý balíček za akční cenu je perfektní dárek pro každého, kdo se zajímá o zdravý životní styl.</span>
+            </div>
+            <div class="feature-card">
+                <strong>Chceš ochutnat nové příchutě</strong>
+                <span>Máme 4 zbrusu nové příchutě! Pokud už Super Greens znáš, tady je šance ochutnat novinky za zlomek ceny.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co v balíčku najdeš -->
+    <section class="sg-section diagonal-bg bg-dark-green">
+        <p class="tagline light-text" style="text-align: center !important;">6 sáčků, 6 příchutí, 1 krabička</p>
+        <h2 class="light" style="text-align: center !important;">Co v balíčku <span class="highlight-light">najdeš?</span></h2>
+        <p class="light-text" style="text-align: center !important; max-width: 600px !important; margin: 0 auto 0 !important;">Každý sáček obsahuje <strong>jednu porci</strong> jiné příchutě Super Greens PRO V2.0. Stačí zamíchat s vodou a ochutnat.</p>
+
+        <div class="flavors-grid">
+            <div class="flavor-card">
+                <img src="../supergreens/super-greens_jablko.png" alt="Super Greens - Jablečný Fresh">
+                <p class="flavor-name">Jablečný Fresh</p>
+            </div>
+            <div class="flavor-card">
+                <img src="../supergreens/super-greens_lesni-ovoce.png" alt="Super Greens - Lesní ovoce">
+                <p class="flavor-name">Lesní ovoce</p>
+            </div>
+            <div class="flavor-card">
+                <img src="../supergreens/super-greens_zeleny-caj-ibisek.png" alt="Super Greens - Zelený čaj & Ibišek">
+                <p class="flavor-name">Zelený čaj & Ibišek</p>
+            </div>
+            <div class="flavor-card">
+                <img src="../supergreens/super-greens_grapefruit.png" alt="Super Greens - Grapefruit">
+                <p class="flavor-name">Grapefruit</p>
+            </div>
+            <div class="flavor-card">
+                <img src="../supergreens/super-greens_mango-marakuja.png" alt="Super Greens - Mango & Maracuja">
+                <p class="flavor-name">Mango & Maracuja</p>
+            </div>
+            <div class="flavor-card">
+                <img src="../supergreens/super-greens_fresh-limetka.png" alt="Super Greens - Fresh Limetka">
+                <p class="flavor-name">Fresh Limetka</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jak na to -->
+    <section class="sg-section diagonal-bg bg-soft-green">
+        <p class="tagline dark-text" style="text-align: center !important;">Jednodušší to být nemůže</p>
+        <h2 class="dark" style="text-align: center !important;">Jak na to? <span class="highlight">3 jednoduché kroky</span></h2>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <h3>Objednej balíček</h3>
+                <p>Objednej si ochutnávkový balíček za akční cenu 99 Kč. Max. 2 ks na osobu, dokud je skladem.</p>
+            </div>
+            <div class="step-card">
+                <h3>Ochutnej všech 6</h3>
+                <p>Každý den zkus jinou příchuť. Zamíchej sáček do 250 ml studené vody a užij si svou porci zelené energie.</p>
+            </div>
+            <div class="step-card">
+                <h3>Vyber si favorita</h3>
+                <p>Najdi příchuť, která ti sedí nejvíc, a objednej si ji ve velkém balení (30 porcí).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proč ochutnat -->
+    <section class="sg-section diagonal-bg bg-cream">
+        <div class="split-content">
+            <div class="content-side">
+                <p class="tagline dark-text">Nejprodávanější greens v ČR</p>
+                <h2 class="dark">Proč ochutnat <span class="highlight">Super Greens PRO V2.0?</span></h2>
+                <p class="dark-text">Super Greens PRO V2.0 je <strong>nejprodávanější zelená směs na českém trhu</strong>. Obsahuje <strong>20+ aktivních látek</strong> včetně chlorelly, spiruliny, mladého ječmene, reishi, cordycepsu a trávicích enzymů.</p>
+                <p class="dark-text">Podporuje <strong>imunitu, trávení, detoxikaci a energii</strong> – a to vše bez přidaného cukru. Tisíce zákazníků už vědí, že funguje. Teď je řada na tobě.</p>
+                <ul class="check-list">
+                    <li>20+ aktivních ingrediencí v každé porci</li>
+                    <li>Bez přidaného cukru, slazeno stévií</li>
+                    <li>Vhodné i pro vegany</li>
+                    <li>Skvělá chuť ve všech 6 variantách</li>
+                    <li>Pomáhá s nafouklým bříškem u 98 % uživatelů</li>
+                </ul>
+            </div>
+            <div class="image-side">
+                <img src="sample-pack-sachets.jpg" alt="Super Greens PRO V2.0 - Ochutnávkové sáčky">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA sekce -->
+    <section class="sg-section diagonal-bg bg-soft-green" style="text-align: center !important;">
+        <p class="tagline dark-text">Limitovaná akce</p>
+        <h2 class="dark">6 příchutí za <span class="highlight">99 Kč</span></h2>
+        <p class="dark-text" style="max-width: 600px !important; margin: 0 auto 20px !important;">Běžná cena ochutnávkového balíčku je 199 Kč. Teď ho získáš <strong>se slevou 50 %</strong> za pouhých <strong>99 Kč</strong>. Omezení: max. 2 kusy na osobu.</p>
+
+        <div class="price-badge" style="margin: 30px auto !important;">
+            <span class="discount-tag">-50 %</span>
+            <span class="old-price">199 Kč</span>
+            <span class="new-price">99 Kč</span>
+            <span class="price-note">Max. 2 ks na osobu</span>
+        </div>
+
+        <div class="benefits-strip" style="margin-top: 40px !important;">
+            <div class="benefit-item">
+                <span>6 příchutí v jednom balení</span>
+            </div>
+            <div class="benefit-item">
+                <span>Sleva 50 %</span>
+            </div>
+            <div class="benefit-item">
+                <span>Bez přidaného cukru</span>
+            </div>
+        </div>
+    </section>
+
+</div>
