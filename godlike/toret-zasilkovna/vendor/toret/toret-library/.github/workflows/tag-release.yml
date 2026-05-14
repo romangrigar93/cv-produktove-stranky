@@ -1,0 +1,60 @@
+# ============================================================================== #
+#  Kompletní a funkční workflow pro automatické tagování verzí
+# ============================================================================== #
+
+# Název workflow, který se zobrazí v záložce "Actions" na GitHubu.
+name: Create and Push Tag on Master Push
+
+# Podmínka, která spouští toto workflow.
+on:
+  # Spustí se při každém 'push' eventu.
+  push:
+    # Omezeno pouze na větev 'master'. Změňte na 'main', pokud používáte jiný název.
+    branches:
+      - master
+
+# Definice jednotlivých úloh (jobs), které se mají provést.
+jobs:
+  # Název našeho jediného jobu. Můžete si ho pojmenovat, jak chcete.
+  create-new-tag:
+    # Popisný název, který se zobrazí v UI GitHub Actions.
+    name: Auto-Tag New Version
+
+    # Specifikace virtuálního stroje, na kterém job poběží. 'ubuntu-latest' je standardní a spolehlivá volba.
+    runs-on: ubuntu-latest
+
+    # -------------------------------------------------------------------------- #
+    # KLÍČOVÁ SEKCE: Udělení oprávnění pro zápis do repozitáře.
+    # Bez tohoto by akce selhala s chybou 401/403 (Bad credentials / Forbidden).
+    # -------------------------------------------------------------------------- #
+    permissions:
+      contents: write
+
+    # Sekvence kroků (steps), které se v rámci tohoto jobu provedou.
+    steps:
+      # Krok 1: Checkout kódu
+      # Tento krok stáhne kód z vašeho repozitáře do virtuálního prostředí,
+      # aby s ním další kroky mohly pracovat.
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+        with:
+          # Je důležité stáhnout celou historii, aby akce našla předchozí tagy.
+          # fetch-depth: 0 znamená "stáhnout všechny commity a tagy".
+          fetch-depth: 0
+
+      # Krok 2: Automatické navýšení verze a vytvoření tagu
+      # Používáme ověřenou komunitní akci 'anothrNick/github-tag-action'.
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          # Zde předáváme akci speciální, automaticky generovaný token,
+          # který má díky sekci 'permissions' právo na zápis.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # Přidá 'v' na začátek tagu (např. v1.14.0). Nastavte na 'false', pokud chcete čistě '1.14.0'.
+          WITH_V: true
+          
+          # Výchozí akce, pokud ve zprávě commitu není specifikována změna verze (#major, #minor, #patch).
+          # 'minor' navýší druhé číslo (1.13.0 -> 1.14.0).
+          # 'patch' by navýšilo třetí číslo (1.13.0 -> 1.13.1).
+          DEFAULT_BUMP: "minor"

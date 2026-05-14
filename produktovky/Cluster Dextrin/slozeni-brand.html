@@ -1,0 +1,236 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    html, body { margin: 0 !important; padding: 0 !important; }
+
+    :root {
+        --cv-red: #c80000;
+        --cv-red-dark: #8b0000;
+        --cv-black: #1a1a1a;
+        --cv-dark-gray: #2d2d2d;
+        --cv-light-gray: #f5f5f5;
+        --cv-white: #ffffff;
+        --cv-yellow: #ffce01;
+    }
+
+    .composition-page *,
+    .composition-page *::before,
+    .composition-page *::after {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .composition-page {
+        font-family: 'Inter', sans-serif;
+        background: var(--cv-black);
+        width: 100%;
+        max-width: 100% !important;
+        padding: 50px;
+        border-radius: 0;
+        overflow-x: hidden;
+    }
+
+    .composition-page h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--cv-white);
+        margin: 0 0 25px 0 !important;
+        padding-bottom: 15px;
+        border-bottom: 3px solid var(--cv-red);
+        display: inline-block;
+    }
+
+    .composition-page h2 .highlight {
+        color: var(--cv-red);
+    }
+
+    .composition-page p {
+        font-size: 1em;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 15px !important;
+    }
+
+    .composition-page strong {
+        color: var(--cv-white);
+        font-weight: 700;
+    }
+
+    /* Composition card */
+    .flavor-composition {
+        background: linear-gradient(135deg, var(--cv-dark-gray) 0%, var(--cv-black) 100%);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .flavor-header {
+        background: var(--cv-red);
+        color: var(--cv-white);
+        padding: 15px 25px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+    }
+
+    .flavor-content {
+        padding: 20px 25px;
+        color: rgba(255,255,255,0.75);
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    /* Tabulka */
+    .info-table-wrapper {
+        margin-top: 40px;
+        overflow-x: auto;
+    }
+
+    .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--cv-dark-gray);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 15px 20px;
+        text-align: left;
+    }
+
+    .info-table th {
+        background: var(--cv-red);
+        color: var(--cv-white);
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .info-table td {
+        color: rgba(255,255,255,0.85);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .info-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .info-table tr:nth-child(even) {
+        background: rgba(0,0,0,0.2);
+    }
+
+    .info-table tr:hover {
+        background: rgba(200,0,0,0.1);
+    }
+
+    .info-table td:not(:first-child) {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.15em;
+        color: var(--cv-yellow);
+        text-align: right;
+    }
+
+    /* Reference note */
+    .reference-note {
+        font-size: 0.85em;
+        font-style: italic;
+        color: rgba(255,255,255,0.5);
+        margin-top: 15px !important;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .composition-page {
+            padding: 30px 20px;
+        }
+
+        .composition-page h2 {
+            font-size: 2em;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 12px 15px;
+            font-size: 0.95em;
+        }
+    }
+</style>
+
+<div class="composition-page">
+    <h2>Složení</h2>
+
+    <div class="flavor-composition">
+        <div class="flavor-header">🧪 Neochucený</div>
+        <div class="flavor-content">
+            Vysoce rozvětvený cyklický dextrin (Cluster Dextrin™).
+        </div>
+    </div>
+
+    <p style="color: rgba(255,255,255,0.6); font-size: 0.95em; margin-top: 15px !important;">
+        100% čistý produkt bez barviv, sladidel a aromat. Žádné zbytečné přídavky – jen patentovaný Cluster Dextrin™ od japonské společnosti Glico.
+    </p>
+
+    <div class="info-table-wrapper">
+        <h2>Nutriční <span class="highlight">hodnoty</span></h2>
+
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Hodnoty</th>
+                    <th style="text-align: right;">Ve 100 g</th>
+                    <th style="text-align: right;">V 25 g</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Energetická hodnota</strong></td>
+                    <td>1649 kJ / 388 kcal</td>
+                    <td>412 kJ / 97 kcal</td>
+                </tr>
+                <tr>
+                    <td>Tuky</td>
+                    <td>0 g</td>
+                    <td>0 g</td>
+                </tr>
+                <tr>
+                    <td>– z toho nasycené mastné kyseliny</td>
+                    <td>0 g</td>
+                    <td>0 g</td>
+                </tr>
+                <tr>
+                    <td><strong>Sacharidy</strong></td>
+                    <td>97 g</td>
+                    <td>24 g</td>
+                </tr>
+                <tr>
+                    <td>– z toho cukry</td>
+                    <td>0 g</td>
+                    <td>0 g</td>
+                </tr>
+                <tr>
+                    <td>Bílkoviny</td>
+                    <td>0 g</td>
+                    <td>0 g</td>
+                </tr>
+                <tr>
+                    <td>Sůl</td>
+                    <td>0 g</td>
+                    <td>0 g</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="reference-note">
+            Referenční hodnota příjmu u průměrné dospělé osoby (8400 kJ / 2000 kcal).
+        </p>
+    </div>
+</div>

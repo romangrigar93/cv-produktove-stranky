@@ -1,0 +1,1181 @@
+:root {
+    --action-button-border: #E7DBFD;
+    --action-button-text: #111111;
+    --action-button-icon: #341664;
+    --action-button-bg-light: #f7f4fd;
+    --action-button-bg-light-hover: #341664;
+    --action-button-text-hover: #ffffff;
+    --action-button-icon-hover: #ffffff;
+    --action-button-primary-hover: #4c2a85;
+}
+
+/* MENU */
+@font-face {
+    font-family: 'toret-font';
+    src: url('../fonts/toret-font.eot?5kiojs');
+    src: url('../fonts/toret-font.eot?5kiojs#iefix') format('embedded-opentype'), url('../fonts/toret-font.ttf?5kiojs') format('truetype'), url('../fonts/toret-font.woff?5kiojs') format('woff'), url('../fonts/toret-font.svg?5kiojs#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#adminmenu #toplevel_page_toret-plugins .wp-menu-image:before {
+    content: '\e900';
+    font-family: 'toret-font';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.toplevel_page_toret-plugins .wp-menu-image.dashicons-before img {
+    width: 20px;
+}
+
+/* COLUMNS */
+.torlib-column-action-button {
+    line-height: 25px !important;
+    background-color: var(--action-button-bg-light) !important;
+    border: 1px solid var(--action-button-border) !important;
+    color: var(--action-button-text) !important;
+    padding: 2px 4px 1px 5px !important;
+    border-radius: 3px !important;
+}
+
+.torlib-column-action-button span:before {
+    color: var(--action-button-icon);
+    line-height: 25px !important;
+    font-size: 16px;
+}
+
+.torlib-column-action-button:hover,
+.torlib-column-action-button:hover span:before {
+    background: var(--action-button-bg-light-hover) !important;
+    color: var(--action-button-text-hover) !important;
+}
+
+.torlib-column-action-button .dashicons {
+    height: auto;
+}
+
+.torlib-column-buttons {
+    display: flex;
+    gap: 1px;
+    flex-wrap: wrap;
+}
+
+/* METABOX */
+.torlib-metabox .dashicons {
+    vertical-align: sub;
+    padding-right: 0;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    white-space: nowrap;
+    color: var(--action-button-icon);
+}
+
+.torlib-metabox a.button,
+.torlib-metabox .button {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 3px;
+    background: var(--action-button-bg-light);
+    color: var(--action-button-text);
+    border-radius: 3px !important;
+    display: flex;
+    line-height: 30px;
+    align-items: center;
+    border: 1px solid var(--action-button-border);
+}
+
+.torlib-metabox .button span {
+    margin-right: 3px;
+}
+
+.torlib-metabox .button:hover,
+.torlib-metabox .button.span:hover {
+    color: var(--action-button-text-hover) !important;
+    background: var(--action-button-bg-light-hover) !important;
+}
+
+.torlib-metabox .button:hover .dashicons {
+    color: var(--action-button-icon-hover) !important;
+}
+
+/* BUTTONS */
+.torlib-primary-button, .torlib-secondary-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: normal;
+    padding: 6px 12px !important;
+    height: 32px !important;
+    border-radius: 3px !important;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.torlib-primary-button .dashicons, .torlib-secondary-button .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.torlib-primary-button {
+    background-color: var(--action-button-bg-light-hover) !important;
+    color: var(--action-button-text-hover) !important;
+    border: 1px solid var(--action-button-bg-light-hover) !important;
+}
+
+.torlib-primary-button .dashicons {
+    color: var(--action-button-icon-hover) !important;
+}
+
+.torlib-primary-button:hover, .torlib-primary-button:focus {
+    background-color: var(--action-button-primary-hover) !important;
+    border-color: var(--action-button-primary-hover) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.torlib-secondary-button {
+    background-color: var(--action-button-bg-light) !important;
+    color: var(--action-button-text) !important;
+    border: 1px solid var(--action-button-border) !important;
+}
+
+.torlib-secondary-button .dashicons {
+    color: var(--action-button-icon) !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.torlib-secondary-button:hover, .torlib-secondary-button:focus {
+    background-color: var(--action-button-bg-light-hover) !important;
+    color: var(--action-button-text-hover) !important;
+    border-color: var(--action-button-bg-light-hover) !important;
+}
+
+.torlib-secondary-button:hover .dashicons, .torlib-secondary-button:focus .dashicons {
+    color: var(--action-button-icon-hover) !important;
+}
+
+/* POPUP */
+.torlib-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.torlib-popup {
+    background-color: #fff !important;
+    color: #333 !important;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-width: 90%;
+    box-sizing: border-box;
+    z-index: 1000000;
+}
+
+.torlib-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.torlib-popup-title {
+    margin-top: 0;
+}
+
+.torlib-popup-buttons {
+    margin-top: 20px;
+    text-align: right;
+    display: flex;
+    column-gap: 5px;
+    justify-content: flex-end;
+}
+
+.torlib-popup-btn {
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.torlib-popup {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-width: 90%;
+}
+
+.torlib-popup.popup-large {
+    width: 90%;
+    max-width: 95%;
+    height: 80vh;
+}
+
+.torlib-popup.popup-small {
+    width: 400px;
+}
+
+.torlib-popup.popup-fullscreen {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+}
+
+.torlib-popup-content {
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.torlib-popup-buttons {
+    flex: 0 0 auto;
+}
+
+.torlib-popup-input-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.torlib-popup-input-wrap.checkbox-option {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-end;
+}
+
+.torlib-popup-input-wrap input[type=checkbox] {
+    margin-left: 5px;
+}
+
+.torlib-popup-auto-open{
+    display: flex;
+}
+
+/* SPINNER */
+.torlib-loader {
+    text-align: center;
+    display: none;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid var(--action-button-icon);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .torlib-loader {
+        width: 80px;
+        height: 80px;
+        margin-left: 0;
+    }
+}
+
+/*
+ * ToretDraw Styles
+ * Version: 1.0.2
+ * Description: Styles for form fields generated by the ToretDraw class.
+ */
+
+/* --- Base Wrappers and Layout --- */
+.toret-draw-field {
+    margin-bottom: 15px;
+    padding: 1px 0; /* Small padding for potential border/outline focus */
+}
+
+.toret-draw-div-layout-item,
+.toret-draw-p-layout-item { /* If you also have a 'p' location type */
+    /* Styles for div/p wrappers, if specific adjustments are needed compared to .toret-draw-field */
+}
+
+.toret-draw-table-layout-item th.toret-draw-table-header,
+.toret-draw-table-layout-item td.toret-draw-table-cell {
+    padding: 12px 10px 12px 0;
+    vertical-align: top;
+    border-bottom: 1px solid #f0f0f0; /* WP style for table row separators */
+}
+
+.toret-draw-table-layout-item:last-child th.toret-draw-table-header,
+.toret-draw-table-layout-item:last-child td.toret-draw-table-cell {
+    border-bottom: none;
+}
+
+.toret-draw-table-layout-item th.toret-draw-table-header {
+    width: 200px; /* Standard width for label column in WP admin */
+    padding-right: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Labels and Descriptions --- */
+.toret-draw-label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: normal; /* WP standard is normal font-weight for labels; <th> will override this */
+    cursor: pointer;
+}
+/* For table layout, <th> already has its font-weight */
+.toret-draw-table-layout-item th.toret-draw-table-header .toret-draw-label {
+    font-weight: inherit;
+}
+
+.toret-draw-label-right {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: normal; /* Ensure right-aligned labels are normal weight */
+}
+
+.toret-draw-required {
+    color: #d63638; /* WP red for required fields */
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+.toret-draw-description {
+    display: block;
+    font-size: 13px; /* WP standard size for descriptions */
+    color: #50575e; /* WP gray for descriptions */
+    margin-top: 6px;
+    font-style: italic;
+}
+.toret-draw-table-cell .toret-draw-description {
+    margin-left: 0; /* In a table, it's already indented by the cell padding */
+}
+
+/* --- Help Tip Styling --- */
+/* This style is for the .toret-draw-help-tip class if your Helper::add_help_tip outputs it. */
+.toret-draw-help-tip {
+    color: #787c82; /* WP gray, similar to WooCommerce help tips */
+    display: inline-block;
+    font-size: 1em; /* Base font size, icon will be scaled by font-family: Dashicons */
+    font-style: normal;
+    height: 16px;
+    line-height: 16px; /* Match height for vertical centering of icon */
+    position: relative;
+    vertical-align: middle;
+    width: 16px;
+    margin-left: 5px; /* Spacing from the element it's next to */
+    cursor: help;
+}
+
+.toret-draw-help-tip::after { /* Using ::after to place the icon */
+    font-family: "Dashicons";
+    content: "\f223"; /* Dashicon for help (info icon) */
+    speak: never; /* Accessibility: prevent screen readers from reading the character code */
+    font-weight: normal; /* Use Dashicons' own weight */
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1; /* Ensure icon is vertically centered in its container */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center; /* Center icon within the 16x16 box */
+}
+
+/* Fallback/Compatibility for WooCommerce help tips if present or generated by Helper */
+.woocommerce-help-tip {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px; /* This effectively sets the size of the Dashicon */
+    color: #787c82;
+    cursor: help;
+    vertical-align: middle;
+    position: relative;
+}
+.woocommerce-help-tip::before { /* WooCommerce uses ::before */
+    font-family: "Dashicons";
+    content: "\f223";
+    speak: never;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* --- Basic Inputs (text, password, email, number, etc.) --- */
+.toret-draw-input {
+    /* WP standard dimensions and styles for inputs */
+    font-size: 14px;
+    line-height: 1.5; /* Default WP line-height for inputs */
+    padding: 6px 8px; /* WP common padding */
+    border: 1px solid #8c8f94; /* WP input border color */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+    background-color: #fff;
+    color: #2c3338; /* WP input text color */
+    border-radius: 3px; /* WP standard border-radius */
+    transition: border-color .1s ease-in-out, box-shadow .1s ease-in-out;
+    vertical-align: middle;
+    box-sizing: border-box; /* Important for width calculations */
+}
+
+.toret-draw-input:focus {
+    border-color: #007cba; /* WP blue for focus */
+    box-shadow: 0 0 0 1px #007cba;
+    outline: 2px solid transparent; /* For accessibility */
+}
+
+.toret-draw-input.short { /* WooCommerce 'short' class */
+    width: auto;
+    min-width: 150px;
+}
+
+/* Classes for standard width text inputs */
+.toret-draw-input.regular-text, /* WP class */
+.toret-draw-input.toret-draw-field-type-text, /* Our class */
+.toret-draw-input.toret-draw-field-type-password,
+.toret-draw-input.toret-draw-field-type-email,
+.toret-draw-input.toret-draw-field-type-url,
+.toret-draw-input.toret-draw-field-type-tel,
+.toret-draw-input.toret-draw-field-type-number,
+.toret-draw-input.toret-draw-field-type-date {
+    width: 100%;
+    max-width: 350px; /* Limit width for better readability on wide screens */
+}
+
+/* On larger screens, you might want a fixed width for regular-text inputs */
+@media screen and (min-width: 782px) {
+    .toret-draw-input.regular-text,
+    .toret-draw-input.toret-draw-field-type-text,
+    .toret-draw-input.toret-draw-field-type-password,
+    .toret-draw-input.toret-draw-field-type-email,
+    .toret-draw-input.toret-draw-field-type-url,
+    .toret-draw-input.toret-draw-field-type-tel,
+    .toret-draw-input.toret-draw-field-type-number,
+    .toret-draw-input.toret-draw-field-type-date {
+        /* Example: width: 25em; */
+    }
+}
+
+
+/* --- Textarea --- */
+.toret-draw-input.toret-draw-field-type-textarea {
+    width: 100%;
+    max-width: 500px; /* Max width for textareas */
+    min-height: 80px; /* Base height */
+    line-height: 1.6;
+}
+
+/* --- Select --- */
+.toret-draw-input.toret-draw-field-type-select,
+.toret-draw-input.toret-draw-field-type-multiselect {
+    /* Base select styles are inherited from .toret-draw-input */
+    /* Specific adjustments if needed */
+    min-width: 200px;
+    padding-right: 28px; /* Space for the arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%2350575e' d='M5 8l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px 12px;
+    -webkit-appearance: none; /* Remove default arrow in Chrome/Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    appearance: none; /* Remove default arrow in modern browsers */
+}
+/* For IE/Edge */
+.toret-draw-input.toret-draw-field-type-select::-ms-expand,
+.toret-draw-input.toret-draw-field-type-multiselect::-ms-expand {
+    display: none;
+}
+.toret-draw-input.toret-draw-field-type-multiselect {
+    background-image: none; /* Multiselect doesn't have an arrow */
+    padding-right: 8px; /* Reset padding for multiselect */
+    min-height: 100px; /* Default height for multiselect */
+}
+
+/* Styles for Select2 (loaded from CDN, but we can slightly adjust them) */
+.toret-draw-field-wrapper .select2-container {
+    max-width: 350px; /* Consistent with other inputs */
+    width: 100% !important; /* !important to override Select2 inline styles */
+    box-sizing: border-box;
+}
+.toret-draw-field-wrapper .select2-container .select2-selection--single {
+    height: 34px; /* Height consistent with standard input */
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.toret-draw-field-wrapper .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 32px; /* Adjust for vertical alignment within the 34px height */
+    padding-left: 8px;
+    padding-right: 20px; /* Space for Select2 arrow */
+}
+.toret-draw-field-wrapper .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 32px; /* Match line-height for arrow positioning */
+    right: 3px;
+}
+.toret-draw-field-wrapper .select2-container--default.select2-container--focus .select2-selection--multiple,
+.toret-draw-field-wrapper .select2-container--default.select2-container--focus .select2-selection--single,
+.toret-draw-field-wrapper .select2-container--default .select2-selection--multiple:focus,
+.toret-draw-field-wrapper .select2-container--default .select2-selection--single:focus {
+    border-color: #007cba; /* WP focus blue */
+    box-shadow: 0 0 0 1px #007cba; /* WP focus shadow */
+}
+.toret-draw-field-wrapper .select2-container--default .select2-selection--multiple {
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    min-height: 34px;
+}
+
+
+/* --- Checkbox & Radio --- */
+.toret-draw-input-checkbox,
+.toret-draw-input-radio {
+    /* WP styles for checkbox/radio */
+    border: 1px solid #8c8f94;
+    background: #fff;
+    color: #50575e; /* Color of the checkmark/dot if using native rendering */
+    clear: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 0; /* Remove line-height for precise control */
+    height: 16px; /* WP standard size */
+    margin: -4px 4px 0 0; /* WP standard margin for alignment */
+    outline: 0;
+    padding: 0 !important; /* Important for consistency */
+    text-align: center;
+    vertical-align: middle;
+    width: 16px; /* WP standard size */
+    min-width: 16px;
+    -webkit-appearance: none; /* Remove native appearance */
+    appearance: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    transition: .05s border-color ease-in-out;
+    box-sizing: border-box;
+}
+.toret-draw-input-radio {
+    border-radius: 50%; /* Make radio buttons circular */
+}
+.toret-draw-input-checkbox:focus,
+.toret-draw-input-radio:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+    outline: 2px solid transparent; /* Accessibility focus style */
+}
+
+.toret-draw-input-checkbox:checked::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23007cba' d='M11.363 3.691L6.252 8.802l-2.61-2.61L2 7.839l3.617 3.617.633.633.633-.633L13 5.338z'/%3E%3C/svg%3E");
+    /* Centering the checkmark within the 16x16 box */
+    margin: -3px 0 0 -3px; /* Adjust these values if the SVG is different */
+    display: block;
+    height: 16px;
+    width: 16px;
+    line-height: 16px; /* For alignment if using font icon */
+}
+.toret-draw-input-radio:checked::before {
+    content: "\2022"; /* Bullet character */
+    font-size: 2em; /* Large bullet */
+    color: #007cba; /* WP blue */
+    /* Centering the bullet */
+    display: block;
+    height: 16px;
+    width: 16px;
+    line-height: 14px; /* Adjust for vertical centering */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.toret-draw-radio-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.toret-draw-radio-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.toret-draw-radio-list-item {
+    margin-bottom: 8px;
+}
+.toret-draw-radio-list-item label {
+    display: inline-flex; /* For aligning input and text */
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+.toret-draw-radio-list-item .toret-draw-input-radio {
+    margin-right: 8px; /* Spacing between radio and text */
+}
+
+/* --- Note --- */
+.toret-draw-note-wrapper .toret-draw-label {
+    /* Label for a note can be like a heading */
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.toret-draw-note-content {
+    background-color: #f8f9fa; /* Light background */
+    border-left: 4px solid #007cba; /* WP blue as accent */
+    padding: 10px 15px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #3c434a; /* WP text color for notices */
+}
+.toret-draw-note-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Checkbox & Radio Specific Label Positions --- */
+.toret-draw-label-after {
+    /* Styles for labels that appear after the input (e.g., typical checkbox/radio) */
+    margin-left: 8px; /* Space between input and label */
+    display: inline-block; /* Keep on same line */
+    vertical-align: middle;
+}
+
+.toret-draw-label-before {
+    /* Styles for labels that appear before the input, but on the same line */
+    margin-right: 8px; /* Space between label and input */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* Wrapper for when label and checkbox are on the same line */
+.toret-draw-field-type-checkbox-wrapper.toret-draw-checkbox-inline-group,
+.toret-draw-field-type-checkbox-wrapper .toret-draw-checkbox-inline-group { /* If the class is on a child element */
+    display: flex; /* Using flexbox for alignment */
+    align-items: center; /* Vertical alignment to center */
+    gap: 5px; /* Small gap between elements */
+}
+
+/* For the case where the label is above the checkbox (label_position: 'before'),
+   and the checkbox is rendered separately below it: */
+.toret-draw-field-type-checkbox-wrapper .toret-draw-input-checkbox {
+    /* You can add margin-top here if the label is above it and you want a larger gap */
+}
+
+/* For radio button list items, where the label is always after the input */
+.toret-draw-radio-list-item input[type="radio"] + .toret-draw-label-after {
+    margin-left: 8px; /* It should already be there, but just in case */
+}
+
+/* --- Buttons (Submit, Button) --- */
+/* Base styles for .button and .button-primary are from WordPress.
+   Our classes are for more specific targeting or minor adjustments. */
+.toret-draw-button {
+    /* If you need any special adjustments for all ToretDraw buttons */
+}
+.toret-draw-button-submit {
+    /* Specific to the submit button, if needed */
+}
+.toret-draw-button-button {
+    /* Specific to <button type="button">, if needed */
+}
+.toret-draw-table-cell .toret-draw-button {
+    /* In a table, the submit button is often without a label in <th>, so alignment... */
+    /* This should happen automatically if <th> is empty. */
+}
+
+
+/* Utility Classes (example) */
+.screen-reader-text { /* WordPress class for hiding text accessibly */
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important; /* Important to override other positions */
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+
+/* Styles for a form with the main div layout */
+.toret-draw-form.toret-draw-form-layout-div .toret-draw-field {
+    /* You can add general styles for fields in the div layout here if needed */
+    /* For example, if you want the label and input to be next to each other even without a flex group: */
+    /* display: flex; align-items: center; gap: 10px; */
+}
+.toret-draw-form.toret-draw-form-layout-div .toret-draw-field .toret-draw-label {
+    /* flex-basis: 150px; flex-shrink: 0; */ /* Example for label next to input */
+}
+.toret-draw-form.toret-draw-form-layout-div .toret-draw-field .toret-draw-input {
+    /* flex-grow: 1; */ /* Example for input next to label */
+}
+
+
+.toret-draw-field-group.form-row {
+    margin-bottom: 25px;
+}
+
+.toret-draw-field-group.two-column-group > .toret-draw-field-wrapper.flex-item-half {
+    flex-grow: 1;
+    flex-basis: calc(50% - 10px);
+    min-width: 200px;
+}
+
+
+/*
+* Toret plugin administration  -------------------------------------------
+*/
+:root {
+    --koverzni: #00c9a5;
+    --zakladni: #22134A;
+    --hlavni: #22134A;
+    --svetla: #ffffff;
+    --bg-svetle: #FCF7FF;
+    --bg-tmave: #533E7B;
+    --bg-ruzova: #FAEAFF;
+    --warning: #b5415e;
+}
+
+/* Admin menu icon */
+@font-face {
+    font-family: 'toret-font';
+    src: url('../fonts/toret-font.eot?5kiojs');
+    src: url('../fonts/toret-font.eot?5kiojs#iefix') format('embedded-opentype'), url('../fonts/toret-font.ttf?5kiojs') format('truetype'), url('../fonts/toret-font.woff?5kiojs') format('woff'), url('../fonts/toret-font.svg?5kiojs#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#adminmenu #toplevel_page_toret-plugins .wp-menu-image:before {
+    content: '\e900';
+    font-family: 'toret-font';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.toplevel_page_toret-plugins .wp-menu-image.dashicons-before img {
+    width: 20px;
+}
+
+/* To th etop button */
+#to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #22134a;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#to-top-button:hover {
+    background-color: var(--bg-tmave);
+}
+
+.toret-admin-wrap.form-table {
+    margin: 0;
+    position: relative;
+    table-layout: fixed;
+}
+
+.toret-admin-wrap.form-table th {
+    position: relative;
+    padding-right: 24px;
+}
+
+.toret-admin-wrap.form-table th label {
+    position: relative;
+    display: block;
+}
+
+.toret-admin-wrap.wrap {
+    padding: 0 20px;
+    background: transparent!important;
+}
+
+.toret-admin-main-wrap {
+    margin-top: 15px;
+}
+
+.toret-admin-main-wrap form {
+}
+
+.toret-admin-main-wrap h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.toret-admin-main-wrap input[type=text],
+.toret-admin-main-wrap input[type=number],
+.toret-admin-main-wrap select {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Tooltip for input fields */
+.toret-input-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.toret-input-tooltip .toret-input-tooltiptext {
+    visibility: hidden;
+    max-width: 350px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.toret-input-tooltip:hover .toret-input-tooltiptext {
+    visibility: visible;
+}
+
+.toret-input-tooltiptext {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Miscellaneous styles */
+.toret-copy-link:hover {
+    cursor: pointer;
+    color: var(--koverzni)
+}
+
+/* Menu styles */
+
+.toret-menu-wrap {
+    display: flex;
+}
+
+.toret-menu {
+    float: left;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    display: block
+}
+
+.toret-menu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.toret-menu li + li {
+    border-left: 1px solid var(--bg-tmave);
+}
+
+.toret-menu li a {
+    float: left;
+    margin: 0;
+    padding: 12px 20px;
+    color: #ffffff;
+    background: var(--zakladni);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.toret-menu li a:hover {
+    background-color: var(--bg-tmave);
+}
+
+.toret-menu li a:focus,
+.toret-menu li a.active {
+    color: #fff;
+    background: var(--koverzni);
+    box-shadow: none;
+}
+
+/* Settings box */
+.toret-settings-box-wrap {
+    background-color: var(--svetla);
+    padding: 20px;
+}
+
+
+.toret-settings-box-wrap + .toret-settings-box-wrap {
+    margin-top: 35px;
+}
+
+.toret-settings-box-wrap h2 {
+    margin-top: 0;
+}
+
+.toret-settings-box-footer .button-primary,
+.toret-settings-section-box-footer .button-primary,
+.toret-settings-sub-section-box-footer .button-primary {
+    color: var(--svetla);
+    background: var(--hlavni);
+    border: none;
+}
+
+.toret-settings-box-footer .button-primary:hover,
+.toret-settings-section-box-footer .button-primary:hover,
+.toret-settings-sub-section-box-footer .button-primary:hover {
+    background-color: var(--bg-tmave);
+}
+
+.toret-settings-box-body .toret-settings-section-box-wrap:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.toret-settings-box-body textarea {
+    width: 100%;
+    min-height: 100px;
+    max-width: 400px;
+}
+
+.toret-settings-box-body .select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: table-cell;
+}
+
+.toret-settings-section-box-body .custom-icon-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+}
+
+.toret-settings-section-box-body .custom-icon-wrap input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Limit table styles */
+.toret-limit-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.toret-limit-table th {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.toret-limit-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.toret-limit-table input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.toret-delete-limit{
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.toret-delete-limit:hover{
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button.toret-primary{
+    color: var(--svetla);
+    background: var(--hlavni);
+    border: none;
+}
+
+.button.toret-secondary:hover {
+    background-color: var(--bg-tmave);
+}
+
+.button.toret-secondary {
+    border: 1px solid var(--zakladni);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: var(--bg-tmave);
+    cursor: pointer;
+}
+
+.button.toret-secondary:hover {
+    background-color: var(--hlavni);
+    color: var(--svetla);
+}
+
+/* License notice */
+.toret-license-success {
+    color: #00a65a;
+}
+
+.toret-license-error {
+    color: red;
+}
+
+/* Collapsible */
+.toret_product_data_collapsible_button {
+    background-color: #001543;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 13px;
+}
+
+.toret_product_data_collapsible_button:hover {
+    background-color: #555;
+}
+
+.toret_product_data_collapsible {
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+}
+
+.toret-tab-variation,
+.toret-tab-category {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #fbf9f9;
+    padding: 0 15px 15px 15px;
+}
+
+.toret-tab-category label {
+    float: left !important;
+    margin-right: 10px !important;
+}
+
+.toret-tab-variation label {
+    width: 250px !important;
+    margin-left: 10px;
+}
+
+.toret_product_data_collapsible label {
+    text-align: left;
+}
+
+/* Order action buttons */
+@keyframes spin {
+    from, 0% {
+        transform: rotate(0deg);
+    }
+    to, 100% {
+        transform: rotate(360deg);
+    }
+}
+
+.toret-spinner {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-top: 2px solid var(--zakladni) !important;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+.toret-column-action-button{
+    line-height: 25px !important;
+    background-color: var(--svetla) !important;
+    border: 1px solid var(--zakladni) !important;
+    color: var(--zakladni) !important;
+    margin: 0 1px !important;
+    padding: 2px 4px 1px 5px !important;
+}
+
+.toret-column-action-button span:before{
+    color: var(--zakladni);
+    line-height: 25px !important;
+    font-size: 16px;
+}
+
+.toret-column-action-button:hover,
+.toret-column-action-button:hover span:before{
+    background: var(--zakladni) !important;
+    color: var(--svetla) !important;
+}
+
+.toret-metabox .dashicons {
+    vertical-align: sub;
+    padding-right: 0;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    white-space: nowrap;
+}
+
+.toret-metabox a.button,
+.toret-metabox .button,
+.toret-metabox .a {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 3px;
+    background: var(--svetla);
+    color: var(--zakladni);
+    border-radius: 3px;
+    display: flex;
+    line-height: 30px;
+    align-items: center;
+    border: 1px solid var(--zakladni);
+}
+
+.toret-metabox a.button span,
+.toret-metabox .button span,
+.toret-metabox .a span {
+    margin-right: 3px;
+}
+
+.toret-metabox a.button:hover,
+.toret-metabox .button:hover,
+.toret-metabox .a:hover {
+    color: var(--svetla);
+    background: var(--zakladni);
+}
+
+.setting-divider{
+    border-bottom: lightgray inset 1px;
+}

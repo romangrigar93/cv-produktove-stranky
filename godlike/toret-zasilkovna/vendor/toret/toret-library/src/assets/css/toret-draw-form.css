@@ -1,0 +1,113 @@
+/* --- ToretForm specific styles --- */
+.toret-draw-form {
+    /* General styles for all forms created by ToretForm */
+}
+
+.toret-draw-form-layout-table {
+    /* Specific styles if main layout is table */
+}
+.toret-draw-form-layout-div {
+    /* Specific styles if main layout is div */
+}
+
+.toret-draw-form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* --- Field Groups --- */
+.toret-draw-field-group {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccd0d4; /* WordPress default border color */
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.toret-draw-group-fieldset {
+    /* Styles specific to fieldset groups, if any */
+}
+.toret-draw-group-div {
+    /* Styles specific to div groups, if any */
+}
+
+.toret-draw-group-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee; /* Light border for title separator */
+    color: #2c3338; /* WordPress dark gray text color */
+}
+.toret-draw-group-fieldset > .toret-draw-group-title { /* Or legend if using <legend> */
+    /* Specific styling for titles within a fieldset (legend) */
+    padding: 0 5px;
+    margin-left: 10px; /* Common WP legend styling */
+    font-size: 1em; /* Legends are often smaller or same size as body text */
+    border-bottom: none; /* Legends typically don't have a bottom border like h2/h3 */
+}
+
+
+/* --- Custom Flex Layout Utilities (can be part of field group content) --- */
+.custom-flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between items in the row */
+}
+.custom-flex-row > .toret-draw-field-wrapper { /* Target direct children wrappers */
+    flex-grow: 1;
+    flex-basis: 200px; /* Default basis, items will grow/shrink from here */
+    margin-bottom: 0; /* Override default field wrapper margin if inside flex row */
+}
+.custom-flex-row > .toret-draw-field-wrapper.flex-item-auto {
+    flex-grow: 0; /* Do not grow */
+    flex-basis: auto; /* Size based on content */
+}
+
+/* Example of column items within a field group, perhaps using flex on the group itself */
+.toret-draw-field-group .flex-column-item {
+    flex: 1; /* Takes up available space equally with other flex-column-items */
+    min-width: 0; /* Allows shrinking below content size if needed */
+}
+.toret-draw-field-group .flex-column-item.size-half {
+    flex-basis: calc(50% - 10px); /* Example for a two-column layout with gap */
+    /* Adjust gap subtraction based on the actual gap used */
+}
+
+
+/* --- Specific Adjustments for Div Layout --- */
+.toret-draw-form-layout-div .toret-draw-field-wrapper:not(.flex-item-half):not(.flex-column-item) {
+    /* Styles for field wrappers in div layout that are NOT part of a specific flex sizing */
+    /* e.g., ensure they take full available width or have a default max-width */
+}
+.toret-draw-form-layout-div .form-field-full-width .toret-draw-input,
+.toret-draw-form-layout-div .form-field-full-width .toret-draw-input.toret-draw-field-type-textarea { /* ensure textarea also applies */
+    width: 100%;
+    max-width: none; /* Override any previous max-width */
+}
+.toret-draw-form-layout-div .form-field-full-width .select2-container {
+    width: 100% !important; /* Override Select2 inline style for full width */
+    max-width: none !important;
+}
+
+/* --- Example: Custom Divi Form Button Styling --- */
+/* This is very specific to a Divi theme integration */
+.my-custom-divi-form .et_pb_button.my-custom-submit-button {
+    display: inline-block;
+    padding: 0.7em 2em;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.7em;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff !important; /* Ensure text color is white */
+    background-color: #0C71C3 !important; /* Divi blue or custom primary color */
+    border-radius: 3px; /* Common Divi button radius */
+    transition: all 0.3s ease 0s; /* Standard Divi transition */
+}
+.my-custom-divi-form .et_pb_button.my-custom-submit-button:hover {
+    opacity: 0.8; /* Common hover effect */
+}

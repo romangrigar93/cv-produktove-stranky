@@ -1,0 +1,1734 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Toret Zásilkovna\n"
+"POT-Creation-Date: 2022-10-03 12:20+0200\n"
+"PO-Revision-Date: 2022-10-03 12:20+0200\n"
+"Last-Translator: Tomáš Cirkl <tomascirkl@gmail.com>\n"
+"Language-Team: Tomáš Cirkl <tomascirkl@gmail.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: toret-zasilkovna.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-zasilkovna-admin.php:157 admin/views/toret.php:147
+msgid "Settings"
+msgstr "Einstellung"
+
+#: admin/class-zasilkovna-admin.php:158 admin/views/toret.php:153
+#: admin/views/toret.php:155
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: admin/class-zasilkovna-admin.php:159
+msgid "Support"
+msgstr "Unterstützung"
+
+#: admin/class-zasilkovna-admin.php:174 admin/class-zasilkovna-admin.php:175
+msgid "Toret plugins"
+msgstr "Toret plugins"
+
+#: admin/class-zasilkovna-admin.php:185 admin/class-zasilkovna-admin.php:186
+#: admin/includes/class-zasilkovna-columns.php:33
+#: admin/includes/class-zasilkovna-product-tab.php:28
+#: admin/views/control-xml.php:79 admin/views/parts/shipping_methods.php:68
+#: admin/views/parts/shipping_methods.php:71
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:54
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:99
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:105
+msgid "Packeta"
+msgstr "Paketshop"
+
+#: admin/class-zasilkovna-admin.php:194 admin/class-zasilkovna-admin.php:195
+msgid "Packeta log"
+msgstr "Paketshop log"
+
+#: admin/class-zasilkovna-admin.php:293
+msgid "Packeta Log"
+msgstr "Paketshop Log"
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:10
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"option."
+msgstr ""
+"Überprüfen Sie die Packetshop Versandmethoden, die Sie für diese Option "
+"deaktivieren möchten."
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:22
+#: admin/includes/ToretZasilkovnaProductCategory.php:19
+#: admin/includes/ToretZasilkovnaProductCategory.php:60
+#: admin/includes/class-zasilkovna-product-tab.php:67
+msgid "Pick-up points "
+msgstr "Abholort "
+
+#: admin/includes/ToretZasilkovnaProductCategory.php:9
+#: admin/includes/ToretZasilkovnaProductCategory.php:50
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"category."
+msgstr ""
+"Überprüfen Sie die Packetshop Versandmethoden, die Sie für diese Kategorie "
+"deaktivieren möchten."
+
+#: admin/includes/class-zasilkovna-bulk.php:27
+msgid "Print labels (Packeta)"
+msgstr "Schilder drucken (Paketshop)"
+
+#: admin/includes/class-zasilkovna-bulk.php:28
+msgid "Print labels (Other carriers)"
+msgstr "Schilder drucken (andere Versanddienstleister)"
+
+#: admin/includes/class-zasilkovna-bulk.php:29
+msgid "Send in bulk to Packeta"
+msgstr "Im großen Umfang an Packetshop senden"
+
+#: admin/includes/class-zasilkovna-bulk.php:76
+#: admin/includes/class-zasilkovna-bulk.php:81
+msgid "Wrong label format. Format"
+msgstr "Falsches Schilderformat. Format"
+
+#: admin/includes/class-zasilkovna-bulk.php:76
+msgid ""
+" not supported. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetlabelpdf\" target=\"_blank"
+"\">Supported formats can be found here</a>."
+msgstr ""
+" wird nicht unterstützt. <a href=\"https://docs.packetery.com/03-creating-"
+"packets/06-packetery-api-reference.html#toc-packetlabelpdf\" target=\"_blank"
+"\"> Unterstützte Formate finden Sie hier</a>."
+
+#: admin/includes/class-zasilkovna-bulk.php:81
+msgid ""
+" not supported. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetscourierlabelspdfhttps://docs."
+"packetery.com/03-creating-packets/06-packetery-api-reference.html#toc-"
+"packetscourierlabelspdf\" target=\"_blank\">Supported formats can be found "
+"here</a>."
+msgstr ""
+" wird nicht unterstützt. <a href=\"https://docs.packetery.com/03-creating-"
+"packets/06-packetery-api-reference.html#toc-packetscourierlabelspdfhttps://"
+"docs.packetery.com/03-creating-packets/06-packetery-api-reference.html#toc-"
+"packetscourierlabelspdf\" target=\"_blank\">Unterstützte Formate finden Sie "
+"hier</a>."
+
+#: admin/includes/class-zasilkovna-bulk.php:86
+msgid "Selected orders do not have assigned parcel ID."
+msgstr ""
+"Für die ausgewählten Bestellungen wurde keine ID des Pakets zugeordnet."
+
+#: admin/includes/class-zasilkovna-bulk.php:91
+msgid "Some of the parcels does not have valid parcel ID."
+msgstr "Einige Pakets haben ungültige ID."
+
+#: admin/includes/class-zasilkovna-bulk.php:96
+#: admin/includes/class-zasilkovna-bulk.php:101
+msgid ""
+"None of the selected orders has Packeta label. Try to print carrier labels "
+"for these orders."
+msgstr ""
+"Keine der ausgewählten Bestellungen hat ein Packetshopschild. Versuchen Sie "
+"für diese Bestellungen Versanddienstleisterschilder auszudrucken."
+
+#: admin/includes/class-zasilkovna-bulk.php:106
+msgid ""
+"To download labels, the order's weight must be entered. If the data have "
+"been sent to Packeta, they have to be modified there."
+msgstr ""
+"Um die Schilder herunterzuladen, müssen Sie das Bestellungsgewicht "
+"eintragen. Falls die Sendung in das Paketshop bereits gesendet wurde, muss "
+"sie dort bearbeitet werden."
+
+#: admin/includes/class-zasilkovna-bulk.php:111
+msgid "Unknown error. Error text: "
+msgstr "Unbekanter Fehler. Fehler: "
+
+#: admin/includes/class-zasilkovna-bulk.php:116
+#: admin/includes/class-zasilkovna-send-ticket.php:215
+msgid ""
+"There has been an error in communication with the carrier. Please try later."
+msgstr ""
+"Fehler bei der Kommunikation mit Versanddienstleister. Versuchen Sie es "
+"bitte später erneut."
+
+#: admin/includes/class-zasilkovna-bulk.php:121
+#: admin/includes/class-zasilkovna-send-ticket.php:220
+msgid "Invalid carrier number."
+msgstr "Ungültige Nummer des Versanddienstleisters."
+
+#: admin/includes/class-zasilkovna-columns.php:32
+msgid "Tracing number"
+msgstr "Sendungsnummer"
+
+#: admin/includes/class-zasilkovna-columns.php:34
+#: admin/views/parts/main.php:483
+msgid "Packeta status"
+msgstr "Packetshop Status"
+
+#: admin/includes/class-zasilkovna-columns.php:215
+#: admin/includes/class-zasilkovna-columns.php:220
+#: admin/includes/metabox.php:185 admin/includes/metabox.php:189
+msgid "Send to Packeta"
+msgstr "An Paketshop senden"
+
+#: admin/includes/class-zasilkovna-columns.php:225
+#: admin/includes/metabox.php:193
+msgid "Add information"
+msgstr "Informationen schreiben"
+
+#: admin/includes/class-zasilkovna-columns.php:228
+#: admin/includes/metabox.php:196
+msgid "Complete the information"
+msgstr "Informationen ergänzen"
+
+#: admin/includes/class-zasilkovna-columns.php:231
+#: admin/includes/metabox.php:199
+msgid "Width:"
+msgstr "Breite:"
+
+#: admin/includes/class-zasilkovna-columns.php:232
+#: admin/includes/metabox.php:200
+msgid "Height:"
+msgstr "Höhe:"
+
+#: admin/includes/class-zasilkovna-columns.php:233
+#: admin/includes/metabox.php:201
+msgid "Length:"
+msgstr "Länge:"
+
+#: admin/includes/class-zasilkovna-columns.php:237
+#: admin/includes/metabox.php:205
+msgid "Weight:"
+msgstr "Gewicht:"
+
+#: admin/includes/class-zasilkovna-columns.php:239
+#: admin/includes/metabox.php:207 admin/views/control-xml.php:175
+#: admin/views/control-xml.php:333 admin/views/parts/main.php:422
+#: admin/views/parts/main.php:473 admin/views/parts/main.php:509
+#: admin/views/parts/main.php:556 admin/views/parts/main.php:685
+#: admin/views/parts/send.php:48 admin/views/parts/shipping_methods.php:45
+#: admin/views/parts/shipping_methods.php:104
+#: admin/views/parts/shipping_methods.php:139
+msgid "Save"
+msgstr "Speichern"
+
+#: admin/includes/class-zasilkovna-columns.php:240
+#: admin/includes/class-zasilkovna-columns.php:321
+#: admin/includes/metabox.php:208 toret-zasilkovna.php:564
+#: toret-zasilkovna.php:624
+msgid "Close"
+msgstr "Schließen"
+
+#: admin/includes/class-zasilkovna-columns.php:244
+msgid "Customs declaration is required"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:286
+msgid "Print label"
+msgstr "Schild ausdrucken"
+
+#: admin/includes/class-zasilkovna-columns.php:294 toret-zasilkovna.php:551
+#: toret-zasilkovna.php:600
+msgid "Printing settings"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:295 toret-zasilkovna.php:552
+#: toret-zasilkovna.php:601
+msgid "Format:"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:303
+#: admin/includes/class-zasilkovna-columns.php:310
+#: admin/views/parts/main.php:226 admin/views/parts/main.php:253
+#: toret-zasilkovna.php:554 toret-zasilkovna.php:607 toret-zasilkovna.php:613
+msgid "labels, 1/4 A4, direct print, print on A4, 4pcs/page"
+msgstr "Label, 1/4 A4, Direktdruck, 4Stk/Seite"
+
+#: admin/includes/class-zasilkovna-columns.php:304
+#: admin/includes/class-zasilkovna-columns.php:311
+#: admin/views/parts/main.php:229 admin/views/parts/main.php:256
+#: toret-zasilkovna.php:555 toret-zasilkovna.php:608 toret-zasilkovna.php:614
+msgid "labels, 1/4 A4, direct print, 1 pc/page"
+msgstr "Etiketten, 1/4 A4, Direktdruck, 1Stk/Seite"
+
+#: admin/includes/class-zasilkovna-columns.php:312
+#: admin/views/parts/main.php:232 toret-zasilkovna.php:556
+#: toret-zasilkovna.php:615
+msgid "labels, 1/8 A4, 1 pc/page"
+msgstr "Label, 1/8 A4, Druck auf A4, 1Stk/Seite"
+
+#: admin/includes/class-zasilkovna-columns.php:313
+#: admin/views/parts/main.php:235 toret-zasilkovna.php:557
+#: toret-zasilkovna.php:616
+msgid "labels, 1/8 A4, print on A4, 8pcs/page"
+msgstr "Label, 1/8 A4, Druck auf A4, 8Stk/Seite"
+
+#: admin/includes/class-zasilkovna-columns.php:314
+#: admin/views/parts/main.php:238 toret-zasilkovna.php:558
+#: toret-zasilkovna.php:617
+msgid "labels, 1/16 A4, 1 pc/page"
+msgstr "Label, 1/16 A4, Druck auf A4, 1Stk/Seite"
+
+#: admin/includes/class-zasilkovna-columns.php:315
+#: admin/views/parts/main.php:241 toret-zasilkovna.php:559
+#: toret-zasilkovna.php:618
+msgid "labels, 105x35mm A4, print on A4, 16pcs/page"
+msgstr "Label, 105 x 35mm A4, Druck auf A4, 16Stk/Seite"
+
+#: admin/includes/class-zasilkovna-columns.php:319 toret-zasilkovna.php:562
+#: toret-zasilkovna.php:622
+msgid "Offset:"
+msgstr "Versatz:"
+
+#: admin/includes/class-zasilkovna-columns.php:320 toret-zasilkovna.php:563
+#: toret-zasilkovna.php:623
+msgid "Print"
+msgstr "Drucken"
+
+#: admin/includes/class-zasilkovna-product-tab.php:48
+msgid "Age verification"
+msgstr "Altersüberprüfung"
+
+#: admin/includes/class-zasilkovna-product-tab.php:49
+msgid "Tick if age verification is required for this product."
+msgstr ""
+"Kreuzen Sie an, falls für dieses Produkt die Altersüberprüfung nötig ist."
+
+#: admin/includes/class-zasilkovna-product-tab.php:55
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"product."
+msgstr ""
+"Überprüfen Sie die Packetshop Versandmethoden, die Sie für dieses Produkt "
+"deaktivieren möchten."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:205
+msgid "Selected order does not have assigned parcel ID."
+msgstr "Die ausgewählte Bestellung hat keine ID des Pakets."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:210
+msgid "Parcel ID not valid."
+msgstr "ID der Sendung ist ungültig."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:225
+msgid "Wrong label format."
+msgstr "Falsches Schilderformat."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:230
+msgid "Unknown error."
+msgstr "Ein unbekannter Fehler ist aufgetreten."
+
+#: admin/includes/metabox.php:43
+msgid "Show log entries for this order"
+msgstr "Die log Vermerkung für diese Bestellung anzeigen"
+
+#: admin/includes/metabox.php:45
+msgid "Shipment weight"
+msgstr "Paketgewicht"
+
+#: admin/includes/metabox.php:52
+msgid "Shipment width"
+msgstr "Packetbreite"
+
+#: admin/includes/metabox.php:57
+msgid "Shipment height"
+msgstr "Packethöhe"
+
+#: admin/includes/metabox.php:62
+msgid "Shipment length"
+msgstr "Packetlänge"
+
+#: admin/includes/metabox.php:212
+msgid "Customs declaration is required. It must be added manually."
+msgstr ""
+
+#: admin/includes/metabox.php:251
+msgid "Download label"
+msgstr "Schilder herunterladen"
+
+#: admin/includes/metabox.php:258
+msgid "Claim assistant label"
+msgstr ""
+
+#: admin/includes/metabox.php:260
+msgid "Claim assistant"
+msgstr ""
+
+#: admin/views/control-xml.php:2
+msgid "Packeta settings"
+msgstr "Packetshop Einstellung"
+
+#: admin/views/control-xml.php:21
+msgid "https://documentation.toret.cz/zasilkovna"
+msgstr ""
+
+#: admin/views/control-xml.php:22
+msgid "Documentation and demo e-shop to try out the plugin"
+msgstr "Dokumentation und Demo - Eshop um das Plugin zu testen"
+
+#: admin/views/control-xml.php:30
+msgid "Main settings"
+msgstr "Haupteinstellung"
+
+#: admin/views/control-xml.php:36 admin/views/control-xml.php:107
+#: admin/views/control-xml.php:265
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:192
+msgid "Carriers"
+msgstr "Versanddienstleister"
+
+#: admin/views/control-xml.php:42
+msgid "Send automatically"
+msgstr "Automatisch senden"
+
+#: admin/views/control-xml.php:82 admin/views/control-xml.php:191
+#: admin/views/parts/main.php:521
+msgid "Item"
+msgstr "Gegenstand"
+
+#: admin/views/control-xml.php:83 admin/views/control-xml.php:120
+#: admin/views/control-xml.php:192 admin/views/control-xml.php:278
+msgid "Price"
+msgstr "Preis"
+
+#: admin/views/control-xml.php:86 admin/views/control-xml.php:202
+msgid "Unified price"
+msgstr "Einheitspreis"
+
+#: admin/views/control-xml.php:87
+msgid "If the price is scaled by weight, the unified price must be entered."
+msgstr ""
+"Ist der Preis nach Gewicht bestimmt, muss der Einheitspreis eingegeben "
+"werden."
+
+#: admin/views/control-xml.php:90 admin/views/control-xml.php:215
+msgid "Maximum weight"
+msgstr "Maximales Gewicht"
+
+#: admin/views/control-xml.php:91
+msgid ""
+"Maximum weight allowed by Packeta is 10 kg. The limit can be increased and "
+"allowed up to 30 kg in the main settings."
+msgstr ""
+"Das maximal erlaubte Gewicht vom Paketshop ist 10 kg. Sie können die "
+"Gewichtsangabe auf 30 kg erhöhen und in der Haupteinstellung erlauben."
+
+#: admin/views/control-xml.php:94 admin/views/control-xml.php:222
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaFee.php:106
+msgid "Cash on delivery fee"
+msgstr "Zuschlag für Nachnahme"
+
+#: admin/views/control-xml.php:95
+msgid "Make sure that Cash on delivery payment method is enabled."
+msgstr "Stellen Sie sicher, dass die Zahlungsmethode Nachnahme aktiviert ist."
+
+#: admin/views/control-xml.php:98 admin/views/control-xml.php:240
+msgid "Maximum C.O.D"
+msgstr "Maximaler C.O.D"
+
+#: admin/views/control-xml.php:99
+msgid ""
+"Maximum order value up to which the C.O.D will be displayed at checkout."
+msgstr ""
+"Maximaler Bestellwert, bis zu dem die Nachnahme an der Kasse angezeigt wird."
+
+#: admin/views/control-xml.php:102 admin/views/control-xml.php:254
+msgid "Free shipping from"
+msgstr "Kostenloser Versand aus"
+
+#: admin/views/control-xml.php:103
+msgid ""
+"This is the sum of the prices of the products in the basket, tax included."
+msgstr ""
+"Dies ist die Summe der Preise der Produkte im Warenkorb, inklusive Steuern."
+
+#: admin/views/control-xml.php:107 admin/views/control-xml.php:265
+msgid "The carrier is not active. Enable it in the tab "
+msgstr ""
+"Der Versanddienstleister ist nicht aktiv. Aktivieren Sie ihn im Schilder "
+
+#: admin/views/control-xml.php:115 admin/views/control-xml.php:273
+msgid "Set prices based on weight"
+msgstr "Preise nach Gewicht einstellen"
+
+#: admin/views/control-xml.php:118 admin/views/control-xml.php:276
+msgid "Weight ABOVE"
+msgstr "Gewicht über"
+
+#: admin/views/control-xml.php:119 admin/views/control-xml.php:277
+msgid "Weight UP TO"
+msgstr "Gewicht BIS"
+
+#: admin/views/control-xml.php:136 admin/views/control-xml.php:167
+#: admin/views/control-xml.php:294 admin/views/control-xml.php:325
+msgid "Delete"
+msgstr "Löschen"
+
+#: admin/views/control-xml.php:142 admin/views/control-xml.php:300
+msgid "Add weight"
+msgstr "Gewicht zugeben"
+
+#: admin/views/control-xml.php:146 admin/views/control-xml.php:304
+msgid "Set the C.O.D. based on the price"
+msgstr "Nachname nach Preis einstellen"
+
+#: admin/views/control-xml.php:149 admin/views/control-xml.php:307
+msgid "Price FROM"
+msgstr "Preis AB"
+
+#: admin/views/control-xml.php:150 admin/views/control-xml.php:308
+msgid "Price UP TO"
+msgstr "Preis BIS"
+
+#: admin/views/control-xml.php:151 admin/views/control-xml.php:309
+msgid "Extra fee"
+msgstr "Zusatzgebühr"
+
+#: admin/views/control-xml.php:173 admin/views/control-xml.php:331
+msgid "Add extra fee"
+msgstr "Zusatzgebühr zugeben"
+
+#: admin/views/control-xml.php:196 admin/views/parts/shipping_methods.php:92
+#: admin/views/parts/shipping_methods.php:127
+msgid ""
+"A package for this carrier cannot be sent through the Packeta API because it "
+"requires a separate customs declaration. It must be added manually."
+msgstr ""
+
+#: admin/views/control-xml.php:198
+msgid ""
+"The carrier cannot be automatically sent to Packeta, because it requires "
+"information about the package dimensions."
+msgstr ""
+"Der Versanddienstleister kann die Sendung nicht senden, er erfordert die "
+"Information zur Abmessung des Pakets."
+
+#: admin/views/control-xml.php:212
+msgid ""
+" The unified price must be entered even if the price is scaled by weight."
+msgstr ""
+" Der Einheitspreis muss dann eingegeben werden, wenn der Preis nach Gewicht "
+"bestimmt ist."
+
+#: admin/views/control-xml.php:218
+msgid "Maximum allowed by Packeta is "
+msgstr "Das Maximum, das vom Paketshop erlaubt ist "
+
+#: admin/views/control-xml.php:218
+msgid "kg."
+msgstr "kg."
+
+#: admin/views/control-xml.php:228 admin/views/control-xml.php:232
+msgid " Make sure you are using payment method "
+msgstr " Stellen Sie sicher, dass Sie die Zahlungsmethode verwenden "
+
+#: admin/views/control-xml.php:228 admin/views/control-xml.php:232
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:54
+msgid "Cash on Delivery"
+msgstr "Nachnahme"
+
+#: admin/views/control-xml.php:228 admin/views/control-xml.php:232
+msgid " from the plugin."
+msgstr " Aus Plugin."
+
+#: admin/views/control-xml.php:235 admin/views/control-xml.php:249
+msgid "This carrier does not accept cash on delivery"
+msgstr ""
+"Der Versanddienstleister akzeptiert nicht die Zahlungsmethode per Nachnahme"
+
+#: admin/views/control-xml.php:247
+msgid ""
+" Maximum order value up to which the C.O.D fee will be displayed at checkout."
+msgstr ""
+" Maximaler Bestellwert, bis zu dem die Nachnahmegebühr an der Kasse "
+"angezeigt wird."
+
+#: admin/views/control-xml.php:261
+msgid ""
+" This is the sum of the prices of the products in the basket, including the "
+"tax, if set on the website."
+msgstr ""
+" Dies ist die Summe der Preise der Produkte im Warenkorb, einschließlich der "
+"Steuern, sofern auf der Website eingestellt."
+
+#: admin/views/log.php:28
+msgid "Delete log"
+msgstr "Log löschen"
+
+#: admin/views/parts/main.php:27
+msgid "Your license is active."
+msgstr "Ihre Lizenz ist aktiv."
+
+#: admin/views/parts/main.php:39
+msgid "License key"
+msgstr "Lizenzschlüssel"
+
+#: admin/views/parts/main.php:44 admin/views/parts/send.php:10
+#: admin/views/parts/shipping_methods.php:76
+#: admin/views/parts/shipping_methods.php:93
+#: admin/views/parts/shipping_methods.php:128
+msgid "Activate"
+msgstr "Aktivieren"
+
+#: admin/views/parts/main.php:48
+msgid "API password"
+msgstr "API Passwort"
+
+#: admin/views/parts/main.php:64
+msgid "API password do not have correct length."
+msgstr "API Passwort hat nicht die korrekte Länge."
+
+#: admin/views/parts/main.php:68
+msgid "API password contains forbidden characters."
+msgstr "API Passwort enthält nicht erlaube Zeichen."
+
+#: admin/views/parts/main.php:76
+msgid "The API password is not probably valid. Please check it."
+msgstr "API Passwort ist nicht gültig. Kontrolieren Sie es, bitte."
+
+#: admin/views/parts/main.php:87
+msgid "Indication"
+msgstr "Bezeichnung - intern"
+
+#: admin/views/parts/main.php:92
+msgid "Detailed guide, how to find it."
+msgstr ""
+
+#: admin/views/parts/main.php:96 admin/views/parts/main.php:99
+msgid "Show countries"
+msgstr "Länder anzeigen"
+
+#: admin/views/parts/main.php:111
+msgid "Start by loading the carriers"
+msgstr "Mit Aufrufen der Webseite des Versanddienstleisters anfangen"
+
+#: admin/views/parts/main.php:117
+msgid "Packeta basic settings"
+msgstr "Grundeinstellung vom Paketshop"
+
+#: admin/views/parts/main.php:120
+msgid "Free shipping"
+msgstr "Kostenloser Versand"
+
+#: admin/views/parts/main.php:125
+msgid "All shipping methods will be free"
+msgstr "Alle Versandarten sind kostenlos"
+
+#: admin/views/parts/main.php:128
+msgid "Free shipping only for Packeta"
+msgstr "Versand in einen Paketshop kostenlos"
+
+#: admin/views/parts/main.php:131
+msgid "Free shipping in shipping selection"
+msgstr "Versand kostenlos bei der Wahl des Versandartes"
+
+#: admin/views/parts/main.php:134
+msgid "Delete \"Free shipping\" - Prices will stay"
+msgstr "Versandart entfernen - die Preise bleiben gleich"
+
+#: admin/views/parts/main.php:140
+msgid "Keep cash on delivery fee for orders with free shipping"
+msgstr "Beim kostenlosen Versand bleibt der Zuchlag für die Nachnahme erhalten"
+
+#: admin/views/parts/main.php:146 admin/views/toret.php:129
+#: admin/views/toret.php:138
+msgid "Yes"
+msgstr "Ja"
+
+#: admin/views/parts/main.php:149 admin/views/toret.php:131
+#: admin/views/toret.php:140
+msgid "No"
+msgstr ""
+
+#: admin/views/parts/main.php:154
+msgid "Round the C.O.D."
+msgstr "Preis der Nachname abrunden."
+
+#: admin/views/parts/main.php:159
+msgid "Up"
+msgstr "Oben"
+
+#: admin/views/parts/main.php:162
+msgid "Down"
+msgstr "Unten"
+
+#: admin/views/parts/main.php:168
+msgid "Send email alerts about parcel creation errors"
+msgstr ""
+"Benachrichtigung per Email senden, wenn ein Fehler bei Erstellung der "
+"Sendung auftritt"
+
+#: admin/views/parts/main.php:176
+msgid "Activate a returns assistant"
+msgstr "Reklamationsassistent aktivieren"
+
+#: admin/views/parts/main.php:184
+msgid "Enable to increase weight from 20 to 30 kg for Packeta deliveries"
+msgstr "Das Gewicht auf 20 und 30 kg für einen Paketshop erhöhen"
+
+#: admin/views/parts/main.php:193
+msgid "Replace the shipping address with selected Packeta branch address"
+msgstr "Ersetzen Sie die Lieferadresse durch die ausgewählte Packetaadresse"
+
+#: admin/views/parts/main.php:202
+msgid "Enable change of order status based on the parcel status"
+msgstr ""
+"Die Änderung des Bestellstatus basierend auf dem Paketstatus aktivieren"
+
+#: admin/views/parts/main.php:211
+msgid "Deactivate pop-up for label printing"
+msgstr ""
+
+#: admin/views/parts/main.php:220
+msgid "Default label type for Paketa"
+msgstr ""
+
+#: admin/views/parts/main.php:247
+msgid "Default label type for external carriers"
+msgstr ""
+
+#: admin/views/parts/main.php:262
+msgid ""
+"Automatically display a map with pickup points when selecting a shipping "
+"method"
+msgstr ""
+
+#: admin/views/parts/main.php:271
+msgid "Hide Zasilkovna tabs in product and category details"
+msgstr ""
+
+#: admin/views/parts/main.php:280
+msgid "Packeta shipment status settings"
+msgstr ""
+
+#: admin/views/parts/main.php:283
+msgid "Load parcel status automatically"
+msgstr "Paketstatus automatisch laden"
+
+#: admin/views/parts/main.php:285
+msgid "Activate CRON to load information about parcel status automatically:"
+msgstr ""
+"Aktivieren Sie CRON, um Informationen zum Paketstatus automatisch zu laden:"
+
+#: admin/views/parts/main.php:290
+msgid "Number of orders checked per CRON run"
+msgstr ""
+
+#: admin/views/parts/main.php:295
+msgid ""
+"Recommended setings is 20 per run. Do not set high run numbers because "
+"Packeta can ban you."
+msgstr ""
+
+#: admin/views/parts/main.php:299
+msgid "Number of days for back check"
+msgstr ""
+
+#: admin/views/parts/main.php:304
+msgid "The number of days for which the order status will be checked back."
+msgstr ""
+
+#: admin/views/parts/main.php:308
+msgid "Do not check the status of the package in the following order statuses"
+msgstr ""
+
+#: admin/views/parts/main.php:323
+msgid "Do not check the status of the package in these shipment states"
+msgstr ""
+
+#: admin/views/parts/main.php:338
+msgid "Price settings"
+msgstr "Preiseinstellung"
+
+#: admin/views/parts/main.php:343
+msgid "Set price incl. VAT"
+msgstr "Preis einstellen einßl. VAT"
+
+#: admin/views/parts/main.php:353
+msgid "Do not set price according to the weight"
+msgstr "Preis nach Gewicht nicht einstellen"
+
+#: admin/views/parts/main.php:362
+msgid "Do not set the C.O.D. fee based on the price"
+msgstr "Nachname basierend auf dem Preis nicht einstellen"
+
+#: admin/views/parts/main.php:370
+msgid "Weight settings"
+msgstr ""
+
+#: admin/views/parts/main.php:375
+msgid "Packaging weight"
+msgstr ""
+
+#: admin/views/parts/main.php:378
+msgid ""
+"It will be automatically added to the weight of the products in the order "
+"when sent to the Packeta."
+msgstr ""
+
+#: admin/views/parts/main.php:384
+msgid "Multiple packages"
+msgstr ""
+
+#: admin/views/parts/main.php:389
+msgid "Enable division into multiple packages"
+msgstr ""
+
+#: admin/views/parts/main.php:401
+msgid "Threshold for division"
+msgstr ""
+
+#: admin/views/parts/main.php:410
+msgid "Disable pickup points filter by order weight"
+msgstr ""
+
+#: admin/views/parts/main.php:425
+msgid "Custom icons for pick-up points"
+msgstr "Kundensymbole für Abholort"
+
+#: admin/views/parts/main.php:437
+msgid "Change Packeta default icon in "
+msgstr "Packetshopsymbol ändern in "
+
+#: admin/views/parts/main.php:442 admin/views/parts/main.php:455
+msgid "Select icon"
+msgstr "Symbol wählen"
+
+#: admin/views/parts/main.php:450
+msgid "Change default icon "
+msgstr "Default icon ändern "
+
+#: admin/views/parts/main.php:464
+msgid "No pick-up points enabled"
+msgstr "Es wurde kein Abholort aktiviert"
+
+#: admin/views/parts/main.php:480
+msgid "Change of order status"
+msgstr "Änderung des Bestellstatus"
+
+#: admin/views/parts/main.php:484 admin/views/parts/send.php:17
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:184
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:163
+msgid "Order Status"
+msgstr "Bestellstatus"
+
+#: admin/views/parts/main.php:493
+msgid "Do not change"
+msgstr "Nichts wechseln"
+
+#: admin/views/parts/main.php:518
+msgid "Exchange rates"
+msgstr "Wechselkurse"
+
+#: admin/views/parts/main.php:522
+msgid "Exchange rate"
+msgstr "Wechselkurs"
+
+#: admin/views/parts/main.php:525
+msgid "EUR"
+msgstr "EUR"
+
+#: admin/views/parts/main.php:532
+msgid "Forint"
+msgstr "Forint"
+
+#: admin/views/parts/main.php:539
+msgid "Zloty"
+msgstr "Zloty"
+
+#: admin/views/parts/main.php:546
+msgid "Leu"
+msgstr "Leu"
+
+#: admin/views/parts/main.php:563
+msgid "Currency and country settings"
+msgstr "Währungs- und Ländereinstellung"
+
+#: admin/views/parts/main.php:567
+msgid "Turn off exchange rate (COD will be sent in the currency of the order)"
+msgstr ""
+"Währungsumrechnung aktivieren (die Nachname wird in der Bestellungswährung "
+"angezeigt)"
+
+#: admin/views/parts/main.php:575 admin/views/parts/shipping_methods.php:51
+#: admin/views/parts/shipping_methods.php:110
+msgid "Country"
+msgstr "Land"
+
+#: admin/views/parts/main.php:576
+msgid "Enabled currency"
+msgstr "Aktivierte Währung"
+
+#: admin/views/parts/main.php:579
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+#: admin/views/parts/main.php:585
+msgid "Czech Republic"
+msgstr "Tschechische Republik"
+
+#: admin/views/parts/main.php:591
+msgid "Denmark"
+msgstr ""
+
+#: admin/views/parts/main.php:597
+msgid "Hungary"
+msgstr "Ungarn"
+
+#: admin/views/parts/main.php:612
+msgid "Germany"
+msgstr "Deutschland"
+
+#: admin/views/parts/main.php:627
+msgid "Poland"
+msgstr "Polen"
+
+#: admin/views/parts/main.php:646
+msgid "Austria"
+msgstr "Österreich"
+
+#: admin/views/parts/main.php:661
+msgid "Romania"
+msgstr "Rumänien"
+
+#: admin/views/parts/main.php:667
+msgid "Slovakia"
+msgstr "Slowakei"
+
+#: admin/views/parts/send.php:7
+msgid "Enable automatic sending to Packeta"
+msgstr "Automatisches Senden an Packeta erlauben"
+
+#: admin/views/parts/send.php:11
+msgid ""
+"Please note: the order should be sent to the Packeta system only when you "
+"are ready to submit the parcel."
+msgstr ""
+"Bitte beachten Sie: Die Bestellung sollte nur dann an das Packetshopsystem "
+"gesendet werden, wenn Sie bereit sind, das Paket einzureichen."
+
+#: admin/views/parts/send.php:16
+msgid "Payment method"
+msgstr "Zahlungsmethode"
+
+#: admin/views/parts/send.php:32
+msgid "Do not send automatically"
+msgstr "Nicht automatisch senden"
+
+#: admin/views/parts/shipping_methods.php:25
+msgid "Loading carriers"
+msgstr "Versanddienstleister loaden"
+
+#: admin/views/parts/shipping_methods.php:28
+msgid "Load carriers automatically"
+msgstr "Versanddienstleister automatisch laden"
+
+#: admin/views/parts/shipping_methods.php:30
+msgid "Activate CRON to load carrier information automatically:"
+msgstr ""
+"CRON aktivieren, um die Informationen vom Versanddienstleister automatisch "
+"zu laden:"
+
+#: admin/views/parts/shipping_methods.php:35
+msgid "Load carriers manually"
+msgstr "Versanddienstleister manuell laden"
+
+#: admin/views/parts/shipping_methods.php:39
+msgid "Run"
+msgstr "Laufen"
+
+#: admin/views/parts/shipping_methods.php:48 public/class-zasilkovna.php:274
+msgid "Pick-up points"
+msgstr "Abholorte"
+
+#: admin/views/parts/shipping_methods.php:52
+#: admin/views/parts/shipping_methods.php:111
+msgid "Carrier"
+msgstr "Versanddienstsleister"
+
+#: admin/views/parts/shipping_methods.php:53
+#: admin/views/parts/shipping_methods.php:112
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:96
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:98
+msgid "The name of the carrier"
+msgstr "Der Name des Versanddienstleisters"
+
+#: admin/views/parts/shipping_methods.php:54
+#: admin/views/parts/shipping_methods.php:113
+msgid "Active"
+msgstr "Aktiv"
+
+#: admin/views/parts/shipping_methods.php:107
+msgid "Delivery to address"
+msgstr "Lieferung an Adresse"
+
+#: admin/views/toret.php:98
+msgid "Installed plugins"
+msgstr "Installierte Plugins"
+
+#: admin/views/toret.php:102 admin/views/toret.php:231
+msgid "Plugin name"
+msgstr "Plugin Name"
+
+#: admin/views/toret.php:103
+msgid "Version"
+msgstr "Version"
+
+#: admin/views/toret.php:104
+msgid "Current version"
+msgstr "Aktuelle Version"
+
+#: admin/views/toret.php:105
+msgid "Licence"
+msgstr "Lizenz"
+
+#: admin/views/toret.php:162 admin/views/toret.php:164
+msgid "Changelog"
+msgstr "Changelog"
+
+#: admin/views/toret.php:183
+msgid "VIEW MY ACCOUNT"
+msgstr "MEIN KONTO ANZEIGEN"
+
+#: admin/views/toret.php:190
+msgid "CONTACT SUPPORT"
+msgstr "UNTERSTüTZUNG KONTAKTIEREN"
+
+#: admin/views/toret.php:227
+msgid "Boost your e-shop with our other plugins"
+msgstr "E-Shop mit unseren anderen Plugins verbessern"
+
+#: admin/views/toret.php:232
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:152
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:129
+msgid "Description"
+msgstr "Beschreibung"
+
+#: admin/views/toret.php:266 admin/views/toret.php:268
+msgid "BUY&nbsp;PLUGIN"
+msgstr "KAUFEN&nbsp;PLUGIN"
+
+#: dopravci.php:185 includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:188
+msgid "Carriers were updated. You may close this window."
+msgstr ""
+"Versanddienstleister wurden aktualisiert. Sie können dieses Fenster "
+"schließen."
+
+#: dopravci.php:187 includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:190
+msgid "Packeta's API key has not been entered."
+msgstr "Der API-Schlüssel vom Packetschop wurde nicht eingegeben."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaFee.php:308
+msgid "Consignment insurance"
+msgstr "Sendungsversicherung"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:55
+msgid "Allows customers to pay for goods on delivery (cash on delivery)."
+msgstr "Kunden ermöglichen, Waren bei Lieferung zu bezahlen (Nachnahme)."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:105
+#, php-format
+msgid "Any &quot;%1$s&quot; method"
+msgstr "Any &quot;%1$s&quot; method"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:118
+#, php-format
+msgid "%1$s (#%2$s)"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:119
+#, php-format
+msgid "%1$s &ndash; %2$s"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:119
+msgid "Other locations"
+msgstr "Andere Orte"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:138
+msgid "Allow cash on delivery"
+msgstr "Nachnahme erlauben"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:139
+msgid "Allow"
+msgstr "Erlauben"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:145
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:122
+msgid "Title"
+msgstr "Titel"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:147
+msgid "The name of the payment method that customers see when ordering."
+msgstr "Der Name der Zahlungsmethode, den Kunden bei der Bestellung sehen."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:148
+msgid "Payment on delivery"
+msgstr "Nachnahme"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:154
+msgid ""
+"Description of the payment method that will appear to the customer on the "
+"page."
+msgstr ""
+"Beschreibung der Zahlungsmethode, die dem Kunden auf der Seite angezeigt "
+"wird."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:155
+msgid "Payment in cash after delivery."
+msgstr "Barzahlung nach Lieferung."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:158
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:136
+msgid "Instructions"
+msgstr "Anweisung"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:160
+msgid "Instructions that appear on a thank you page."
+msgstr "Anweisungen, die auf der Dankesseite erscheinen."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:161
+msgid "Make payment only after the delivery of the goods."
+msgstr "Zahlung erst nach Lieferung der Ware."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:164
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:143
+msgid "Enable delivery method"
+msgstr "Zustellmethode aktivieren"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:169
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:148
+msgid ""
+"If the cash on delivery is active, you can define the shipping methods here. "
+"To enable all modes of transport, leave the field empty."
+msgstr ""
+"Wenn die Zahlungsmethode Nachnahme aktiv ist, können Sie hier die "
+"Versandarten definieren. Lassen Sie das Feld leer, um alle Versandarten zu "
+"aktivieren."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:174
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:153
+msgid "Allow for countries"
+msgstr "Für Länder aktivieren"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:179
+msgid "Choose which country the COD will be available for."
+msgstr "Wählen Sie aus, für welches Land die Nachnahme verfügbar sein soll."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:189
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:168
+msgid "Order status after payment."
+msgstr "Bestellstatus nach Zahlung."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:194
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:195
+msgid "Calculate tax?"
+msgstr "Steuer berechnen?"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:197
+msgid "Calculate a tax for a C.O.D fee?"
+msgstr "Steuer für Nachnahmegebühr berechnen?"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:201
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:202
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:204
+msgid "Display cash on delivery if order price is 0"
+msgstr "Nachnahme anzeigen, wenn der Bestellpreis 0 ist"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:504
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:506
+msgid "Payment on delivery."
+msgstr "Nachnahme."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:516
+msgid "The customer chose the cash on delivery"
+msgstr "Der Kunde hat die Zahlungsmethode per Nachnahme gewählt"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:94
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:124
+msgid "Bank transfer"
+msgstr "Bankberweisung"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:95
+msgid "Payments via bank account."
+msgstr "Zahlung per Banküberweisung."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:116
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:143
+msgid "Enable / Disable"
+msgstr "Aktivieren/Deaktivieren"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:118
+msgid "Enable Bank Transfer"
+msgstr "Banküberweisung aktivieren"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:125
+msgid "Title the customer sees at the checkout."
+msgstr "Schlagzeile, die der Kunde an der Kasse sieht."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:131
+msgid "Description of the payment method displayed at the checkout."
+msgstr "Beschreibung der an der Kasse angezeigten Zahlungsmethode."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:132
+msgid ""
+"Make a payment by transferring to a bank account. Use Order ID to identify "
+"your payment. Your order will be sent after the payment has been made."
+msgstr ""
+"Führen Sie die Zahlung per Überweisung durch. Um ihre Zahlung zu "
+"identifizieren, verwenden Sie die ID Nummer Ihrer Bestellung. Ihre Sendung "
+"wird nach Erhalt gesendet."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:138
+msgid ""
+"The instructions will be displayed on the thank-you page and the checkout."
+msgstr ""
+"Die Instruktionen werden an der Danke - Seite und an der Kasse - Seite "
+"angezeigt."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:158
+msgid "Select countries with available exchange rate."
+msgstr ""
+"Wählen Sie aus, für welche Länder die Währungsumrechnung verfügbar ist."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:203
+msgid "Account details"
+msgstr "Kontodetails"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:209
+msgid "Account name"
+msgstr "Kontoname"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:210
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:517
+msgid "Account number"
+msgstr "Kontonummer"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:211
+msgid "Name of bank"
+msgstr "Kreditinstitut"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:212
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:521
+msgid "Sort Code"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:213
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:525
+msgid "IBAN"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:214
+msgid "BIC / Swift"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:220
+msgid "+ Add an account"
+msgstr "+Konto zufügen"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:222
+msgid "Delete Selected Account (Accounts)"
+msgstr "Ausgewähltes Konto (ausgewählte Konten) entfernen"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:504
+msgid "Bank account detail"
+msgstr "Kontodetail"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:529
+msgid "BIC"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:566
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:568
+msgid "Awaiting completion of bank transfer"
+msgstr "Wir warten auf den Abschluss der Überweisung"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:90
+msgid "Allow Packeta"
+msgstr "Packetshop aktivieren"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:92
+msgid "Enable this method"
+msgstr "Diese Methode aktivieren"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:102
+msgid "Packeta title"
+msgstr "Packetshop Schlagzeile"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:104
+msgid "The text the customer sees"
+msgstr "Text, den der Kunde sieht"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:35
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:37
+msgid "Error sending to Packeta"
+msgstr "Fehler beim Senden an den Paketshop"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:36
+msgid "E-mail notification upon parcel error"
+msgstr "Email - Info von dem Sendungsfehler"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:38
+msgid "Error sending to Zasilkovna from {site_title} shop"
+msgstr "Fehler beim Senden an den Paketshop aus dem Laden  {site_title}"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:132
+msgid "Plain text"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:136
+msgid "HTML"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:137
+msgid "Multipart"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:145
+msgid "Enable this e-mail notification"
+msgstr "Diese Email - Benachrichtung genehmigen"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:149
+msgid "Recipient(s)"
+msgstr "Empfänger(s)"
+
+#. translators: %s: admin email
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:152
+#, php-format
+msgid ""
+"Enter recipient (separate with comma) of this e-mail. The default is %s."
+msgstr ""
+"Geben Sie die Empfänger (mit Komma getrennt) für diese Email ein. "
+"Ausgangsemail ist %s."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:158
+msgid "E-mail subject"
+msgstr "Betreff"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:164
+msgid "Email title"
+msgstr "Betreff"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:170
+msgid "E-mail type"
+msgstr "Emailart"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:172
+msgid "Select the format."
+msgstr "Wählen Sie das Format, das gesendet werden soll."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:43
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:87
+msgid "Order ID: "
+msgstr "Bestellung ID: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:44
+msgid "Create shipment"
+msgstr "Sendung erstellen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:55
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:99
+msgid "Store ID: "
+msgstr "Laden ID: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:56
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:88
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:100
+#, fuzzy
+#| msgid "Create shipment"
+msgid "Create shipment."
+msgstr "Sendung erstellen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:56
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:80
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:88
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:100
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:135
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:546
+#, fuzzy
+#| msgid "Packeta"
+msgid " Package "
+msgstr "Paketshop"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:69
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:123
+msgid "Data sent"
+msgstr "Daten gesendet"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:80
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:135
+#, fuzzy
+#| msgid "Packeta's answer"
+msgid "Packeta's answer."
+msgstr "Packetshop Antwort"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:322
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:340
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:584
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:603
+msgid "Shipment has not been saved with error:"
+msgstr "Die Sendung wurde mit dem Fehler nicht gespeichert:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:508
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:529
+msgid "Free"
+msgstr "Kostenlos"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:890
+msgid "Awaiting delivery by the shop"
+msgstr "Wir erwarten die Lieferung vom Laden"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:891
+msgid "Received"
+msgstr "Empfangen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:892
+msgid "Ready for delivery"
+msgstr "Zum Versand bereit"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:893
+msgid "Order is being shipped"
+msgstr "Bestellung wird versendet"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:894
+msgid "Ready for pickup"
+msgstr "Das Paket ist abholbereit"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:895
+msgid "Dispatched by carrier"
+msgstr "Versendet"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:896
+msgid "Delivered"
+msgstr "Zugestellt"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:897
+msgid "Refund"
+msgstr "Rückerstattung"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:898
+msgid "Returned to the consignor"
+msgstr "Das Paket wurde zum Versender retourniert"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:899
+msgid "Shipment cancelled"
+msgstr "Die Sendung wurde storniert"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:900
+msgid "The shipment has been received and is on its way to the depot"
+msgstr "Die Sendung ist eingegangen und auf dem Weg zum Depot"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:901
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:92
+msgid "No logs found"
+msgstr "Keine Vermerkungen gefunden"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:184
+msgid "Order ID"
+msgstr "Bestellung ID"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:185
+msgid "Date"
+msgstr "Datum"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:186
+msgid "Context"
+msgstr "Kontext"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:72
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:93
+msgid "notice"
+msgstr "Bemerkung"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:73
+msgid ""
+"<strong>In order to the WooCommerce Packeta plugin to work, you need to "
+"install the WooCommerce plugin.</strong>"
+msgstr ""
+"<strong>Sie müssen das Plugin WooCommerce installieren, damit das Plugin "
+"WooCommerce Paketshop funktioniert.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:94
+msgid ""
+"<strong>The plugin requires WooCommerce version 5.0 and newer to work "
+"properly. The plugin should be compatible with version 4.0., but we cannot "
+"guarantee it to work properly. We recommend you to update.</strong>"
+msgstr ""
+"<strong>Plugin benötigt die Version WooCommerce 5.0 und höher um korrekt zu "
+"funktionieren. Plugin soll mit der Version  4.0. kompatibel sein, ein "
+"ordnungsgemäßer Betrieb ist jedoch nicht garantiert. Wir empfehlen eine "
+"Aktualisierung.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:115
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:136
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:159
+msgid "warning"
+msgstr "Hinweis"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:116
+msgid ""
+"<strong>The plugin requires active cURL library to work properly. Please "
+"contact your server administrator.</strong>"
+msgstr ""
+"<strong>Plugin benötigt eine aktive cURL Bibliothek, um korrekt zu "
+"funktionieren. Kontaktieren Sie, bitte, Ihren Serververwalter.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:137
+msgid ""
+"<strong>The plugin requires active Soap library to work properly. Please "
+"contact your server administrator.</strong>"
+msgstr ""
+"<strong>Plugin benötigt eine aktive Soap Bibliothek, um korrekt zu "
+"funktionieren. Kontaktieren Sie, bitte, Ihren Serververwalter.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:160
+msgid ""
+"The plugin requires activation of the license for proper operation. Please "
+"verify the license in the "
+msgstr ""
+"Plugin erfordert die Lizenzaktivierung um korrekt zu funktionieren.  "
+"Überprüfen Sie Ihre Lizenz in "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:160
+msgid "plugin settings"
+msgstr "Plugin Einstellung"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:191
+msgid "Data update is required"
+msgstr "Datenaktualisierung ist erforderlich"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:192
+msgid ""
+"Plugin data must be updated to complete the update. As this is a large "
+"update, we recommend checking the Toret Packeta plugin settings afterwards, "
+"especially enabling the shipping method Pick-up points in section "
+msgstr ""
+"Plugin Daten müssen aktualisiert werden, um die Aktualisierung "
+"abzuschließen. Es geht um großes Update, daher empfehlen wir, die "
+"Einstellungen des Toret Packetshop Plugins anschließend zu überprüfen, "
+"insbesondere um die Versandmethode in Abholort zu aktivieren "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:197
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:200
+msgid "Learn more"
+msgstr "Mehr erfahren"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:41
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:108
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:168
+msgid "Packeta - pick up point: "
+msgstr "Paketshop - Abholort: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:54
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:189
+msgid "Name: "
+msgstr "Name: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:58
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:191
+msgid "Place: "
+msgstr "Stadt: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:62
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:193
+msgid "Street: "
+msgstr "Straße: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:66
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:195
+msgid "City: "
+msgstr "Ort: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:70
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:197
+msgid "ZIP code: "
+msgstr "PLZ: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:75
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:80
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:134
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:137
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:201
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:204
+msgid "Show location details"
+msgstr "Details des Ortes anzeigen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:226
+msgid "Track the shipment online"
+msgstr "Sendung online verfolgen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:261
+msgid "Get Status error"
+msgstr "Statusfehler anzeigen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaPUC.php:57
+msgid "Every 12 hours"
+msgstr "Jede 12 Stunden"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:546
+#, fuzzy
+#| msgid "Packeta’s answer - searching for carrier id"
+msgid "Packeta’s answer - searching for carrier id."
+msgstr "Paketshop Antwort - ID des Versanddienstleisters feststellen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:117
+msgid "Your license has been activated."
+msgstr "Ihre Lizenz wurde aktiviert."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:120
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:132
+msgid ""
+"Invalid license key.<br />Please contract support at <a href=\"https://www."
+"toret.cz\">Toret.cz</a>."
+msgstr ""
+"Ungültiger Lizenzschlüssel<br /> Kontaktieren Sie den Support auf der "
+"Webseite <a href=\"https://www.toret.cz\">Toret.cz</a>."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:124
+msgid ""
+"Submitted license key does not correspond to the website's URL. <br />Please "
+"check your license key in section <a href=\"https://toret.cz/muj-ucet/\">My "
+"Account</a>. In case of other issues contact support at <a href=\"https://"
+"www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"Der angegebene Lizenschlüssel entspricht nicht URL. . <br />Kontrollieren "
+"Sie, bitte, ihren Lizenzschlüssel in  <a href=\"https://toret.cz/muj-ucet/"
+"\"> Mein Konto </a>. Wenden Sie sich bei weiteren Problemen an den Support "
+"auf der Webseite  <a href=\"https://www.toret.cz\">Toret.cz</a>."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:128
+msgid ""
+"You do not own the entered license key <br />Please contact support at <a "
+"href=\"https://www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"Sie haben keinen Lizenzschlüssel. <br /> Kontaktieren Sie, bitte, den "
+"Support auf der Webseite <a href=\"https://www.toret.cz\">Toret.cz</a>."
+
+#: includes/emails/zasilkovna-admin-error-info-plain.php:17
+#, php-format
+msgid "Error in sending parcel for order No.: %d"
+msgstr "Der Fehler beim Senden der Sendung mit der Bestellnummer.: %d"
+
+#: includes/emails/zasilkovna-admin-error-info-plain.php:18
+#: includes/emails/zasilkovna-admin-error-info.php:20
+msgid "Parcel has not been entered into Packeta's system due to error:"
+msgstr ""
+"Das Paket wurde aufgrund eines Fehlers nicht in das System von Packetshop "
+"eingegeben:"
+
+#: includes/emails/zasilkovna-admin-error-info.php:19
+#, php-format
+msgid "Error in sending parcel for order No.: %s"
+msgstr "Der Fehler beim Senden der Sendung mit der Bestellnummer.: %s"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:55
+msgid "View details"
+msgstr "Details anzeigen"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:78
+#, php-format
+msgid "More information about %s"
+msgstr "Mehr informationen über %s"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:131
+msgid "Check for updates"
+msgstr "Updates prüfen"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "Das %s Plugin ist aktuell."
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:219
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "Neue Version vom %s Plugin ist verfgbar."
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:221
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "Es konnte nicht beurteilt werden, ob Updates für %s verfübar sind."
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:227
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Unbekannter Update Checker Status\"%s\""
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Vcs/PluginUpdateChecker.php:99
+msgid "There is no changelog available."
+msgstr "Kein changelog verfügbar."
+
+#: packetaStatus.php:85
+msgid "Packeta status change"
+msgstr "Packetshopstatus ändern"
+
+#: public/class-zasilkovna.php:418
+msgid "Please select a pick-up point."
+msgstr "Ausgabestelle auswählen."
+
+#: public/class-zasilkovna.php:767
+msgid "Order Status in Packeta:"
+msgstr "Bestellstatus in Packetshop:"
+
+#: public/class-zasilkovna.php:870
+msgid "Change pick-up point"
+msgstr "Ausgabestelle ändern"
+
+#: public/class-zasilkovna.php:942
+msgid "Track the shipment online: "
+msgstr "Paket online verfolgen "
+
+#: public/class-zasilkovna.php:1072
+msgid "Select a pick-up point"
+msgstr "Ausgabestelle auswählen"
+
+#: public/class-zasilkovna.php:1080
+msgid "Selected store"
+msgstr "Ausgewählte Filiale"
+
+#: public/class-zasilkovna.php:1308 public/class-zasilkovna.php:1317
+msgid "Please select a store for selected shipping option."
+msgstr "Wählen Sie eine Filiale für die ausgewählte Versandart."
+
+#. Plugin Name of the plugin/theme
+msgid "Toret Zásilkovna"
+msgstr "Toret Paketshop"
+
+#. Plugin URI of the plugin/theme
+msgid "https://toret.cz/produkt/woocommerce-zasilkovna/"
+msgstr "https://toret.cz/produkt/woocommerce-zasilkovna/"
+
+#. Description of the plugin/theme
+msgid "WooCommerce intergration plugin to connect to Packeta services."
+msgstr ""
+"WooCommerce Integrations Plugin zur Verbindung mit Packetshop "
+"Dienstleistungen."
+
+#. Author of the plugin/theme
+msgid "Toret.cz"
+msgstr "Toret.cz"
+
+#. Author URI of the plugin/theme
+msgid "https://toret.cz"
+msgstr "https://toret.cz"
+
+#~ msgid "Status change"
+#~ msgstr "Status ändern"

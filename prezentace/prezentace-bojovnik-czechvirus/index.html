@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czech Virus x Bojovník — Majáles 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-2: #1e1e1e;
+            --border: #2a2a2a;
+            --text: #f0f0f0;
+            --text-muted: #999;
+            --red: #e74c3c;
+            --red-dim: rgba(231, 76, 60, 0.12);
+            --gold: #d4a940;
+            --gold-dim: rgba(212, 169, 64, 0.12);
+            --green: #4dd9c0;
+            --green-dim: rgba(77, 217, 192, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 32px;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-brand {
+            font-weight: 800;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--red);
+        }
+        .nav-progress { display: flex; gap: 6px; align-items: center; }
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .nav-dot.active {
+            background: var(--red);
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
+        }
+        .nav-dot:hover { background: var(--text-muted); }
+        .nav-counter {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-left: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Slides */
+        .slides-wrapper { height: 100vh; overflow: hidden; position: relative; }
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 60px 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .slide-content { max-width: 1100px; width: 100%; }
+
+        /* Typography */
+        h1 { font-size: 52px; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+        h2 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .subtitle { font-size: 20px; color: var(--text-muted); font-weight: 300; margin-top: 16px; line-height: 1.5; }
+        .label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+        .hl { color: var(--red); }
+        .hl-gold { color: var(--gold); }
+        .hl-green { color: var(--green); }
+
+        /* Cards */
+        .card-grid { display: grid; gap: 16px; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+        .card:hover { border-color: #444; }
+        .card p { font-size: 14px; line-height: 1.7; color: var(--text-muted); }
+        .card-red { border-left: 3px solid var(--red); }
+        .card-green { border-left: 3px solid var(--green); }
+        .card-gold { border-left: 3px solid var(--gold); }
+
+        /* Stat boxes */
+        .stats { display: flex; gap: 16px; margin: 24px 0; }
+        .stat {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-value.red { color: var(--red); }
+        .stat-value.gold { color: var(--gold); }
+        .stat-value.green { color: var(--green); }
+        .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* List styles */
+        .info-list { list-style: none; padding: 0; }
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .info-list li:last-child { border-bottom: none; }
+        .info-list li strong { color: var(--text); }
+
+        /* Pro / Contra */
+        .pro-contra { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .pro-box, .contra-box {
+            border-radius: 12px;
+            padding: 28px;
+        }
+        .pro-box {
+            background: linear-gradient(135deg, rgba(77, 217, 192, 0.08), rgba(77, 217, 192, 0.02));
+            border: 1px solid rgba(77, 217, 192, 0.2);
+        }
+        .contra-box {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.08), rgba(231, 76, 60, 0.02));
+            border: 1px solid rgba(231, 76, 60, 0.2);
+        }
+        .pro-box h3 { color: var(--green); font-size: 16px; margin-bottom: 16px; }
+        .contra-box h3 { color: var(--red); font-size: 16px; margin-bottom: 16px; }
+        .pro-box ul, .contra-box ul { list-style: none; padding: 0; }
+        .pro-box ul li, .contra-box ul li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 6px 0;
+            line-height: 1.6;
+        }
+        .pro-box ul li::before { content: '+ '; color: var(--green); font-weight: 700; }
+        .contra-box ul li::before { content: '— '; color: var(--red); font-weight: 700; }
+
+        /* Timeline */
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-date {
+            width: 100px;
+            flex-shrink: 0;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--red);
+            padding-top: 2px;
+        }
+        .timeline-text h3 { font-size: 15px; margin-bottom: 4px; }
+        .timeline-text p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+        .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(231,76,60,0.3); }
+        .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(77,217,192,0.3); }
+        .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(212,169,64,0.3); }
+
+        /* Highlight box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(212, 169, 64, 0.05));
+            border: 1px solid rgba(231, 76, 60, 0.25);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+        .highlight-box p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+        .highlight-box strong { color: var(--text); }
+
+        /* Cost table */
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .cost-table th {
+            text-align: left;
+            padding: 10px 16px;
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+        .cost-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        .cost-table td:last-child { text-align: right; color: var(--text); font-weight: 600; }
+        .cost-table tr.total td {
+            border-top: 2px solid var(--red);
+            font-weight: 700;
+            color: var(--red);
+            font-size: 16px;
+        }
+
+        /* Nav hint */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: var(--text-muted);
+            opacity: 0.5;
+            display: flex;
+            gap: 16px;
+        }
+        .nav-hint kbd {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+        }
+
+        /* Connection line visual */
+        .connection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .connection-node {
+            text-align: center;
+            padding: 20px 28px;
+            border-radius: 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+        .connection-node .node-title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+        .connection-node .node-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .connection-arrow {
+            font-size: 24px;
+            color: var(--red);
+        }
+
+        /* Scrollable content */
+        .slide-scroll {
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+        .slide-scroll::-webkit-scrollbar { width: 4px; }
+        .slide-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-brand">Czech Virus x Bojovník — Majáles 2026</div>
+    <div style="display:flex;align-items:center;">
+        <div class="nav-progress" id="navDots"></div>
+        <div class="nav-counter" id="navCounter"></div>
+    </div>
+</nav>
+
+<div class="slides-wrapper" id="slidesWrapper">
+
+    <!-- SLIDE 0: Title -->
+    <div class="slide active" data-slide="0">
+        <div class="slide-content" style="text-align:center;">
+            <div class="label">Partnerská aktivace — 1. května 2026</div>
+            <h1 style="font-size: 48px;"><span class="hl">Czech Virus</span><br><span class="hl-gold">x Bojovník</span></h1>
+            <p class="subtitle">Aktivace na Pražském Majálesu 2026<br>ve spojení s filmem Bojovník a Oktagonem</p>
+            <div class="connection">
+                <div class="connection-node">
+                    <div class="node-title" style="color: var(--red);">Czech Virus</div>
+                    <div class="node-sub">Partner filmu</div>
+                </div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node">
+                    <div class="node-title" style="color: var(--gold);">Bojovník</div>
+                    <div class="node-sub">Premiéra 13. 8. 2026</div>
+                </div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node">
+                    <div class="node-title" style="color: var(--gold);">Majáles</div>
+                    <div class="node-sub">1. 5. 2026 — Letňany</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 1: Majáles -->
+    <div class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="label">Event</div>
+            <h2>Pražský Majáles <span class="hl-gold">2026</span></h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value gold">1. 5.</div>
+                    <div class="stat-label">Datum</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value red">20 000+</div>
+                    <div class="stat-label">Očekávaná návštěvnost</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" style="color: var(--text);">18–28</div>
+                    <div class="stat-label">Věk cílovky</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value green">Letňany</div>
+                    <div class="stat-label">Letiště Praha</div>
+                </div>
+            </div>
+            <div class="two-col" style="margin-top: 24px;">
+                <div>
+                    <h3>Cílová skupina</h3>
+                    <ul class="info-list">
+                        <li><strong>Studenti VŠ a SŠ</strong> — hlavní jádro návštěvníků</li>
+                        <li><strong>Mladí 18–28 let</strong> — aktivní na sociálních sítích, Instagram/TikTok generace</li>
+                        <li><strong>Zábava + alkohol</strong> — celodenní festival, pivní stany, party atmosféra</li>
+                        <li><strong>Fitness & lifestyle oriented</strong> — trendující segment mezi mladými</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Klíčové spojení</h3>
+                    <div class="highlight-box" style="margin-top: 0;">
+                        <p>Majáles je příležitost propojit <span class="hl">Czech Virus</span>, Oktagon a film <span class="hl-gold">Bojovník</span> na jednom místě. Na stage se chystá promo video k filmu — je teoretická možnost do něj dostat i <strong>logo <span class="hl">Czech Virus</span></strong>.</p>
+                    </div>
+                    <div style="margin-top: 16px;">
+                        <h3>Headliners</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
+                            Ben Cristovao, Calin, PTK, STEIN27, Kontrafakt, Robin Zoot, Chinaski, David Koller, Horkyže Slíže a další.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: Co máme na stole -->
+    <div class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="label">Aktivace</div>
+            <h2>Co je <span class="hl">na stole</span></h2>
+            <div class="card-grid cols-2">
+                <div class="card card-red">
+                    <h3>Hostesky na Majálesu</h3>
+                    <p><strong>4–6 hostesek</strong> v outfitech inspirovaných Oktagon cage girls. Rozdávají náramky a nálepky k filmu <span class="hl-gold">Bojovník</span>. Mohou mít na sobě zakomponované <strong>logo <span class="hl">Czech Virus</span> + logo filmu</strong>.</p>
+                    <span class="badge badge-gold">V jednání</span>
+                </div>
+                <div class="card card-green">
+                    <h3>Vzorky Super Greens</h3>
+                    <p>Hostesky mohou zároveň rozdávat <strong>vzorky nových příchutí Super Greens</strong>. Na vzorek lze nalepit custom samolepku se <strong>slevovým kódem</strong> — konverze je tím přímo měřitelná.</p>
+                    <span class="badge badge-gold">K rozhodnutí</span>
+                </div>
+                <div class="card card-gold">
+                    <h3>Promo video na stage</h3>
+                    <p>Možnost promo videa na hlavní scéně — buď <strong>logo <span class="hl">Czech Virus</span></strong>, nebo ukázka scény z <span class="hl-gold">Bojovníka</span>.</p>
+                    <span class="badge badge-gold">V jednání</span>
+                </div>
+                <div class="card card-gold">
+                    <h3>Brandová přítomnost</h3>
+                    <p>Logo <span class="hl">Czech Virus</span> na hosteskách + potenciálně v promo videu. <strong>Přímá vazba: <span class="hl">Czech Virus</span> → Oktagon → <span class="hl-gold">Bojovník</span>.</strong></p>
+                    <span class="badge badge-green">Přirozená synergii</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: Super Greens angle -->
+    <div class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="label">Produkt</div>
+            <h2>Super Greens <span class="hl-green">na Majálesu</span></h2>
+            <div class="two-col">
+                <div>
+                    <h3>Proč právě Super Greens?</h3>
+                    <ul class="info-list">
+                        <li><strong>Máme hodně vzorků</strong> — ideální příležitost je rozdat cílovce</li>
+                        <li><strong>Univerzální cílovka</strong> — ne jen "gym bros", ale i holky, lifestyle segment</li>
+                        <li><strong>Retail cena 699 Kč / 30 dávek</strong> — premium produkt, vzorek má high perceived value</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--green);">Kocovina angle</h3>
+                    <div class="highlight-box" style="margin-top: 0; border-color: rgba(77,217,192,0.25); background: linear-gradient(135deg, rgba(77,217,192,0.08), rgba(77,217,192,0.02));">
+                        <p>Na Majálesu bude celý den <strong>pít 20 000 lidí</strong>. Super Greens obsahují chlorellu, spirulinu, antioxidanty (Pycnogenol, Quercetin), trávicí enzymy (Bromelain, Papain) a adaptogenní houby.</p>
+                        <p style="margin-top: 12px;">Oficiálně to nikde nepíšeme, ale na custom samolepku vzorku lze dát <strong>hravé sdělení</strong> typu:</p>
+                        <p style="margin-top: 8px; color: var(--text); font-weight: 600; font-size: 16px;">"Zítřejší já ti poděkuje."</p>
+                        <p style="margin-top: 8px;">+ <strong>slevový kód</strong> na e-shop — kontextově relevantní, zapamatovatelné a <strong>přímo měřitelné</strong> (konverze přes kód).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Pro & Contra + kalkulace -->
+    <div class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Rozhodnutí</div>
+                <h2>Vzorky — <span class="hl">pro</span> a <span class="hl">proti</span></h2>
+                <div class="pro-contra">
+                    <div class="pro-box">
+                        <h3>Pro investici</h3>
+                        <ul>
+                            <li>Přímý kontakt s 2–3 tisíci lidmi z cílovky</li>
+                            <li>Přirozené propojení Czech Virus, Oktagon a filmu — autentické, ne vynucené</li>
+                            <li>Launch nových příchutí přímo do rukou potenciálních zákazníků</li>
+                            <li>Kocovina messaging = vysoká zapamatovatelnost a sdílení na sítích</li>
+                            <li>Logo na hosteskách — tisíce vizuálních kontaktů</li>
+                            <li>Super Greens nejsou "gym only" — osloví i ne-fitness segment</li>
+                            <li>Premium brand v kontextu filmu a Oktagonu — posílení image</li>
+                        </ul>
+                    </div>
+                    <div class="contra-box">
+                        <h3>Proti investici</h3>
+                        <ul>
+                            <li>2 500 vzorků = reálný náklad na produkci a balení</li>
+                            <li>Cílovka Majálesu (studenti 18–22) nemusí být primární kupní síla</li>
+                            <li>Festival prostředí — lidé ochutnají, ale těžko cokoliv změřit (až na kód)</li>
+                            <li>Alkoholové, drogy — brand asociace samozřejmě nemusí všem sedět</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 28px;">
+                    <h3>Hrubý odhad nákladů</h3>
+                    <table class="cost-table">
+                        <thead>
+                            <tr>
+                                <th>Položka</th>
+                                <th>Poznámka</th>
+                                <th>Odhad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vzorky Super Greens</td>
+                                <td>Jednorázové sáčky, nové příchutě</td>
+                                <td>~35 000 – 55 000 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>Custom samolepky na vzorky</td>
+                                <td>"Zítřejší já ti poděkuje" + slevový kód na e-shop</td>
+                                <td>~3 000 – 5 000 Kč</td>
+                            </tr>
+                            <tr class="total">
+                                <td>Celkem odhadovaný náklad</td>
+                                <td></td>
+                                <td>~38 000 – 60 000 Kč</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">
+                        <strong>CPV (cost per sample):</strong> cca 16–26 Kč za vzorek do ruky.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Doporučení -->
+    <div class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="label">Závěr</div>
+            <h2>Co <span class="hl">rozhodnout</span></h2>
+            <div class="card-grid cols-2" style="margin-bottom: 20px;">
+                <div class="card card-green">
+                    <h3>1. Vzorky — jít do toho?</h3>
+                    <p>Investice 40–65 tis. Kč za 2 500 přímých kontaktů s "cílovkou" + tisíce dalších vizuálních impresí přes hostesky. Příležitost podpořit nové příchutě.</p>
+                </div>
+                <div class="card card-gold">
+                    <h3>2. Custom samolepka na vzorky</h3>
+                    <p>Hravý messaging cílený na kontext (kocovina) + <strong>slevový kód</strong> na e-shop. Konverze je přímo měřitelná — víme přesně, kolik objednávek přišlo z Majálesu.</p>
+                </div>
+                <div class="card card-gold">
+                    <h3>3. Promo video na stage</h3>
+                    <p>V jednání je možnost promo videa na hlavní scéně — logo <span class="hl">Czech Virus</span> nebo ukázka scény z <span class="hl-gold">Bojovníka</span>.</p>
+                    <span class="badge badge-gold">V jednání</span>
+                </div>
+                <div class="card card-gold">
+                    <h3>4. Logo na hosteskách</h3>
+                    <p>Zakomponovat Czech Virus logo vedle loga filmu na outfit hostesek. Každý kontakt s hosteskou = vizuální kontakt s brandem.</p>
+                    <span class="badge badge-green">Potvrdit s Bontonfilm</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 12px;">
+                <h3>Časová osa</h3>
+                <div class="timeline-item">
+                    <div class="timeline-date">Co nejdřív</div>
+                    <div class="timeline-text">
+                        <h3>Rozhodnutí o vzorcích</h3>
+                        <p>Potvrzení počtu, výběr příchutí, spuštění výroby custom sáčků.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Do 10. 4.</div>
+                    <div class="timeline-text">
+                        <h3>Samolepka & design</h3>
+                        <p>Finalizace messaging na samolepku, slevový kód, objednávka tisku.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Do 20. 4.</div>
+                    <div class="timeline-text">
+                        <h3>Dojednat Bontonfilm</h3>
+                        <p>Dotáhnout: logo na hosteskách, promo video, logistika vzorků.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1. 5.</div>
+                    <div class="timeline-text">
+                        <h3 style="color: var(--red);">Majáles</h3>
+                        <p>Aktivace. Hostesky + vzorky + (promo video).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-hint">
+    <kbd>&larr;</kbd> <kbd>&rarr;</kbd> šipky &nbsp;|&nbsp; scroll &nbsp;|&nbsp; klik na tečky
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    const dotsContainer = document.getElementById('navDots');
+    const counter = document.getElementById('navCounter');
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    function updateCounter() {
+        counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
+    updateCounter();
+
+    function goToSlide(index) {
+        if (index < 0 || index >= totalSlides || index === currentSlide) return;
+        slides[currentSlide].classList.remove('active');
+        dotsContainer.children[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dotsContainer.children[currentSlide].classList.add('active');
+        updateCounter();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            goToSlide(currentSlide + 1);
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goToSlide(currentSlide - 1);
+        }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+    document.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) goToSlide(currentSlide + (diff > 0 ? 1 : -1));
+    });
+
+    let wheelTimeout = false;
+    document.addEventListener('wheel', (e) => {
+        const scrollEl = e.target.closest('.slide-scroll');
+        if (scrollEl && scrollEl.scrollHeight > scrollEl.clientHeight) return;
+        if (wheelTimeout) return;
+        wheelTimeout = true;
+        setTimeout(() => wheelTimeout = false, 600);
+        if (e.deltaY > 0) goToSlide(currentSlide + 1);
+        else if (e.deltaY < 0) goToSlide(currentSlide - 1);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1640 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Toret Zásilkovna\n"
+"POT-Creation-Date: 2022-03-07 12:33+0100\n"
+"PO-Revision-Date: 2022-03-07 12:53+0100\n"
+"Language-Team: Tomáš Cirkl <tomascirkl@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: toret-zasilkovna.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Tomáš Cirkl <tomascirkl@gmail.com>\n"
+"Language: hu\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-zasilkovna-admin.php:145 admin/views/toret.php:146
+msgid "Settings"
+msgstr "Beállítások"
+
+#: admin/class-zasilkovna-admin.php:146 admin/views/toret.php:152
+#: admin/views/toret.php:154
+msgid "Documentation"
+msgstr "Dokumentáció"
+
+#: admin/class-zasilkovna-admin.php:147
+msgid "Support"
+msgstr "Ügyfélszolgálat"
+
+#: admin/class-zasilkovna-admin.php:162 admin/class-zasilkovna-admin.php:163
+msgid "Toret plugins"
+msgstr "Toret bővítmények"
+
+#: admin/class-zasilkovna-admin.php:173 admin/class-zasilkovna-admin.php:174
+#: admin/includes/class-zasilkovna-columns.php:33
+#: admin/includes/class-zasilkovna-product-tab.php:28
+#: admin/views/control-xml.php:79 admin/views/parts/shipping_methods.php:61
+#: admin/views/parts/shipping_methods.php:64
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:54
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:99
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:105
+msgid "Packeta"
+msgstr "Csomagküldő"
+
+#: admin/class-zasilkovna-admin.php:182 admin/class-zasilkovna-admin.php:183
+msgid "Packeta log"
+msgstr "Csomagküldő log"
+
+#: admin/class-zasilkovna-admin.php:281
+msgid "Packeta Log"
+msgstr "Csomagküldő log"
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:10
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"option."
+msgstr ""
+"Jelölje be azokat a Csomagküldő szállítási módokat, amelyeket le szeretné "
+"tiltani ebben az opcióban."
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:22
+#: admin/includes/ToretZasilkovnaProductCategory.php:19
+#: admin/includes/ToretZasilkovnaProductCategory.php:60
+#: admin/includes/class-zasilkovna-product-tab.php:67
+msgid "Pick-up points "
+msgstr "Átvevőhelyek "
+
+#: admin/includes/ToretZasilkovnaProductCategory.php:9
+#: admin/includes/ToretZasilkovnaProductCategory.php:50
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"category."
+msgstr ""
+"Jelölje be azokat a Csomagküldő szállítási módokat, amelyeket le szeretné "
+"tiltani ebben a kategóriában."
+
+#: admin/includes/class-zasilkovna-bulk.php:27
+msgid "Print labels (Packeta)"
+msgstr "Címkék nyomtatása (Csomagküldő)"
+
+#: admin/includes/class-zasilkovna-bulk.php:28
+msgid "Print labels (Other carriers)"
+msgstr "Címkék nyomtatása (Egyéb szállítók)"
+
+#: admin/includes/class-zasilkovna-bulk.php:29
+msgid "Send in bulk to Packeta"
+msgstr "Tömeges küldés a Csomagküldőbe"
+
+#: admin/includes/class-zasilkovna-bulk.php:76
+#: admin/includes/class-zasilkovna-bulk.php:81
+msgid "Wrong label format. Format"
+msgstr "Rossz címkeformátum. Formátum"
+
+#: admin/includes/class-zasilkovna-bulk.php:76
+msgid ""
+" not supported. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetlabelpdf\" target=\"_blank"
+"\">Supported formats can be found here</a>."
+msgstr ""
+" nem támogatott. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetlabelpdf\" target=\"_blank\"> A "
+"támogatott formátumok itt találhatók </ a >."
+
+#: admin/includes/class-zasilkovna-bulk.php:81
+msgid ""
+" not supported. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetscourierlabelspdfhttps://docs."
+"packetery.com/03-creating-packets/06-packetery-api-reference.html#toc-"
+"packetscourierlabelspdf\" target=\"_blank\">Supported formats can be found "
+"here</a>."
+msgstr ""
+" nem támogatott. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetscourierlabelspdfhttps://docs."
+"packetery.com/03-creating-packets/06-packetery-api-reference.html#toc-"
+"packetscourierlabelspdf\" target=\"_blank\">A támogatott formátumok itt "
+"találhatók</a>."
+
+#: admin/includes/class-zasilkovna-bulk.php:86
+msgid "Selected orders do not have assigned parcel ID."
+msgstr "A kiválasztott rendelésekhez nincs hozzárendelve csomagazonosító."
+
+#: admin/includes/class-zasilkovna-bulk.php:91
+msgid "Some of the parcels does not have valid parcel ID."
+msgstr "Néhány csomagnak nincs érvényes csomagazonosítója."
+
+#: admin/includes/class-zasilkovna-bulk.php:96
+#: admin/includes/class-zasilkovna-bulk.php:101
+msgid ""
+"None of the selected orders has Packeta label. Try to print carrier labels "
+"for these orders."
+msgstr ""
+"A kiválasztott rendelések egyike sem rendelkezik Csomagküldő címkével. "
+"Próbáljon szállítási címkéket nyomtatni ezekhez a megrendelésekhez."
+
+#: admin/includes/class-zasilkovna-bulk.php:106
+msgid ""
+"To download labels, the order's weight must be entered. If the data have "
+"been sent to Packeta, they have to be modified there."
+msgstr ""
+"A címkék letöltéséhez meg kell adni a rendelés súlyát. Ha az adatok a "
+"Csomagküldő lettek elküldve, ezeket szükséges ott módosítani."
+
+#: admin/includes/class-zasilkovna-bulk.php:111
+msgid "Unknown error. Error text: "
+msgstr "Ismeretlen hiba. Hiba szöveg: "
+
+#: admin/includes/class-zasilkovna-bulk.php:116
+#: admin/includes/class-zasilkovna-send-ticket.php:177
+msgid ""
+"There has been an error in communication with the carrier. Please try later."
+msgstr ""
+"Hiba történt a szolgáltatóval folytatott kommunikáció során. Kérjük, "
+"próbálja később."
+
+#: admin/includes/class-zasilkovna-bulk.php:121
+#: admin/includes/class-zasilkovna-send-ticket.php:182
+msgid "Invalid carrier number."
+msgstr "Szállító száma érvénytelen."
+
+#: admin/includes/class-zasilkovna-columns.php:32
+msgid "Tracing number"
+msgstr "Nyomkövetési szám"
+
+#: admin/includes/class-zasilkovna-columns.php:34
+#: admin/views/parts/main.php:366
+msgid "Packeta status"
+msgstr "Csomag állapota"
+
+#: admin/includes/class-zasilkovna-columns.php:163
+#: admin/includes/metabox.php:123
+msgid "Send to Packeta"
+msgstr "Küldés a Csomagküldőbe"
+
+#: admin/includes/class-zasilkovna-columns.php:164
+#: admin/includes/metabox.php:124
+msgid "Add information"
+msgstr "Információ hozzáadása"
+
+#: admin/includes/class-zasilkovna-columns.php:167
+#: admin/includes/metabox.php:127
+msgid "Complete the information"
+msgstr "Töltse ki az információkat"
+
+#: admin/includes/class-zasilkovna-columns.php:170
+#: admin/includes/metabox.php:130
+msgid "Width:"
+msgstr "Szélesség:"
+
+#: admin/includes/class-zasilkovna-columns.php:171
+#: admin/includes/metabox.php:131
+msgid "Height:"
+msgstr "Magasság:"
+
+#: admin/includes/class-zasilkovna-columns.php:172
+#: admin/includes/metabox.php:132
+msgid "Length:"
+msgstr "Hossz:"
+
+#: admin/includes/class-zasilkovna-columns.php:176
+#: admin/includes/metabox.php:136
+msgid "Weight:"
+msgstr "Súly:"
+
+#: admin/includes/class-zasilkovna-columns.php:178
+#: admin/includes/metabox.php:138 admin/views/control-xml.php:175
+#: admin/views/control-xml.php:333 admin/views/parts/main.php:305
+#: admin/views/parts/main.php:356 admin/views/parts/main.php:392
+#: admin/views/parts/main.php:439 admin/views/parts/main.php:562
+#: admin/views/parts/send.php:48 admin/views/parts/shipping_methods.php:38
+#: admin/views/parts/shipping_methods.php:97
+#: admin/views/parts/shipping_methods.php:132
+msgid "Save"
+msgstr "Mentés"
+
+#: admin/includes/class-zasilkovna-columns.php:179
+#: admin/includes/class-zasilkovna-columns.php:236
+#: admin/includes/metabox.php:139 toret-zasilkovna.php:558
+msgid "Close"
+msgstr "Bezárás"
+
+#: admin/includes/class-zasilkovna-columns.php:183
+msgid "Customs declaration is required"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:215
+msgid "Print label"
+msgstr "Címke nyomtatása"
+
+#: admin/includes/class-zasilkovna-columns.php:218 toret-zasilkovna.php:545
+msgid "Printing settings"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:219 toret-zasilkovna.php:546
+msgid "Format:"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:222
+#: admin/includes/class-zasilkovna-columns.php:225 toret-zasilkovna.php:548
+msgid "labels, 1/4 A4, direct print, print on A4, 4pcs/page"
+msgstr "címkék, 1/4 A4, közvetlen nyomtatás, 4db/oldal"
+
+#: admin/includes/class-zasilkovna-columns.php:223
+#: admin/includes/class-zasilkovna-columns.php:226 toret-zasilkovna.php:549
+msgid "labels, 1/4 A4, direct print, 1 pc/page"
+msgstr "címkék, 1/4 A4, közvetlen nyomtatás, 1db/oldal"
+
+#: admin/includes/class-zasilkovna-columns.php:227 toret-zasilkovna.php:550
+msgid "labels, 1/8 A4, 1 pc/page"
+msgstr "címkék, 1/8 A4, nyomtatás A4-re, 1db/oldal"
+
+#: admin/includes/class-zasilkovna-columns.php:228 toret-zasilkovna.php:551
+msgid "labels, 1/8 A4, print on A4, 8pcs/page"
+msgstr "címkék, 1/8 A4, nyomtatás A4-re, 8db/oldal"
+
+#: admin/includes/class-zasilkovna-columns.php:229 toret-zasilkovna.php:552
+msgid "labels, 1/16 A4, 1 pc/page"
+msgstr "címkék, 1/16 A4, nyomtatás A4-re, 1db/oldal"
+
+#: admin/includes/class-zasilkovna-columns.php:230
+msgid "labels, 105x35mm A4, print on A4, 16pcs/page"
+msgstr "címkék, 105x35mm A4, nyomtatás A4-re, 16db/oldal"
+
+#: admin/includes/class-zasilkovna-columns.php:234 toret-zasilkovna.php:556
+msgid "Offset:"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-columns.php:235 toret-zasilkovna.php:557
+msgid "Print"
+msgstr ""
+
+#: admin/includes/class-zasilkovna-product-tab.php:48
+msgid "Age verification"
+msgstr "Életkor ellenőrzése"
+
+#: admin/includes/class-zasilkovna-product-tab.php:49
+msgid "Tick if age verification is required for this product."
+msgstr "Jelölje be, ha az életkor-ellenőrzése ennél a terméknél szükséges."
+
+#: admin/includes/class-zasilkovna-product-tab.php:55
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"product."
+msgstr ""
+"Jelölje be azokat a Csomagküldő szállítási módokat, amelyeket le szeretne "
+"tiltani ennél a terméknél."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:167
+msgid "Selected order does not have assigned parcel ID."
+msgstr "A kiválasztott rendeléshez nincs hozzárendelve csomagazonosító."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:172
+msgid "Parcel ID not valid."
+msgstr "A csomag azonosítója érvénytelen."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:187
+msgid "Wrong label format."
+msgstr "Rossz címkeformátum."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:192
+msgid "Unknown error."
+msgstr "Imseretlen hiba."
+
+#: admin/includes/metabox.php:43
+msgid "Show log entries for this order"
+msgstr "A rendelés bejegyzéseinek megjelenítése"
+
+#: admin/includes/metabox.php:45
+msgid "Shipment weight"
+msgstr "Szállítmány súlya"
+
+#: admin/includes/metabox.php:50
+msgid "Shipment width"
+msgstr "Szállítmány szélessége"
+
+#: admin/includes/metabox.php:54
+msgid "Shipment height"
+msgstr "Szállítmány magassága"
+
+#: admin/includes/metabox.php:58
+msgid "Shipment length"
+msgstr "Szállítmány hossza"
+
+#: admin/includes/metabox.php:143
+msgid "Customs declaration is required. It must be added manually."
+msgstr ""
+
+#: admin/includes/metabox.php:173
+msgid "Download label"
+msgstr "Címke letöltése"
+
+#: admin/includes/metabox.php:180
+msgid "Claim assistant label"
+msgstr ""
+
+#: admin/includes/metabox.php:182
+msgid "Claim assistant"
+msgstr ""
+
+#: admin/views/control-xml.php:2
+msgid "Packeta settings"
+msgstr "Csomag beállításai"
+
+#: admin/views/control-xml.php:21
+msgid "https://documentation.toret.cz/zasilkovna"
+msgstr ""
+
+#: admin/views/control-xml.php:22
+msgid "Documentation and demo e-shop to try out the plugin"
+msgstr "A plugin kipróbálásához szükséges dokumentáció és demo e-shop"
+
+#: admin/views/control-xml.php:30
+msgid "Main settings"
+msgstr "Fő beállítások"
+
+#: admin/views/control-xml.php:36 admin/views/control-xml.php:107
+#: admin/views/control-xml.php:265
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:186
+msgid "Carriers"
+msgstr "Szállítók"
+
+#: admin/views/control-xml.php:42
+msgid "Send automatically"
+msgstr "Automatikus küldés"
+
+#: admin/views/control-xml.php:82 admin/views/control-xml.php:191
+#: admin/views/parts/main.php:404
+msgid "Item"
+msgstr "Áru"
+
+#: admin/views/control-xml.php:83 admin/views/control-xml.php:120
+#: admin/views/control-xml.php:192 admin/views/control-xml.php:278
+msgid "Price"
+msgstr "Ár"
+
+#: admin/views/control-xml.php:86 admin/views/control-xml.php:202
+msgid "Unified price"
+msgstr "Egységes ár"
+
+#: admin/views/control-xml.php:87
+msgid "If the price is scaled by weight, the unified price must be entered."
+msgstr "Ha az ár súly szerint mérlegelt, egységes árat kell megadni."
+
+#: admin/views/control-xml.php:90 admin/views/control-xml.php:215
+msgid "Maximum weight"
+msgstr "Maximális súly"
+
+#: admin/views/control-xml.php:91
+msgid ""
+"Maximum weight allowed by Packeta is 10 kg. The limit can be increased and "
+"allowed up to 30 kg in the main settings."
+msgstr ""
+"A Csomagküldő által megengedett maximális súly 10 kg. A határérték 30 kg-ig "
+"növelhető a fő beállításokban."
+
+#: admin/views/control-xml.php:94 admin/views/control-xml.php:222
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaFee.php:89
+msgid "Cash on delivery fee"
+msgstr "Utánvét díja"
+
+#: admin/views/control-xml.php:95
+msgid "Make sure that Cash on delivery payment method is enabled."
+msgstr ""
+
+#: admin/views/control-xml.php:98 admin/views/control-xml.php:240
+msgid "Maximum C.O.D"
+msgstr ""
+
+#: admin/views/control-xml.php:99
+msgid ""
+"Maximum order value up to which the C.O.D will be displayed at checkout."
+msgstr ""
+
+#: admin/views/control-xml.php:102 admin/views/control-xml.php:254
+msgid "Free shipping from"
+msgstr "Ingyenes szállítás innen"
+
+#: admin/views/control-xml.php:103
+msgid ""
+"This is the sum of the prices of the products in the basket, tax included."
+msgstr "Ez a kosárban szereplő termékek árának összege, az adót is beleértve."
+
+#: admin/views/control-xml.php:107 admin/views/control-xml.php:265
+msgid "The carrier is not active. Enable it in the tab "
+msgstr "A szállító nem aktív. Aktiválja a lapon "
+
+#: admin/views/control-xml.php:115 admin/views/control-xml.php:273
+msgid "Set prices based on weight"
+msgstr "Állítsa be az árakat súly szerint"
+
+#: admin/views/control-xml.php:118 admin/views/control-xml.php:276
+msgid "Weight ABOVE"
+msgstr "Súly -tól"
+
+#: admin/views/control-xml.php:119 admin/views/control-xml.php:277
+msgid "Weight UP TO"
+msgstr "Súly -ig"
+
+#: admin/views/control-xml.php:136 admin/views/control-xml.php:167
+#: admin/views/control-xml.php:294 admin/views/control-xml.php:325
+msgid "Delete"
+msgstr "Törlés"
+
+#: admin/views/control-xml.php:142 admin/views/control-xml.php:300
+msgid "Add weight"
+msgstr "Súly hozáadása"
+
+#: admin/views/control-xml.php:146 admin/views/control-xml.php:304
+msgid "Set the C.O.D. based on the price"
+msgstr "Az útánvétet ár szerinti beállítása"
+
+#: admin/views/control-xml.php:149 admin/views/control-xml.php:307
+msgid "Price FROM"
+msgstr "Ár -tól"
+
+#: admin/views/control-xml.php:150 admin/views/control-xml.php:308
+msgid "Price UP TO"
+msgstr "Ár -ig"
+
+#: admin/views/control-xml.php:151 admin/views/control-xml.php:309
+msgid "Extra fee"
+msgstr "Külön díj"
+
+#: admin/views/control-xml.php:173 admin/views/control-xml.php:331
+msgid "Add extra fee"
+msgstr "Külön díj hozzáadása"
+
+#: admin/views/control-xml.php:196 admin/views/parts/shipping_methods.php:85
+#: admin/views/parts/shipping_methods.php:120
+msgid ""
+"A package for this carrier cannot be sent through the Packeta API because it "
+"requires a separate customs declaration. It must be added manually."
+msgstr ""
+
+#: admin/views/control-xml.php:198
+msgid ""
+"The carrier cannot be automatically sent to Packeta, because it requires "
+"information about the package dimensions."
+msgstr ""
+"A szállítót nem lehet automatikusan elküldeni a Csomagküldőbe, mert szükség "
+"van a csomag méreteire vonatkozó információkra."
+
+#: admin/views/control-xml.php:212
+msgid ""
+" The unified price must be entered even if the price is scaled by weight."
+msgstr " Ha az ár súly szerint mérlegelt, egységes árat kell megadni."
+
+#: admin/views/control-xml.php:218
+msgid "Maximum allowed by Packeta is "
+msgstr "A Csomagküldőben maximálisan engedélyezett "
+
+#: admin/views/control-xml.php:218
+msgid "kg."
+msgstr "kg."
+
+#: admin/views/control-xml.php:228 admin/views/control-xml.php:232
+msgid " Make sure you are using payment method "
+msgstr " Győződjön meg arról, hogy fizetési módot használ "
+
+#: admin/views/control-xml.php:228 admin/views/control-xml.php:232
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:54
+msgid "Cash on Delivery"
+msgstr "Utánvétes fizetés"
+
+#: admin/views/control-xml.php:228 admin/views/control-xml.php:232
+msgid " from the plugin."
+msgstr " a pluginból."
+
+#: admin/views/control-xml.php:235 admin/views/control-xml.php:249
+msgid "This carrier does not accept cash on delivery"
+msgstr "Ez a szállító nem fogad el utánvétes fizetést"
+
+#: admin/views/control-xml.php:247
+msgid ""
+" Maximum order value up to which the C.O.D fee will be displayed at checkout."
+msgstr ""
+" A megrendelés maximális értéke, amelyig az utánvét díja fizetéskor "
+"megjelenik."
+
+#: admin/views/control-xml.php:261
+msgid ""
+" This is the sum of the prices of the products in the basket, including the "
+"tax, if set on the website."
+msgstr ""
+" Ez a kosárban szereplő termékek árainak összege, beleértve az adót is, ha a "
+"weboldalon így van beállítva."
+
+#: admin/views/log.php:28
+msgid "Delete log"
+msgstr "Log törlése"
+
+#: admin/views/parts/main.php:20
+msgid "Your license is active."
+msgstr "A licence aktív."
+
+#: admin/views/parts/main.php:32
+msgid "License key"
+msgstr "Licenckulcs"
+
+#: admin/views/parts/main.php:37 admin/views/parts/send.php:10
+#: admin/views/parts/shipping_methods.php:69
+#: admin/views/parts/shipping_methods.php:86
+#: admin/views/parts/shipping_methods.php:121
+msgid "Activate"
+msgstr "Aktiválás"
+
+#: admin/views/parts/main.php:41
+msgid "API password"
+msgstr "API jelszó"
+
+#: admin/views/parts/main.php:57
+msgid "API password do not have correct length."
+msgstr "Az API jelszó hossza nem megfelelő."
+
+#: admin/views/parts/main.php:61
+msgid "API password contains forbidden characters."
+msgstr "Az API jelszó tiltott karaktereket tartalmaz."
+
+#: admin/views/parts/main.php:69
+msgid "The API password is not probably valid. Please check it."
+msgstr "Az API jelszó valószínűleg nem érvényes. Kérjük, ellenőrizze le."
+
+#: admin/views/parts/main.php:80
+msgid "Indication"
+msgstr "Webáruház/feladó jelzése"
+
+#: admin/views/parts/main.php:85
+msgid "Detailed guide, how to find it."
+msgstr ""
+
+#: admin/views/parts/main.php:89 admin/views/parts/main.php:92
+msgid "Show countries"
+msgstr "Országok megtekitnése"
+
+#: admin/views/parts/main.php:104
+msgid "Start by loading the carriers"
+msgstr "Kezdje a szállítók betöltésével"
+
+#: admin/views/parts/main.php:110
+msgid "Packeta basic settings"
+msgstr "Csomagküldő alap beállításai"
+
+#: admin/views/parts/main.php:113
+msgid "Free shipping"
+msgstr "Ingyenes szállítás"
+
+#: admin/views/parts/main.php:118
+msgid "All shipping methods will be free"
+msgstr "Az összes szállítási mód ingyenes"
+
+#: admin/views/parts/main.php:121
+msgid "Free shipping only for Packeta"
+msgstr "Ingyenes szállítás csak a Csomagküldővel"
+
+#: admin/views/parts/main.php:124
+msgid "Free shipping in shipping selection"
+msgstr "Ingyenes szállítás a szállítási választékban"
+
+#: admin/views/parts/main.php:127
+msgid "Delete \"Free shipping\" - Prices will stay"
+msgstr "Az \"Ingyenes szállítás\" törlése - Az árak maradnak"
+
+#: admin/views/parts/main.php:133
+msgid "Keep cash on delivery fee for orders with free shipping"
+msgstr ""
+"Ingyenes szállítással rendelkező rendelések esetén tartsa meg az utánvételi "
+"díjat"
+
+#: admin/views/parts/main.php:139 admin/views/toret.php:128
+#: admin/views/toret.php:137
+msgid "Yes"
+msgstr "Igen"
+
+#: admin/views/parts/main.php:142 admin/views/toret.php:130
+#: admin/views/toret.php:139
+msgid "No"
+msgstr "Nem"
+
+#: admin/views/parts/main.php:147
+msgid "Round the C.O.D."
+msgstr "Utánvét kerekítése."
+
+#: admin/views/parts/main.php:152
+msgid "Up"
+msgstr "Fel"
+
+#: admin/views/parts/main.php:155
+msgid "Down"
+msgstr "Le"
+
+#: admin/views/parts/main.php:161
+msgid "Send email alerts about parcel creation errors"
+msgstr "E-mail értesítések küldése a csomag elkészítés köben történő hibákról"
+
+#: admin/views/parts/main.php:169
+msgid "Activate a returns assistant"
+msgstr "Aktiválja a visszáru asszisztenst"
+
+#: admin/views/parts/main.php:177
+msgid "Enable to increase weight from 20 to 30 kg for Packeta deliveries"
+msgstr ""
+"Engedélyezze a súly 20-ról 30 kg-ra növelését a Csomagküldő szállításoknál"
+
+#: admin/views/parts/main.php:186
+msgid "Replace the shipping address with selected Packeta branch address"
+msgstr ""
+
+#: admin/views/parts/main.php:195
+msgid "Enable change of order status based on the parcel status"
+msgstr ""
+"Engedélyezze a rendelés állapotának megváltoztatását a csomag állapota "
+"szerint"
+
+#: admin/views/parts/main.php:203
+msgid "Packeta shipment status settings"
+msgstr ""
+
+#: admin/views/parts/main.php:206
+msgid "Load parcel status automatically"
+msgstr "A csomag állapotának automatikus betöltése"
+
+#: admin/views/parts/main.php:208
+msgid "Activate CRON to load information about parcel status automatically:"
+msgstr ""
+"A csomag állapotának automatikus betöltéséhez aktiválja a CRON szolgáltatást:"
+
+#: admin/views/parts/main.php:213
+msgid "Number of orders checked per CRON run"
+msgstr ""
+
+#: admin/views/parts/main.php:218
+msgid ""
+"Recommended setings is 20 per run. Do not set high run numbers because "
+"Packeta can ban you."
+msgstr ""
+
+#: admin/views/parts/main.php:222
+msgid "Number of days for back check"
+msgstr ""
+
+#: admin/views/parts/main.php:227
+msgid "The number of days for which the order status will be checked back."
+msgstr ""
+
+#: admin/views/parts/main.php:231
+msgid "Do not check the status of the package in the following order statuses"
+msgstr ""
+
+#: admin/views/parts/main.php:246
+msgid "Do not check the status of the package in these shipment states"
+msgstr ""
+
+#: admin/views/parts/main.php:261
+msgid "Price settings"
+msgstr "Árbeállítások"
+
+#: admin/views/parts/main.php:266
+msgid "Set price incl. VAT"
+msgstr "Ár beállítása ÁFA-val"
+
+#: admin/views/parts/main.php:276
+msgid "Do not set price according to the weight"
+msgstr "Az ár ne a súlynak megfelelően legyen beállítva"
+
+#: admin/views/parts/main.php:285
+msgid "Do not set the C.O.D. fee based on the price"
+msgstr "Ne állítsa be a utánvételi díjat ár alapján"
+
+#: admin/views/parts/main.php:293
+msgid "Weight settings"
+msgstr ""
+
+#: admin/views/parts/main.php:296
+msgid "Packaging weight"
+msgstr ""
+
+#: admin/views/parts/main.php:299
+msgid ""
+"It will be automatically added to the weight of the products in the order "
+"when sent to the Packeta."
+msgstr ""
+
+#: admin/views/parts/main.php:308
+msgid "Custom icons for pick-up points"
+msgstr "Az átvételi pontok egyéni ikonai"
+
+#: admin/views/parts/main.php:320
+msgid "Change Packeta default icon in "
+msgstr "Módosítsa a Csomagküldő alap ikonját itt "
+
+#: admin/views/parts/main.php:325 admin/views/parts/main.php:338
+msgid "Select icon"
+msgstr "Ikon kiválasztása"
+
+#: admin/views/parts/main.php:333
+msgid "Change default icon "
+msgstr "Alap ikon módosítása "
+
+#: admin/views/parts/main.php:347
+msgid "No pick-up points enabled"
+msgstr "Nincs engedélyezett átvevőhely"
+
+#: admin/views/parts/main.php:363
+msgid "Change of order status"
+msgstr "A rendelés állapotának módosítása"
+
+#: admin/views/parts/main.php:367 admin/views/parts/send.php:17
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:184
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:157
+msgid "Order Status"
+msgstr "Rendelés állapota"
+
+#: admin/views/parts/main.php:376
+msgid "Do not change"
+msgstr "Ne váltsa be"
+
+#: admin/views/parts/main.php:401
+msgid "Exchange rates"
+msgstr "Árfolyamok"
+
+#: admin/views/parts/main.php:405
+msgid "Exchange rate"
+msgstr "Árfolyam"
+
+#: admin/views/parts/main.php:408
+msgid "EUR"
+msgstr "EUR"
+
+#: admin/views/parts/main.php:415
+msgid "Forint"
+msgstr "Forint"
+
+#: admin/views/parts/main.php:422
+msgid "Zloty"
+msgstr "Zloty"
+
+#: admin/views/parts/main.php:429
+msgid "Leu"
+msgstr "Leu"
+
+#: admin/views/parts/main.php:446
+msgid "Currency and country settings"
+msgstr "Pénznem- és országbeállítások"
+
+#: admin/views/parts/main.php:450
+msgid "Turn off exchange rate (COD will be sent in the currency of the order)"
+msgstr ""
+"Kapcsolja ki az árfolyamot (a COD a rendelés pénznemében kerül elküldésre)"
+
+#: admin/views/parts/main.php:458 admin/views/parts/shipping_methods.php:44
+#: admin/views/parts/shipping_methods.php:103
+msgid "Country"
+msgstr "Ország"
+
+#: admin/views/parts/main.php:459
+msgid "Enabled currency"
+msgstr "Engedélyezett pénznem"
+
+#: admin/views/parts/main.php:462
+msgid "Bulgaria"
+msgstr "Bulgária"
+
+#: admin/views/parts/main.php:468
+msgid "Czech Republic"
+msgstr "Csehország"
+
+#: admin/views/parts/main.php:474
+msgid "Hungary"
+msgstr "Magyarország"
+
+#: admin/views/parts/main.php:489
+msgid "Germany"
+msgstr "Németország"
+
+#: admin/views/parts/main.php:504
+msgid "Poland"
+msgstr "Lengyelország"
+
+#: admin/views/parts/main.php:523
+msgid "Austria"
+msgstr "Ausztria"
+
+#: admin/views/parts/main.php:538
+msgid "Romania"
+msgstr "Románia"
+
+#: admin/views/parts/main.php:544
+msgid "Slovakia"
+msgstr "Szlovákia"
+
+#: admin/views/parts/send.php:7
+msgid "Enable automatic sending to Packeta"
+msgstr ""
+
+#: admin/views/parts/send.php:11
+msgid ""
+"Please note: the order should be sent to the Packeta system only when you "
+"are ready to submit the parcel."
+msgstr ""
+"Kérjük, vegye figyelembe a következőt: rendelését csak akkor küldje el a "
+"Csomagküldőbe, ha készen áll a csomag elküldésére."
+
+#: admin/views/parts/send.php:16
+msgid "Payment method"
+msgstr "Fizetési mód"
+
+#: admin/views/parts/send.php:32
+msgid "Do not send automatically"
+msgstr ""
+
+#: admin/views/parts/shipping_methods.php:18
+msgid "Loading carriers"
+msgstr ""
+
+#: admin/views/parts/shipping_methods.php:21
+msgid "Load carriers automatically"
+msgstr "Szállítók automatikus betöltése"
+
+#: admin/views/parts/shipping_methods.php:23
+msgid "Activate CRON to load carrier information automatically:"
+msgstr "A szolgáltató adatainak automatikus betöltéséhez aktiválja a CRON-t :"
+
+#: admin/views/parts/shipping_methods.php:28
+msgid "Load carriers manually"
+msgstr "Szállítók manuális betöltése"
+
+#: admin/views/parts/shipping_methods.php:32
+msgid "Run"
+msgstr "Futtatás"
+
+#: admin/views/parts/shipping_methods.php:41 public/class-zasilkovna.php:255
+msgid "Pick-up points"
+msgstr "Átvevőhelyek"
+
+#: admin/views/parts/shipping_methods.php:45
+#: admin/views/parts/shipping_methods.php:104
+msgid "Carrier"
+msgstr "Szállító"
+
+#: admin/views/parts/shipping_methods.php:46
+#: admin/views/parts/shipping_methods.php:105
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:96
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:98
+msgid "The name of the carrier"
+msgstr "Szállító neve"
+
+#: admin/views/parts/shipping_methods.php:47
+#: admin/views/parts/shipping_methods.php:106
+msgid "Active"
+msgstr "Aktív"
+
+#: admin/views/parts/shipping_methods.php:100
+msgid "Delivery to address"
+msgstr "Házhozszállítás"
+
+#: admin/views/toret.php:97
+msgid "Installed plugins"
+msgstr "Telepített pluginok"
+
+#: admin/views/toret.php:101 admin/views/toret.php:230
+msgid "Plugin name"
+msgstr "Plugin neve"
+
+#: admin/views/toret.php:102
+msgid "Version"
+msgstr "Verzió"
+
+#: admin/views/toret.php:103
+msgid "Current version"
+msgstr "Jelenlegi verzió"
+
+#: admin/views/toret.php:104
+msgid "Licence"
+msgstr "Licens"
+
+#: admin/views/toret.php:161 admin/views/toret.php:163
+msgid "Changelog"
+msgstr "Changelog"
+
+#: admin/views/toret.php:182
+msgid "VIEW MY ACCOUNT"
+msgstr "A FIÓKOM MEGTEKINTÉSE"
+
+#: admin/views/toret.php:189
+msgid "CONTACT SUPPORT"
+msgstr "FORDULJON AZ ÜGYFÉLSZOLGÁLATHOZ"
+
+#: admin/views/toret.php:226
+msgid "Boost your e-shop with our other plugins"
+msgstr "Növelje e-shopj-ját a többi pluginunkal"
+
+#: admin/views/toret.php:231
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:152
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:123
+msgid "Description"
+msgstr "Leírás"
+
+#: admin/views/toret.php:265 admin/views/toret.php:267
+msgid "BUY&nbsp;PLUGIN"
+msgstr "BUY&nbsp;PLUGIN"
+
+#: dopravci.php:185 includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:188
+msgid "Carriers were updated. You may close this window."
+msgstr "A szállítók frissítetve lettek. Bezárhatja az ablakot."
+
+#: dopravci.php:187 includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:190
+msgid "Packeta's API key has not been entered."
+msgstr "A Csomagküldő API-kulcsa nem lett megadva."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaFee.php:284
+msgid "Consignment insurance"
+msgstr "Szállítmány-biztosítás"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:55
+msgid "Allows customers to pay for goods on delivery (cash on delivery)."
+msgstr "Engedélyezi hogy az ügyfél kézbesítéskor fizessen (utánvéttel)."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:105
+#, php-format
+msgid "Any &quot;%1$s&quot; method"
+msgstr "Any &quot;%1$s&quot; method"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:118
+#, php-format
+msgid "%1$s (#%2$s)"
+msgstr "%1$s (#%2$s)"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:119
+#, php-format
+msgid "%1$s &ndash; %2$s"
+msgstr "%1$s &ndash; %2$s"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:119
+msgid "Other locations"
+msgstr "Egyéb helyszínek"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:138
+msgid "Allow cash on delivery"
+msgstr "Utánvét engedélyezése"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:139
+msgid "Allow"
+msgstr "Engedélyezés"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:145
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:116
+msgid "Title"
+msgstr "Elnevezés"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:147
+msgid "The name of the payment method that customers see when ordering."
+msgstr "Az ügyfelek számára rendeléskor megjelenő fizetési mód neve."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:148
+msgid "Payment on delivery"
+msgstr "Fizetés kézbesítéskor"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:154
+msgid ""
+"Description of the payment method that will appear to the customer on the "
+"page."
+msgstr "Az oldalon az ügyfél számára megjelenő fizetési mód leírása."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:155
+msgid "Payment in cash after delivery."
+msgstr "Fizetés készpénzben kézbesítéskor."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:158
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:130
+msgid "Instructions"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:160
+msgid "Instructions that appear on a thank you page."
+msgstr "A köszönőlapon megjelenő utasítások."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:161
+msgid "Make payment only after the delivery of the goods."
+msgstr "Fizessen csak az áru kézbesítése után."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:164
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:137
+msgid "Enable delivery method"
+msgstr "Engedélyezze a szállítási módot"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:169
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:142
+msgid ""
+"If the cash on delivery is active, you can define the shipping methods here. "
+"To enable all modes of transport, leave the field empty."
+msgstr ""
+"Ha az utánvét aktív, itt határozhatja meg a szállítási módokat. Az összes "
+"szállítási mód engedélyezéséhez hagyja üresen a mezőt."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:174
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:147
+msgid "Allow for countries"
+msgstr "Engedélyezés az országoknak"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:179
+msgid "Choose which country the COD will be available for."
+msgstr "Válassza ki, hogy mely országban legyen elérhető a COD."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:189
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:162
+msgid "Order status after payment."
+msgstr "A megrendelés fizetés utáni állapota."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:194
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:195
+msgid "Calculate tax?"
+msgstr "Adó kiszámolása?"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:197
+msgid "Calculate a tax for a C.O.D fee?"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:201
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:202
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:204
+msgid "Display cash on delivery if order price is 0"
+msgstr "Jelenítse meg az utánvétet, ha a megrendelés ára 0"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:503
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:505
+msgid "Payment on delivery."
+msgstr "Fizetés kézbesítéskor."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:515
+msgid "The customer chose the cash on delivery"
+msgstr "Az ügyfél az utánvétet választotta"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:88
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:118
+msgid "Bank transfer"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:89
+msgid "Payments via bank account."
+msgstr "Fizetések bankszámlán keresztül."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:110
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:143
+msgid "Enable / Disable"
+msgstr "Engedélyezés / Letiltás"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:112
+msgid "Enable Bank Transfer"
+msgstr "Banki átutalás engedélyezése"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:119
+msgid "Title the customer sees at the checkout."
+msgstr "Felirat, amely az ügyfél számára megjelenik a pénztárnál."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:125
+msgid "Description of the payment method displayed at the checkout."
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:126
+msgid ""
+"Make a payment by transferring to a bank account. Use Order ID to identify "
+"your payment. Your order will be sent after the payment has been made."
+msgstr ""
+"Fizessen bankszámlára történő átutalással. Használja a Megrendelés "
+"azonosítóját a fizetés azonosításához. Rendelését a fizetés után elküldjük."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:132
+msgid ""
+"The instructions will be displayed on the thank-you page and the checkout."
+msgstr "Az utasítások megjelenítése a köszönőlapon és a pénztárnál."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:152
+msgid "Select countries with available exchange rate."
+msgstr "Válassza ki az elérhető árfolyammal rendelkező országokat."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:197
+msgid "Account details"
+msgstr "Fiók adatai"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:203
+msgid "Account name"
+msgstr "Fiók neve"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:204
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:502
+msgid "Account number"
+msgstr "Fiók száma"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:205
+msgid "Name of bank"
+msgstr "Bank neve"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:206
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:506
+msgid "Sort Code"
+msgstr "Rendezési kód"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:207
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:510
+msgid "IBAN"
+msgstr "IBAN"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:208
+msgid "BIC / Swift"
+msgstr "BIC / Swift"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:214
+msgid "+ Add an account"
+msgstr "+ Fiók hozzáadása"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:216
+msgid "Delete Selected Account (Accounts)"
+msgstr "Kiválasztott fiók (fiókok) törlése"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:489
+msgid "Bank account detail"
+msgstr "Bankszámla adatai"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:514
+msgid "BIC"
+msgstr "BIC"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:551
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:553
+msgid "Awaiting completion of bank transfer"
+msgstr "A banki átutalás befejezésre vár"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:90
+msgid "Allow Packeta"
+msgstr "Engedélyezze a Csomagküldőt"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:92
+msgid "Enable this method"
+msgstr "Engedélyezze ezt a módszert"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:102
+msgid "Packeta title"
+msgstr "Csomag elnevezése"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:104
+msgid "The text the customer sees"
+msgstr "Ügyfél számára látható szöveg"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:35
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:37
+msgid "Error sending to Packeta"
+msgstr "Hiba történt a Csomagküldőbe való küldéskor"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:36
+msgid "E-mail notification upon parcel error"
+msgstr "E-mail értesítés csomag hiba esetén"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:38
+msgid "Error sending to Zasilkovna from {site_title} shop"
+msgstr ""
+"Hiba történt a (z) {site_title} üzletből a Zasilkovna-ba történő elküldésekor"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:132
+msgid "Plain text"
+msgstr "Egyszerű szöveg"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:136
+msgid "HTML"
+msgstr "HTML"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:137
+msgid "Multipart"
+msgstr "Összetett"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:145
+msgid "Enable this e-mail notification"
+msgstr "Engedélyezze ezt az e-mail értesítést"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:149
+msgid "Recipient(s)"
+msgstr "Címzett(ek)"
+
+#. translators: %s: admin email
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:152
+#, php-format
+msgid ""
+"Enter recipient (separate with comma) of this e-mail. The default is %s."
+msgstr ""
+"Írja be az e-mail címzettjét (vesszővel elválasztva). Az alapértelmezett % s."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:158
+msgid "E-mail subject"
+msgstr "E-mail tárgya"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:164
+msgid "Email title"
+msgstr "E-mail elnevezése"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:170
+msgid "E-mail type"
+msgstr "E-mail típusa"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:172
+msgid "Select the format."
+msgstr "Formátum kiválasztása."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:31
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:31
+#: packetaStatus.php:86
+msgid "Order ID: "
+msgstr "Rendelés azonosítója: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:32
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:44
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:32
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:44
+msgid "Create shipment"
+msgstr "Szállítmány létrehozása"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:43
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:43
+msgid "Store ID: "
+msgstr "Üzlet azonosítója: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:58
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:65
+msgid "Data sent"
+msgstr "Adatok elküldve"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:69
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:77
+msgid "Packeta's answer"
+msgstr "Csomagküldő válasza"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:275
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:289
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:480
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:494
+msgid "Shipment has not been saved with error:"
+msgstr "A szállítátmány nem lett elmentetve emiatt a hiba miatt:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:467
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:488
+msgid "Free"
+msgstr "Ingyenes"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:811
+msgid "Awaiting delivery by the shop"
+msgstr "A csomag az üzletben várakozik a szállításra"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:812
+msgid "Received"
+msgstr "Kézbesítve"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:813
+msgid "Ready for delivery"
+msgstr "Szállításra kész"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:814
+msgid "Order is being shipped"
+msgstr ""
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:815
+msgid "Ready for pickup"
+msgstr "Átvevésre kész"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:816
+msgid "Dispatched by carrier"
+msgstr "A szállító által feladva"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:817
+msgid "Delivered"
+msgstr "Kézbesítve"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:818
+msgid "Refund"
+msgstr "Visszatérítés"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:819
+msgid "Returned to the consignor"
+msgstr "Visszaküldve a feladónak"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:820
+msgid "Shipment cancelled"
+msgstr "A szállítás törölve"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:821
+msgid "The shipment has been received and is on its way to the depot"
+msgstr "A szállítmány megérkezett, és a depó felé tart"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:822
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:92
+msgid "No logs found"
+msgstr "Nincs található log"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:184
+msgid "Order ID"
+msgstr "Rendelés azonosítója"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:185
+msgid "Date"
+msgstr "Dátum"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:186
+msgid "Context"
+msgstr "Kontextus"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:72
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:93
+msgid "notice"
+msgstr "értesítés"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:73
+msgid ""
+"<strong>In order to the WooCommerce Packeta plugin to work, you need to "
+"install the WooCommerce plugin.</strong>"
+msgstr ""
+"<strong> A WooCommerce Csomagküldő plugin működéséhez telepítenie kell a "
+"WooCommerce plugint. </strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:94
+msgid ""
+"<strong>The plugin requires WooCommerce version 5.0 and newer to work "
+"properly. The plugin should be compatible with version 4.0., but we cannot "
+"guarantee it to work properly. We recommend you to update.</strong>"
+msgstr ""
+"<strong> A plugin megfelelő működéséhez a WooCommerce 5.0 és újabb verzióra "
+"van szükség. A plugin-nak kompatibilisnek kellene lennie a 4.0 verzióval is, "
+"de nem tudjuk garantálni a megfelelő működését. Javasoljuk, hogy frissítse. "
+"</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:115
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:136
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:159
+msgid "warning"
+msgstr "figyelem"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:116
+msgid ""
+"<strong>The plugin requires active cURL library to work properly. Please "
+"contact your server administrator.</strong>"
+msgstr ""
+"<strong> A plugin megfelelő működéséhez aktív cURL könyvtár szükséges. "
+"Kérjük, lépjen kapcsolatba a szerver rendszergazdájával. </strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:137
+msgid ""
+"<strong>The plugin requires active Soap library to work properly. Please "
+"contact your server administrator.</strong>"
+msgstr ""
+"<strong> A bővítmény megfelelő működéséhez aktív Soap könyvtár szükséges. "
+"Kérjük, lépjen kapcsolatba a szerver rendszergazdájával. </strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:160
+msgid ""
+"The plugin requires activation of the license for proper operation. Please "
+"verify the license in the "
+msgstr ""
+"A plugin megfelelő működéséhez a licenc aktiválását igényli. Kérjük, "
+"eigazolja a licencet itt "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:160
+msgid "plugin settings"
+msgstr "plugin beállítások"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:185
+msgid "Data update is required"
+msgstr "Adatok frissítése szükséges"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:186
+msgid ""
+"Plugin data must be updated to complete the update. As this is a large "
+"update, we recommend checking the Toret Packeta plugin settings afterwards, "
+"especially enabling the shipping method Pick-up points in section "
+msgstr ""
+"A frissítés befejezéséhez frissíteni kell a plugin adatait. Mivel ez egy "
+"nagy frissítés, javasoljuk, hogy utólag ellenőrizze a Toret Packeta "
+"bővítmény beállításait, különös tekintettel engedélyezve a szállítási módot "
+"az Átvevőhelyeken a szakaszban "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:191
+msgid "Update"
+msgstr "Frissítés"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:194
+msgid "Learn more"
+msgstr "Tudjon meg többet"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:41
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:104
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:157
+msgid "Packeta - pick up point: "
+msgstr "Csomagküldő - átvevőhely "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:54
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:178
+msgid "Name: "
+msgstr "Név: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:58
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:180
+msgid "Place: "
+msgstr "Hely: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:62
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:182
+msgid "Street: "
+msgstr "Utca: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:66
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:184
+msgid "City: "
+msgstr "Város: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:70
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:186
+msgid "ZIP code: "
+msgstr "Irányítószám: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:75
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:80
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:130
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:133
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:190
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:193
+msgid "Show location details"
+msgstr "Helyadatok megjelenítése"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:214
+msgid "Track the shipment online"
+msgstr "A szállítmány online nyomonkövetése"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:249
+msgid "Get Status error"
+msgstr "Állapot letöltési hiba"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaPUC.php:57
+msgid "Every 12 hours"
+msgstr "12 óránként"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:449
+msgid "Packeta’s answer - searching for carrier id"
+msgstr "A Csomagküldő válasza - a szolgáltató azonosítójának keresése"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:105
+msgid "Your license has been activated."
+msgstr "Engedélyét/Linensét aktiváltuk."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:108
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:120
+msgid ""
+"Invalid license key.<br />Please contract support at <a href=\"https://www."
+"toret.cz\">Toret.cz</a>."
+msgstr ""
+"Érvénytelen licenckulcs. <br /> Kérjük, vegye fel a kapcsolatot az "
+"ügyfélszolgálatunkkal <a href=\"https://www.toret.cz\"> Toret.cz </a> címen."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:112
+msgid ""
+"Submitted license key does not correspond to the website's URL. <br />Please "
+"check your license key in section <a href=\"https://toret.cz/muj-ucet/\">My "
+"Account</a>. In case of other issues contact support at <a href=\"https://"
+"www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"A beküldött licenckulcs nem felel meg a webhely URL-jének. <br /> Kérjük, "
+"ellenőrizze a licenckulcsát a <a href=\"https://toret.cz/muj-ucet/\"> Saját "
+"fiók </a> részben. Egyéb problémák esetén vegye fel a kapcsolatot az "
+"ügyfélszolgálattal a <a href=\"https://www.toret.cz\"> Toret.cz </a> címen."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:116
+msgid ""
+"You do not own the entered license key <br />Please contact support at <a "
+"href=\"https://www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"Ön nem a megadott licenckulcs tulajdonosa <br /> Kérjük, vegye fel a "
+"kapcsolatot az ügyfélszolgálattal a <a href=\"https://www.toret.cz\"> Toret."
+"cz </a> címen."
+
+#: includes/emails/zasilkovna-admin-error-info-plain.php:17
+#, php-format
+msgid "Error in sending parcel for order No.: %d"
+msgstr "Hiba történt a % d számú csomag küldésekor"
+
+#: includes/emails/zasilkovna-admin-error-info-plain.php:18
+#: includes/emails/zasilkovna-admin-error-info.php:20
+msgid "Parcel has not been entered into Packeta's system due to error:"
+msgstr "Hiba miatt a csomag nem lett bejegyezve a Csomagküldő rendszerébe:"
+
+#: includes/emails/zasilkovna-admin-error-info.php:19
+#, php-format
+msgid "Error in sending parcel for order No.: %s"
+msgstr "Hiba történt a %s számú csomag küldésekor"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:55
+msgid "View details"
+msgstr "Részletek megtekintése"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:78
+#, php-format
+msgid "More information about %s"
+msgstr "További információk %s-ról"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:131
+msgid "Check for updates"
+msgstr "Ellenőrizze a frissítéseket"
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "A % s plugin aktuális."
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:219
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "A % s beépülő modul új verziója elérhető."
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:221
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr ""
+"Nem sikerült megállapítani, hogy elérhetőek-e frissítések a következőhöz: "
+"% s."
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Plugin/Ui.php:227
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Ismeretlen frissítés-ellenőrző állapota: \"% s\""
+
+#: includes/plugin-update-checker-master/Puc/v4p8/Vcs/PluginUpdateChecker.php:99
+msgid "There is no changelog available."
+msgstr "A változások listája nem elérhető."
+
+#: packetaStatus.php:82
+msgid "Packeta status change"
+msgstr "A csomag állapota megváltozott"
+
+#: packetaStatus.php:87
+msgid "Status change"
+msgstr "Állapotváltás"
+
+#: public/class-zasilkovna.php:399
+msgid "Please select a pick-up point."
+msgstr "Kérjük, válassza ki az átvevőhelyet."
+
+#: public/class-zasilkovna.php:658
+msgid "Order Status in Packeta:"
+msgstr "Rendelés állapota a Csomagküldőben:"
+
+#: public/class-zasilkovna.php:763
+msgid "Change pick-up point"
+msgstr "Válasszon más átvevőhelyet"
+
+#: public/class-zasilkovna.php:859
+msgid "Track the shipment online: "
+msgstr "A szállítmány online nyomonkövetése: "
+
+#: public/class-zasilkovna.php:1009
+msgid "Select a pick-up point"
+msgstr "Válassza ki az átvevőhelyet"
+
+#: public/class-zasilkovna.php:1017
+msgid "Selected store"
+msgstr "Kiválasztott üzlet"
+
+#: public/class-zasilkovna.php:1267 public/class-zasilkovna.php:1277
+msgid "Please select a store for selected shipping option."
+msgstr "Kérjük, válasszon egy üzletet a kiválasztott szállítási módhoz."
+
+#: toret-zasilkovna.php:553
+msgid "labels, 105x35mm A4, print on A4, 16pcs/pag"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Toret Zásilkovna"
+msgstr "Toret Csomagküldő"
+
+#. Plugin URI of the plugin/theme
+msgid "https://toret.cz/produkt/woocommerce-zasilkovna/"
+msgstr "https://toret.cz/produkt/woocommerce-zasilkovna/"
+
+#. Description of the plugin/theme
+msgid "WooCommerce intergration plugin to connect to Packeta services."
+msgstr ""
+"WooCommerce integrációs plugin a Csomagküldő szolgáltatásokhoz való "
+"csatlakozáshoz."
+
+#. Author of the plugin/theme
+msgid "Toret.cz"
+msgstr "Toret.cz"
+
+#. Author URI of the plugin/theme
+msgid "https://toret.cz"
+msgstr "https://toret.cz"

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:praha.majales.cz)",
+      "WebFetch(domain:www.totalfilm.cz)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:czechvirus.cz)",
+      "WebFetch(domain:cs.wikipedia.org)",
+      "WebFetch(domain:www.tiktok.com)",
+      "WebFetch(domain:www.filmbooster.com)",
+      "WebFetch(domain:isport.blesk.cz)",
+      "WebFetch(domain:www.kinobox.cz)"
+    ]
+  }
+}

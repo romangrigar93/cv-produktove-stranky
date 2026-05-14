@@ -1,0 +1,287 @@
+/* Popup Overlay */
+.toret-popup-popup-scope {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+	display: none; /* Hidden by default */
+	align-items: center;
+	justify-content: center;
+	z-index: 10000; /* Ensure it's on top */
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+.toret-popup-popup-scope.toret-popup-overlay--active {
+	display: flex; /* Show when active */
+}
+
+/* Popup Content Box */
+.toret-popup-popup-scope .toret-popup-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	max-width: 600px; /* Max width */
+	width: 90%;       /* Responsive width */
+	max-height: 90vh; /* Max height relative to viewport */
+	overflow-y: auto; /* Scroll inside popup if content is too long */
+	position: relative; /* For positioning the close button */
+	animation: myPopupFadeIn 0.3s ease-out; /* Název animace může zůstat globální */
+}
+
+/* Keyframes */
+@keyframes myPopupFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Popup Header */
+.toret-popup-popup-scope .toret-popup-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.toret-popup-popup-scope .toret-popup-title {
+	margin: 0;
+	font-size: 1.5em;
+	color: #333;
+}
+
+/* Close Button (X) */
+.toret-popup-popup-scope .toret-popup-close {
+	background: none;
+	border: none;
+	font-size: 1.8em;
+	line-height: 1;
+	color: #888;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.toret-popup-popup-scope .toret-popup-close:hover,
+.toret-popup-popup-scope .toret-popup-close:focus {
+	color: #333;
+	outline: none;
+}
+
+/* Popup Body */
+.toret-popup-popup-scope .toret-popup-body {
+	margin-bottom: 20px;
+	line-height: 1.6;
+	color: #555;
+}
+.toret-popup-popup-scope .toret-popup-body p {
+	margin-top: 0;
+}
+.toret-popup-popup-scope .toret-popup-body img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* Popup Footer */
+.toret-popup-popup-scope .toret-popup-footer {
+	border-top: 1px solid #eee;
+	padding-top: 15px;
+	display: flex;
+	justify-content: flex-end; /* Align buttons to the right */
+	gap: 10px; /* Space between buttons */
+}
+
+.toret-popup-popup-scope .toret-popup-footer-button {
+	padding: 8px 15px;
+	border: 1px solid #ccc;
+	background-color: #f0f0f0;
+	color: #333;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.toret-popup-popup-scope .toret-popup-footer-button:hover {
+	background-color: #e0e0e0;
+	border-color: #bbb;
+}
+
+/* Primary button style */
+.toret-popup-popup-scope .toret-popup-footer-button.primary {
+	background-color: #0073aa; /* WordPress blue */
+	color: #fff;
+	border-color: #0073aa;
+}
+.toret-popup-popup-scope .toret-popup-footer-button.primary:hover {
+	background-color: #005a8e;
+}
+
+
+/* Responsiveness for very small screens */
+@media (max-width: 480px) {
+	.toret-popup-popup-scope .toret-popup-content {
+		width: 95%;
+		padding: 15px;
+	}
+	.toret-popup-popup-scope .toret-popup-title {
+		font-size: 1.2em;
+	}
+	.toret-popup-popup-scope .toret-popup-footer {
+		flex-direction: column; /* Stack buttons vertically */
+	}
+	.toret-popup-popup-scope .toret-popup-footer-button {
+		width: 100%; /* Make buttons full width */
+		margin-bottom: 5px;
+	}
+	.toret-popup-popup-scope .toret-popup-footer-button:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Custom sizes for the popup */
+.toret-popup-content.toret-popup-size-small {
+	width: 300px;
+	max-width: 90%;
+}
+
+.toret-popup-content.toret-popup-size-medium {
+	width: 500px;
+	max-width: 90%;
+}
+
+.toret-popup-content.toret-popup-size-large {
+	width: 800px;
+	max-width: 90%;
+}
+
+.toret-popup-content.toret-popup-size-extra-large {
+	width: 1140px;
+	max-width: 95%;
+}
+
+.toret-popup-content.toret-popup-size-fullscreen {
+	width: 95%;
+	max-width: 98%;
+}
+
+@media (max-width: 1200px) {
+	.toret-popup-content.toret-popup-size-extra-large {
+		width: 960px;
+	}
+}
+
+@media (max-width: 992px) {
+	.toret-popup-content.toret-popup-size-large,
+	.toret-popup-content.toret-popup-size-extra-large {
+		width: 90%;
+	}
+}
+
+@media (max-width: 768px) {
+	.toret-popup-content.toret-popup-size-medium,
+	.toret-popup-content.toret-popup-size-large,
+	.toret-popup-content.toret-popup-size-extra-large {
+		width: 90%;
+		margin: 10px;
+	}
+}
+
+@media (max-width: 576px) {
+	.toret-popup-content.toret-popup-size-small,
+	.toret-popup-content.toret-popup-size-medium,
+	.toret-popup-content.toret-popup-size-large,
+	.toret-popup-content.toret-popup-size-extra-large {
+		width: calc(100% - 20px);
+		margin: 10px auto;
+		padding: 15px;
+	}
+	.toret-popup-header {
+		padding-bottom: 10px;
+	}
+	.toret-popup-body {
+	}
+}
+
+/* Spinner */
+.toret-popup-spinner {
+	display: none; /* Skrytý defaultně */
+	box-sizing: border-box; /* Aby border neovlivňoval celkovou velikost */
+	/* Pozicování uprostřed tlačítka */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1.2em; /* Velikost spinneru - upravte podle potřeby */
+	height: 1.2em;
+	margin-top: -0.6em; /* Polovina výšky */
+	margin-left: -0.6em; /* Polovina šířky */
+
+	border: 2px solid rgba(0, 0, 0, 0.2); /* Světlejší barva pro "dráhu" */
+	border-top-color: currentColor; /* Použije barvu textu tlačítka pro aktivní část */
+	border-radius: 50%;
+	animation: toretPopupSpin 0.7s linear infinite;
+}
+
+@keyframes toretPopupSpin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Styl pro text tlačítka (aby se dal skrýt) */
+.toret-popup-button-text {
+	transition: opacity 0.1s ease-out;
+}
+
+/* Když je tlačítko ve stavu načítání */
+.toret-popup-button--loading .toret-popup-spinner {
+	display: block; /* Zobrazí spinner */
+}
+
+.toret-popup-button--loading .toret-popup-button-text {
+	opacity: 0; /* Skryje text, ale zachová jeho původní místo */
+	/* Alternativně visibility: hidden; */
+}
+
+/* Zajistí, že zakázané tlačítko se spinnerem vypadá stále rozumně */
+.toret-popup-button--loading:disabled {
+	opacity: 1; /* Pokud by defaultní :disabled mělo nižší opacity */
+	/* Můžete zde upravit i cursor, pokud je potřeba */
+}
+
+.toret-popup-external-close-button {
+	position: absolute;
+	/* Adjust these values to position the button as in your image.
+       This example places it outside the top-right corner of the wrapper. */
+	top: 0;   /* (button height / 2) or slightly more if you want space */
+	right: 10px; /* (button width / 2) or slightly more */
+	width: 32px;
+	height: 32px;
+	border-radius: 50%; /* Makes it circular */
+	background-color: #333; /* Dark background like in the image */
+	color: white; /* White 'X' */
+	border: none;
+	font-size: 20px; /* Adjust for '×' size */
+	line-height: 30px; /* Helps vertically center the '×' if height is fixed */
+	text-align: center;
+	cursor: pointer;
+	z-index: 10; /* Ensures it's above the popup content if it visually overlaps slightly */
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow */
+	display: flex; /* For centering content if line-height trick isn't perfect */
+	align-items: center;
+	justify-content: center;
+	outline: none; /* Remove default focus outline */
+}
+
+.toret-popup-external-close-button:focus{
+	outline: none;
+}

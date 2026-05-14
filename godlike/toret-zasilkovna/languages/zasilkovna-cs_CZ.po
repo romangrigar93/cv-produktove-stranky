@@ -1,0 +1,3426 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Toret Zásilkovna\n"
+"POT-Creation-Date: 2026-02-25 13:42+0100\n"
+"PO-Revision-Date: 2026-02-25 13:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: toret-zasilkovna.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-zasilkovna-admin.php:117
+msgid "Settings"
+msgstr "Nastavení"
+
+#: admin/class-zasilkovna-admin.php:118
+msgid "Documentation"
+msgstr "Dokumentace"
+
+#: admin/class-zasilkovna-admin.php:119
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:502
+msgid "Support"
+msgstr "Podpora"
+
+#: admin/class-zasilkovna-admin.php:132 admin/class-zasilkovna-admin.php:133
+msgid "Toret plugins"
+msgstr "Toret plugins"
+
+#: admin/class-zasilkovna-admin.php:143 admin/class-zasilkovna-admin.php:144
+#: admin/includes/ToretZasilkovnaProductCategory.php:11
+#: admin/includes/ToretZasilkovnaProductCategory.php:20
+#: admin/includes/class-zasilkovna-columns.php:20
+#: admin/includes/class-zasilkovna-product-tab.php:16
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:41
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:84
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:90
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1617
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1618
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:72
+msgid "Packeta"
+msgstr "Zásilkovna"
+
+#: admin/class-zasilkovna-admin.php:152 admin/class-zasilkovna-admin.php:153
+msgid "Packeta log"
+msgstr "Zásilkovna log"
+
+#: admin/class-zasilkovna-admin.php:259
+msgid "Packeta Log"
+msgstr "Zásilkovna log"
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:38
+#: admin/includes/ToretZasilkovnaAdminVariation.php:83
+#: admin/includes/ToretZasilkovnaProductCategory.php:49
+#: admin/includes/ToretZasilkovnaProductCategory.php:93
+#: admin/includes/class-zasilkovna-product-tab.php:65
+#: admin/includes/class-zasilkovna-product-tab.php:110
+msgid "Pick-up points "
+msgstr "Výdejní místa "
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:63
+#: admin/includes/class-zasilkovna-product-tab.php:90
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"product:"
+msgstr ""
+"Zaškrtněte metody přepravy Zásilkovna, které chcete pro tento produkt "
+"zakázat:"
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:108
+#: admin/includes/class-zasilkovna-product-tab.php:135
+msgid ""
+"Check the Packeta shipping methods, for which you want to have free shipping "
+"if product is in the cart:"
+msgstr ""
+"Zaškrtněte způsoby dopravy Zásilkovny, pro které chcete mít dopravu zdarma, "
+"pokud je produkt v košíku:"
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:120
+#: admin/includes/ToretZasilkovnaProductCategory.php:130
+#: admin/includes/class-zasilkovna-product-tab.php:148
+msgid "Disable Z-BOXes"
+msgstr "Deaktivovat Z-BOXy"
+
+#: admin/includes/ToretZasilkovnaAdminVariation.php:125
+#: admin/includes/class-zasilkovna-product-tab.php:153
+msgid "Disable pickup point types for this product:"
+msgstr "Deaktivovat typy výdejních míst pro tento produkt:"
+
+#: admin/includes/ToretZasilkovnaProductCategory.php:74
+msgid ""
+"Check the Packeta shipping methods, which you want to disable for this "
+"category:"
+msgstr ""
+"Zaškrtněte metody přepravy Zásilkovny, které chcete pro tuto kategorii "
+"zakázat:"
+
+#: admin/includes/ToretZasilkovnaProductCategory.php:118
+msgid ""
+"Check the Packeta shipping methods, for which you want to have free shipping "
+"if category is in the cart:"
+msgstr ""
+"Zaškrtněte způsoby dopravy Zásilkovny, pro které chcete mít dopravu zdarma, "
+"pokud je produkt z kategorie v košíku:"
+
+#: admin/includes/ToretZasilkovnaProductCategory.php:135
+msgid "Disable pickup point types for this category:"
+msgstr "Deaktivovat typy výdejních míst pro tuto kategorii:"
+
+#: admin/includes/class-zasilkovna-bulk.php:20
+msgid "Packeta - Print Labels"
+msgstr "Zásilkovna - Tisk štítků"
+
+#: admin/includes/class-zasilkovna-bulk.php:21
+msgid "Packeta - Print Labels for Other Carriers"
+msgstr "Zásilkovna - Tisk štítků pro ostatní dopravce"
+
+#: admin/includes/class-zasilkovna-bulk.php:22
+msgid "Packeta - Print Return Shipment Labels"
+msgstr "Zásilkovna - Tisk štítků pro zpětné zásilky"
+
+#: admin/includes/class-zasilkovna-bulk.php:23
+msgid "Packeta - Create Shipments"
+msgstr "Zásilkovna - Vytvořit zásilky"
+
+#: admin/includes/class-zasilkovna-bulk.php:65
+#: admin/includes/class-zasilkovna-bulk.php:70
+msgid "Wrong label format. Format"
+msgstr "Nesprávný formát štítku. Formát"
+
+#: admin/includes/class-zasilkovna-bulk.php:65
+msgid ""
+" not supported. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetlabelpdf\" "
+"target=\"_blank\">Supported formats can be found here</a>."
+msgstr ""
+" není podporován. <a href=\"https://docs.packetery.com/03-creating-packets/"
+"06-packetery-api-reference.html#toc-packetlabelpdf\" "
+"target=\"_blank\">Podporované formáty můžete najít zde</a>."
+
+#: admin/includes/class-zasilkovna-bulk.php:70
+msgid ""
+" not supported. <a href=\"https://docs.packetery.com/03-creating-packets/06-"
+"packetery-api-reference.html#toc-packetscourierlabelspdfhttps://"
+"docs.packetery.com/03-creating-packets/06-packetery-api-reference.html#toc-"
+"packetscourierlabelspdf\" target=\"_blank\">Supported formats can be found "
+"here</a>."
+msgstr ""
+" není podporován. <a href=\"https://docs.packetery.com/03-creating-packets/"
+"06-packetery-api-reference.html#toc-packetscourierlabelspdfhttps://"
+"docs.packetery.com/03-creating-packets/06-packetery-api-reference.html#toc-"
+"packetscourierlabelspdf\" target=\"_blank\">Podporované formáty naleznete "
+"zde</a>."
+
+#: admin/includes/class-zasilkovna-bulk.php:75
+msgid "Selected orders do not have assigned parcel ID."
+msgstr "Vybrané objednávky nemají přiřazené ID balíku."
+
+#: admin/includes/class-zasilkovna-bulk.php:80
+msgid "Some of the parcels does not have valid parcel ID."
+msgstr "Některý z balíků má neplatné ID."
+
+#: admin/includes/class-zasilkovna-bulk.php:86
+msgid ""
+"None of the selected orders has Packeta label. Try to print carrier labels "
+"for these orders."
+msgstr ""
+"Žádná z vybraných objednávek nemá štítek Zásilkovny. Zkuste pro tyto "
+"objednávky vytisknout štítky dopravců."
+
+#: admin/includes/class-zasilkovna-bulk.php:91
+msgid ""
+"To download labels, the order's weight must be entered. If the data have "
+"been sent to Packeta, they have to be modified there."
+msgstr ""
+"Pro stažení štítků je potřeba mít vyplněnou váhu objednávky. Pokud již byla "
+"zásilka odeslána do Zásilkovny, je třeba ji upravit tam."
+
+#: admin/includes/class-zasilkovna-bulk.php:96
+msgid "Unknown error. Error text: "
+msgstr "Neznámá chyba. Text chyby: "
+
+#: admin/includes/class-zasilkovna-bulk.php:101
+#: admin/includes/class-zasilkovna-send-ticket.php:236
+msgid ""
+"There has been an error in communication with the carrier. Please try later."
+msgstr "Při komunikaci s dopravcem došlo k chybě. Zkuste to později."
+
+#: admin/includes/class-zasilkovna-bulk.php:106
+#: admin/includes/class-zasilkovna-send-ticket.php:241
+msgid "Invalid carrier number."
+msgstr "Neplatné číslo dopravce."
+
+#: admin/includes/class-zasilkovna-columns.php:21
+msgid "Packeta status"
+msgstr "Stav Zásilkovny"
+
+#: admin/includes/class-zasilkovna-columns.php:103
+msgid "Print label"
+msgstr "Tisk štítku"
+
+#: admin/includes/class-zasilkovna-columns.php:112 toret-zasilkovna.php:1084
+#: toret-zasilkovna.php:1123 toret-zasilkovna.php:1168
+msgid "Printing settings"
+msgstr "Nastavení tisku"
+
+#: admin/includes/class-zasilkovna-columns.php:113 toret-zasilkovna.php:1085
+#: toret-zasilkovna.php:1124 toret-zasilkovna.php:1169
+msgid "Format:"
+msgstr "Formát:"
+
+#: admin/includes/class-zasilkovna-columns.php:119
+#: admin/includes/class-zasilkovna-columns.php:124
+#: admin/views/parts/general.php:585 admin/views/parts/general.php:602
+#: toret-zasilkovna.php:1087 toret-zasilkovna.php:1126
+#: toret-zasilkovna.php:1175 toret-zasilkovna.php:1181
+msgid "labels, 1/4 A4, direct print, print on A4, 4pcs/page"
+msgstr "štítky, 1/4 A4, přímý tisk, 4ks/stránka"
+
+#: admin/includes/class-zasilkovna-columns.php:120
+#: admin/includes/class-zasilkovna-columns.php:125
+#: admin/views/parts/general.php:586 admin/views/parts/general.php:603
+#: toret-zasilkovna.php:1088 toret-zasilkovna.php:1127
+#: toret-zasilkovna.php:1176 toret-zasilkovna.php:1182
+msgid "labels, 1/4 A4, direct print, 1 pc/page"
+msgstr "štítky, 1/4 A4, přímý tisk, 1ks/stránka"
+
+#: admin/includes/class-zasilkovna-columns.php:126
+#: admin/views/parts/general.php:587 toret-zasilkovna.php:1089
+#: toret-zasilkovna.php:1128 toret-zasilkovna.php:1183
+msgid "labels, 1/8 A4, 1 pc/page"
+msgstr "štítky, 1/8 A4, tisk na A4, 1ks/stránka"
+
+#: admin/includes/class-zasilkovna-columns.php:127
+#: admin/views/parts/general.php:588 toret-zasilkovna.php:1090
+#: toret-zasilkovna.php:1129 toret-zasilkovna.php:1184
+msgid "labels, 1/8 A4, print on A4, 8pcs/page"
+msgstr "štítky, 1/8 A4, tisk na A4, 8ks/stránka"
+
+#: admin/includes/class-zasilkovna-columns.php:128
+#: admin/views/parts/general.php:589 toret-zasilkovna.php:1091
+#: toret-zasilkovna.php:1130 toret-zasilkovna.php:1185
+msgid "labels, 1/16 A4, 1 pc/page"
+msgstr "štítky, 1/16 A4, tisk na A4, 1ks/stránka"
+
+#: admin/includes/class-zasilkovna-columns.php:129
+#: admin/views/parts/general.php:590 toret-zasilkovna.php:1092
+#: toret-zasilkovna.php:1131 toret-zasilkovna.php:1186
+msgid "labels, 105x35mm A4, print on A4, 16pcs/page"
+msgstr "štítky, 105x35mm A4, tisk na A4, 16ks/stránka"
+
+#: admin/includes/class-zasilkovna-columns.php:133 toret-zasilkovna.php:1095
+#: toret-zasilkovna.php:1134 toret-zasilkovna.php:1190
+msgid "Offset:"
+msgstr "Vynechané pozice:"
+
+#: admin/includes/class-zasilkovna-columns.php:135
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:265
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2089
+#: toret-zasilkovna.php:1097 toret-zasilkovna.php:1136
+#: toret-zasilkovna.php:1192
+msgid "Close"
+msgstr "Zavřít"
+
+#: admin/includes/class-zasilkovna-columns.php:136 toret-zasilkovna.php:1098
+#: toret-zasilkovna.php:1137 toret-zasilkovna.php:1193
+msgid "Print"
+msgstr "Tisk"
+
+#: admin/includes/class-zasilkovna-columns.php:153
+msgid "Track package: "
+msgstr "Sledovat zásilku: "
+
+#: admin/includes/class-zasilkovna-columns.php:159
+#: admin/includes/metabox.php:182
+msgid "Cancel package"
+msgstr "Zrušit zásilku"
+
+#: admin/includes/class-zasilkovna-product-tab.php:45
+msgid "Age verification"
+msgstr "Ověření věku"
+
+#: admin/includes/class-zasilkovna-product-tab.php:46
+msgid "Tick if age verification is required for this product."
+msgstr "Zaškrtněte, pokud je u tohoto produktu požadováno ověření věku."
+
+#: admin/includes/class-zasilkovna-product-tab.php:163
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:199
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:203
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1951
+msgid "Customs declaration"
+msgstr "Celní prohlášení"
+
+#: admin/includes/class-zasilkovna-product-tab.php:167
+msgid "Product name (EN)"
+msgstr "Název produktu (EN)"
+
+#: admin/includes/class-zasilkovna-product-tab.php:172
+msgid "Customs code"
+msgstr "Celní kód"
+
+#: admin/includes/class-zasilkovna-send-ticket.php:36
+msgid "Package(s) cancel finished."
+msgstr "Zrušení balíčku(ů) dokončeno."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:40
+msgid "Package(s) delete finished."
+msgstr "Odstranění balíčku(ů) dokončeno."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:45
+msgid "Package(s) send finished with errors."
+msgstr "Odesílání balíčků skončilo s chybami."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:47
+msgid "Package(s) send finished."
+msgstr "Odeslání balíku(ů) je dokončeno."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:104
+#: admin/includes/class-zasilkovna-send-ticket.php:137
+#: admin/includes/class-zasilkovna-send-ticket.php:201
+#: admin/includes/class-zasilkovna-send-ticket.php:251
+msgid "Unknown error."
+msgstr "Neznámá chyba."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:216
+msgid "Packet canceled."
+msgstr "Balíček zrušen."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:221
+msgid "Packet state does not allow this operation."
+msgstr "Stav balíčku tuto operaci neumožňuje."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:226
+msgid "Selected order does not have assigned parcel ID."
+msgstr "Vybrané objednávky nemají přiřazené ID balíku."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:231
+msgid "Parcel ID not valid."
+msgstr "Neplatné ID balíku."
+
+#: admin/includes/class-zasilkovna-send-ticket.php:246
+msgid "Wrong label format."
+msgstr "Nesprávný formát štítku."
+
+#: admin/includes/metabox.php:45
+msgid "Change shipping method to:"
+msgstr "Změnit způsob dopravy na:"
+
+#: admin/includes/metabox.php:46
+msgid "---"
+msgstr "---"
+
+#: admin/includes/metabox.php:69
+msgid "Change shipping"
+msgstr "Změnit dopravu"
+
+#: admin/includes/metabox.php:97
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2112
+msgid "This package is probably oversized."
+msgstr "Tato zásilka je pravděpodobně nadrozměrná."
+
+#: admin/includes/metabox.php:101
+msgid "Shipment weight"
+msgstr "Hmotnost zásilky"
+
+#: admin/includes/metabox.php:109
+msgid "Order total"
+msgstr "Celková cena"
+
+#: admin/includes/metabox.php:117
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:295
+msgid "Maximum size of one side [m]"
+msgstr "Maximální rozměr jedné strany [m]"
+
+#: admin/includes/metabox.php:125
+msgid "Sum of all three sides [m]"
+msgstr "Součet všech tří stran [m]"
+
+#: admin/includes/metabox.php:135
+msgid "Shipment width"
+msgstr "Šířka zásilky"
+
+#: admin/includes/metabox.php:140
+msgid "Shipment height"
+msgstr "Výška zásilky"
+
+#: admin/includes/metabox.php:145
+msgid "Shipment length"
+msgstr "Délka zásilky"
+
+#: admin/includes/metabox.php:163
+msgid "Download label"
+msgstr "Stáhnout štítek"
+
+#: admin/includes/metabox.php:170
+msgid "Claim assistant label"
+msgstr "Štítek reklamačního asistenta"
+
+#: admin/includes/metabox.php:172
+msgid "Claim assistant"
+msgstr "Reklamační asistent"
+
+#: admin/includes/metabox.php:176
+msgid "Delete all package data"
+msgstr "Smazat všechna data balíčku"
+
+#: admin/includes/metabox.php:179
+msgid "Cancel claim package"
+msgstr "Zrušit reklamační zásilku"
+
+#: admin/includes/metabox.php:188
+msgid "Show log entries for this order"
+msgstr "Zobrazit záznamy logu pro tuto objednávku"
+
+#: admin/views/admin.php:43
+msgid "Country settings"
+msgstr "Nastavení země"
+
+#: admin/views/admin.php:99
+msgid "Go to top"
+msgstr "Nahoru"
+
+#: admin/views/parts/auto_send.php:32
+msgid "Do not send automatically"
+msgstr "Neodesílat automaticky"
+
+#: admin/views/parts/auto_send.php:59
+msgid "Send data to Packeta system on order status change"
+msgstr "Odeslat údaje do systému Zásilkovny při změně stavu objednávky"
+
+#: admin/views/parts/auto_send.php:61 admin/views/parts/exchange_rates.php:61
+#: admin/views/parts/exchange_rates.php:181 admin/views/parts/general.php:53
+#: admin/views/parts/general.php:163 admin/views/parts/general.php:230
+#: admin/views/parts/general.php:252 admin/views/parts/general.php:294
+#: admin/views/parts/general.php:349 admin/views/parts/general.php:447
+#: admin/views/parts/general.php:513 admin/views/parts/general.php:565
+#: admin/views/parts/general.php:658 admin/views/parts/tracking.php:73
+#: admin/views/parts/tracking.php:111
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:263
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:562
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2090
+msgid "Save"
+msgstr "Uložit"
+
+#: admin/views/parts/carriers.php:17
+msgid "Automatically load carriers"
+msgstr "Automatické načítání dopravců"
+
+#: admin/views/parts/carriers.php:19
+msgid "For automatic carrier loading, set up CRON on the hosting server:"
+msgstr "Pro automatické načítání dopravců nastavte na hostingu CRON:"
+
+#: admin/views/parts/carriers.php:26
+msgid "Load carriers manually"
+msgstr "Načíst dopravce ručně"
+
+#: admin/views/parts/carriers.php:28 admin/views/parts/tracking.php:28
+msgid "Run"
+msgstr "Spustit"
+
+#: admin/views/parts/carriers.php:34
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:498
+msgid "Carriers"
+msgstr "Dopravci"
+
+#: admin/views/parts/carriers.php:40
+msgid "Country name"
+msgstr "Název země"
+
+#: admin/views/parts/carriers.php:41
+msgid "Country code"
+msgstr "Kód země"
+
+#: admin/views/parts/carriers.php:42
+msgid "Active carriers"
+msgstr "Aktivní dopravci"
+
+#: admin/views/parts/carriers.php:43
+#: vendor/toret/toret-library/src/SettingsFieldsTrait.php:589
+msgid "Action"
+msgstr "Akce"
+
+#: admin/views/parts/carriers.php:51
+msgid "Setup"
+msgstr "Nastavení"
+
+#: admin/views/parts/carriers.php:57
+msgid "Countries"
+msgstr "Země"
+
+#: admin/views/parts/exchange_rates.php:21
+msgid ""
+"The currency conversion will be done by the Packeta according to its own "
+"exchange rate at the time of package creation."
+msgstr ""
+"Přepočet měny provede Zásilkovna podle vlastního směnného kurzu v době "
+"vytvoření balíčku."
+
+#: admin/views/parts/exchange_rates.php:22
+msgid "Disable currency conversion according to plugin settings"
+msgstr "Zakázat převod měny podle nastavení pluginu"
+
+#: admin/views/parts/exchange_rates.php:50
+msgid "x "
+msgstr "x "
+
+#: admin/views/parts/exchange_rates.php:59
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:501
+msgid "Exchange rates"
+msgstr "Kurzy měn"
+
+#: admin/views/parts/exchange_rates.php:69
+msgid "Bulgaria"
+msgstr "Bulharsko"
+
+#: admin/views/parts/exchange_rates.php:72
+#: admin/views/parts/exchange_rates.php:80
+#: admin/views/parts/exchange_rates.php:88
+#: admin/views/parts/exchange_rates.php:96
+#: admin/views/parts/exchange_rates.php:105
+#: admin/views/parts/exchange_rates.php:115
+#: admin/views/parts/exchange_rates.php:124
+#: admin/views/parts/exchange_rates.php:133
+#: admin/views/parts/exchange_rates.php:141
+msgid "CZK"
+msgstr "CZK"
+
+#: admin/views/parts/exchange_rates.php:77
+msgid "Czech Republic"
+msgstr "Česká republika"
+
+#: admin/views/parts/exchange_rates.php:85
+msgid "Denmark"
+msgstr "Dánsko"
+
+#: admin/views/parts/exchange_rates.php:93
+msgid "Hungary"
+msgstr "Maďarsko"
+
+#: admin/views/parts/exchange_rates.php:97
+msgid "HUF"
+msgstr "HUF"
+
+#: admin/views/parts/exchange_rates.php:102
+msgid "Germany"
+msgstr "Německo"
+
+#: admin/views/parts/exchange_rates.php:106
+#: admin/views/parts/exchange_rates.php:116
+#: admin/views/parts/exchange_rates.php:125
+#: admin/views/parts/exchange_rates.php:142
+#: admin/views/parts/exchange_rates.php:150
+msgid "EUR"
+msgstr "EUR"
+
+#: admin/views/parts/exchange_rates.php:111
+msgid "Poland"
+msgstr "Polsko"
+
+#: admin/views/parts/exchange_rates.php:114
+msgid "PLN"
+msgstr "PLN"
+
+#: admin/views/parts/exchange_rates.php:121
+msgid "Austria"
+msgstr "Rakousko"
+
+#: admin/views/parts/exchange_rates.php:130
+msgid "Romania"
+msgstr "Rumunsko"
+
+#: admin/views/parts/exchange_rates.php:138
+msgid "Slovakia"
+msgstr "Slovensko"
+
+#: admin/views/parts/exchange_rates.php:147
+msgid "Other eurozone countries"
+msgstr "Ostatní země eurozóny"
+
+#: admin/views/parts/exchange_rates.php:179
+msgid "Currency and country settings"
+msgstr "Nastavení měny a země"
+
+#: admin/views/parts/general.php:19
+msgid "License key"
+msgstr "Licenční klíč"
+
+#: admin/views/parts/general.php:29
+msgid "API password"
+msgstr "Heslo API"
+
+#: admin/views/parts/general.php:40
+msgid "Indication"
+msgstr "Označení"
+
+#: admin/views/parts/general.php:41
+msgid "Detailed guide, how to find it "
+msgstr "Podrobný průvodce, jak ji najít "
+
+#: admin/views/parts/general.php:42
+msgid "here"
+msgstr "zde"
+
+#: admin/views/parts/general.php:51
+msgid "Connection"
+msgstr "Propojení"
+
+#: admin/views/parts/general.php:64
+msgid "All shipping methods will be free"
+msgstr "Všechny způsoby dopravy budou zdarma"
+
+#: admin/views/parts/general.php:65
+msgid "Free shipping only for Packeta"
+msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#: admin/views/parts/general.php:66
+msgid "Free shipping in shipping selection"
+msgstr "Doprava zdarma ve výběru dopravy"
+
+#: admin/views/parts/general.php:67
+msgid "Delete \"Free shipping\" - Prices will stay"
+msgstr "Odstranit dopravu zdarma - ceny zůstanou"
+
+#: admin/views/parts/general.php:69
+msgid "Free shipping"
+msgstr "Doprava zdarma"
+
+#: admin/views/parts/general.php:79
+msgid "All Packeta shipping methods for free"
+msgstr "Všechny metody přepravy Zásilkovna zdarma"
+
+#: admin/views/parts/general.php:80
+msgid "Selected shipping method for free"
+msgstr "Vybraný způsob dopravy zdarma"
+
+#: admin/views/parts/general.php:81
+msgid "Not applicable"
+msgstr "Neuplatňuje se"
+
+#: admin/views/parts/general.php:83
+msgid "Free shipping coupon behaviour"
+msgstr "Chování kuponu na dopravu zdarma"
+
+#: admin/views/parts/general.php:93
+msgid "Send email notifications about failed shipment creation"
+msgstr "Posílat e-mailová upozornění o neúspěšném vytvoření zásilky"
+
+#: admin/views/parts/general.php:102
+msgid "Replace the shipping address with selected Packeta branch address"
+msgstr "Nahradit doručovací adresu vybranou adresou pobočky Zásilkovny"
+
+#: admin/views/parts/general.php:111
+msgid "Set the shipment value to the maximum allowed value if exceeded"
+msgstr ""
+"Nastavit hodnotu zásilky na maximální povolenou hodnotu, pokud je překročena"
+
+#: admin/views/parts/general.php:120
+msgid "Hide Zasilkovna tabs in product and category details"
+msgstr "Skrýt Zásilkovna záložku u produktu a v kategorii"
+
+#: admin/views/parts/general.php:129
+msgid "Disable log"
+msgstr "Deaktivovat log"
+
+#: admin/views/parts/general.php:138
+msgid "Enable pickup point selection log"
+msgstr "Povolit protokol výběru výdejního místa"
+
+#: admin/views/parts/general.php:147
+msgid "woocommerce_email_after_order_table"
+msgstr "woocommerce_email_after_order_table"
+
+#: admin/views/parts/general.php:148
+msgid "woocommerce_email_order_details"
+msgstr "woocommerce_email_order_details"
+
+#: admin/views/parts/general.php:149
+msgid "woocommerce_email_before_order_table"
+msgstr "woocommerce_email_before_order_table"
+
+#: admin/views/parts/general.php:150
+msgid "woocommerce_email_order_meta"
+msgstr "woocommerce_email_order_meta"
+
+#: admin/views/parts/general.php:151
+msgid "woocommerce_email_customer_details"
+msgstr "woocommerce_email_customer_details"
+
+#: admin/views/parts/general.php:153
+msgid "Tracking link in email position"
+msgstr "Pozice odkazu na sledování v e-mailu"
+
+#: admin/views/parts/general.php:161
+msgid "Packeta basic settings"
+msgstr "Základní nastavení Zásilkovny"
+
+#: admin/views/parts/general.php:171
+msgid "Shipping tax class based on cart items"
+msgstr "Daňová sazba dopravy podle položek košíku"
+
+#: admin/views/parts/general.php:172
+msgid "Standard rate"
+msgstr "Standardní sazba"
+
+#: admin/views/parts/general.php:189
+msgid "Cash on delivery tax class"
+msgstr "Daňová třída dobírky"
+
+#: admin/views/parts/general.php:199
+msgid "Round Cash on delivery value to Hungary to multiples of five"
+msgstr "Zaokrouhlit dobírku do Maďarska na násobky pěti"
+
+#: admin/views/parts/general.php:208
+msgid "Yes"
+msgstr "Ano"
+
+#: admin/views/parts/general.php:209
+msgid "No"
+msgstr "Ne"
+
+#: admin/views/parts/general.php:211
+msgid "Keep Cash on delivery fee for orders with free shipping"
+msgstr "Zachovat poplatek za dobírku u objednávek s dopravou zdarma"
+
+#: admin/views/parts/general.php:221
+msgid "Disable cash on delivery if unavailable for the selected pickup point"
+msgstr "Zakázat dobírku, pokud není dostupná pro zvolené výdejní místo"
+
+#: admin/views/parts/general.php:228
+msgid "Cash on delivery"
+msgstr "Dobírka"
+
+#: admin/views/parts/general.php:243
+msgid "Set price incl. VAT"
+msgstr "Nastavovat cenu včetně DPH"
+
+#: admin/views/parts/general.php:250
+msgid "Price settings"
+msgstr "Nastavení ceny"
+
+#: admin/views/parts/general.php:268
+msgid "Default shipment weight"
+msgstr "Výchozí hmotnost zásilky"
+
+#: admin/views/parts/general.php:283
+msgid "Packaging weight in kg"
+msgstr "Hmotnost balení v kg"
+
+#: admin/views/parts/general.php:285
+msgid ""
+"It is included in the carrier's maximum weight limit and in the shipping "
+"cost based on weight."
+msgstr ""
+"Je zahrnuta do maximálního hmotnostního limitu dopravce a do ceny přepravy "
+"podle hmotnosti."
+
+#: admin/views/parts/general.php:292
+msgid "Weight settings"
+msgstr "Nastavení hmotnosti"
+
+#: admin/views/parts/general.php:304
+msgid "Activate a claim assistant"
+msgstr "Aktivovat reklamačního asistenta"
+
+#: admin/views/parts/general.php:313
+msgid "Create a return shipment along with a standard shipment"
+msgstr "Vytvořit zpětnou zásilku s vytvořením standardní zásilky"
+
+#: admin/views/parts/general.php:322
+msgid "Print labels for return and standard shipments together"
+msgstr "Tisknout štítky pro zpětné zásilky a standardní zásilky společně"
+
+#: admin/views/parts/general.php:331
+msgid "Track the status of return shipment along with the standard shipment"
+msgstr "Sledovat stav zpětné zásilky společně se standardní zásilkou"
+
+#: admin/views/parts/general.php:340
+msgid "Include return shipment in order status change based on package status"
+msgstr ""
+"Zahrnout zpětnou zásilku do změny stavu objednávky na základě stavu balíku"
+
+#: admin/views/parts/general.php:347
+msgid "Return shipment"
+msgstr "Zpětná zásilka"
+
+#: admin/views/parts/general.php:360
+msgid "Allow splitting into multiple shipments"
+msgstr "Povolit rozdělení do více zásilek"
+
+#: admin/views/parts/general.php:373
+msgid "Weight"
+msgstr "Hmotnost"
+
+#: admin/views/parts/general.php:374
+msgid "Longest side"
+msgstr "Nejdelší strana"
+
+#: admin/views/parts/general.php:375
+msgid "Sum of dimensions of all three sides"
+msgstr "Součet rozměrů všech tří stran"
+
+#: admin/views/parts/general.php:377
+msgid "Division by"
+msgstr "Rozdělit dle"
+
+#: admin/views/parts/general.php:438
+msgid "Disable pickup points filter by order weight"
+msgstr "Zakázat filtr výdejních míst podle hmotnosti objednávky"
+
+#: admin/views/parts/general.php:445
+msgid "Multiple shipments"
+msgstr "Vícenásobné zásilky"
+
+#: admin/views/parts/general.php:458
+msgid ""
+"Enable widget for address selection (Home delivery carriers in CZ and SK)"
+msgstr "Povolit widget pro výběr adresy (doručení domů v ČR a SR)"
+
+#: admin/views/parts/general.php:467
+msgid "Set address selection from HD widget as mandatory"
+msgstr "Nastavit výběr adresy z widgetu HD jako povinný"
+
+#: admin/views/parts/general.php:476
+msgid "Automatically open the pickup point widget when selecting shipping*"
+msgstr "Automaticky otevřít widget s výdejními místy při výběru dopravy*"
+
+#: admin/views/parts/general.php:485
+msgid "Right after shipping"
+msgstr "Ihned po dopravě"
+
+#: admin/views/parts/general.php:486
+msgid "Below shipping list"
+msgstr "Pod dopravním seznamem"
+
+#: admin/views/parts/general.php:488
+msgid "Pickup point widget button position*"
+msgstr "Umístění tlačítka widgetu pro výběr poboček*"
+
+#: admin/views/parts/general.php:498
+msgid ""
+"Enable selected pickup point check via JS. This can be possibly incomatible "
+"with your checkout theme."
+msgstr ""
+"Povolení kontroly vybraného místa vyzvednutí prostřednictvím JS. Může být "
+"nekompatibilní s vaší šablonou v pokladně."
+
+#: admin/views/parts/general.php:505
+msgid "*This setup is not applicable for block checkout."
+msgstr "*Toto nastavení se nevztahuje pro blokovou pokladnu."
+
+#: admin/views/parts/general.php:511
+msgid "Widget"
+msgstr "Widget"
+
+#: admin/views/parts/general.php:522
+msgid "This setup is not applicable for block checkout."
+msgstr "Toto nastavení se nevztahuje pro blokovou pokladnu."
+
+#: admin/views/parts/general.php:530
+msgid "Show icon next to shipping method"
+msgstr "Zobrazit ikonu vedle způsobu dopravy"
+
+#: admin/views/parts/general.php:539
+msgid "Display an icon next to the pickup point selection button at checkout"
+msgstr "Zobrazit ikonu v pokladně vedle tlačítka pro výběr výdejního místa"
+
+#: admin/views/parts/general.php:548
+msgid "Icon custom css"
+msgstr "Vlastní CSS pro ikonu"
+
+#: admin/views/parts/general.php:557
+msgid "Choose pickup logo custom css"
+msgstr "Vlastní CSS pro logo u výběru poboček"
+
+#: admin/views/parts/general.php:563
+msgid "Icons setup"
+msgstr "Nastavení ikon"
+
+#: admin/views/parts/general.php:576
+msgid "Deactivate pop-up for label printing"
+msgstr "Deaktivovat pop-up okno pro tisk štítků"
+
+#: admin/views/parts/general.php:592
+msgid "Default label type for Packeta"
+msgstr "Výchozí typ štítku pro Zásilkovnu"
+
+#: admin/views/parts/general.php:605
+msgid "Default Label Type for Other Carrier"
+msgstr "Výchozí typ štítku pro ostatní dopravce"
+
+#: admin/views/parts/general.php:615
+msgid "Text Before Shipment Number - Shipment Reference"
+msgstr "Text před číslem zásilky - reference na zásilku"
+
+#: admin/views/parts/general.php:625
+msgid "Text After Shipment Number - Shipment Reference"
+msgstr "Text za číslem zásilky - reference na zásilku"
+
+#: admin/views/parts/general.php:632
+msgid "*Possible shortcodes:"
+msgstr "*Možné proměnné:"
+
+#: admin/views/parts/general.php:633
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:206
+#: vendor/toret/toret-library/src/Log.php:188
+#: vendor/toret/toret-library/src/Log.php:250
+#: vendor/toret/toret-library/src/Log.php:486
+msgid "Order ID"
+msgstr "ID objednávky"
+
+#: admin/views/parts/general.php:634
+msgid "Order number"
+msgstr "Číslo objednávky"
+
+#: admin/views/parts/general.php:635
+msgid "Customer note"
+msgstr "Poznámka zákazníka"
+
+#: admin/views/parts/general.php:636
+msgid "iDoklad invoice document number"
+msgstr "iDoklad číslo dokumentu"
+
+#: admin/views/parts/general.php:637
+msgid "iDoklad invoice id"
+msgstr "iDoklad ID faktury"
+
+#: admin/views/parts/general.php:638
+msgid "iDoklad proforma document number"
+msgstr "iDoklad číslo proforma dokumentu"
+
+#: admin/views/parts/general.php:639
+msgid "iDoklad proforma id"
+msgstr "iDoklad ID proformy"
+
+#: admin/views/parts/general.php:640
+msgid "iDoklad proforma variable symbol"
+msgstr "iDoklad proforma variabilní symbol"
+
+#: admin/views/parts/general.php:647
+msgid "Package note visible on label*"
+msgstr "Poznámka viditelná na štítku*"
+
+#: admin/views/parts/general.php:656
+msgid "Shipment labels"
+msgstr "Štítky na zásilky"
+
+#: admin/views/parts/support.php:9
+#, php-format
+msgid "Do you need help? Check the %s or contact %s."
+msgstr "Potřebujete pomoc? Podívejte se do %s nebo kontaktujte %s."
+
+#: admin/views/parts/support.php:10
+msgid "documentation"
+msgstr "dokumentace"
+
+#: admin/views/parts/support.php:11
+msgid "support"
+msgstr "podpora"
+
+#: admin/views/parts/tracking.php:17
+msgid "Load parcel status automatically"
+msgstr "Automatické načítání stavu zásilky"
+
+#: admin/views/parts/tracking.php:19
+msgid ""
+"For automatic shipment status updates, set up CRON on the hosting server:"
+msgstr "Pro automatické načítání stavů zásilek nastavte na hostingu CRON:"
+
+#: admin/views/parts/tracking.php:26
+msgid "Check statuses manually"
+msgstr "Ruční kontrola stavů"
+
+#: admin/views/parts/tracking.php:41
+msgid "The number of days for which the order status will be checked back."
+msgstr "Počet dní, po které bude stav balíku zpětně kontrolován."
+
+#: admin/views/parts/tracking.php:43
+msgid "Number of days for back check"
+msgstr "Počet dní pro zpětnou kontrolu"
+
+#: admin/views/parts/tracking.php:54
+msgid "Do not check shipment status in these order statuses"
+msgstr "Nekontrolovat stav zásilky v těchto stavech objednávky"
+
+#: admin/views/parts/tracking.php:64
+msgid "Do not check the status of the package in these shipment states"
+msgstr "Nekontrolovat stav balíku v těchto stavech zásilky"
+
+#: admin/views/parts/tracking.php:71
+msgid "Packeta shipment status settings"
+msgstr "Nastavení sledování stavu zásilky"
+
+#: admin/views/parts/tracking.php:84
+msgid "Enable change of order status based on the parcel status"
+msgstr "Povolit změnu stavu objednávky na základě stavu zásilky"
+
+#: admin/views/parts/tracking.php:90
+msgid "Do not change"
+msgstr "Stav objednávky"
+
+#: admin/views/parts/tracking.php:109
+msgid "Order status change based on package status"
+msgstr "Změna stavu objednávky na základě stavu balíčku"
+
+#: checkout-blocks-initialize.php:52
+msgid "tzas-selected-branch"
+msgstr "tzas-selected-branch"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaFee.php:83
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:468
+msgid "Cash on delivery fee"
+msgstr "Poplatek za dobírku"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaFee.php:357
+msgid "Consignment insurance"
+msgstr "Pojištění zásilky"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:70
+msgid "Cash on Delivery"
+msgstr "Dobírka"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:71
+msgid "Allows customers to pay for goods on delivery (cash on delivery)."
+msgstr "Umožňuje zákazníkům platit zboží při doručení (na dobírku)."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:122
+#, php-format
+msgid "Any &quot;%1$s&quot; method"
+msgstr "Jakákoli &quot;%1$s&quot; metoda"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:135
+#, php-format
+msgid "%1$s (#%2$s)"
+msgstr "%1$s (#%2$s)"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:136
+#, php-format
+msgid "%1$s &ndash; %2$s"
+msgstr "%1$s &ndash; %2$s"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:136
+msgid "Other locations"
+msgstr "Další místa"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:154
+msgid "Allow cash on delivery"
+msgstr "Povolit dobírku"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:155
+msgid "Allow"
+msgstr "Povolit"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:161
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:137
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:177
+msgid "Title"
+msgstr "Titulek"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:163
+msgid "The name of the payment method that customers see when ordering."
+msgstr "Název způsobu platby, který uvidí zákazník na pokladně."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:164
+msgid "Payment on delivery"
+msgstr "Platba na dobírku"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:168
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:144
+msgid "Description"
+msgstr "Popisek"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:170
+msgid ""
+"Description of the payment method that will appear to the customer on the "
+"page."
+msgstr "Popis způsobu platby, který se zobrazí zákazníkovi na stránce."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:171
+msgid "Payment in cash after delivery."
+msgstr "Platba v hotovosti po doručení."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:174
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:151
+msgid "Instructions"
+msgstr "Instrukce"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:176
+msgid "Instructions that appear on a thank you page."
+msgstr "Instrukce, které se zobrazí na děkovné stránce."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:177
+msgid "Make payment only after the delivery of the goods."
+msgstr "Platbu proveďte až po doručení zboží."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:180
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:158
+msgid "Enable delivery method"
+msgstr "Povolit způsob dopravy"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:185
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:163
+msgid ""
+"If the cash on delivery is active, you can define the shipping methods here. "
+"To enable all modes of transport, leave the field empty."
+msgstr ""
+"Pokud je platba na dobírku aktivní, zde můžete definovat způsoby dopravy. "
+"Pro povolení všech způsobů dopravy zanechte pole prázdné."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:190
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:168
+msgid "Allow for countries"
+msgstr "Povolit pro země"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:195
+msgid "Choose which country the COD will be available for."
+msgstr "Vyberte, pro které země bude dobírka dostupná."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:200
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:178
+msgid "Order Status"
+msgstr "Stav objednávky"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:205
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:183
+msgid "Order status after payment."
+msgstr "Stav objednávky po platbě."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:210
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:211
+msgid "Calculate tax?"
+msgstr "Vypočítat daň?"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:213
+msgid "Calculate a tax for a C.O.D fee?"
+msgstr "Kalkulovat daň z poplatku za dobírku?"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:217
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:218
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:220
+msgid "Display cash on delivery if order price is 0"
+msgstr "Zobrazit dobírku, pokud je cena zásilky 0"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:490
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:492
+msgid "Payment on delivery."
+msgstr "Dobírka."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaGatewayDobirka.php:502
+msgid "The customer chose the cash on delivery"
+msgstr "Zákazník zvolil platbu na dobírku"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:106
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:139
+msgid "Bank transfer"
+msgstr "Bankovní převod"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:107
+msgid "Payments via bank account."
+msgstr "Platby bankovním převodem."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:131
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:128
+msgid "Enable / Disable"
+msgstr "Povolit / Zakázat"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:133
+msgid "Enable Bank Transfer"
+msgstr "Povolit platbu převodem"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:140
+msgid "Title the customer sees at the checkout."
+msgstr "Název, který zákazník uvidí při platbě."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:146
+msgid "Description of the payment method displayed at the checkout."
+msgstr "Popis způsobu platby, který se zobrazí v pokladně."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:147
+msgid ""
+"Make a payment by transferring to a bank account. Use Order ID to identify "
+"your payment. Your order will be sent after the payment has been made."
+msgstr ""
+"Platbu proveďte převodem na bankovní účet. Použijte ID objednávky pro "
+"identifikaci platby. Vaše objednávka bude odeslána po provedení platby."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:153
+msgid ""
+"The instructions will be displayed on the thank-you page and the checkout."
+msgstr "Instrukce budou zobrazeny na děkovné stránce a pokladně."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:173
+msgid "Select countries with available exchange rate."
+msgstr "Vyberte, pro které země bude převod dostupný."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:214
+msgid "Account details"
+msgstr "Detaily účtu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:220
+msgid "Account name"
+msgstr "Název účtu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:221
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:507
+msgid "Account number"
+msgstr "Číslo účtu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:222
+msgid "Name of bank"
+msgstr "Název banky"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:223
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:511
+msgid "Sort Code"
+msgstr "Variabilní číslo"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:224
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:515
+msgid "IBAN"
+msgstr "IBAN"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:225
+msgid "BIC / Swift"
+msgstr "BIC / Swift"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:231
+msgid "+ Add an account"
+msgstr "+ Přidat účet"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:233
+msgid "Delete Selected Account (Accounts)"
+msgstr "Smazat vybraný účet (účty)"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:494
+msgid "Bank account detail"
+msgstr "Detail bankovního účtu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:519
+msgid "BIC"
+msgstr "BIC"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:551
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaPlatbaNaUcet.php:553
+msgid "Awaiting completion of bank transfer"
+msgstr "Čeká se na dokončení bankovního převodu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:75
+msgid "Allow Packeta"
+msgstr "Povolit Zásilkovnu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:77
+msgid "Enable this method"
+msgstr "Povolit tento způsob"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:81
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:83
+msgid "The name of the carrier"
+msgstr "Název dopravce"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:87
+msgid "Packeta title"
+msgstr "Název Zásilkovny"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaShipping.php:89
+msgid "The text the customer sees"
+msgstr "Název, který se zobrazí zákazníkovi"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:22
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:24
+msgid "Error sending to Packeta"
+msgstr "Chyba při odesílání do Zásilkovny"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:23
+msgid "E-mail notification upon parcel error"
+msgstr "E-mailové upozornění v případě chyby při vytváření zásilky"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:25
+msgid "Error sending to Zasilkovna from {site_title} shop"
+msgstr "Chyba odeslání do Zásilkovny z obchodu {site_title}"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:117
+msgid "Plain text"
+msgstr "Prostý text"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:121
+msgid "HTML"
+msgstr "HTML"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:122
+msgid "Multipart"
+msgstr "Vícenásobné"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:130
+msgid "Enable this e-mail notification"
+msgstr "Povolit toto e-mailové upozornění"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:134
+msgid "Recipient(s)"
+msgstr "Příjemci"
+
+#. translators: %s: admin email
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:137
+#, php-format
+msgid ""
+"Enter recipient (separate with comma) of this e-mail. The default is %s."
+msgstr "Vložte příjemce (oddělené čárkou) pro tento email. Výchozí je %s."
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:143
+msgid "E-mail subject"
+msgstr "Předmět E-mailu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:149
+msgid "Email title"
+msgstr "Název e-mailu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:155
+msgid "E-mail type"
+msgstr "Typ e-mailu"
+
+#: includes/ToretZasilkovnaLib/ToretWooExtension/ToretZasilkovnaWcAdminErrorInfo.php:157
+msgid "Select the format."
+msgstr "Vyberte formát."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:59
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:93
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:108
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:133
+msgid "Order ID: "
+msgstr "ID objednávky: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:60
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:62
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:109
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:112
+msgid "Create shipment failed because the billing email address is not valid."
+msgstr ""
+"Vytvoření zásilky se nezdařilo, protože fakturační e-mailová adresa není "
+"platná."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:60
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:94
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:109
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:136
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:676
+msgid " Package "
+msgstr " Balíček "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:101
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:187
+msgid "Packeta API call: "
+msgstr "Packeta API volání: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:101
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:187
+msgid "Package"
+msgstr "Balíček"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:290
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaClaimTicket.php:308
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:709
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:730
+msgid "Shipment has not been saved with error:"
+msgstr "Zásilka nebyla uložena s chybou:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:50
+msgid "Invalid API response."
+msgstr "Neplatná odpověď API."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:217
+msgid "Carriers fetched successfully."
+msgstr "Přepravci byli úspěšně načteni."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:221
+msgid "Error while fetching carriers."
+msgstr "Chyba při načítání přepravců."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:226
+msgid "API key is not set."
+msgstr "API klíč není nastaven."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:299
+msgid "No orders to check."
+msgstr "Žádné objednávky ke kontrole."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:339
+msgid "No orders to process."
+msgstr "Žádné objednávky ke zpracování."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:340
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:430
+msgid "Orders skipped by order status:"
+msgstr "Objednávky přeskočené podle stavu objednávky:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:341
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:431
+msgid "Orders skipped by package status:"
+msgstr "Objednávky přeskočené podle stavu zásilky:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:392
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:400
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:410
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:420
+msgid "Packeta status change"
+msgstr "Změna stavu Zásilkovny"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:429
+msgid "Statuses checked:"
+msgstr "Kontrolované stavy:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCron.php:432
+msgid "Orders processed:"
+msgstr "Zpracované objednávky:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:199
+msgid "Check issues"
+msgstr "Kontrola problémů"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:216
+msgid "Invoice number is required!"
+msgstr "Číslo faktury je povinné!"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:225
+msgid "Invoice issue date is required!"
+msgstr "Datum vystavení faktury je povinné!"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:234
+msgid "Some order items miss customs code!"
+msgstr "Některým položkám objednávky chybí celní kód!"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:242
+msgid "Some order items miss product title in EN!"
+msgstr "U některých položek objednávky chybí název produktu v EN!"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaCustoms.php:251
+msgid "Some order items miss weight property!"
+msgstr "Některé položky objednávky postrádají váhu!"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:65
+msgid ""
+"A package for this carrier cannot be sent through the Packeta API. It must "
+"be added manually."
+msgstr ""
+"Balíček pro tohoto dopravce nelze odeslat prostřednictvím Packeta API. Musí "
+"být přidán ručně."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:69
+msgid ""
+"The carrier requires information about the package dimensions before send "
+"throught the Packeta API."
+msgstr ""
+"Dopravce vyžaduje informace o rozměrech balíku před odesláním "
+"prostřednictvím rozhraní Packeta API."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:98
+msgid "Active carrier"
+msgstr "Aktivovat dopravce"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:109
+msgid "Shipping name on the checkout page"
+msgstr "Název dopravce na stránce pokladny"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:118
+msgid "Shipping rate calculation type"
+msgstr "Typ výpočtu dopravy"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:121
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:451
+msgid "Flat rate"
+msgstr "Jednotná cena"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:122
+msgid "Weight-based"
+msgstr "Na základě hmotnosti"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:123
+msgid "Dimension-based"
+msgstr "Na základě rozměrů"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:124
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:452
+msgid "Total price-based"
+msgstr "Na základě ceny objednávky"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:139
+msgid "Unified price"
+msgstr "Jednotná cena"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:140
+msgid ""
+"The flat rate applies when no restrictions are set based on the weight, "
+"dimensions, or total price of the order."
+msgstr ""
+"Jednotná cena se použije, pokud nejsou nastaveny žádné limity podle "
+"hmotnosti, rozměrů nebo celkové ceny objednávky."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:151
+msgid "Flat rate in other currencies"
+msgstr "Paušální sazba v ostatních měnách"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:168
+msgid "Flat rate - "
+msgstr "Paušální sazba - "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:187
+msgid "Weight ABOVE"
+msgstr "Hmotnost OD"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:188
+msgid "Weight UP TO"
+msgstr "Hmotnost DO"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:189
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:204
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:218
+msgid "Rate "
+msgstr "Cena "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:191
+msgid "Add weight limit"
+msgstr "Přidat hmotnostní limit"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:192
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:207
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:221
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:533
+#: toret-zasilkovna.php:194
+msgid "Delete"
+msgstr "Vymazat"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:193
+msgid "Set prices based on weight"
+msgstr "Nastavení cen podle hmotnosti"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:202
+msgid "Dimension [m] ABOVE"
+msgstr "Rozměr [m] NAD"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:203
+msgid "Dimension [m]  UP TO"
+msgstr "Rozměr [m] DO"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:206
+msgid "Add dimension limit"
+msgstr "Přidat limit rozměru"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:208
+msgid "Set prices based on max dimension"
+msgstr "Nastavení cen na základě maximálního rozměru"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:216
+msgid "Total price ABOVE"
+msgstr "Celková cena NAD"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:217
+msgid "Total price UP TO"
+msgstr "Celková cena DO"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:220
+msgid "Add price limit"
+msgstr "Přidat cenový limit"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:222
+msgid "Set prices based on total price"
+msgstr "Nastavení cen na základě celkové ceny"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:243
+msgid "Maximum weight"
+msgstr "Maximální hmotnost"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:244
+msgid "Maximum weight allowed by this carrier is "
+msgstr "Maximální hmotnost povolená tímto dopravcem je "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:244
+msgid "kg"
+msgstr "kg"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:259
+msgid "Maximum cart total price"
+msgstr "Maximální celková cena košíku"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:260
+msgid ""
+"If the total cart value is exceeded, the shipping method will be hidden. "
+"Leave blank if not used."
+msgstr ""
+"Pokud je překročena celková hodnota košíku, doprava se skryje. Nevyužívá-li "
+"se, ponechte nastavení prázdné."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:270
+msgid "Allow the use of a coupon for free shipping"
+msgstr "Povolit použití kuponu na dopravu zdarma"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:280
+msgid "Enable package dimensions check"
+msgstr "Povolit kontrolu rozměrů balíku"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:281
+msgid ""
+"If the maximum size is exceeded, the shipping method will not be available "
+"at checkout and the package will noft be sent to the Zasilkovna system."
+msgstr ""
+"Pokud je maximální velikost překročena, způsob dopravy nebude při objednávce "
+"k dispozici a zásilka nebude odeslán do systému Zásilkovny."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:296
+msgid "Maximum size of one side."
+msgstr "Maximální velikost jedné strany."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:312
+msgid "Maximum value of the sum of three sides [m]"
+msgstr "Maximální hodnota součtu tří stran [m]"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:313
+msgid ""
+"If the maximum size is exceeded, the shipping method will be unavailable, "
+"and the shipment will not be sent to the Zásilkovna system."
+msgstr ""
+"Pokud je maximální velikost překročena, doprava nebude k dispozici a zásilka "
+"nebude odeslána do systému Zásilkovny."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:380
+msgid "Maximum Cash on Delivery value"
+msgstr "Maximální hodnota dobírky"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:381
+msgid ""
+"Maximum order value up to which the Cash on delivery will be displayed at "
+"checkout."
+msgstr ""
+"Maximální hodnota objednávky, do jejíž výše se u pokladny zobrazí dobírka."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:397
+msgid "Free shipping from"
+msgstr "Doprava zdarma od"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:398
+msgid ""
+"This is the sum of the prices of the products in the basket, tax included."
+msgstr "Jedná se o součet cen produktů v košíku včetně hodnoty daně."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:412
+msgid "Custom icon at checkout"
+msgstr "Vlastní ikona v pokladně"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:416
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:434
+msgid "Select icon"
+msgstr "Vybrat ikonu"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:430
+msgid "Custom pickup point select icon at checkout"
+msgstr "Vlastní ikona místa vyzvednutí v pokladně"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:448
+msgid "Cash on delivery fee calculation type"
+msgstr "Typ výpočtu poplatku za dobírku"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:469
+msgid ""
+"Make sure that Cash on delivery payment method is enabled. The flat rate "
+"applies when no restrictions are set based on the total price of the order."
+msgstr ""
+"Ujistěte se, že je povolen způsob platby na dobírku. Jednotná cena se "
+"použije, pokud nejsou nastaveny žádné limity podle celkové ceny objednávky."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:480
+msgid "Cash on delivery fee in other currencies"
+msgstr "Poplatek za dobírku v jiných měnách"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:497
+msgid "Cash on delivery fee - "
+msgstr "Poplatek za dobírku - "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:515
+msgid "Set the Cash on delivery fee based on the price"
+msgstr "Nastavení příplatku za dobírku na základě ceny"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:518
+msgid "Price UP TO"
+msgstr "Cena DO"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:519
+msgid "Extra fee"
+msgstr "Příplatek"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:539
+msgid "Add extra fee"
+msgstr "Přidat příplatek"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaDraw.php:546
+msgid "The carrier is not active."
+msgstr "Dopravce není aktivní."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:694
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:708
+msgid "Free"
+msgstr "Zdarma"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1080
+msgid "Awaiting delivery by the shop"
+msgstr "Čeká se na doručení obchodem"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1081
+msgid "Received"
+msgstr "Obdržené"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1082
+msgid "Ready for delivery"
+msgstr "Připravena k odeslání"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1083
+msgid "Order is being shipped"
+msgstr "Objednávka se odesílá"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1084
+msgid "Ready for pickup"
+msgstr "Připravena k výdeji"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1085
+msgid "Dispatched by carrier"
+msgstr "Odeslána přepravcem"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1086
+msgid "Delivered"
+msgstr "Úspěšně doručeno"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1087
+msgid "Refund"
+msgstr "Vracející se zásilka"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1088
+msgid "Returned to the consignor"
+msgstr "Vrácena odesílateli"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1089
+msgid "Shipment cancelled"
+msgstr "Zásilka zrušena"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1090
+msgid "The shipment has been received and is on its way to the depot"
+msgstr "Zásilka byla obdržena a je na cestě do depa"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1091
+msgid "Reverse packet has been accepted at our branch"
+msgstr "Reverzní zásilka byla přijata na naší pobočce"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1092
+msgid "Packeta Home made unsuccessful delivery attempt of packet"
+msgstr "Zásilkovna Domů provedla neúspěšný pokus o doručení balíčku"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1093
+msgid ""
+"Packeta Home delivery attempt of packet end in rejected by recipient response"
+msgstr ""
+"Zásilkovna Domů pokus o doručení balíčku skončil odmítnutím ze strany "
+"příjemce"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1094
+msgid "Packet rejected by recipient (non HD rejection)"
+msgstr "Balíček odmítnut příjemcem („non HD rejection“)"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1095
+msgid ""
+"Packeta Home delivery made unsuccessful delivery attempt of packet and there "
+"was no branch for redirection nearby."
+msgstr ""
+"Packeta Home delivery provedla neúspěšný pokus o doručení zásilky a v okolí "
+"nebyla žádná pobočka, kam by bylo možné zásilku přesměrovat."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1096
+msgid "Storage time expired and packet will be returned."
+msgstr "Doba skladování vypršela a balíček bude vrácen."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1097
+msgid ""
+"Packet was cancelled but it was consigned later on. Packet will be returned."
+msgstr "Balík byl zrušen, ale později byl odeslán. Balík bude vrácen."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1098
+msgid ""
+"Packet does not meet the shipping conditions (overlimit) and will be "
+"returned."
+msgstr "Balíček nesplňuje přepravní podmínky (overlimit) a bude vrácen."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1099
+msgid "Unsuccessful delivery attempt of packet into Z-BOX."
+msgstr "Neúspěšný pokus o doručení zásilky do Z-BOXu."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1100
+msgid ""
+"Last delivery attempt to the box has been made. A change in the delivery "
+"method will be required."
+msgstr ""
+"Byl proveden poslední pokus o doručení do schránky. Bude nutné změnit způsob "
+"doručení."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1101
+msgid "First delivery attempt made by external carrier."
+msgstr "První pokus o doručení proveden externím přepravcem."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1102
+msgid "Packet is currently being reviewed."
+msgstr "Balíček je v současné době revidován."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1103
+msgid "Review of the packet has been completed."
+msgstr "Kontrola balíčku byla dokončena."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1104
+msgid "Not exported to Packeta"
+msgstr "Není exportováno do Packeta"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1618
+msgid "(Z-Point, Z-Box)"
+msgstr "(Z-Point, Z-Box)"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1960
+msgid "Invoice number:"
+msgstr "Číslo faktury:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1968
+msgid "Invoice issue date (Y-m-d):"
+msgstr "Datum vystavení faktury (Y-m-d):"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1975
+msgid "Invoice"
+msgstr "Faktura"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1976
+msgid "EAD"
+msgstr "EAD"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1980
+msgid " file:"
+msgstr " soubor:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1984
+msgid "Select file"
+msgstr "Vybrat soubor"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:1986
+msgid "Upload to Packetka"
+msgstr "Odeslat do Zásilkovny"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2017
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2019
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2027
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2029
+msgid "Send to Packeta"
+msgstr "Odeslat do Zásilkovny"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2035
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2040
+msgid "Add information"
+msgstr "Přidat informace"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2038
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2043
+msgid "Complete the information"
+msgstr "Doplňte informace"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2049
+msgid "Width:"
+msgstr "Šířka:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2050
+msgid "Height:"
+msgstr "Výška:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2051
+msgid "Length:"
+msgstr "Délka:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2057
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2059
+msgid "Weight:"
+msgstr "Hmotnost:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2073
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2075
+msgid "Order total:"
+msgstr "Celková cena:"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2096
+msgid "Customs declaration is required. It must be added manually."
+msgstr "Vyžaduje se celní prohlášení. Musí být podáno ručně."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2148
+msgid "Weight threshold for division in kg"
+msgstr "Hmotnostní práh pro rozdělení v kg"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2149
+msgid "Longest side threshold for division in m"
+msgstr "Nejdelší strana prahu pro rozdělení v m"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaHelper.php:2150
+msgid "Sum of all three sides threshold for division in m"
+msgstr "Součet všech tří stran prahové hodnoty pro rozdělení v m"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:114
+msgid "No logs found"
+msgstr "Nebyly nalezeny žádné protokoly"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:207
+#: vendor/toret/toret-library/src/Log.php:186
+#: vendor/toret/toret-library/src/Log.php:249
+msgid "Date"
+msgstr "Datum"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaLog.php:208
+#: vendor/toret/toret-library/src/Log.php:189
+#: vendor/toret/toret-library/src/Log.php:251
+msgid "Context"
+msgstr "Kontext"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:48
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:63
+msgid "notice"
+msgstr "upozornění"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:49
+msgid ""
+"<strong>In order to the WooCommerce Packeta plugin to work, you need to "
+"install the WooCommerce plugin.</strong>"
+msgstr ""
+"<strong>Pro fungování pluginu WooCommerce Zásilkovna je nutné mít "
+"nainstalovaný plugin WooCommerce.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:64
+msgid ""
+"<strong>The plugin requires WooCommerce version 5.0 and newer to work "
+"properly. The plugin should be compatible with version 4.0., but we cannot "
+"guarantee it to work properly. We recommend you to update.</strong>"
+msgstr ""
+"<strong>Plugin vyžaduje pro správné fungování verzi WooCommerce 5.0 a vyšší. "
+"Plugin by měl být kompatibilní i s verzí 2.6., avšak správné fungování není "
+"garantováno. Doporučujeme aktualizovat.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:82
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:98
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:114
+msgid "warning"
+msgstr "upozornění"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:83
+msgid ""
+"<strong>The plugin requires active cURL library to work properly. Please "
+"contact your server administrator.</strong>"
+msgstr ""
+"<strong>Plugin vyžaduje aktivní cURL knihovnu pro správné fungování. Prosím "
+"kontaktujte vašeho správce serveru.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:99
+msgid ""
+"<strong>The plugin requires active Soap library to work properly. Please "
+"contact your server administrator.</strong>"
+msgstr ""
+"<strong>Plugin vyžaduje aktivní Soap knihovnu pro správné fungování. Prosím, "
+"kontaktujte vašeho správce serveru.</strong>"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:115
+msgid ""
+"The plugin requires activation of the license for proper operation. Please "
+"verify the license in the "
+msgstr ""
+"Plugin vyžaduje aktivaci licence pro správné fungování. Prosím, ověřte "
+"licenci v "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaNotices.php:115
+msgid "plugin settings"
+msgstr "nastavení pluginu"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:33
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:80
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:135
+msgid "Packeta - pick up point: "
+msgstr "Zásilkovna - výdejní místo: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:46
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:153
+msgid "Name: "
+msgstr "Jméno: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:50
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:155
+msgid "Place: "
+msgstr "Místo: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:54
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:157
+msgid "Street: "
+msgstr "Ulice: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:58
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:159
+msgid "City: "
+msgstr "Město: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:62
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:161
+msgid "ZIP code: "
+msgstr "PSČ: "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:106
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:109
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:165
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:168
+msgid "Show location details"
+msgstr "Zobrazit podrobnosti"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:214
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:218
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:221
+msgid "Failed to retrieve package status"
+msgstr "Nepodařilo se načíst stav balíčku."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:219
+msgid "Package status"
+msgstr "Stav balíku"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:243
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:271
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaOutputs.php:286
+msgid "Check log for details."
+msgstr "Zobrazit podrobnosti."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaPUC.php:53
+msgid "Every 12 hours"
+msgstr "Každých 12 hodin"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:94
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:98
+msgid ""
+"Create shipment failed because the package dimensions have exceeded the "
+"maximum value."
+msgstr ""
+"Vytvoření zásilky se nezdařilo, protože rozměry balíku překročily maximální "
+"hodnotu."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:134
+msgid ""
+"The shipment could not be created because the exchange rate has not been set "
+"in the plugin settings in the "
+msgstr ""
+"Zásilku nebylo možné vytvořit, protože v nastavení pluginu nebyl nastaven "
+"směnný kurz "
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:135
+msgid "'Exchange rates' tab"
+msgstr "v sekci „Směnné kurzy“"
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:655
+msgid "Package(s) sent to Zasilkovna."
+msgstr "Balík(y) odeslány do Zásilkovny."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSendTicket.php:676
+msgid "Packeta’s answer - searching for carrier id."
+msgstr "Odpověď Zásilkovny - zjišťuje se ID dopravce."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:92
+msgid "Your license has been activated."
+msgstr "Vaše licence byla aktivována."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:94
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:103
+msgid ""
+"Invalid license key.<br />Please contract support at <a href=\"https://"
+"www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"Neplatný licenční klíč.<br />Prosím kontaktujte podporu na webu <a "
+"href=\"https://www.toret.cz\">Toret.cz</a>."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:97
+msgid ""
+"Submitted license key does not correspond to the website's URL. <br />Please "
+"check your license key in section <a href=\"https://toret.cz/muj-ucet/\">My "
+"Account</a>. In case of other issues contact support at <a href=\"https://"
+"www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"Zadaný licenční klíč neodpovídá URL webu. <br />Prosím zkontrolujte si "
+"licenční klíč v sekci <a href=\"https://toret.cz/muj-ucet/\">Můj účet</a>. V "
+"případě dalších problémů kontaktujte podporu na webu <a href=\"https://"
+"www.toret.cz\">Toret.cz</a>."
+
+#: includes/ToretZasilkovnaLib/ToretZasilkovnaSettings.php:100
+msgid ""
+"You do not own the entered license key <br />Please contact support at <a "
+"href=\"https://www.toret.cz\">Toret.cz</a>."
+msgstr ""
+"Nemáte zadaný licenční klíč. <br />Prosím kontaktujte podporu na webu <a "
+"href=\"https://www.toret.cz\">Toret.cz</a>."
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:164
+msgid "Zásilkovna Z-Point"
+msgstr "Zásilkovna Z-Point"
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:164
+msgid "Zásilkovna Z-BOX"
+msgstr "Zásilkovna Z-BOX"
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:497
+msgid "General settings"
+msgstr "Hlavní nastavení"
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:499
+msgid "Automatic sending"
+msgstr "Automatické odesílání"
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:500
+msgid "Tracking"
+msgstr "Sledování"
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:516
+msgid "API password do not have correct length."
+msgstr "Heslo API nemá správnou délku."
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:520
+msgid "API password contains forbidden characters."
+msgstr "Heslo API obsahuje nepovolené znaky."
+
+#: includes/ToretZasilkovnaLib/toret-zasilkovna-functions.php:523
+msgid "The API password is probably not probably. Please check it. "
+msgstr "Heslo API pravděpodobně není. Zkontrolujte ho prosím. "
+
+#: includes/emails/zasilkovna-admin-error-info-plain.php:13
+#, php-format
+msgid "Error in sending parcel for order No.: %d"
+msgstr "Chyba odeslání zásilky pro objednávku č.: %d"
+
+#: includes/emails/zasilkovna-admin-error-info-plain.php:14
+#: includes/emails/zasilkovna-admin-error-info.php:17
+msgid "Parcel has not been entered into Packeta's system due to error:"
+msgstr ""
+"Zásilka objednávky nebyla vložena do systému Zásilkovny z důvodu chyby:"
+
+#: includes/emails/zasilkovna-admin-error-info.php:16
+#, php-format
+msgid "Error in sending parcel for order No.: %s"
+msgstr "Chyba při odesílání zásilky pro objednávku č.: %s"
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:56
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:56
+msgid "View details"
+msgstr "Zobrazit podrobnosti"
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:79
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:79
+#, php-format
+msgid "More information about %s"
+msgstr "Více informací o %s"
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:130
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:130
+msgid "Check for updates"
+msgstr "Zkontrolovat aktualizace"
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:217
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "Plugin %s je aktuální."
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:219
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:219
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "K dispozici je nová verze pluginu %s."
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:221
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:221
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "Nelze určit, zda jsou pro %s dostupné aktualizace."
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Plugin/Ui.php:227
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:227
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Neznámý stav kontroly aktualizací \"%s\""
+
+#: includes/plugin-update-checker-master/Puc/v5p5/Vcs/PluginUpdateChecker.php:113
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v5p6/Vcs/PluginUpdateChecker.php:113
+msgid "There is no changelog available."
+msgstr "Není k dispozici žádný seznam změn."
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:23
+msgid "Custom shipping method for: "
+msgstr "Vlastní způsob dopravy pro: "
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:171
+msgid "Enable/Disable"
+msgstr "Povolit / Zakázat"
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:173
+msgid "Enable this shipping method"
+msgstr "Povolit tento způsob dopravy"
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:179
+msgid "This controls the title which the user sees during checkout."
+msgstr "Ovládá nadpis, který se uživateli zobrazí při placení."
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:184
+msgid "Cost"
+msgstr "Cena"
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:186
+msgid "Cost of this shipping method."
+msgstr "Náklady na tento způsob přepravy."
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:191
+msgid "Tax status"
+msgstr "Stav daně"
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:196
+msgid "Taxable"
+msgstr "Zdanitelné"
+
+#: includes/shipping_methods/ToretZasilkovnaShippingTemplate.php:197
+msgctxt "Tax status"
+msgid "None"
+msgstr "Žádný"
+
+#: public/class-zasilkovna.php:149 public/class-zasilkovna.php:1461
+msgid "Select a pick-up point"
+msgstr "Vybrat výdejní místo"
+
+#: public/class-zasilkovna.php:156 public/class-zasilkovna.php:1512
+msgid "Select address"
+msgstr "Vybrat adresu"
+
+#: public/class-zasilkovna.php:229
+msgid "This plugin requires WooCommerce to be installed and active."
+msgstr "Tento plugin vyžaduje, aby byla nainstalována a aktivní WooCommerce."
+
+#: public/class-zasilkovna.php:411
+msgid "Please select a pick-up point."
+msgstr "Vyberte prosím výdejní místo."
+
+#: public/class-zasilkovna.php:730 public/class-zasilkovna.php:979
+#: public/class-zasilkovna.php:1003 public/class-zasilkovna.php:1032
+#: public/class-zasilkovna.php:1044 public/class-zasilkovna.php:1056
+#: public/class-zasilkovna.php:1266
+msgid ""
+"The branch selection service is currently unavailable. Please choose a "
+"different shipping option."
+msgstr ""
+"Možnost výběru pobočky není momentálně k dispozici. Vyberte prosím jinou "
+"možnost doručení."
+
+#: public/class-zasilkovna.php:771
+msgid "Selected pickup point"
+msgstr "Zvolené výdejní místo"
+
+#: public/class-zasilkovna.php:1131 public/class-zasilkovna.php:1317
+#: public/class-zasilkovna.php:1338 public/class-zasilkovna.php:1397
+msgid "Tracking link"
+msgstr "Odkaz na sledování"
+
+#: public/class-zasilkovna.php:1134
+msgid "Order Status in Packeta:"
+msgstr "Stav objednávky v Zásilkovně:"
+
+#: public/class-zasilkovna.php:1275
+msgid "Change pick-up point"
+msgstr "Změnit výdejní místo"
+
+#: public/class-zasilkovna.php:1307 public/class-zasilkovna.php:1329
+msgid "Track the shipment online: "
+msgstr "Sledujte zásilku online: "
+
+#: public/class-zasilkovna.php:1470
+msgid "Selected store"
+msgstr "Vybraný obchod"
+
+#: public/class-zasilkovna.php:1741
+msgid "Selected shipping method needs pick-up point to be selected."
+msgstr "Vybraný způsob přepravy vyžaduje výběr místa vyzvednutí."
+
+#: public/class-zasilkovna.php:1758
+msgid "The selected pick-up point is not valid for your shipping country."
+msgstr "Vybrané místo vyzvednutí není platné pro vaši zemi dodání."
+
+#: public/class-zasilkovna.php:1773
+msgid "Please select an address from Packeta widget."
+msgstr "Vyberte adresu z Packeta widgetu."
+
+#: public/class-zasilkovna.php:1998
+msgid "Auto ticket send failed - API not allowed"
+msgstr "Odeslání automatického štítku se nezdařilo – API není povoleno"
+
+#: public/class-zasilkovna.php:2045 public/class-zasilkovna.php:2084
+msgid "Auto ticket sent successfully"
+msgstr "Automatické odeslání štítku úspěšné"
+
+#: public/class-zasilkovna.php:2126
+msgid "Auto ticket send attempt completed"
+msgstr "Pokus o automatické odeslání štítku úspěšný"
+
+#: public/class-zasilkovna.php:2172
+msgid ": Free"
+msgstr ": Zdarma"
+
+#: toret-zasilkovna.php:455 toret-zasilkovna.php:481 toret-zasilkovna.php:507
+msgid "Package id: "
+msgstr "ID zásilky: "
+
+#: toret-zasilkovna.php:456 toret-zasilkovna.php:482 toret-zasilkovna.php:508
+msgid "Failed to cancel package. Error: "
+msgstr "Balíček se nepodařilo zrušit. Chyba: "
+
+#: vendor/toret/toret-library/src/Draw.php:627
+msgid "Select"
+msgstr "Vybrat"
+
+#: vendor/toret/toret-library/src/Log.php:185
+msgid "ID"
+msgstr "ID"
+
+#: vendor/toret/toret-library/src/Log.php:187
+#: vendor/toret/toret-library/src/Log.php:248
+msgid "Type"
+msgstr "Typ"
+
+#: vendor/toret/toret-library/src/Log.php:190
+msgid "Log Content"
+msgstr "Obsah logu"
+
+#: vendor/toret/toret-library/src/Log.php:229
+msgid "Error"
+msgstr "Chyba"
+
+#: vendor/toret/toret-library/src/Log.php:231
+msgid "Warning"
+msgstr "Upozornění"
+
+#: vendor/toret/toret-library/src/Log.php:233
+msgid "Success"
+msgstr "Úspěch"
+
+#: vendor/toret/toret-library/src/Log.php:236
+msgid "Info"
+msgstr "Informace"
+
+#: vendor/toret/toret-library/src/Log.php:257
+msgid "Log is empty"
+msgstr "Log je prázdný"
+
+#: vendor/toret/toret-library/src/Log.php:383
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] "%s položka"
+msgstr[1] "%s položky"
+msgstr[2] "%s položek"
+
+#: vendor/toret/toret-library/src/Log.php:404
+msgid "First page"
+msgstr "První strana"
+
+#: vendor/toret/toret-library/src/Log.php:415
+msgid "Previous page"
+msgstr "Předchozí stránka"
+
+#: vendor/toret/toret-library/src/Log.php:422
+#, php-format
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr "%1$s v %2$s"
+
+#: vendor/toret/toret-library/src/Log.php:437
+msgid "Next page"
+msgstr "Další stránka"
+
+#: vendor/toret/toret-library/src/Log.php:448
+msgid "Last page"
+msgstr "Poslední stránka"
+
+#: vendor/toret/toret-library/src/Log.php:462
+msgid "Are you sure you want to delete all logs? This action cannot be undone."
+msgstr "Opravdu chcete smazat všechny logy? Tuto akci nelze vrátit zpět."
+
+#: vendor/toret/toret-library/src/Log.php:468
+msgid "Delete all logs"
+msgstr "Smazat všechny logy"
+
+#: vendor/toret/toret-library/src/Log.php:485
+msgid "Filter by Order ID"
+msgstr "Filtrovat podle ID objednávky"
+
+#: vendor/toret/toret-library/src/Log.php:489
+msgid "Filter by Subscription ID"
+msgstr "Filtrovat podle ID předplatného"
+
+#: vendor/toret/toret-library/src/Log.php:490
+msgid "Subscription ID"
+msgstr "ID předplatného"
+
+#: vendor/toret/toret-library/src/Log.php:493
+msgid "Filter"
+msgstr "Filtr"
+
+#: vendor/toret/toret-library/src/Log.php:496
+msgid "Export CSV"
+msgstr "Export CSV"
+
+#: vendor/toret/toret-library/src/Log.php:500
+msgid "Clear Filter"
+msgstr "Zrušit filtr"
+
+#: vendor/toret/toret-library/src/Log.php:515
+msgid "All logs have been successfully deleted."
+msgstr "Všechny logy byly úspěšně odstraněny."
+
+#: vendor/toret/toret-library/src/SettingsFieldsTrait.php:606
+msgid "Edit"
+msgstr "Upravit"
+
+#. Plugin Name of the plugin/theme
+msgid "Toret Zásilkovna"
+msgstr "Toret Zásilkovna"
+
+#. Plugin URI of the plugin/theme
+msgid "https://toret.cz/produkt/woocommerce-zasilkovna/"
+msgstr "https://toret.cz/produkt/woocommerce-zasilkovna/"
+
+#. Description of the plugin/theme
+msgid "WooCommerce intergration plugin to connect to Packeta services."
+msgstr "WooCommerce integrační plugin pro napojení na služby Zásilkovny."
+
+#. Author of the plugin/theme
+msgid "Toret.cz"
+msgstr "Toret.cz"
+
+#. Author URI of the plugin/theme
+msgid "https://toret.cz"
+msgstr "https://toret.cz"
+
+#, php-format
+#~ msgid "%s položka"
+#~ msgid_plural "%s položek"
+#~ msgstr[0] "%s položka"
+#~ msgstr[1] "%s položky"
+#~ msgstr[2] "%s položek"
+
+#~ msgid "Save settings"
+#~ msgstr "Uložit nastavení"
+
+#~ msgid "Packeta settings"
+#~ msgstr "Nastavení Zásilkovny"
+
+#~ msgid "https://documentation.toret.cz/zasilkovna"
+#~ msgstr "https://documentation.toret.cz/zasilkovna"
+
+#~ msgid "Documentation and demo e-shop to try out the plugin"
+#~ msgstr "Dokumentace a demo e-shop pro vyzkoušení pluginu"
+
+#~ msgid "Send automatically"
+#~ msgstr "Odesílat automaticky"
+
+#~ msgid "Item"
+#~ msgstr "Produkt"
+
+#~ msgid "Price"
+#~ msgstr "Cena"
+
+#~ msgid "If the price is scaled by weight, the unified price must be entered."
+#~ msgstr ""
+#~ "Jednotnou cenu je nutné vyplnit i v případě škálování ceny podle váhy."
+
+#~ msgid ""
+#~ "Maximum weight allowed by Packeta is 15 kg. The limit can be increased "
+#~ "and allowed up to 30 kg in the main settings."
+#~ msgstr ""
+#~ "Maximální hmotnost povolená společností Zásilkovna je 15 kg. V hlavním "
+#~ "nastavení lze limit zvýšit a povolit až 30 kg."
+
+#~ msgid ""
+#~ "Maximum total cart price. Shipping method will be hidden if exceeded. "
+#~ "Leave empty if not applicable."
+#~ msgstr ""
+#~ "Maximální celková cena košíku. Pokud bude překročena, způsob dopravy se "
+#~ "skryje. Pokud se nepoužívá, ponechte prázdné."
+
+#~ msgid "Maximum size of one side"
+#~ msgstr "Maximální velikost jedné strany"
+
+#~ msgid "The maximum sum of the dimensions of all three sides of the package."
+#~ msgstr "Maximální součet rozměrů všech tří stran balení."
+
+#~ msgid "Make sure that Cash on delivery payment method is enabled."
+#~ msgstr "Ujistěte se, že je povolen způsob platby na dobírku."
+
+#~ msgid "Maximum C.O.D"
+#~ msgstr "Maximální výše dobírky"
+
+#~ msgid ""
+#~ "Maximum order value up to which the C.O.D will be displayed at checkout."
+#~ msgstr ""
+#~ "Maximální hodnota objednávky, do které bude při pokladně zobrazena "
+#~ "dobírka."
+
+#~ msgid "The carrier is not active. Enable it in the tab "
+#~ msgstr "Dopravce není aktivní. Povolit jej můžete v záložce "
+
+#~ msgid ""
+#~ "Please enter at least one rate. Otherwise, shipping will be for free!"
+#~ msgstr ""
+#~ "Vložte prosím alespoň jedno pravidlo. V opačném případě je doprava zdarma!"
+
+#~ msgid "Set the C.O.D. based on the price"
+#~ msgstr "Nastavit dobírku podle ceny"
+
+#~ msgid "Price FROM"
+#~ msgstr "Cena OD"
+
+#~ msgid ""
+#~ "A package for this carrier cannot be sent through the Packeta API because "
+#~ "it requires a separate customs declaration. It must be added manually."
+#~ msgstr ""
+#~ "Balík pro tohoto dopravce nelze odeslat prostřednictvím Zásilkovna API, "
+#~ "protože vyžaduje samostatnou celní deklaraci. Musí být podáno ručně."
+
+#~ msgid ""
+#~ "The carrier cannot be automatically sent to Packeta, because it requires "
+#~ "information about the package dimensions."
+#~ msgstr ""
+#~ "Dopravce nelze automaticky odesílat do Zásilkovny, protože vyžaduje "
+#~ "posílání informací o rozměrech balíku."
+
+#~ msgid ""
+#~ " The unified price must be entered even if the price is scaled by weight."
+#~ msgstr ""
+#~ " Jednotnou cenu je nutné vyplnit u i případě škálování ceny podle váhy."
+
+#~ msgid "Maximum allowed by Packeta is "
+#~ msgstr "Maximum povolené Zásilkovnou je "
+
+#~ msgid "kg."
+#~ msgstr "kg."
+
+#~ msgid ""
+#~ "If the maximum size is exceeded, the shipping method will not be "
+#~ "available at checkout and the package will not be sent to the Zasilkovna "
+#~ "system."
+#~ msgstr ""
+#~ "Pokud je překročena maximální velikost, způsob dopravy nebude v pokladně "
+#~ "dostupný a zásilka nebude odeslána do systému Zasilkovny."
+
+#~ msgid " Make sure you are using payment method "
+#~ msgstr " Ujistěte se, že využíváte platební metodu "
+
+#~ msgid " from the plugin."
+#~ msgstr " z pluginu."
+
+#~ msgid "This carrier does not accept cash on delivery"
+#~ msgstr "Tento dopravce nepřijímá dobírku"
+
+#~ msgid ""
+#~ " Maximum order value up to which the C.O.D fee will be displayed at "
+#~ "checkout."
+#~ msgstr ""
+#~ " Maximální hodnota objednávky, do které se bude v pokladně zobrazovat "
+#~ "poplatek za dobírku."
+
+#~ msgid ""
+#~ " This is the sum of the prices of the products in the basket, including "
+#~ "the tax, if set on the website."
+#~ msgstr ""
+#~ " Jedná se o součet cen produktů v košíku včetně hodnoty daně, je-li na "
+#~ "webu nastavena."
+
+#~ msgid "Your license is active."
+#~ msgstr "Vaše licence je aktivní."
+
+#~ msgid "Activate"
+#~ msgstr "Aktivuj"
+
+#~ msgid "The API password is not probably valid. Please check it."
+#~ msgstr "Heslo API není pravděpodobně platné, zkontrolujte jej."
+
+#~ msgid "Detailed guide, how to find it."
+#~ msgstr "Podrobný průvodce, kde to najít."
+
+#~ msgid "Show countries"
+#~ msgstr "Zobrazit země"
+
+#~ msgid "Start by loading the carriers"
+#~ msgstr "Začněte načtením dopravců"
+
+#~ msgid "Keep cash on delivery fee for orders with free shipping"
+#~ msgstr "Při dopravě zdarma ponechat příplatek za dobírku"
+
+#~ msgid ""
+#~ "Disable Cash on delivery payment method if not available for selected "
+#~ "pickup point"
+#~ msgstr ""
+#~ "Zakázat platbu na dobírku, pokud není pro vybrané místo vyzvednutí k "
+#~ "dispozici."
+
+#~ msgid "Round the C.O.D."
+#~ msgstr "Zaokrouhlit dobírku"
+
+#~ msgid "Up"
+#~ msgstr "Nahoru"
+
+#~ msgid "Down"
+#~ msgstr "Dolů"
+
+#~ msgid "Arithmetic rounding"
+#~ msgstr "Aritmetické zaokrouhlování"
+
+#~ msgid "Send email alerts about parcel creation errors"
+#~ msgstr "Odesílat upozornění e-mailem o chybě vytvoření zásilky"
+
+#~ msgid "Enable to increase weight from 15 to 30 kg for Packeta deliveries"
+#~ msgstr "Povolit zvýšení hmotnosti z 15 na 30 kg u balíčků Zásilkovny."
+
+#~ msgid "Default label type for external carriers"
+#~ msgstr "Výchozí typ štítku pro externí dopravce"
+
+#~ msgid ""
+#~ "Automatically display a map with pickup points when selecting a shipping "
+#~ "method"
+#~ msgstr ""
+#~ "Automaticky zobrazit mapu s výběrem výdejního místa při výběru dopravy"
+
+#~ msgid "Pickup point widget button position"
+#~ msgstr "Umístění tlačítka widgetu pro výběr poboček"
+
+#~ msgid "Text before package number (reference)"
+#~ msgstr "Text před číslem balíčku (odkaz)"
+
+#~ msgid "Text after package number (reference)"
+#~ msgstr "Text za číslem balíčku (odkaz)"
+
+#~ msgid "Activate CRON to load information about parcel status automatically:"
+#~ msgstr "Pro automatické načítání informací o stavu zásilky aktivujte CRON:"
+
+#~ msgid "Number of orders checked per CRON run"
+#~ msgstr "Počet zkontrolovaných objednávek na běh CRONu"
+
+#~ msgid ""
+#~ "Recommended setings is 20 per run. Do not set high run numbers because "
+#~ "Packeta can ban you."
+#~ msgstr ""
+#~ "Doporučené nastavení je 20 na běh. Nenastavujte vysoká čísla, protože vás "
+#~ "může Zásilkovna zabanovat."
+
+#~ msgid ""
+#~ "Do not check the status of the package in the following order statuses"
+#~ msgstr "Nekontrolovat stav zásilky v následujících stavech objednávky"
+
+#~ msgid "Do not set the C.O.D. fee based on the price"
+#~ msgstr "Vypnout nastavení příplatku za dobírku podle ceny"
+
+#~ msgid "Default package weight"
+#~ msgstr "Výchozí hmotnost balení"
+
+#~ msgid ""
+#~ "It will be automatically added to the weight of the products in the order "
+#~ "when sent to the Packeta."
+#~ msgstr ""
+#~ "Při odeslání do Zásilkovny bude automaticky přičteno k hmotnosti produktů "
+#~ "v objednávce."
+
+#~ msgid "Request claim right after package send to Packeta"
+#~ msgstr ""
+#~ "Zažádat o zpětný balík (Reklamační asistent) ihned po odeslání balíčku "
+#~ "Zásilkovny"
+
+#~ msgid "Print package and claim labels together"
+#~ msgstr ""
+#~ "Tisknout štítky pro balíčky a zpětné balíčky (Reklamační asistent) "
+#~ "společně"
+
+#~ msgid "Track status together with package"
+#~ msgstr "Sledovat stav vrácené zásilky společně s balíkem"
+
+#~ msgid "Include in order status change based on package status"
+#~ msgstr "Zahrnout do změny stavu objednávky na základě stavu balíčku"
+
+#~ msgid "Multiple packages"
+#~ msgstr "Více balíčků"
+
+#~ msgid "Enable division into multiple packages"
+#~ msgstr "Povolit rozdělení do více balíčků"
+
+#~ msgid "Threshold for division"
+#~ msgstr "Práh pro rozdělení"
+
+#~ msgid "Actions on Cash on Delivery and package value maximum allowed limits"
+#~ msgstr ""
+#~ "Akce týkající se dobírky a maximálních povolených limitů hodnoty balíku"
+
+#~ msgid "Hide CoD if cart total exceeds allowed maximum"
+#~ msgstr ""
+#~ "Skrýt dobírku, pokud celkový počet v košíku překročí povolené maximum"
+
+#~ msgid "Set package value to allowerd maximum if exceeded"
+#~ msgstr ""
+#~ "Nastavení hodnoty balíčku na maximální povolenou hodnotu, pokud je "
+#~ "překročena"
+
+#~ msgid "Widget for address selection (Home delivery carriers in CZ and SK)"
+#~ msgstr "Widget pro výběr adresy (doručení na adresu v ČR a SR)"
+
+#~ msgid "Enable widget"
+#~ msgstr "Povolit widget"
+
+#~ msgid "Set address selection as mandatory"
+#~ msgstr "Nastavit výběr adresy jako povinný"
+
+#~ msgid "Plugin log"
+#~ msgstr "Plugin log"
+
+#~ msgid "Invoice number source"
+#~ msgstr "Zdroj čísla faktury"
+
+#~ msgid "------"
+#~ msgstr "------"
+
+#~ msgid "Toret iDoklad"
+#~ msgstr "Toret iDoklad"
+
+#~ msgid "Toret Vyfakturuj"
+#~ msgstr "Toret Vyfakturuj"
+
+#~ msgid "Toret Fakturoid"
+#~ msgstr "Toret Fakturoid"
+
+#~ msgid "Invoice issued date source"
+#~ msgstr "Zdroj data vystavení faktury"
+
+#~ msgid "Order paid date"
+#~ msgstr "Datum zaplacení objednávky"
+
+#~ msgid "Set product EN title as original product name"
+#~ msgstr "Nastavení názvu produktu v EN jako původní název produktu"
+
+#~ msgid "Custom icons for pick-up points"
+#~ msgstr "Vlastní ikony u výdejních míst"
+
+#~ msgid "Change Packeta default icon in "
+#~ msgstr "Změnit výchozí ikonu Zásilkovny v "
+
+#~ msgid "Change default icon "
+#~ msgstr "Změnit výchozí ikonu "
+
+#~ msgid "No pick-up points enabled"
+#~ msgstr "Nemáte povolena žádná výdejní místa"
+
+#~ msgid "Custom icons for shipping methods"
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#~ msgid "Show icon at the checkout"
+#~ msgstr "Zobrazit ikonu v pokladně"
+
+#~ msgid "Show icon at the checkout next to Select pickup point button"
+#~ msgstr "Zobrazit ikonu v pokladně vedle tlačítka Vybrat místo vyzvednutí"
+
+#~ msgid "Icon custom css*"
+#~ msgstr "Vlastní CSS ikon*"
+
+#~ msgid "Choose pickup logo custom css*"
+#~ msgstr "Vlastní CSS pro logo u výběru poboček*"
+
+#~ msgid "Change of order status"
+#~ msgstr "Změna stavu objednávky"
+
+#~ msgid "Exchange rate"
+#~ msgstr "Kurz měny"
+
+#~ msgid "USD"
+#~ msgstr "USD"
+
+#~ msgid "Leu"
+#~ msgstr "Leu"
+
+#~ msgid ""
+#~ "Turn off exchange rate (COD will be sent in the currency of the order)"
+#~ msgstr "Vypnout konverzi měn (dobírka se bude odesílat v měně objednávky)"
+
+#~ msgid "Country"
+#~ msgstr "Země"
+
+#~ msgid "Enabled currency"
+#~ msgstr "Povolená měna"
+
+#~ msgid "Enable automatic sending to Packeta"
+#~ msgstr "Povolit automatické odesílání do Zásilkovny"
+
+#~ msgid ""
+#~ "Please note: the order should be sent to the Packeta system only when you "
+#~ "are ready to submit the parcel."
+#~ msgstr ""
+#~ "Upozornění: Do systému Zásilkovny by se měla objednávka odeslat až ve "
+#~ "chvíli, kdy jste připraveni balík podat."
+
+#~ msgid "Payment method"
+#~ msgstr "Způsob platby"
+
+#~ msgid "Loading carriers"
+#~ msgstr "Načítám dopravce"
+
+#~ msgid "Load carriers automatically"
+#~ msgstr "Načítat dopravce automaticky"
+
+#~ msgid "Activate CRON to load carrier information automatically:"
+#~ msgstr "CRON pro automatické načítání dopravců:"
+
+#~ msgid "Pick-up points"
+#~ msgstr "Výdejní místa"
+
+#~ msgid "Carrier"
+#~ msgstr "Přepravce"
+
+#~ msgid "Active"
+#~ msgstr "Aktivní"
+
+#~ msgid "Delivery to address"
+#~ msgstr "Doručení na adresu"
+
+#~ msgid "Failed to download carriers data."
+#~ msgstr "Nepodařilo se stáhnout data dopravců."
+
+#~ msgid "Carriers were updated. You may close this window."
+#~ msgstr "Dopravci byli aktualizování. Můžete zavřít okno."
+
+#~ msgid "Packeta's API key has not been entered."
+#~ msgstr "Není vyplněn API klíč Zásilkovny."
+
+#~ msgid "No orders to update based on current criteria."
+#~ msgstr "Žádné objednávky k aktualizaci na základě aktuálních kritérií."
+
+#~ msgid "No orders to update after filtering."
+#~ msgstr "Po filtrování není třeba aktualizovat žádné objednávky."
+
+#~ msgid "Package statuses were updated. You may close this window."
+#~ msgstr "Stavy balíčků byly aktualizovány. Toto okno můžete zavřít."
+
+#~ msgid "Unknown"
+#~ msgstr "Neznámý"
+
+#~ msgid "Enabled"
+#~ msgstr "Povolit"
+
+#~ msgid "Fee label"
+#~ msgstr "Popis příplatku"
+
+#~ msgid "Rate"
+#~ msgstr "Cena"
+
+#~ msgid "Scope "
+#~ msgstr "Rozsah "
+
+#~ msgid "Visible at the checkout "
+#~ msgstr "Viditelné v pokladně "
+
+#~ msgid "Product"
+#~ msgstr "Produkt"
+
+#~ msgid "Category"
+#~ msgstr "Kategorie"
+
+#~ msgid "Variation"
+#~ msgstr "Variace"
+
+#~ msgid "Global"
+#~ msgstr "Globální"
+
+#~ msgid "Visible"
+#~ msgstr "Viditelné"
+
+#~ msgid "Hidden"
+#~ msgstr "Skryté"
+
+#~ msgid "No custom fee has been entered."
+#~ msgstr "Nebyl zadán žádný vlastní příplatek."
+
+#~ msgid "Add fee"
+#~ msgstr "Přidat příplatek"
+
+#~ msgid "Category fee scope:"
+#~ msgstr "Rozsah příplatků kategorie:"
+
+#~ msgid "No fees with limited category scope available."
+#~ msgstr "Nejsou k dispozici žádné příplatky s omezeným rozsahem kategorií."
+
+#~ msgid "Product variation fees:"
+#~ msgstr "Příplatek za variantu produktu:"
+
+#~ msgid "No fees with product variation scope available."
+#~ msgstr "Žádné poplatky s omezením na variantu produktu nejsou dostupné."
+
+#~ msgid "Product scoped fees:"
+#~ msgstr "Poplatky za produkt:"
+
+#~ msgid "No fees with product scope available."
+#~ msgstr "Nejsou k dispozici žádné poplatky s rozsahem produktu."
+
+#~ msgid "Spain"
+#~ msgstr "Španělsko"
+
+#~ msgid "Portugal"
+#~ msgstr "Portugalsko"
+
+#~ msgid "Ireland"
+#~ msgstr "Irsko"
+
+#~ msgid "Finland"
+#~ msgstr "Finsko"
+
+#~ msgid "Sweden"
+#~ msgstr "Švédsko"
+
+#~ msgid "Estonia"
+#~ msgstr "Estonsko"
+
+#~ msgid "Lithuania"
+#~ msgstr "Litva"
+
+#~ msgid "Latvia"
+#~ msgstr "Lotyšsko"
+
+#~ msgid "Malta"
+#~ msgstr "Malta"
+
+#~ msgid "Croatia"
+#~ msgstr "Chorvatsko"
+
+#~ msgid "Italy"
+#~ msgstr "Itálie"
+
+#~ msgid "Luxembourg"
+#~ msgstr "Lucembursko"
+
+#~ msgid "Greece"
+#~ msgstr "Řecko"
+
+#~ msgid "Slovenia"
+#~ msgstr "Slovinsko"
+
+#~ msgid "Belgium"
+#~ msgstr "Belgie"
+
+#~ msgid "France"
+#~ msgstr "Francie"
+
+#~ msgid "Netherlands"
+#~ msgstr "Nizozemsko"
+
+#~ msgid "United Kingdom"
+#~ msgstr "Velká Británie"
+
+#~ msgid "Switzerland"
+#~ msgstr "Švýcarsko"
+
+#~ msgid "Monday"
+#~ msgstr "Pondělí"
+
+#~ msgid "Tuesday"
+#~ msgstr "Úterý"
+
+#~ msgid "Wednesday"
+#~ msgstr "Středa"
+
+#~ msgid "Thursday"
+#~ msgstr "Čtvrtek"
+
+#~ msgid "Friday"
+#~ msgstr "Pátek"
+
+#~ msgid "Saturday"
+#~ msgstr "Sobota"
+
+#~ msgid "Sunday"
+#~ msgstr "Neděle"
+
+#~ msgid "(incl. VAT)"
+#~ msgstr "(vč. DPH)"
+
+#~ msgid "(excl. VAT)"
+#~ msgstr "(bez DPH)"
+
+#~ msgid "Icon for: "
+#~ msgstr "Ikona pro: "
+
+#~ msgid "Upload"
+#~ msgstr "Nahrát"
+
+#~ msgid "Reverse packet has been accepted at our branch."
+#~ msgstr "Zpětná zásilka byla přijata na naší pobočce."
+
+#~ msgid "Packeta Home made unsuccessful delivery attempt of packet."
+#~ msgstr "Zásilkovna Domů se neúspěšně pokusila doručit zásilku."
+
+#~ msgid ""
+#~ "Packeta Home delivery attempt of packet end in rejected by recipient "
+#~ "response."
+#~ msgstr ""
+#~ "Zásilkovna Domů pokus o doručení balíčku skončil odmítnutím ze strany "
+#~ "příjemce."
+
+#~ msgid "Get Status error"
+#~ msgstr "Získat stav chyby"
+
+#~ msgid "Create shipment"
+#~ msgstr "Vytvořit zásilku"
+
+#~ msgid "Store ID: "
+#~ msgstr "ID obchodu: "
+
+#~ msgid "Create shipment."
+#~ msgstr "Vytvořit zásilku."
+
+#~ msgid "Data sent"
+#~ msgstr "Data odeslána"
+
+#~ msgid "Packeta's answer."
+#~ msgstr "Odpověď Zásilkovny."
+
+#~ msgid "Track the shipment online"
+#~ msgstr "Sledovat zásilku online"
+
+#~ msgid "The carrier cannot be automatically sent to Packeta."
+#~ msgstr "Dopravce nelze automaticky odeslat do služby Packeta."
+
+#~ msgid "Shipping method"
+#~ msgstr "Dopravní metoda"
+
+#~ msgid "Need help? You can find documentation "
+#~ msgstr "Potřebujete pomoc? Můžete najít dokumentaci "
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Ae aramex hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for At dpd hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Change shipping method to:"
+#~ msgid "Custom shipping method for Bg econt box."
+#~ msgstr "Změnit způsob dopravy na:"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Bg econt hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Bg econt pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Bg sameday box."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Bg sameday hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Bg speedy hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Bg speedy pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for De hermes hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for De hermes pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Ready for delivery"
+#~ msgid "De home delivery hd"
+#~ msgstr "Připravena k odeslání"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Dk post nord hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Dk post nord pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Ee omniva hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Ee omniva pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Es correos hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Es mrw hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Es mrw pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Fi post nord hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Fi post nord pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Fr colissimo hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Fr colissimo pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Gr acs hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Gr acs pp."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Gr speedex hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Hu foxpost box."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Packeta log"
+#~ msgid "Packeta zbox cz"
+#~ msgstr "Zásilkovna log"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zbox cz."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta log"
+#~ msgid "Packeta zbox hu"
+#~ msgstr "Zásilkovna log"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zbox hu."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta log"
+#~ msgid "Packeta zbox pl"
+#~ msgstr "Zásilkovna log"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zbox pl."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta log"
+#~ msgid "Packeta zbox ro"
+#~ msgstr "Zásilkovna log"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zbox ro."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta log"
+#~ msgid "Packeta zbox sk"
+#~ msgstr "Zásilkovna log"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zbox sk."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta Z-Point"
+#~ msgid "Packeta zpoints cz"
+#~ msgstr "Packeta Z-Point"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zpoints cz."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta Z-Point"
+#~ msgid "Packeta zpoints hu"
+#~ msgstr "Packeta Z-Point"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zpoints hu."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta Z-Point"
+#~ msgid "Packeta zpoints pl"
+#~ msgstr "Packeta Z-Point"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zpoints pl."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta Z-Point"
+#~ msgid "Packeta zpoints ro"
+#~ msgstr "Packeta Z-Point"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zpoints ro."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Packeta Z-Point"
+#~ msgid "Packeta zpoints sk"
+#~ msgstr "Packeta Z-Point"
+
+#, fuzzy
+#~| msgid "Free shipping only for Packeta"
+#~ msgid "Custom shipping method for Packeta zpoints sk."
+#~ msgstr "Doprava zdarma jen pro Zásilkovnu"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Ro cargus hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Ro sameday box."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Ro sameday hd."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#, fuzzy
+#~| msgid "Pick-up points"
+#~ msgid "Z points"
+#~ msgstr "Výdejní místa"
+
+#, fuzzy
+#~| msgid "Custom icons for shipping methods"
+#~ msgid "Custom shipping method for Z points."
+#~ msgstr "Vlastní ikony pro způsoby dopravy"
+
+#~ msgid "Shipping methods setup"
+#~ msgstr "Nastavení způsobů přepravy"
+
+#~ msgid "WooCommerce settings"
+#~ msgstr "WooCommerce nastavení"
+
+#~ msgid "Print labels (Packeta)"
+#~ msgstr "Vytisknout štítky (Zásilkovna)"
+
+#~ msgid "Print claim labels (Packeta)"
+#~ msgstr "Vytisknout reklamační štítky (Zásilkovna)?"
+
+#~ msgid "Send in bulk to Packeta"
+#~ msgstr "Hromadné odeslání do Zásilkovny"
+
+#~ msgid "Add to order status changes based on shipment status"
+#~ msgstr "Přidat do změny stavu objednávky na základě stavu balíčku"
+
+#~ msgid "Packeta claim status"
+#~ msgstr "Stav zpětné zásilky"
+
+#~ msgid "Customs declaration is required"
+#~ msgstr "Vyžaduje se celní prohlášení"
+
+#~ msgid "Print claim label"
+#~ msgstr "Tisk reklamačního štítku"
+
+#~ msgid "Track claim package: "
+#~ msgstr "Sledovat zpětnou zásilku: "
+
+#~ msgid ""
+#~ "* This action will delete all data related to the Zasilkovna package."
+#~ msgstr "* Tato akce odstraní všechna data týkající se Zásilkovna balíčku."
+
+#~ msgid "Data update is required"
+#~ msgstr "Je vyžadována aktualizace dat"
+
+#~ msgid ""
+#~ "Plugin data must be updated to complete the update. As this is a large "
+#~ "update, we recommend checking the Toret Packeta plugin settings "
+#~ "afterwards, especially enabling the shipping method Pick-up points in "
+#~ "section "
+#~ msgstr ""
+#~ "Pro dokončení aktualizace je potřeba aktualizovat data pluginu. Protože "
+#~ "se jedná o rozsáhlou aktualizaci, doporučujeme poté zkontrolovat "
+#~ "nastavení pluginu Toret Zásilkovna, především pak povolení dopravní "
+#~ "metody Výdejní místa v sekci "
+
+#~ msgid "Update"
+#~ msgstr "Aktualizovat"
+
+#~ msgid "Learn more"
+#~ msgstr "Zjistit více"
+
+#~ msgid "Please select a store for selected shipping option"
+#~ msgstr "Vyberte prosím obchod pro vybranou možnost přepravy"
+
+#~ msgid "Please select a store for selected shipping country"
+#~ msgstr "Vyberte prosím obchod pro vybranou zemi dodání"
+
+#~ msgid "Packeta Z-BOX"
+#~ msgstr "Packeta Z-BOX"
+
+#~ msgid "Forint"
+#~ msgstr "Forint"
+
+#~ msgid "Zloty"
+#~ msgstr "Zloty"
+
+#~ msgid "Do not set price according to the weight"
+#~ msgstr "Vypnout nastavení ceny podle váhy"
+
+#~ msgid ""
+#~ "Check the Packeta shipping methods, which you want to disable for this "
+#~ "category."
+#~ msgstr ""
+#~ "Zaškrtněte způsoby dopravy Zásilkovny, které chcete pro tuto kategorii "
+#~ "zakázat."
+
+#~ msgid ""
+#~ "Check the Packeta shipping methods, for which you want to have free "
+#~ "shipping if product is in the cart."
+#~ msgstr ""
+#~ "Zaškrtněte způsoby dopravy Zásilkovny, pro které chcete mít dopravu "
+#~ "zdarma, pokud je produkt v košíku."
+
+#~ msgid ""
+#~ "Check the Packeta shipping methods, which you want to disable for this "
+#~ "option."
+#~ msgstr ""
+#~ "Zaškrtněte způsoby dopravy Zásilkovny, které chcete pro tuto variantu "
+#~ "zakázat."
+
+#~ msgid "Installed plugins"
+#~ msgstr "Nainstalované pluginy"
+
+#~ msgid "Version"
+#~ msgstr "Verze"
+
+#~ msgid "Current version"
+#~ msgstr "Aktuální verze"
+
+#~ msgid "Licence"
+#~ msgstr "Licence"
+
+#~ msgid "Changelog"
+#~ msgstr "Changelog"
+
+#~ msgid "VIEW MY ACCOUNT"
+#~ msgstr "ZOBRAZIT MŮJ ÚČET"
+
+#~ msgid "CONTACT SUPPORT"
+#~ msgstr "KONTAKTOVAT PODPORU"
+
+#~ msgid "Boost your e-shop with our other plugins"
+#~ msgstr "Vylepšete si e-shop pomocí našich dalších pluginů"
+
+#~ msgid "BUY&nbsp;PLUGIN"
+#~ msgstr "KOUPIT&nbsp;PLUGIN"

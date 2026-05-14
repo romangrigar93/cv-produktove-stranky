@@ -1,0 +1,84 @@
+.tzas-label-img {
+    max-width: 25px;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    bottom: -6px;
+}
+
+#shipping_method .zas-tlac {
+    margin-top: 10px;
+}
+
+.zasikovna-ico img {
+    max-width:150px!important;
+}
+
+.tzzas-block-parcelshops .zas-pop-kont {
+   margin-top: 10px;
+}
+/* Nastavíme kontejner na flex s wrapem */
+.tzzas-block-parcelshops{
+    --gap: 12px; /* můžeš měnit mezeru na jednom místě */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: var(--gap);
+}
+
+/* Základní reset šířek uvnitř pluginových wrapperů */
+.tzzas-block-parcelshops .wc-block-components-text-input{
+    box-sizing: border-box;
+    width: auto; /* přebije případné width:100% z pluginu */
+}
+
+/* 1) .tzas-message přes celou šířku (první řádek) */
+.tzzas-block-parcelshops .wc-block-components-text-input.tzas-message{
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 0;
+}
+
+/* 2) .tzas-data má být 100% - 165px a na stejném řádku s tlačítkem */
+.tzzas-block-parcelshops .wc-block-components-text-input.tzas-data{
+    /* přesná šířka vůči pevnému tlačítku + mezera (gap) */
+    width: calc(100% - 165px - var(--gap));
+    flex: 0 0 calc(100% - 165px - var(--gap));
+    min-width: 0; /* aby se správně smrskával obsah */
+    margin-top: 0;
+}
+
+/* Tlačítko pevně 165px (druhý řádek vpravo) */
+#zas-pop-kont{
+    flex: 0 0 165px;
+    width: 165px;
+}
+
+/* jednotná výška 50 px */
+.tzzas-block-parcelshops input[type="text"],
+#zas-pop-kont{
+    box-sizing: border-box;
+    height: 50px;
+    line-height: 50px; /* pro vertikální zarovnání textu */
+    padding: 0 12px; /* vodorovné odsazení */
+    margin-top:0;
+}
+
+/* pokud plugin používá “plovoucí” labely, ať nepřekáží výšce */
+.tzzas-block-parcelshops .wc-block-components-text-input{
+    min-height: 25px;
+}
+
+/* (volitelné) sjednotit velikost písma tlačítka s inputem */
+#zas-pop-kont{
+    font-size: 16px;
+}
+
+.wc-block-components-checkout-step__container #zas-pop-kont {
+    color: white;
+    background: #A90034;
+}
+
+.wc-block-components-checkout-step__container #zas-pop-kont:hover {
+    background: #491217;
+}

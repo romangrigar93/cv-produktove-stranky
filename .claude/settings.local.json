@@ -8,7 +8,11 @@
       "Bash(dir:*)",
       "WebFetch(domain:czechvirus.cz)",
       "Bash(php -r \":*)",
-      "Bash(\"/c/xampp/php/php.exe\" -r \":*)"
+      "Bash(\"/c/xampp/php/php.exe\" -r \":*)",
+      "Bash(mv \"0f2b2ddc-97d0-4566-8312-8d59356f6d0d.JPG\" \"sample-pack-unboxed.jpg\")",
+      "Bash(mv \"1ca3cd22-b356-47f5-ad7e-b2388d4a4207.JPG\" \"sample-pack-sachets.jpg\")",
+      "Bash(mv \"78ce304c-72ef-4bf7-b411-e2833447b77c.JPG\" \"sample-pack-boxes.jpg\")",
+      "WebFetch(domain:giants-live.com)"
     ]
   }
 }

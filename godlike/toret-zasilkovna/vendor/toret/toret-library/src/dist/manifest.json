@@ -1,0 +1,11 @@
+{
+  "src/assets/js/toret-settings.js": {
+    "file": "assets/admin-CVTOq_4F.js",
+    "name": "admin",
+    "src": "src/assets/js/toret-settings.js",
+    "isEntry": true,
+    "css": [
+      "assets/admin-0RbccGLz.css"
+    ]
+  }
+}

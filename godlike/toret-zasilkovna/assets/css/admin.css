@@ -1,0 +1,284 @@
+:root {
+    --koverzni: #00c9a5;
+    --zakladni: #22134A;
+    --hlavni: #22134A;
+    --svetla: #ffffff;
+    --bg-svetle: #FCF7FF;
+    --bg-tmave: #533E7B;
+    --bg-ruzova: #FAEAFF;
+    --warning: #b5415e;
+}
+
+.toret-zasilkovna-produkt-admin,
+.toret-zasilkovna-category {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0 15px 15px;
+}
+
+.toret-zasilkovna-produkt-admin label {
+    width: 250px !important;
+}
+
+.toret-zasilkovna-category label {
+    width: 250px !important;
+    float: left;
+}
+
+.toret-single-print .toret-popup-label, .toret-detail-print .toret-popup-label, .toret-orders-multi .toret-popup-label {
+    width: 100%;
+    display: inline-block;
+}
+
+.toret-orders-multi .toret-popup-label select {
+    float: right;
+    max-width: 70%;
+    margin-right: 0;
+}
+
+.toret-orders-multi button {
+    margin-bottom: 0;
+}
+
+.toret-popup-inner {
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.zasilkovna-customs-warning {
+    color: var(--koverzni);
+    font-weight: 500;
+}
+
+.toret-popup-print {
+    background: transparent;
+}
+
+.tzas-ulozit {
+    padding: 5px 20px;
+    border: 1px solid var(--zakladni);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: var(--bg-tmave);
+    cursor: pointer;
+}
+
+.tzas-ulozit:hover{
+    padding: 5px 20px;
+    background-color: var(--hlavni);
+    color: var(--svetla);
+}
+
+.toret-input-weight {
+    width: 60px;
+    border-radius: 0 !important;
+    margin-right: -1px !important;
+    height: 30px;
+}
+
+.zasilkovna-sledovani {
+    line-height: 2.5em;
+}
+.toret-popup, .toret-popup-print {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: auto;
+    padding-top: 200px;
+}
+
+.toret-popup-inner {
+    background: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    padding: 25px;
+}
+
+.toret-popup-label {
+    width: 33%;
+    display: block;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+
+.toret-popup-label input, .toret-popup-label select {
+    float: right;
+    position: relative;
+    width: 80px;
+    height: 30px;
+}
+
+.toret-popup-label select {
+    width: 70%;
+}
+
+.toret-popup-close, .toret-popup-print-close {
+    float: right;
+}
+
+.toret-popup-close,
+.toret-popup-save,
+.toret-popup-print-close,
+.toret-popup-print-save {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.toret-customs-popup-save {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.toret-popup-error {
+    border: 1px solid red !important;
+}
+
+.toret-popup-title {
+    margin-top: 0;
+}
+
+.zasilkovna-metabox-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.zasilkovna-order-input {
+    width: 100%;
+}
+
+.tzas-oversized {
+    color: var(--koverzni);
+}
+
+.tzas-oversized-column {
+    color: var(--koverzni);
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.zasilkovna-metabox-customs {
+    background: #f6f6f6;
+    padding: 4px 6px;
+    border: 1px;
+    border-radius: 4px;
+}
+
+.zasilkovna-metabox-customs .tzas-invoice-number_field, .zasilkovna-metabox-customs .tzas-invoice-date_field {
+    margin-top: 2px !important;
+    margin-bottom: 4px !important;
+}
+
+.toret-popup-inner-customs {
+    padding: 0;
+}
+
+.toret-popup-inner-customs-metabox {
+    padding: 0 12px;
+}
+
+.zasilkovna-customs-title {
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+
+.zasilkovna-customs-group {
+    margin-top: 5px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.zasilkovna-customs-buttons {
+    margin-top: 10px;
+}
+
+.choose_storage_file, .zasilkovna-upload-storage {
+    width: auto !important;
+    margin-bottom: 0 !important;
+    height: 20px !important;
+    padding: 0 !important;
+}
+
+.zasilkovna-file-input-wrap {
+    margin: 3px 0;
+}
+
+#tzas-invoice-number {
+    width: 100% !important;
+}
+
+#tzas-invoice-date {
+    width: 100% !important;
+}
+
+.toret-customs-info-metabox {
+    margin-top: 10px;
+}
+
+.toret-zasilkovna-change-shipping select {
+    width: 100%;
+}
+
+.toret-zasilkovna-change-shipping .button {
+    line-height: 28px !important;
+    margin-top: 5px;
+}
+
+.cell-left {
+    text-align: left;
+    width: 25%;
+}
+
+/* Zarovnání vlevo */
+.zarovnani-vlevo th {
+    text-align: left;
+}
+
+.toret-popup-order {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: auto;
+    padding-top: 200px;
+}
+
+.zasilkovna-pozadavek {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.zasilkovna-pozadavek span {
+    background-color: var(--warning);
+    color: var(--bg-svetle) !important;
+    padding: 8px 16px !important;
+    border-radius: 3px;
+}
+
+.toret-popup-print-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.toret-popup-print-buttons button{
+    display: flex;
+    width: 49%;
+    justify-content: center;
+}
+
+.toret-popup-print-inner{
+    max-width: 400px;
+}
+
+.tzas-multiple-weight-hidden{
+    display: none;
+}

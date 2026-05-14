@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.toret-plugin-settings {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    box-sizing: border-box;
+}
+
+.toret-plugin-settings *,
+.toret-plugin-settings *::before,
+.toret-plugin-settings *::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+.toret-plugin-settings img {
+    display: block;
+    max-width: 100%;
+}
+
+.toret-plugin-settings button {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: none;
+}
+
+.toret-plugin-settings input[type="text"],
+.toret-plugin-settings input[type="email"],
+.toret-plugin-settings input[type="number"],
+.toret-plugin-settings input[type="password"],
+.toret-plugin-settings select,
+.toret-plugin-settings textarea {
+    box-sizing: border-box;
+}
+
+.toret-plugin-settings a {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.toret-plugin-settings a:hover,
+.toret-plugin-settings a:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+/* === TOM SELECT === */
+.toret-plugin-settings .ts-control {
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    min-height: 38px;
+    color: #111827;
+}
+
+.toret-plugin-settings .toret-multiselect{
+    border: 1px solid #d1d5db !important;
+}
+
+.toret-plugin-settings .ts-wrapper.focus .ts-control {
+    border-color: #341664 !important;
+    box-shadow: 0 0 0 1px #341664 !important;
+    outline: none;
+}
+
+.toret-plugin-settings .ts-wrapper,
+.toret-plugin-settings .ts-wrapper * {
+    box-sizing: border-box;
+}
+
+.toret-plugin-settings .ts-dropdown {
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    margin-top: 4px;
+    z-index: 99999;
+}
+
+.toret-plugin-settings .ts-dropdown .option {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #374151;
+}
+
+.toret-plugin-settings .ts-dropdown .option.active,
+.toret-plugin-settings .ts-dropdown .option:hover {
+    background-color: #f0fdfa !important;
+    color: #22134A !important;
+}
+
+.toret-plugin-settings .ts-wrapper.has-items .ts-control > input {
+    margin: 0 4px !important;
+}
+
+@media (min-width: 768px) {
+    .settings-plugin-wrapper.mx-auto.md\:px-0 {
+        padding-right: 1rem;
+    }
+}
