@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czech Virus — MCP server: manuál pro tým</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-2: #1e1e1e;
+            --border: #2a2a2a;
+            --text: #f0f0f0;
+            --text-muted: #999;
+            --red: #e74c3c;
+            --red-dim: rgba(231, 76, 60, 0.12);
+            --gold: #d4a940;
+            --gold-dim: rgba(212, 169, 64, 0.12);
+            --green: #4dd9c0;
+            --green-dim: rgba(77, 217, 192, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 32px;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-brand { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--red); }
+        .nav-progress { display: flex; gap: 6px; align-items: center; }
+        .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s; }
+        .nav-dot.active { background: var(--red); box-shadow: 0 0 10px rgba(231, 76, 60, 0.4); }
+        .nav-dot:hover { background: var(--text-muted); }
+        .nav-counter { font-size: 12px; color: var(--text-muted); margin-left: 12px; font-variant-numeric: tabular-nums; }
+
+        /* Slides */
+        .slides-wrapper { height: 100vh; overflow: hidden; position: relative; }
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            padding: 80px 60px 40px;
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
+        }
+        .slide.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .slide-content { max-width: 1100px; width: 100%; }
+
+        /* Typography */
+        h1 { font-size: 52px; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+        h2 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .subtitle { font-size: 20px; color: var(--text-muted); font-weight: 300; margin-top: 16px; line-height: 1.5; }
+        .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--red); margin-bottom: 16px; }
+        .hl { color: var(--red); }
+        .hl-gold { color: var(--gold); }
+        .hl-green { color: var(--green); }
+
+        /* Cards */
+        .card-grid { display: grid; gap: 16px; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.3s; }
+        .card:hover { border-color: #444; }
+        .card p { font-size: 14px; line-height: 1.7; color: var(--text-muted); }
+        .card h3 .ico { margin-right: 8px; }
+        .card-red { border-left: 3px solid var(--red); }
+        .card-green { border-left: 3px solid var(--green); }
+        .card-gold { border-left: 3px solid var(--gold); }
+
+        /* Stat boxes */
+        .stats { display: flex; gap: 16px; margin: 24px 0; }
+        .stat { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+        .stat-value { font-size: 36px; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+        .stat-value.red { color: var(--red); }
+        .stat-value.gold { color: var(--gold); }
+        .stat-value.green { color: var(--green); }
+        .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+        /* List styles */
+        .info-list { list-style: none; padding: 0; }
+        .info-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .info-list li:last-child { border-bottom: none; }
+        .info-list li strong { color: var(--text); }
+
+        /* Pro / Contra */
+        .pro-contra { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .pro-box, .contra-box { border-radius: 12px; padding: 28px; }
+        .pro-box { background: linear-gradient(135deg, rgba(77, 217, 192, 0.08), rgba(77, 217, 192, 0.02)); border: 1px solid rgba(77, 217, 192, 0.2); }
+        .contra-box { background: linear-gradient(135deg, rgba(231, 76, 60, 0.08), rgba(231, 76, 60, 0.02)); border: 1px solid rgba(231, 76, 60, 0.2); }
+        .pro-box h3 { color: var(--green); font-size: 16px; margin-bottom: 16px; }
+        .contra-box h3 { color: var(--red); font-size: 16px; margin-bottom: 16px; }
+        .pro-box ul, .contra-box ul { list-style: none; padding: 0; }
+        .pro-box ul li, .contra-box ul li { font-size: 14px; color: var(--text-muted); padding: 6px 0; line-height: 1.6; }
+        .pro-box ul li::before { content: '+ '; color: var(--green); font-weight: 700; }
+        .contra-box ul li::before { content: '— '; color: var(--red); font-weight: 700; }
+
+        /* Timeline */
+        .timeline-item { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-date { width: 110px; flex-shrink: 0; font-size: 13px; font-weight: 700; color: var(--red); padding-top: 2px; }
+        .timeline-text h3 { font-size: 15px; margin-bottom: 4px; }
+        .timeline-text p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+        /* Badge */
+        .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-top: 8px; }
+        .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(231,76,60,0.3); }
+        .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(77,217,192,0.3); }
+        .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(212,169,64,0.3); }
+
+        /* Highlight box */
+        .highlight-box { background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(212, 169, 64, 0.05)); border: 1px solid rgba(231, 76, 60, 0.25); border-radius: 12px; padding: 24px; margin-top: 20px; }
+        .highlight-box p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+        .highlight-box strong { color: var(--text); }
+
+        /* Tables */
+        .cost-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        .cost-table th { text-align: left; padding: 10px 16px; border-bottom: 2px solid var(--border); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+        .cost-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+        .cost-table td:first-child { color: var(--text); font-weight: 600; }
+        .cost-table tr.total td { border-top: 2px solid var(--red); font-weight: 700; color: var(--red); font-size: 15px; }
+
+        /* Code */
+        .code { font-family: 'JetBrains Mono', monospace; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--green); line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+        code.inline { font-family: 'JetBrains Mono', monospace; background: var(--surface-2); border: 1px solid var(--border); border-radius: 5px; padding: 2px 7px; font-size: 0.86em; color: var(--gold); }
+
+        /* Steps */
+        .steps { counter-reset: step; list-style: none; padding: 0; }
+        .steps li { position: relative; padding: 14px 0 14px 52px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .steps li:last-child { border-bottom: none; }
+        .steps li strong { color: var(--text); }
+        .steps li::before {
+            counter-increment: step; content: counter(step);
+            position: absolute; left: 0; top: 12px;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--red-dim); border: 1px solid rgba(231,76,60,0.4); color: var(--red);
+            font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center;
+        }
+
+        /* Chips */
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .chip { font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 5px 11px; border-radius: 7px; background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); }
+        .chip.g { color: var(--green); border-color: rgba(77,217,192,0.3); }
+        .chip.r { color: var(--red); border-color: rgba(231,76,60,0.3); }
+
+        /* Flow diagram */
+        .connection { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 28px 0; flex-wrap: wrap; }
+        .connection-node { text-align: center; padding: 18px 24px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); }
+        .connection-node .node-title { font-size: 16px; font-weight: 800; }
+        .connection-node .node-sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        .connection-arrow { font-size: 22px; color: var(--red); }
+
+        /* Scrollable content */
+        .slide-scroll { max-height: calc(100vh - 130px); overflow-y: auto; padding-right: 10px; width: 100%; }
+        .slide-scroll::-webkit-scrollbar { width: 4px; }
+        .slide-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+        .nav-hint { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-muted); opacity: 0.5; display: flex; gap: 16px; }
+        .nav-hint kbd { background: var(--surface-2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 11px; }
+        .small { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-brand">Czech Virus — MCP server · manuál pro tým</div>
+    <div style="display:flex;align-items:center;">
+        <div class="nav-progress" id="navDots"></div>
+        <div class="nav-counter" id="navCounter"></div>
+    </div>
+</nav>
+
+<div class="slides-wrapper" id="slidesWrapper">
+
+    <!-- 0: Title -->
+    <div class="slide active" data-slide="0">
+        <div class="slide-content" style="text-align:center;">
+            <div class="label">Interní nástroj · květen 2026</div>
+            <h1>AI napojené na <span class="hl">naše data</span></h1>
+            <p class="subtitle">MCP server propojuje Claude a ChatGPT přímo s daty Czech Virus —<br>objednávky, faktury, sklad, marketing, influenceři. Bezpečně a jen pro adminy.</p>
+            <div class="connection">
+                <div class="connection-node">
+                    <div class="node-title hl">Claude / ChatGPT</div>
+                    <div class="node-sub">tvůj AI asistent</div>
+                </div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node">
+                    <div class="node-title hl-gold">MCP server</div>
+                    <div class="node-sub">cv-portal.cz · OAuth 2.1</div>
+                </div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node">
+                    <div class="node-title hl-green">Pohoda + e-shop</div>
+                    <div class="node-sub">živá firemní data</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1: Co to je / proč -->
+    <div class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="label">Co to je</div>
+            <h2>AI, která vidí <span class="hl">aktuální čísla</span></h2>
+            <div class="two-col">
+                <div>
+                    <p class="small" style="margin-bottom:16px;">MCP (Model Context Protocol) je standardizovaný most mezi AI a firemními daty. Místo abys čísla kopíroval do chatu, AI si je sama přečte přímo z databáze — vždy aktuální, bez exportů.</p>
+                    <ul class="info-list">
+                        <li><strong>Čte, nepíše</strong> — read-only analytika (jediná výjimka: AI poznámky)</li>
+                        <li><strong>Jen pro adminy</strong> — přihlášení přes cv-portal účet</li>
+                        <li><strong>Per-user práva</strong> — každý vidí jen to, na co má přístup</li>
+                        <li><strong>Funguje v Claude i ChatGPT</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Na co je to dobré</h3>
+                    <div class="card card-green" style="margin-bottom:12px;">
+                        <p>"Jaký produkt nejvíc prodával kód <span class="hl-green">andula20</span> v květnu?" → odpověď za pár sekund, bez ručního dolování v Pohodě.</p>
+                    </div>
+                    <div class="card card-gold">
+                        <p>"Kteří zákazníci z lednové akce se vrátili v květnu?" → kohortní analýza nad reálnými objednávkami.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2: Co AI umí přečíst -->
+    <div class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Možnosti</div>
+                <h2>Co všechno <span class="hl">umí přečíst</span></h2>
+                <p class="small" style="margin-bottom:18px;">24 nástrojů rozdělených podle oblasti. Každá oblast má vlastní oprávnění — uvidíš jen to, co máš povolené.</p>
+                <div class="card-grid cols-3">
+                    <div class="card card-red"><h3>📦 Produkty &amp; sklad</h3><p>Vyhledávání produktů, skladové pohyby, top prodejní žebříčky.</p></div>
+                    <div class="card card-red"><h3>🛒 Objednávky</h3><p>Objednávky dle data, kupónu; položky přes pohyby.</p></div>
+                    <div class="card card-gold"><h3>💰 Finance</h3><p>Faktury, účetní deník, sklad. Citlivé — zvlášť gated.</p></div>
+                    <div class="card card-green"><h3>📊 Přehledy</h3><p>Tržby (B2C+B2B), detail zákazníka, kupóny, AI reporty.</p></div>
+                    <div class="card card-red"><h3>📣 Marketing</h3><p>Marketingový deník, kampaně, plánovací kalendář.</p></div>
+                    <div class="card card-gold"><h3>🧪 R&amp;D</h3><p>Vývojová pipeline produktů, fáze, deadliny.</p></div>
+                    <div class="card card-green"><h3>🤝 Influenceři</h3><p>Seznam influencerů, kódy, provize/objednávky.</p></div>
+                    <div class="card card-red"><h3>🏢 Konkurence</h3><p>Sledované ceny konkurence a jejich změny.</p></div>
+                    <div class="card card-gold"><h3>🧠 AI paměť</h3><p>Poznámky, které si AI pamatuje napříč chaty.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3: Bezpečnost -->
+    <div class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="label">Bezpečnost</div>
+            <h2>Kdo se k čemu <span class="hl">dostane</span></h2>
+            <div class="stats">
+                <div class="stat"><div class="stat-value red">Jen admin</div><div class="stat-label">žádný veřejný přístup</div></div>
+                <div class="stat"><div class="stat-value gold">OAuth 2.1</div><div class="stat-label">PKCE · tokeny, ne hesla</div></div>
+                <div class="stat"><div class="stat-value green">Per-user</div><div class="stat-label">práva dle účtu</div></div>
+            </div>
+            <div class="two-col" style="margin-top:8px;">
+                <div>
+                    <ul class="info-list">
+                        <li><strong>Přihlášení přes cv-portal</strong> — AI dostane jen práva tvého účtu</li>
+                        <li><strong>Finance gated zvlášť</strong> — faktury/účetnictví uvidí jen kdo má právo</li>
+                        <li><strong>Tokeny se hashují</strong>, mají expiraci a jdou kdykoliv odvolat</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="highlight-box" style="margin-top:0;">
+                        <p><strong>Osobní údaje zákazníků se ven neposílají.</strong> E-maily AI dostane jako neprůhledné tokeny <code class="inline">em_a3f9b2c1…</code>. AI je nikdy nevidí v čitelné podobě — odkryje je jen ten, kdo má právo <code class="inline">mcp_view_pii</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4: PII tokeny -->
+    <div class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="label">Ochrana osobních údajů</div>
+            <h2>Pseudonym <span class="hl-green">tokeny</span></h2>
+            <div class="two-col">
+                <div>
+                    <p class="small" style="margin-bottom:14px;">Aby AI mohla rozlišit "stejného zákazníka" napříč objednávkami, ale neviděla e-mail, vrací se místo e-mailu deterministický token. Stejný zákazník = vždy stejný token.</p>
+                    <div class="code">objednávka 8810064045
+company: Gabriela Večeřová
+email:   em_2e0d9f189400e7b2
+coupon:  andula20</div>
+                    <p class="small" style="margin-top:14px;">Token funguje i jako vstup — vložíš ho do <code class="inline">get_customer_detail</code> a AI dostane historii zákazníka, aniž by viděla e-mail.</p>
+                </div>
+                <div>
+                    <h3 class="hl-green">Jak zpětně zjistit, kdo to je</h3>
+                    <ul class="steps">
+                        <li>Zkopíruj token <code class="inline">em_…</code> z odpovědi AI.</li>
+                        <li>Otevři v cv-portalu <strong>Customer 360°</strong> (<code class="inline">zakaznik-detail.php</code>).</li>
+                        <li>Vlož token do vyhledávacího pole.</li>
+                        <li>Portál ti ukáže <strong>reálného zákazníka</strong>.</li>
+                    </ul>
+                    <p class="small" style="margin-top:10px;">Klíč k odšifrování je uložený jen na serveru — z tokenu samotného e-mail nikdo nezíská.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5: Jak se připojit -->
+    <div class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Implementace</div>
+                <h2>Jak se <span class="hl">připojit</span></h2>
+                <p class="small" style="margin-bottom:14px;">Adresa serveru (stejná pro všechny klienty):</p>
+                <div class="code" style="color: var(--gold);">https://www.cv-portal.cz/mcp/server.php</div>
+                <div class="two-col" style="margin-top:20px;">
+                    <div>
+                        <h3>Claude (web i Desktop)</h3>
+                        <ul class="steps">
+                            <li>Settings → <strong>Connectors</strong> → Add custom connector.</li>
+                            <li>Vlož URL serveru, potvrď.</li>
+                            <li>Otevře se přihlášení na cv-portal — <strong>přihlas se svým adminem</strong>.</li>
+                            <li>Klikni <strong>Povolit</strong> na obrazovce se souhlasem.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>ChatGPT (Plus / Pro / Business)</h3>
+                        <ul class="steps">
+                            <li>Settings → <strong>Connectors</strong> → Add custom (Developer Mode).</li>
+                            <li>Vlož stejnou URL.</li>
+                            <li>Přihlas se a dej Povolit.</li>
+                            <li>Pozor: ChatGPT musí mít povolené <strong>"write/actions"</strong> pro zápis poznámek.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <p>⚠️ <strong>Důležité:</strong> v prohlížeči buď přihlášený <strong>správným účtem</strong> cv-portalu. Když jsi přihlášený jiným účtem (nebo bez práva <code class="inline">mcp_access</code>), připojení tiše selže.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6: Práva -->
+    <div class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Oprávnění</div>
+                <h2>Práva se nastavují v <span class="hl">Nastavení → Uživatelé</span></h2>
+                <p class="small" style="margin-bottom:14px;">Každému adminovi zaškrtneš, co smí AI jeho jménem číst. Superadmin má vše automaticky.</p>
+                <table class="cost-table">
+                    <thead><tr><th>Oprávnění</th><th>Co odemyká</th></tr></thead>
+                    <tbody>
+                        <tr><td>mcp_access</td><td>vůbec se připojit (bez něj nic)</td></tr>
+                        <tr><td>mcp_read_pohoda</td><td>objednávky</td></tr>
+                        <tr><td>mcp_read_finance</td><td>faktury, sklad, účetnictví (citlivé)</td></tr>
+                        <tr><td>mcp_read_overview</td><td>tržby, zákazníci, kupóny, reporty</td></tr>
+                        <tr><td>mcp_read_marketing / _rnd / _influencers / _products / _competitor / _customers</td><td>příslušné oblasti</td></tr>
+                        <tr><td>mcp_notes</td><td>AI paměť (osobní poznámky)</td></tr>
+                        <tr><td>mcp_view_pii</td><td>vidět reálné e-maily místo tokenů</td></tr>
+                        <tr><td>mcp_notes_shared</td><td>spravovat týmovou paměť + preprompt (superadmin)</td></tr>
+                    </tbody>
+                </table>
+                <p class="small">Pravidlo: <span class="hl-green">do financí nemá vidět každý</span> — proto je <code class="inline">mcp_read_finance</code> a <code class="inline">mcp_view_pii</code> defaultně vypnuté pro všechny.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7: Jak používat -->
+    <div class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="label">Použití</div>
+            <h2>Stačí se <span class="hl">normálně zeptat</span></h2>
+            <p class="small" style="margin-bottom:16px;">Nepíšeš příkazy ani SQL — píšeš česky. AI si sama vybere správný nástroj.</p>
+            <div class="card-grid cols-2">
+                <div class="card card-green"><p>"Napiš mi, na který kód přišlo tento měsíc nejvíc objednávek a jaký produkt ten člověk nejvíc prodal."</p></div>
+                <div class="card card-green"><p>"Jaké byly celkové tržby za květen 2026 a kolik z toho byl B2B?"</p></div>
+                <div class="card card-gold"><p>"Vezmi všechny objednávky s kódem andula20 a zjisti, kolik z nich byli noví zákazníci."</p></div>
+                <div class="card card-gold"><p>"Jak si vede produkt Creapure proti konkurenci a jak se hýbal sklad?"</p></div>
+            </div>
+            <div class="highlight-box">
+                <p>💡 <strong>Tip:</strong> když AI něco spočítá špatně nebo jí vysvětlíš firemní pravidlo, řekni jí <em>"ulož si to do paměti"</em>. Příště to bude vědět.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8: Revenue metodika -->
+    <div class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="label">Důležité pravidlo</div>
+            <h2>Jak se počítají <span class="hl">tržby</span></h2>
+            <div class="pro-contra">
+                <div class="pro-box">
+                    <h3>Správně — get_sales_summary</h3>
+                    <ul>
+                        <li>Tržba z položek vystavených faktur (pohyby)</li>
+                        <li>B2C (retail) přes objednávky, datováno dle objednávky</li>
+                        <li>B2B (velkoobchod) přes faktury, dle faktury</li>
+                        <li>Celkem = B2C + B2B → sedí na dashboard</li>
+                    </ul>
+                </div>
+                <div class="contra-box">
+                    <h3>Špatně — sčítat objednávky</h3>
+                    <ul>
+                        <li>Ignoruje B2B (často ~polovinu tržeb!)</li>
+                        <li>Hlavička objednávky není tržba</li>
+                        <li>Nepočítá nevyfakturované správně</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p>Server tohle pravidlo <strong>diktuje AI sám</strong> (přes preprompt), takže by mělo vyjít správně. Květen 2026 = <span class="hl-green">4 496 120 Kč</span> (B2C 2,01 M + B2B 2,49 M). Kdyby AI hlásila ~2 M, je připojená špatně nebo bez reconnectu.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9: AI paměť -->
+    <div class="slide" data-slide="9">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">AI paměť</div>
+                <h2>Tři vrstvy <span class="hl-gold">paměti</span></h2>
+                <table class="cost-table">
+                    <thead><tr><th>Typ</th><th>Kdo zapíše</th><th>Kdo vidí</th><th>V prepromptu?</th></tr></thead>
+                    <tbody>
+                        <tr><td>Osobní</td><td>každý (vlastní)</td><td>jen autor</td><td>ne</td></tr>
+                        <tr><td>Sdílená (týmová)</td><td>superadmin</td><td>všichni admini</td><td>ne</td></tr>
+                        <tr><td>Sdílená + pinned</td><td>superadmin</td><td>všichni</td><td><span class="hl-green">ano</span></td></tr>
+                    </tbody>
+                </table>
+                <div class="two-col" style="margin-top:18px;">
+                    <div>
+                        <h3>Jak to využít</h3>
+                        <p class="small">Když AI naučíš obecné firemní pravidlo (např. metodiku tržeb), superadmin ho uloží jako <strong>pinned týmovou poznámku</strong>. Od příštího reconnectu to má <strong>každý agent</strong> (Claude i ChatGPT, tvůj i kolegův) automaticky v kontextu.</p>
+                    </div>
+                    <div>
+                        <h3>Důležité</h3>
+                        <ul class="info-list">
+                            <li><strong>Osobní paměť je sdílená napříč klienty</strong> stejného účtu — co si zapíše Claude, přečte ChatGPT.</li>
+                            <li><strong>Jiný účet = jiná paměť.</strong></li>
+                            <li><strong>Pinned</strong> drží preprompt krátký — jen klíčová pravidla.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10: Troubleshooting -->
+    <div class="slide" data-slide="10">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Když něco nefunguje</div>
+                <h2>FAQ &amp; <span class="hl">řešení</span></h2>
+                <ul class="info-list">
+                    <li><strong>AI nevidí nové funkce / čísla jsou stará</strong> → dej <strong>reconnect</strong>. Nástroje i preprompt se načítají jen při připojení.</li>
+                    <li><strong>Připojení tiše selže, nehodí na souhlas</strong> → v prohlížeči jsi přihlášený <strong>jiným účtem</strong> nebo bez <code class="inline">mcp_access</code>. Odhlas se a přihlas správným.</li>
+                    <li><strong>AI tvrdí, že u objednávek nevidí kupón / zákazníka</strong> → čte <strong>jiný konektor</strong> (např. "Woody"), ne náš "Czech Virus". Zkontroluj, který je zapnutý.</li>
+                    <li><strong>ChatGPT neumí zapsat poznámku</strong> → ChatGPT blokuje zápis; povol u konektoru "write/actions", nebo potvrď akci. V Claude funguje bez omezení.</li>
+                    <li><strong>Claude Desktop se zacyklí na přihlášení</strong> → odpoj konektor, restartuj appku, přihlas se nejdřív v prohlížeči na cv-portal, pak připoj znovu.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11: Závěr -->
+    <div class="slide" data-slide="11">
+        <div class="slide-content" style="text-align:center;">
+            <div class="label">Shrnutí</div>
+            <h1 style="font-size:42px;">AI, která zná <span class="hl">naše čísla</span></h1>
+            <p class="subtitle">Připoj se na <code class="inline" style="font-size:15px;">cv-portal.cz/mcp/server.php</code>, přihlas se svým adminem, povol — a ptej se česky.</p>
+            <div class="card-grid cols-3" style="margin-top:32px;text-align:left;">
+                <div class="card card-red"><h3>🔌 Připojení</h3><p>Settings → Connectors → URL serveru → přihlásit → Povolit.</p></div>
+                <div class="card card-green"><h3>🔒 Bezpečně</h3><p>Jen admini, per-user práva, e-maily jako tokeny.</p></div>
+                <div class="card card-gold"><h3>🧠 Učí se</h3><p>Co jí vysvětlíš, si zapamatuje — i pro celý tým.</p></div>
+            </div>
+            <p class="small" style="margin-top:28px;">Správa &amp; nová práva: <strong>Roman</strong> (superadmin) · technické detaily v <code class="inline">cv-portal/mcp/MCP-CONTEXT.md</code></p>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-hint">
+    <kbd>&larr;</kbd> <kbd>&rarr;</kbd> šipky &nbsp;|&nbsp; scroll &nbsp;|&nbsp; klik na tečky
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    const dotsContainer = document.getElementById('navDots');
+    const counter = document.getElementById('navCounter');
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    function updateCounter() { counter.textContent = `${currentSlide + 1} / ${totalSlides}`; }
+    updateCounter();
+
+    function goToSlide(index) {
+        if (index < 0 || index >= totalSlides || index === currentSlide) return;
+        slides[currentSlide].classList.remove('active');
+        dotsContainer.children[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dotsContainer.children[currentSlide].classList.add('active');
+        updateCounter();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goToSlide(currentSlide + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); goToSlide(currentSlide - 1); }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+    document.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) goToSlide(currentSlide + (diff > 0 ? 1 : -1));
+    });
+
+    let wheelTimeout = false;
+    document.addEventListener('wheel', (e) => {
+        const scrollEl = e.target.closest('.slide-scroll');
+        if (scrollEl && scrollEl.scrollHeight > scrollEl.clientHeight) return;
+        if (wheelTimeout) return;
+        wheelTimeout = true;
+        setTimeout(() => wheelTimeout = false, 600);
+        if (e.deltaY > 0) goToSlide(currentSlide + 1);
+        else if (e.deltaY < 0) goToSlide(currentSlide - 1);
+    });
+</script>
+
+</body>
+</html>
