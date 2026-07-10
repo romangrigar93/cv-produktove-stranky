@@ -269,23 +269,23 @@
             <div class="slide-scroll">
                 <div class="label">Nejdůležitější · co určuje štítek</div>
                 <h2>Jeden štítek podle <span class="hl">naléhavosti</span></h2>
-                <p class="small" style="margin-bottom:14px;">Porovnává se <strong>zásoba (v týdnech)</strong> s <strong>prahem (LT + SS)</strong>. Navíc je tu druhá hranice — samotný <strong>LT</strong> = bod, odkdy už ani nová/urychlená dodávka nestihne dorazit včas. Odtud 5 úrovní naléhavosti:</p>
+                <p class="small" style="margin-bottom:14px;">Základ: <strong>týdenní projekce</strong> — od dnešního stavu se každý týden odečte odbyt a přičtou dodávky podle termínů z rozvrhů výrobců. Druhá hranice je samotný <strong>LT</strong> = nová objednávka položená dnes dorazí nejdřív za LT týdnů. Odtud úrovně naléhavosti:</p>
                 <div class="card-grid cols-2">
                     <div class="card card-crit">
                         <span class="badge badge-crit">Objednat hned!</span>
-                        <p style="margin-top:10px;">I se započtením objednaného je zásoba pod <strong>LT</strong> → jsi pozadu, nová objednávka dorazí až po výpadku. Řeš expresně (spěšná dodávka, náhrada).<br><span class="small">se zásilkou &lt; LT</span></p>
-                    </div>
-                    <div class="card card-red">
-                        <span class="badge badge-red">Objednat</span>
-                        <p style="margin-top:10px;">Ani s objednaným to nestačí na práh, ale času je ještě dost. <strong>Objednej novou objednávku.</strong><br><span class="small">LT ≤ se zásilkou &lt; práh</span></p>
+                        <p style="margin-top:10px;">Projekce spadne pod nulu <strong>dřív, než by dorazila nová objednávka</strong> — a ani naplánované dodávky díru nezacelí. Objednej hned a zároveň urychluj. Řeš expresně.<br><span class="small">vyprodání &lt; LT a díra trvá i po dodávkách</span></p>
                     </div>
                     <div class="card card-orange">
                         <span class="badge badge-orange">Urychli u výrobce</span>
-                        <p style="margin-top:10px;">Objednávka na cestě tě pokryje, ALE samotný sklad je pod <strong>LT</strong> → kriticky nízko. Když dodávka klopýtne, vypadneš. <strong>Tlač dodavatele, ať dodá dřív.</strong><br><span class="small">stav &lt; LT, se zásilkou ≥ práh</span></p>
+                        <p style="margin-top:10px;">Vyprodáno dřív, než dorazí nová objednávka, ALE naplánované dodávky pak díru zacelí → <strong>nová objednávka nepomůže</strong>. Jediné řešení: tlač výrobce, ať dodá dřív.<br><span class="small">vyprodání &lt; LT, dodávky pak stav srovnají</span></p>
+                    </div>
+                    <div class="card card-red">
+                        <span class="badge badge-red">Objednat</span>
+                        <p style="margin-top:10px;">V horizontu (do prahu) vznikne díra, kterou <strong>dnešní objednávka ještě stihne pokrýt</strong> (dorazí za LT). Objednej — návrh množství říká kolik.<br><span class="small">díra v projekci mezi LT a prahem</span></p>
                     </div>
                     <div class="card card-gold">
-                        <span class="badge badge-gold">Urychli</span>
-                        <p style="margin-top:10px;">Sklad pod prahem, ale objednávka na cestě to v klidu pokryje. Jen sledovat.<br><span class="small">LT ≤ stav &lt; práh, se zásilkou ≥ práh</span></p>
+                        <span class="badge badge-gold">Hlídat</span>
+                        <p style="margin-top:10px;">Projekce je čistá — dodávky dorazí včas. Ale samotný sklad je pod prahem, takže <strong>závisíš na tom, že dodávky dorazí</strong>. Sledovat.<br><span class="small">projekce ≥ 0, sám sklad pod prahem</span></p>
                     </div>
                     <div class="card card-green">
                         <span class="badge badge-green">OK</span>
@@ -319,7 +319,7 @@
                     <div class="highlight-box" style="margin-top:0;">
                         <p><strong>Lidsky:</strong> než by od dodavatele dorazila nová šarže (7 týdnů + týden pojistka), tak mi 50 ks při tempu 13 kusů týdně vydrží jen necelé <strong>4 týdny</strong>.<br><br>Vypadl bych ze zboží na několik týdnů → proto <span class="hl">objednat hned</span>.</p>
                     </div>
-                    <p class="small" style="margin-top:14px;">Kdyby bylo na cestě třeba 400 ks, „se zásilkou" by vyšlo (50+400)/13 = 34 týdnů → štítek by byl jen <span class="hl-gold">Urychli</span>, ne Objednat.</p>
+                    <p class="small" style="margin-top:14px;">Kdyby bylo na cestě 400 ks, záleží <strong>kdy dorazí</strong>: stihne-li to před vyprodáním (za necelé 4 týdny), štítek je jen <span class="hl-gold">Hlídat</span>; dorazí-li později, je to <span class="hl-gold">Urychli u výrobce</span>.</p>
                 </div>
             </div>
         </div>
@@ -430,18 +430,18 @@
     <div class="slide" data-slide="9c">
         <div class="slide-content">
             <div class="slide-scroll">
-            <div class="label" style="color:var(--gold)">Návrh k diskuzi</div>
-            <h2>Počítat i s <span class="hl-gold">termíny dodání</span></h2>
-            <p class="small" style="margin-bottom:10px;">Dnes: <strong>„Se zásilkou" = (stav + všechno na cestě) ÷ odbyt</strong>. Jeden pytel, bez termínů. Velká šarže, co dorazí za 10 týdnů, se počítá jako by byla hned → umí <span class="hl">podhodnotit</span> naléhavost.</p>
-            <div class="formula">stav(týden w) <span class="op">=</span> stav(w−1) − odbyt + dodávky na týden w<br>týden vyprodání <span class="op">=</span> první týden, kdy stav spadne pod nulu (resp. pod SS)</div>
-            <h3 style="margin-top:6px;">Navrhované nové sloupce v přehledu</h3>
+            <div class="label" style="color:var(--green)">Nové — už to tak počítáme</div>
+            <h2>Počítáme i s <span class="hl-green">termíny dodání</span></h2>
+            <p class="small" style="margin-bottom:10px;">Dřív: <strong>„Se zásilkou" = (stav + všechno na cestě) ÷ odbyt</strong>. Jeden pytel, bez termínů — velká šarže, co dorazí za 10 týdnů, se počítala jako by byla hned. Teď jede <strong>týdenní projekce</strong> z termínů v rozvrzích výrobců:</p>
+            <div class="formula">stav(týden w) <span class="op">=</span> stav(w−1) − odbyt + dodávky na týden w<br>týden vyprodání <span class="op">=</span> první týden, kdy stav spadne pod nulu</div>
+            <h3 style="margin-top:6px;">Nové sloupce v přehledu</h3>
             <ul class="info-list">
-                <li><strong>Předpokládaný stav skladu za LT</strong> — kolik zbude v okamžiku, kdy by dorazila nově vydaná objednávka. Záporné = ani nová objednávka nestihne.</li>
-                <li><strong>Předpokládaný stav za práh (LT + SS)</strong> — na konci bezpečnostního horizontu; má zůstat ≥ 0.</li>
-                <li><strong>Týden vyprodání</strong> — odhadovaný týden, kdy zásoba klesne na nulu (při aktuálním odbytu).</li>
                 <li><strong>Nejbližší dodávka</strong> — nejbližší příchozí (týden + ks) z rozvrhu od výrobce.</li>
+                <li><strong>Stav za LT</strong> — kolik zbude v okamžiku, kdy by dorazila nově vydaná objednávka. Záporné = ani nová objednávka nestihne.</li>
+                <li><strong>Stav za práh (LT + SS)</strong> — na konci bezpečnostního horizontu; má zůstat ≥ 0.</li>
+                <li><strong>Vyprodání</strong> — odhadovaný týden, kdy zásoba klesne na nulu (při aktuálním odbytu).</li>
             </ul>
-            <p class="small" style="margin-top:10px;">Štítek se pak zpřesní: <span class="badge badge-crit">Objednat hned!</span> když je vyprodáno dřív, než dorazí nová objednávka (vyprodání &lt; teď + LT); <span class="badge badge-red">Objednat</span> když to nestačí do prahu; jinak <span class="badge badge-green">OK</span>.</p>
+            <p class="small" style="margin-top:10px;">Konzervativní pravidla: co výrobce <strong>nerozepsal, nepočítá se</strong> (horší scénář tlačí na doplnění rozvrhu); položky bez rozvrhu = celý zbytek v týdnu dle LT; dodávka po termínu = počítá se „teď". Karta z Pohody zůstává křížovou kontrolou.</p>
             </div>
         </div>
     </div>
@@ -450,7 +450,7 @@
     <div class="slide" data-slide="9d">
         <div class="slide-content">
             <div class="slide-scroll">
-            <div class="label" style="color:var(--gold)">Návrh — příklad</div>
+            <div class="label" style="color:var(--green)">Příklad z praxe</div>
             <h2>Proč jeden pytel <span class="hl">klame</span></h2>
             <p class="small" style="margin-bottom:12px;">Stav <strong>200 ks</strong>, odbyt <strong>40/týd</strong>, na cestě <strong>500 ks</strong> — ale dle rozvrhu dorazí až <strong>W36</strong> (250) a <strong>W40</strong> (250). Dnešní výpočet: (200 + 500) / 40 = <strong>17,5 týdne</strong> → vypadá bezpečně, žádný alarm.</p>
             <div class="two-col" style="grid-template-columns:1.05fr 0.95fr;gap:26px;align-items:start;">
@@ -498,7 +498,7 @@
                 <div class="stat"><div class="stat-value green">2</div><div class="stat-label">Zásoba = stav ÷ odbyt</div></div>
                 <div class="stat"><div class="stat-value red">3</div><div class="stat-label">Objednat, když zásoba ≤ LT+SS</div></div>
             </div>
-            <p class="small">Hotovo: návrh <strong>objednacího množství</strong> (z MOQ + násobku) a <strong>rozpad vydaných objednávek</strong> na položky s rozvrhem dodávek pro výrobce.<br>Další krok (k diskuzi): <strong>napojení termínů dodání</strong> — časově fázované pokrytí (viz předchozí slidy) a přístup výrobců do portálu.<br>Stránky zatím nejsou v menu — <code class="inline">/zasobovani.php</code> a <code class="inline">/dodavatele-objednavky.php</code>.</p>
+            <p class="small">Hotovo: návrh <strong>objednacího množství</strong>, <strong>rozpad vydaných objednávek</strong> s rozvrhem dodávek pro výrobce i <strong>časově fázovaná projekce</strong> (štítky podle skutečných termínů dodání).<br>Další krok: <strong>přístup výrobců do portálu</strong> — každý uvidí a vyplní jen svoje objednávky.<br>Stránky zatím nejsou v menu — <code class="inline">/zasobovani.php</code> a <code class="inline">/dodavatele-objednavky.php</code>.</p>
         </div>
     </div>
 
