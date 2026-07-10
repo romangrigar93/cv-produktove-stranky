@@ -438,7 +438,7 @@
             <ul class="info-list">
                 <li><strong>Předpokládaný stav skladu za LT</strong> — kolik zbude v okamžiku, kdy by dorazila nově vydaná objednávka. Záporné = ani nová objednávka nestihne.</li>
                 <li><strong>Předpokládaný stav za práh (LT + SS)</strong> — na konci bezpečnostního horizontu; má zůstat ≥ 0.</li>
-                <li><strong>Týden vyprodání</strong> — ETA, kdy dojdeme na nulu.</li>
+                <li><strong>Týden vyprodání</strong> — odhadovaný týden, kdy zásoba klesne na nulu (při aktuálním odbytu).</li>
                 <li><strong>Nejbližší dodávka</strong> — nejbližší příchozí (týden + ks) z rozvrhu od výrobce.</li>
             </ul>
             <p class="small" style="margin-top:10px;">Štítek se pak zpřesní: <span class="badge badge-crit">Objednat hned!</span> když je vyprodáno dřív, než dorazí nová objednávka (vyprodání &lt; teď + LT); <span class="badge badge-red">Objednat</span> když to nestačí do prahu; jinak <span class="badge badge-green">OK</span>.</p>
