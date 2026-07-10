@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czech Virus — Zásobování: jak číst čísla</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-2: #1e1e1e;
+            --border: #2a2a2a;
+            --text: #f0f0f0;
+            --text-muted: #999;
+            --red: #e74c3c;
+            --red-dim: rgba(231, 76, 60, 0.12);
+            --gold: #d4a940;
+            --gold-dim: rgba(212, 169, 64, 0.12);
+            --green: #4dd9c0;
+            --green-dim: rgba(77, 217, 192, 0.12);
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow: hidden; height: 100vh; }
+
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-brand { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--red); }
+        .nav-progress { display: flex; gap: 6px; align-items: center; }
+        .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s; }
+        .nav-dot.active { background: var(--red); box-shadow: 0 0 10px rgba(231,76,60,0.4); }
+        .nav-dot:hover { background: var(--text-muted); }
+        .nav-counter { font-size: 12px; color: var(--text-muted); margin-left: 12px; font-variant-numeric: tabular-nums; }
+
+        .slides-wrapper { height: 100vh; overflow: hidden; position: relative; }
+        .slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 80px 60px 40px; opacity: 0; transform: translateY(30px); transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+        .slide.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .slide-content { max-width: 1100px; width: 100%; }
+
+        h1 { font-size: 52px; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+        h2 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .subtitle { font-size: 20px; color: var(--text-muted); font-weight: 300; margin-top: 16px; line-height: 1.5; }
+        .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--red); margin-bottom: 16px; }
+        .hl { color: var(--red); }
+        .hl-gold { color: var(--gold); }
+        .hl-green { color: var(--green); }
+
+        .card-grid { display: grid; gap: 16px; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+        .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.3s; }
+        .card:hover { border-color: #444; }
+        .card p { font-size: 14px; line-height: 1.7; color: var(--text-muted); }
+        .card-red { border-left: 3px solid var(--red); }
+        .card-green { border-left: 3px solid var(--green); }
+        .card-gold { border-left: 3px solid var(--gold); }
+        .card-orange { border-left: 3px solid #e0851c; }
+        .card-crit { border-left: 3px solid #ff5a4d; }
+        .card-muted { border-left: 3px solid var(--text-muted); }
+
+        .stats { display: flex; gap: 16px; margin: 24px 0; }
+        .stat { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+        .stat-value { font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+        .stat-value.red { color: var(--red); }
+        .stat-value.gold { color: var(--gold); }
+        .stat-value.green { color: var(--green); }
+        .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+        .info-list { list-style: none; padding: 0; }
+        .info-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .info-list li:last-child { border-bottom: none; }
+        .info-list li strong { color: var(--text); }
+
+        .badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+        .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(231,76,60,0.3); }
+        .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(77,217,192,0.3); }
+        .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(212,169,64,0.3); }
+        .badge-muted { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+        .badge-crit { background: rgba(231,76,60,0.28); color: #ff9a90; border: 1px solid rgba(231,76,60,0.6); }
+        .badge-orange { background: rgba(224,133,28,0.16); color: #e8973b; border: 1px solid rgba(224,133,28,0.4); }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(212,169,64,0.05)); border: 1px solid rgba(231,76,60,0.25); border-radius: 12px; padding: 24px; margin-top: 20px; }
+        .highlight-box p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+        .highlight-box strong { color: var(--text); }
+
+        .code { font-family: 'JetBrains Mono', monospace; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 14px; color: var(--green); line-height: 1.8; white-space: pre-wrap; }
+        code.inline { font-family: 'JetBrains Mono', monospace; background: var(--surface-2); border: 1px solid var(--border); border-radius: 5px; padding: 2px 7px; font-size: 0.86em; color: var(--gold); }
+
+        .connection { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 28px 0; flex-wrap: wrap; }
+        .connection-node { text-align: center; padding: 18px 24px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); }
+        .connection-node .node-title { font-size: 16px; font-weight: 800; }
+        .connection-node .node-sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        .connection-arrow { font-size: 22px; color: var(--red); }
+
+        .steps { counter-reset: step; list-style: none; padding: 0; }
+        .steps li { position: relative; padding: 14px 0 14px 52px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .steps li:last-child { border-bottom: none; }
+        .steps li strong { color: var(--text); }
+        .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 12px; width: 32px; height: 32px; border-radius: 50%; background: var(--red-dim); border: 1px solid rgba(231,76,60,0.4); color: var(--red); font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+
+        .slide-scroll { max-height: calc(100vh - 130px); overflow-y: auto; padding-right: 10px; width: 100%; }
+        .slide-scroll::-webkit-scrollbar { width: 4px; }
+        .slide-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+        .nav-hint { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-muted); opacity: 0.5; display: flex; gap: 16px; }
+        .nav-hint kbd { background: var(--surface-2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 11px; }
+        .small { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+        .formula { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 14px 0; line-height: 1.8; }
+        .formula .op { color: var(--red); }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-brand">Czech Virus — Zásobování · jak číst čísla</div>
+    <div style="display:flex;align-items:center;">
+        <div class="nav-progress" id="navDots"></div>
+        <div class="nav-counter" id="navCounter"></div>
+    </div>
+</nav>
+
+<div class="slides-wrapper" id="slidesWrapper">
+
+    <!-- 0: Title -->
+    <div class="slide active" data-slide="0">
+        <div class="slide-content" style="text-align:center;">
+            <div class="label">Interní nástroj · zásobování</div>
+            <h1>Kdy a co <span class="hl">objednávat</span></h1>
+            <p class="subtitle">Přehled, který sám ohlásí, u kterých produktů hrozí, že vypadneme ze zboží —<br>na základě toho, jak rychle mizí a jak dlouho trvá dodávka. Vše počítá z Pohody.</p>
+            <div class="connection">
+                <div class="connection-node">
+                    <div class="node-title hl">Pohoda</div>
+                    <div class="node-sub">parametry karty + pohyby</div>
+                </div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node">
+                    <div class="node-title hl-gold">Portál</div>
+                    <div class="node-sub">spočítá zásobu v týdnech</div>
+                </div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node">
+                    <div class="node-title hl-green">Štítek</div>
+                    <div class="node-sub">Objednat / Hlídat / OK</div>
+                </div>
+            </div>
+            <p class="small" style="margin-top:24px;">Stránka: <code class="inline">cv-portal.cz/zasobovani.php</code></p>
+        </div>
+    </div>
+
+    <!-- 1: Co to řeší -->
+    <div class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="label">Proč to je</div>
+            <h2>Nevypadnout ze zboží — ale <span class="hl">ani zbytečně</span> neskladovat</h2>
+            <div class="two-col">
+                <div>
+                    <p class="small" style="margin-bottom:16px;">Každý produkt někdy dojde. Objednat se musí <strong>dřív</strong>, protože dodávka nebo výroba pár týdnů trvá. Objednat pozdě = díra na skladě a ztracený prodej. Objednat moc brzo / moc = zbytečně vázané peníze ve skladu.</p>
+                    <p class="small">Tenhle přehled hlídá tu hranici za tebe — u <strong>každého produktu zvlášť</strong> spočítá, na kolik týdnů ještě máš zásobu, a porovná to s tím, jak dlouho trvá, než dorazí nové.</p>
+                </div>
+                <div>
+                    <div class="highlight-box" style="margin-top:0;">
+                        <p><strong>Jedna otázka, na kterou to odpovídá:</strong><br><br>„Vydrží mi zásoba do doby, než by stihla dorazit nová objednávka?"<br><br>Pokud ne → <span class="hl">objednat teď</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2: Odkud se berou čísla (základ) -->
+    <div class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Základ · odkud se čísla berou</div>
+                <h2>Všechno je v <span class="hl">Pohodě</span>, per produkt</h2>
+                <p class="small" style="margin-bottom:18px;">V portálu se nic nezadává ručně. Bere se to ze dvou míst v Pohodě — parametry na kartě a skladové pohyby.</p>
+                <div class="two-col">
+                    <div>
+                        <h3 class="hl-gold">1. Parametry karty (E1)</h3>
+                        <p class="small" style="margin-bottom:10px;">Vyplňuje nákupní u každého produktu zvlášť:</p>
+                        <ul class="info-list">
+                            <li><strong>Nákup řešit</strong> — má se karta vůbec hlídat?</li>
+                            <li><strong>Min. množství (MOQ)</strong> — kolik nejmíň jde objednat</li>
+                            <li><strong>Zaokrouhlení</strong> — násobek šarže (600, 1200…)</li>
+                            <li><strong>LT — Lead Time</strong> — za kolik týdnů dorazí</li>
+                            <li><strong>SS — Safety Stock</strong> — pojistka v týdnech</li>
+                            <li><strong>Dodavatel</strong> + Suppliers Code</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="hl-green">2. Skladové pohyby</h3>
+                        <p class="small" style="margin-bottom:10px;">Z nich se počítá, jak rychle zboží mizí:</p>
+                        <ul class="info-list">
+                            <li><strong>Výdeje</strong> — prodej i spotřeba do výroby</li>
+                            <li><strong>Stav zásoby</strong> — kolik je teď na skladě</li>
+                            <li><strong>Obj V</strong> — co je objednané u dodavatele (na cestě)</li>
+                        </ul>
+                        <div class="highlight-box" style="margin-top:16px;">
+                            <p>Protože LT/SS/MOQ jsou <strong>na kartě</strong>, každý produkt má vlastní pravidla. Nic se nikde „nastaví globálně".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3: Pojem Odbyt -->
+    <div class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="label">Pojem 1 · odbyt</div>
+            <h2>Kolik toho <span class="hl">týdně mizí</span></h2>
+            <p class="small" style="margin-bottom:8px;">Ze výdejů se spočítá průměrný týdenní odbyt — a to ve <strong>třech oknech</strong>: za posledních 20, 5 a 3 týdny. Bere se z nich <strong>nejvyšší</strong> číslo.</p>
+            <div class="formula">Odbyt/týden <span class="op">=</span> max( průměr 20 týdnů , průměr 5 týdnů , průměr 3 týdny )</div>
+            <div class="two-col" style="margin-top:8px;">
+                <div class="card card-gold">
+                    <h3>Proč tři okna?</h3>
+                    <p>20 týdnů = klidný dlouhodobý průměr. 5 a 3 týdny = zachytí, když se prodej <strong>zrychlil</strong> (akce, sezóna, virál).</p>
+                </div>
+                <div class="card card-red">
+                    <h3>Proč to nejvyšší?</h3>
+                    <p>Radši počítáme s vyšším tempem — je bezpečnější mít o kus víc, než vypadnout ze zboží, které se zrovna rozjelo.</p>
+                </div>
+            </div>
+            <p class="small" style="margin-top:16px;">Do odbytu se počítají <strong>výdeje</strong> ze tří agend: <strong>vydané faktury</strong> (prodej), <strong>výdejky</strong> (vzorky, spotřeba obalů/etiket) a <strong>výroba</strong> (spotřeba surovin). Přesuny mezi sklady a příjmy se nepočítají.</p>
+        </div>
+    </div>
+
+    <!-- 4: Zásoba v týdnech -->
+    <div class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="label">Pojem 2 · zásoba v týdnech</div>
+            <h2>Na kolik týdnů mi to <span class="hl">vydrží</span></h2>
+            <p class="small" style="margin-bottom:6px;">Hlavní číslo celého přehledu. Kolik mám na skladě, děleno tím, kolik týdně spotřebuju.</p>
+            <div class="formula">Zásoba (týdnů) <span class="op">=</span> stav na skladě <span class="op">÷</span> odbyt za týden</div>
+            <p class="small" style="margin:6px 0 6px;">A druhá varianta, která započítá i to, co je <strong>na cestě</strong> od dodavatele:</p>
+            <div class="formula">Se zásilkou <span class="op">=</span> ( stav <span class="op">+</span> Obj&nbsp;V ) <span class="op">÷</span> odbyt za týden</div>
+            <div class="highlight-box">
+                <p><strong>Příklad:</strong> na skladě 50 ks, odbyt 10 ks/týden → <span class="hl-green">zásoba na 5 týdnů</span>. Když navíc mám 30 ks objednaných, „se zásilkou" = (50+30)/10 = <span class="hl-green">8 týdnů</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5: Práh LT + SS -->
+    <div class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="label">Pojem 3 · práh</div>
+            <h2>Kdy je zásoba <span class="hl">už moc nízká</span></h2>
+            <p class="small" style="margin-bottom:6px;">Hranice, pod kterou nechceme klesnout. Skládá se ze dvou čísel z Pohody:</p>
+            <div class="stats">
+                <div class="stat"><div class="stat-value gold">LT</div><div class="stat-label">Lead Time<br>za kolik týdnů dorazí</div></div>
+                <div class="stat"><div class="stat-value red">+ SS</div><div class="stat-label">Safety Stock<br>pojistka v týdnech</div></div>
+                <div class="stat"><div class="stat-value green">= Práh</div><div class="stat-label">tolik týdnů zásoby<br>musím mít</div></div>
+            </div>
+            <div class="highlight-box">
+                <p><strong>Logika:</strong> když objednávka dorazí za <strong>LT</strong> týdnů, musím mít na skladě aspoň na tu dobu — plus <strong>SS</strong> jako rezervu pro jistotu. Takže jakmile zásoba klesne na <span class="hl">LT + SS týdnů</span>, je nejvyšší čas objednat, aby nové dorazilo dřív, než staré dojde.</p>
+            </div>
+            <p class="small" style="margin-top:14px;">Např. <code class="inline">LT = 7</code>, <code class="inline">SS = 1</code> → práh <strong>8 týdnů</strong>. Klesne-li zásoba pod 8 týdnů, řeší se.</p>
+        </div>
+    </div>
+
+    <!-- 6: Štítky -->
+    <div class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-scroll">
+                <div class="label">Nejdůležitější · co určuje štítek</div>
+                <h2>Jeden štítek podle <span class="hl">naléhavosti</span></h2>
+                <p class="small" style="margin-bottom:14px;">Porovnává se <strong>zásoba (v týdnech)</strong> s <strong>prahem (LT + SS)</strong>. Navíc je tu druhá hranice — samotný <strong>LT</strong> = bod, odkdy už ani nová/urychlená dodávka nestihne dorazit včas. Odtud 5 úrovní naléhavosti:</p>
+                <div class="card-grid cols-2">
+                    <div class="card card-crit">
+                        <span class="badge badge-crit">Objednat hned!</span>
+                        <p style="margin-top:10px;">I se započtením objednaného je zásoba pod <strong>LT</strong> → jsi pozadu, nová objednávka dorazí až po výpadku. Řeš expresně (spěšná dodávka, náhrada).<br><span class="small">se zásilkou &lt; LT</span></p>
+                    </div>
+                    <div class="card card-red">
+                        <span class="badge badge-red">Objednat</span>
+                        <p style="margin-top:10px;">Ani s objednaným to nestačí na práh, ale času je ještě dost. <strong>Objednej novou objednávku.</strong><br><span class="small">LT ≤ se zásilkou &lt; práh</span></p>
+                    </div>
+                    <div class="card card-orange">
+                        <span class="badge badge-orange">Urychli u výrobce</span>
+                        <p style="margin-top:10px;">Objednávka na cestě tě pokryje, ALE samotný sklad je pod <strong>LT</strong> → kriticky nízko. Když dodávka klopýtne, vypadneš. <strong>Tlač dodavatele, ať dodá dřív.</strong><br><span class="small">stav &lt; LT, se zásilkou ≥ práh</span></p>
+                    </div>
+                    <div class="card card-gold">
+                        <span class="badge badge-gold">Urychli</span>
+                        <p style="margin-top:10px;">Sklad pod prahem, ale objednávka na cestě to v klidu pokryje. Jen sledovat.<br><span class="small">LT ≤ stav &lt; práh, se zásilkou ≥ práh</span></p>
+                    </div>
+                    <div class="card card-green">
+                        <span class="badge badge-green">OK</span>
+                        <p style="margin-top:10px;">Zásoby je dost — i samotný sklad vydrží přes práh.<br><span class="small">stav ≥ práh</span></p>
+                    </div>
+                    <div class="card card-muted">
+                        <span class="badge badge-muted">Bez odbytu / Chybí LT/SS</span>
+                        <p style="margin-top:10px;">Bez odbytu = nic se nevydává, nedá se počítat. Chybí LT/SS = nevyplněné parametry v Pohodě → <strong>doplnit na kartě.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7: Příklad -->
+    <div class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="label">Příklad krok po kroku</div>
+            <h2>Supreme Creatine → <span class="hl">Objednat</span></h2>
+            <div class="two-col">
+                <div>
+                    <ul class="steps">
+                        <li><strong>Odbyt:</strong> průměry 20t = 9, 5t = 11, 3t = 13 → bereme max = <strong>13 ks/týden</strong></li>
+                        <li><strong>Na skladě:</strong> 50 ks, na cestě 0 ks</li>
+                        <li><strong>Zásoba:</strong> 50 ÷ 13 = <strong>3,8 týdne</strong></li>
+                        <li><strong>Práh:</strong> LT 7 + SS 1 = <strong>8 týdnů</strong></li>
+                        <li>3,8 týdne &lt; 8 týdnů → <span class="hl">Objednat</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="highlight-box" style="margin-top:0;">
+                        <p><strong>Lidsky:</strong> než by od dodavatele dorazila nová šarže (7 týdnů + týden pojistka), tak mi 50 ks při tempu 13 kusů týdně vydrží jen necelé <strong>4 týdny</strong>.<br><br>Vypadl bych ze zboží na několik týdnů → proto <span class="hl">objednat hned</span>.</p>
+                    </div>
+                    <p class="small" style="margin-top:14px;">Kdyby bylo na cestě třeba 400 ks, „se zásilkou" by vyšlo (50+400)/13 = 34 týdnů → štítek by byl jen <span class="hl-gold">Urychli</span>, ne Objednat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7b: Návrh objednávky -->
+    <div class="slide" data-slide="7b">
+        <div class="slide-content">
+            <div class="label">Kolik objednat</div>
+            <h2>Návrh množství — aby štítek <span class="hl">zhasl</span></h2>
+            <p class="small" style="margin-bottom:8px;">Systém navrhne <strong>nejmenší objednatelné množství</strong>, po kterém zásoba (se započtením objednávky) přeleze práh — tedy štítek „Objednat" zmizí. Respektuje přitom <strong>MOQ</strong> (minimum) a <strong>zaokrouhlení</strong> (násobek šarže) z Pohody.</p>
+            <div class="formula">chybí <span class="op">=</span> práh × odbyt − (stav + na cestě)<br>návrh <span class="op">=</span> nejmenší násobek šarže, který je ≥ MOQ i ≥ „chybí"</div>
+            <div class="two-col" style="margin-top:8px;">
+                <div>
+                    <ul class="steps">
+                        <li><strong>Chybí do prahu:</strong> 8 × 13 − 50 = <strong>54 ks</strong></li>
+                        <li><strong>Ale MOQ = 600</strong>, násobek = 600 → nejmenší objednávka je <strong>600 ks</strong></li>
+                        <li><strong>Stock GRAND TOT:</strong> (50 + 600) ÷ 13 = <strong>50 týdnů</strong></li>
+                    </ul>
+                </div>
+                <div class="card card-gold">
+                    <h3>Proč rovnou tolik?</h3>
+                    <p>Creatine se od výrobce bere po celých šaržích (600 ks). I když „chybí" jen 54, nejde objednat míň — proto návrh 600. Sloupec <strong>Grand Tot</strong> ukáže, na kolik týdnů to pak vystačí.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8: Odkud se to plní -->
+    <div class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="label">Aktualizace dat</div>
+            <h2>Odkud se to <span class="hl">plní</span></h2>
+            <p class="small" style="margin-bottom:16px;">Jedním tlačítkem v <strong>Roboti → Aktualizovat zásoby</strong> se natáhne vše z Pohody:</p>
+            <div class="connection">
+                <div class="connection-node"><div class="node-title hl">Sklad</div><div class="node-sub">produkty + parametry</div></div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node"><div class="node-title hl-gold">Zásobování</div><div class="node-sub">všechny sklady</div></div>
+                <div class="connection-arrow">&#10230;</div>
+                <div class="connection-node"><div class="node-title hl-green">Dodavatelé</div><div class="node-sub">jména z adresáře</div></div>
+            </div>
+            <ul class="info-list" style="margin-top:10px;">
+                <li>Projedou se <strong>všechny sklady</strong> (produkty, suroviny, obaly, etikety) — mimo ODPIS a prázdné.</li>
+                <li>Stejný kód v jiném skladu = <strong>samostatný řádek</strong> (může mít jiné parametry), nesčítá se.</li>
+                <li>Odbyt je kotvený k poslednímu dni pohybů v datech — dole u nadpisu je vidět, k jakému datu.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 9: Jak s tím pracovat -->
+    <div class="slide" data-slide="9">
+        <div class="slide-content">
+            <div class="label">Jak s tím pracovat</div>
+            <h2>Filtry a <span class="hl">čtení tabulky</span></h2>
+            <div class="two-col">
+                <div>
+                    <h3>Nahoře souhrn</h3>
+                    <p class="small" style="margin-bottom:14px;">Rychlé počty: kolik je <span class="hl">Objednat</span>, <span class="hl-gold">Hlídat</span>, <span class="hl-green">OK</span>… Řádky jsou seřazené <strong>od nejurgentnějších</strong>.</p>
+                    <h3>Filtruj podle</h3>
+                    <ul class="info-list">
+                        <li><strong>Dodavatele</strong> — připravíš objednávku pro jednoho dodavatele</li>
+                        <li><strong>Kódu / názvu</strong> — konkrétní produkt</li>
+                        <li><strong>Suppliers Code</strong>, <strong>skladu</strong>, <strong>stavu</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sloupce, které to řídí</h3>
+                    <ul class="info-list">
+                        <li><strong>Odbyt/týd</strong> — jak rychle mizí</li>
+                        <li><strong>Zásoba / Se zásilkou (týd)</strong> — na jak dlouho vystačí</li>
+                        <li><strong>LT · SS · Práh</strong> — hranice objednání</li>
+                        <li><strong>MOQ · Násobek</strong> — pro objednací množství</li>
+                    </ul>
+                    <p class="small" style="margin-top:12px;">Hlavička i sloupce <strong>Stav a Kód</strong> zůstávají „přilepené" při rolování, ať víš, kde jsi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9b: Vydané objednávky / rozvrh dodávek -->
+    <div class="slide" data-slide="9b">
+        <div class="slide-content">
+            <div class="slide-scroll">
+            <div class="label" style="color:var(--green)">Nové — pohled výrobce</div>
+            <h2>Vydané objednávky <span class="hl-green">rozpadené na položky</span></h2>
+            <p class="small" style="margin-bottom:14px;">Samostatná stránka <code class="inline">/dodavatele-objednavky.php</code>: otevřené vydané objednávky (co ještě nedorazilo) rozpadené na jednotlivé položky. U každé <strong>objednáno · dodáno · zbývá</strong> — „zbývá" bere z Pohody, takže <strong>částečné dodávky</strong> se průběžně odečítají.</p>
+            <div class="two-col">
+                <div>
+                    <h3>Rozvrh dodávek</h3>
+                    <p class="small" style="margin-bottom:8px;">Výrobce dodává po fázích. U položky si proto sestaví <strong>rozvrh</strong> — kolik kusů a v jakém týdnu dorazí (přidá řádek, doplní týden + množství).</p>
+                    <ul class="info-list">
+                        <li><strong>Zbývá rozdělit</strong> hlídá, ať součet sedí se „zbývá"</li>
+                        <li>Předvyplněno dle <strong>lead time</strong> — jde přepsat</li>
+                        <li>Ukládá se jen v portálu, do Pohody <strong>nezapisuje</strong></li>
+                        <li>Filtr podle <strong>výrobce</strong> — základ pro budoucí přihlášení dodavatelů</li>
+                    </ul>
+                </div>
+                <div class="card card-gold">
+                    <h3>Proč to sbíráme</h3>
+                    <p>Ten rozvrh <strong>(týden + množství)</strong> je přesně vstup, který v přehledu dnes chybí. Zatím počítáme se vším „na cestě", jako by to bylo hned — bez ohledu na termín. Další slide ukazuje, co s tím.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9c: Návrh - časově fázované pokrytí -->
+    <div class="slide" data-slide="9c">
+        <div class="slide-content">
+            <div class="slide-scroll">
+            <div class="label" style="color:var(--gold)">Návrh k diskuzi</div>
+            <h2>Počítat i s <span class="hl-gold">termíny dodání</span></h2>
+            <p class="small" style="margin-bottom:10px;">Dnes: <strong>„Se zásilkou" = (stav + všechno na cestě) ÷ odbyt</strong>. Jeden pytel, bez termínů. Velká šarže, co dorazí za 10 týdnů, se počítá jako by byla hned → umí <span class="hl">podhodnotit</span> naléhavost.</p>
+            <div class="formula">stav(týden w) <span class="op">=</span> stav(w−1) − odbyt + dodávky na týden w<br>týden vyprodání <span class="op">=</span> první týden, kdy stav spadne pod nulu (resp. pod SS)</div>
+            <h3 style="margin-top:6px;">Navrhované nové sloupce v přehledu</h3>
+            <ul class="info-list">
+                <li><strong>Předpokládaný stav skladu za LT</strong> — kolik zbude v okamžiku, kdy by dorazila nově vydaná objednávka. Záporné = ani nová objednávka nestihne.</li>
+                <li><strong>Předpokládaný stav za práh (LT + SS)</strong> — na konci bezpečnostního horizontu; má zůstat ≥ 0.</li>
+                <li><strong>Týden vyprodání</strong> — ETA, kdy dojdeme na nulu.</li>
+                <li><strong>Nejbližší dodávka</strong> — nejbližší příchozí (týden + ks) z rozvrhu od výrobce.</li>
+            </ul>
+            <p class="small" style="margin-top:10px;">Štítek se pak zpřesní: <span class="badge badge-crit">Objednat hned!</span> když je vyprodáno dřív, než dorazí nová objednávka (vyprodání &lt; teď + LT); <span class="badge badge-red">Objednat</span> když to nestačí do prahu; jinak <span class="badge badge-green">OK</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9d: Projekce - příklad -->
+    <div class="slide" data-slide="9d">
+        <div class="slide-content">
+            <div class="slide-scroll">
+            <div class="label" style="color:var(--gold)">Návrh — příklad</div>
+            <h2>Proč jeden pytel <span class="hl">klame</span></h2>
+            <p class="small" style="margin-bottom:12px;">Stav <strong>200 ks</strong>, odbyt <strong>40/týd</strong>, na cestě <strong>500 ks</strong> — ale dle rozvrhu dorazí až <strong>W36</strong> (250) a <strong>W40</strong> (250). Dnešní výpočet: (200 + 500) / 40 = <strong>17,5 týdne</strong> → vypadá bezpečně, žádný alarm.</p>
+            <div class="two-col" style="grid-template-columns:1.05fr 0.95fr;gap:26px;align-items:start;">
+                <div>
+                    <table style="width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:13px;">
+                        <thead>
+                            <tr style="color:var(--text-muted);">
+                                <th style="text-align:left;padding:6px 10px;border-bottom:1px solid var(--border);">Týden</th>
+                                <th style="text-align:right;padding:6px 10px;border-bottom:1px solid var(--border);">Příchozí</th>
+                                <th style="text-align:right;padding:6px 10px;border-bottom:1px solid var(--border);">Stav na konci</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding:5px 10px;">W28</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;">160</td></tr>
+                            <tr><td style="padding:5px 10px;">W29</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;">120</td></tr>
+                            <tr><td style="padding:5px 10px;">W30</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;">80</td></tr>
+                            <tr><td style="padding:5px 10px;">W31</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;">40</td></tr>
+                            <tr><td style="padding:5px 10px;">W32</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;">0</td></tr>
+                            <tr style="background:rgba(231,76,60,0.12);"><td style="padding:5px 10px;color:var(--red);font-weight:700;">W33</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;color:var(--red);font-weight:700;">−40 · vyprodáno</td></tr>
+                            <tr><td style="padding:5px 10px;">W34</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;color:var(--red);">−80</td></tr>
+                            <tr><td style="padding:5px 10px;">W35</td><td style="text-align:right;padding:5px 10px;color:var(--text-muted);">—</td><td style="text-align:right;padding:5px 10px;color:var(--red);">−120</td></tr>
+                            <tr style="background:rgba(77,217,192,0.10);"><td style="padding:5px 10px;">W36</td><td style="text-align:right;padding:5px 10px;color:var(--green);font-weight:700;">+250</td><td style="text-align:right;padding:5px 10px;">90</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div class="highlight-box" style="margin-top:0;">
+                        <p><strong>Realita:</strong> zásoba dojde ve <span class="hl">W33</span>, ale první dodávka až <span class="hl-gold">W36</span> → <strong>3 týdny výpadku</strong>. Projekce to ukáže a štítek dá <span class="badge badge-crit">Objednat hned!</span> — jeden pytel by mlčel (17,5 týdne).</p>
+                    </div>
+                    <p class="small" style="margin-top:14px;">Bonus: stejná projekce umí říct <strong>„o kolik urychlit"</strong> dodávku W36, aby výpadek zmizel — a to je přesně to, co výrobce vidí ve svém rozvrhu.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10: Co dál -->
+    <div class="slide" data-slide="10">
+        <div class="slide-content" style="text-align:center;">
+            <div class="label">Shrnutí</div>
+            <h1 style="font-size:40px;">Zásoba v týdnech <span class="hl">vs.</span> práh</h1>
+            <p class="subtitle" style="max-width:820px;margin-left:auto;margin-right:auto;">Celé to stojí na jedné myšlence: spočítat, na kolik týdnů mám zásobu, a porovnat to s tím, za jak dlouho dorazí nové zboží. Štítek pak řekne, jestli je čas objednat.</p>
+            <div class="stats" style="max-width:820px;margin:32px auto;">
+                <div class="stat"><div class="stat-value gold">1</div><div class="stat-label">Odbyt = max z 20/5/3 týdnů</div></div>
+                <div class="stat"><div class="stat-value green">2</div><div class="stat-label">Zásoba = stav ÷ odbyt</div></div>
+                <div class="stat"><div class="stat-value red">3</div><div class="stat-label">Objednat, když zásoba ≤ LT+SS</div></div>
+            </div>
+            <p class="small">Hotovo: návrh <strong>objednacího množství</strong> (z MOQ + násobku) a <strong>rozpad vydaných objednávek</strong> na položky s rozvrhem dodávek pro výrobce.<br>Další krok (k diskuzi): <strong>napojení termínů dodání</strong> — časově fázované pokrytí (viz předchozí slidy) a přístup výrobců do portálu.<br>Stránky zatím nejsou v menu — <code class="inline">/zasobovani.php</code> a <code class="inline">/dodavatele-objednavky.php</code>.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-hint">
+    <kbd>&larr;</kbd> <kbd>&rarr;</kbd> šipky &nbsp;|&nbsp; scroll &nbsp;|&nbsp; klik na tečky
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    const dotsContainer = document.getElementById('navDots');
+    const counter = document.getElementById('navCounter');
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    function updateCounter() { counter.textContent = `${currentSlide + 1} / ${totalSlides}`; }
+    updateCounter();
+
+    function goToSlide(index) {
+        if (index < 0 || index >= totalSlides || index === currentSlide) return;
+        slides[currentSlide].classList.remove('active');
+        dotsContainer.children[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dotsContainer.children[currentSlide].classList.add('active');
+        updateCounter();
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goToSlide(currentSlide + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); goToSlide(currentSlide - 1); }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+    document.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) goToSlide(currentSlide + (diff > 0 ? 1 : -1));
+    });
+
+    let wheelTimeout = false;
+    document.addEventListener('wheel', (e) => {
+        const scrollEl = e.target.closest('.slide-scroll');
+        if (scrollEl && scrollEl.scrollHeight > scrollEl.clientHeight) return;
+        if (wheelTimeout) return;
+        wheelTimeout = true;
+        setTimeout(() => wheelTimeout = false, 600);
+        if (e.deltaY > 0) goToSlide(currentSlide + 1);
+        else if (e.deltaY < 0) goToSlide(currentSlide - 1);
+    });
+</script>
+
+</body>
+</html>
