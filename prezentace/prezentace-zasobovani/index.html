@@ -412,10 +412,14 @@
                     <p class="small" style="margin-bottom:8px;">Výrobce dodává po fázích. U položky si proto sestaví <strong>rozvrh</strong> — kolik kusů a v jakém týdnu dorazí (přidá řádek, doplní týden + množství).</p>
                     <ul class="info-list">
                         <li><strong>Zbývá rozdělit</strong> hlídá, ať součet sedí se „zbývá"</li>
-                        <li>Předvyplněno dle <strong>lead time</strong> — jde přepsat</li>
-                        <li>Ukládá se jen v portálu, do Pohody <strong>nezapisuje</strong></li>
-                        <li>Filtr podle <strong>výrobce</strong> — základ pro budoucí přihlášení dodavatelů</li>
+                        <li>Výrobce týden <strong>zadává sám</strong> (nepředvyplňujeme) — jeho volba = skutečné potvrzení</li>
+                        <li>Ukládá se jen v portálu, do Pohody <strong>nezapisuje</strong>; každá změna se <strong>loguje</strong> (kdo a kdy)</li>
+                        <li>Výrobce má vlastní přihlášení a vidí <strong>jen svoje objednávky</strong></li>
                     </ul>
+                    <p class="small" style="margin-top:10px;">V přehledu pak „Nejbližší dodávka" barvou říká, komu termín věřit:
+                       <span style="color:var(--text-muted)">šedě = jen odhad z LT</span> ·
+                       <span class="hl-gold">zlatě = potvrzeno interně</span> ·
+                       <span class="hl-green">zeleně = potvrzeno dodavatelem</span>.</p>
                 </div>
                 <div class="card card-gold">
                     <h3>Proč to sbíráme</h3>
