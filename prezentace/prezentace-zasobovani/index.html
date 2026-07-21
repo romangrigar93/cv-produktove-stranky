@@ -212,21 +212,21 @@
     <!-- 3: Pojem Odbyt -->
     <div class="slide" data-slide="3">
         <div class="slide-content">
-            <div class="label">Pojem 1 · odbyt</div>
-            <h2>Kolik toho <span class="hl">týdně mizí</span></h2>
-            <p class="small" style="margin-bottom:8px;">Ze výdejů se spočítá průměrný týdenní odbyt — a to ve <strong>třech oknech</strong>: za posledních 20, 5 a 3 týdny. Bere se z nich <strong>nejvyšší</strong> číslo.</p>
-            <div class="formula">Odbyt/týden <span class="op">=</span> max( průměr 20 týdnů , průměr 5 týdnů , průměr 3 týdny )</div>
+            <div class="label">Pojem 1 · odbyt („Odhad")</div>
+            <h2>Kolik toho <span class="hl">týdně mizí</span> — klidný normál</h2>
+            <p class="small" style="margin-bottom:8px;">Ze výdejů po <strong>uzavřených týdnech</strong> se spočítá běžné tempo prodeje. Do průměru se ale nepočítá každý týden — <strong>vyhazují se týdny, které nejsou „normální"</strong>:</p>
             <div class="two-col" style="margin-top:8px;">
-                <div class="card card-gold">
-                    <h3>Proč tři okna?</h3>
-                    <p>20 týdnů = klidný dlouhodobý průměr. 5 a 3 týdny = zachytí, když se prodej <strong>zrychlil</strong> (akce, sezóna, virál).</p>
-                </div>
                 <div class="card card-red">
-                    <h3>Proč to nejvyšší?</h3>
-                    <p>Radši počítáme s vyšším tempem — je bezpečnější mít o kus víc, než vypadnout ze zboží, které se zrovna rozjelo.</p>
+                    <h3>Co se nepočítá</h3>
+                    <p><strong>Výpadky</strong> — sklad byl na nule; nula v prodeji ≠ nezájem, nebylo co prodávat (stav si systém dopočítá zpětně z pohybů). <strong>Akční týdny</strong> — dle marketingového kalendáře, špička z akce nemá nafukovat normál. <strong>Extrémy</strong> přes 2× medián. U novinek jen týdny <strong>od prvního prodeje</strong>.</p>
+                </div>
+                <div class="card card-gold">
+                    <h3>Opatrnost zůstává</h3>
+                    <p>Z očištěných dat se vezme <strong>nejvyšší</strong> z průměrů za 20, 5 a 3 týdny — když se prodej reálně rozjede, projeví se to hned. A každé číslo jde <strong>rozkliknout</strong>: který týden se počítal, který ne a proč.</p>
                 </div>
             </div>
-            <p class="small" style="margin-top:16px;">Do odbytu se počítají <strong>výdeje</strong> ze tří agend: <strong>vydané faktury</strong> (prodej), <strong>výdejky</strong> (vzorky, spotřeba obalů/etiket) a <strong>výroba</strong> (spotřeba surovin). Přesuny mezi sklady a příjmy se nepočítají.</p>
+            <div class="formula" style="margin-top:10px;">Odhad/týden <span class="op">=</span> max( očištěný průměr 20 týdnů , 5 týdnů , 3 týdny )</div>
+            <p class="small" style="margin-top:12px;">Do odbytu se počítají <strong>výdeje</strong> ze tří agend: <strong>vydané faktury</strong> (prodej), <strong>výdejky</strong> (vzorky, spotřeba obalů/etiket) a <strong>výroba</strong> (spotřeba surovin). Přesuny mezi sklady a příjmy se nepočítají.</p>
         </div>
     </div>
 
@@ -308,7 +308,7 @@
             <div class="two-col">
                 <div>
                     <ul class="steps">
-                        <li><strong>Odbyt:</strong> průměry 20t = 9, 5t = 11, 3t = 13 → bereme max = <strong>13 ks/týden</strong></li>
+                        <li><strong>Odhad:</strong> očištěné průměry 20t = 9, 5t = 11, 3t = 13 → bereme max = <strong>13 ks/týden</strong></li>
                         <li><strong>Na skladě:</strong> 50 ks, na cestě 0 ks</li>
                         <li><strong>Zásoba:</strong> 50 ÷ 13 = <strong>3,8 týdne</strong></li>
                         <li><strong>Práh:</strong> LT 7 + SS 1 = <strong>8 týdnů</strong></li>
@@ -498,11 +498,11 @@
             <h1 style="font-size:40px;">Zásoba v týdnech <span class="hl">vs.</span> práh</h1>
             <p class="subtitle" style="max-width:820px;margin-left:auto;margin-right:auto;">Celé to stojí na jedné myšlence: spočítat, na kolik týdnů mám zásobu, a porovnat to s tím, za jak dlouho dorazí nové zboží. Štítek pak řekne, jestli je čas objednat.</p>
             <div class="stats" style="max-width:820px;margin:32px auto;">
-                <div class="stat"><div class="stat-value gold">1</div><div class="stat-label">Odbyt = max z 20/5/3 týdnů</div></div>
+                <div class="stat"><div class="stat-value gold">1</div><div class="stat-label">Odhad = očištěný normál (max 20/5/3 týdnů)</div></div>
                 <div class="stat"><div class="stat-value green">2</div><div class="stat-label">Zásoba = stav ÷ odbyt</div></div>
                 <div class="stat"><div class="stat-value red">3</div><div class="stat-label">Objednat, když zásoba ≤ LT+SS</div></div>
             </div>
-            <p class="small">Hotovo: návrh <strong>objednacího množství</strong>, <strong>rozpad vydaných objednávek</strong> s rozvrhem dodávek pro výrobce i <strong>časově fázovaná projekce</strong> (štítky podle skutečných termínů dodání).<br>Další krok: <strong>přístup výrobců do portálu</strong> — každý uvidí a vyplní jen svoje objednávky.<br>Najdeš je v menu <strong>Zásoby</strong> (potřebuješ právo „Zásobování" — zaškrtává superadmin v Nastavení).</p>
+            <p class="small">Hotovo: návrh <strong>objednacího množství</strong>, <strong>rozpad vydaných objednávek</strong> s rozvrhem dodávek pro výrobce, <strong>časově fázovaná projekce</strong> (štítky podle skutečných termínů dodání) i <strong>očištěný normál odbytu</strong> (bez výpadků, akcí a špiček — každé číslo jde rozkliknout).<br>Další krok: <strong>akční vrstva z kalendáře</strong> — „Objednat" vyskočí samo LT týdnů před akcí.<br>Najdeš je v menu <strong>Zásoby</strong> (potřebuješ právo „Zásobování" — zaškrtává superadmin v Nastavení).</p>
         </div>
     </div>
 
