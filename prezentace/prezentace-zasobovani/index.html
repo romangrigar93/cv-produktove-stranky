@@ -60,6 +60,7 @@
         .card-gold { border-left: 3px solid var(--gold); }
         .card-orange { border-left: 3px solid #e0851c; }
         .card-crit { border-left: 3px solid #ff5a4d; }
+        .card-blue { border-left: 3px solid #86b7ff; }
         .card-muted { border-left: 3px solid var(--text-muted); }
 
         .stats { display: flex; gap: 16px; margin: 24px 0; }
@@ -83,6 +84,7 @@
         .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(212,169,64,0.3); }
         .badge-muted { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
         .badge-crit { background: rgba(231,76,60,0.28); color: #ff9a90; border: 1px solid rgba(231,76,60,0.6); }
+        .badge-blue { background: rgba(134,183,255,0.18); color: #86b7ff; border: 1px solid rgba(134,183,255,0.5); }
         .badge-orange { background: rgba(224,133,28,0.16); color: #e8973b; border: 1px solid rgba(224,133,28,0.4); }
 
         .highlight-box { background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(212,169,64,0.05)); border: 1px solid rgba(231,76,60,0.25); border-radius: 12px; padding: 24px; margin-top: 20px; }
@@ -213,16 +215,16 @@
     <div class="slide" data-slide="3">
         <div class="slide-content">
             <div class="label">Pojem 1 · odbyt („Odhad")</div>
-            <h2>Kolik toho <span class="hl">týdně mizí</span> — klidný normál</h2>
-            <p class="small" style="margin-bottom:8px;">Ze výdejů po <strong>uzavřených týdnech</strong> se spočítá běžné tempo prodeje. Do průměru se ale nepočítá každý týden — <strong>vyhazují se týdny, které nejsou „normální"</strong>:</p>
+            <h2>Kolik toho <span class="hl">týdně mizí</span> — standardní tempo</h2>
+            <p class="small" style="margin-bottom:8px;">Z <strong>celkových výdejů</strong> (e-shop i velkoobchod) za posledních <strong>20 uzavřených týdnů</strong> se spočítá prostý průměr. Vyhazuje se jen to, co standard opravdu křiví:</p>
             <div class="two-col" style="margin-top:8px;">
                 <div class="card card-red">
-                    <h3>Extrémy ven — z obou stran</h3>
-                    <p><strong>Zespoda:</strong> nulové týdny se nepočítají — výpadek skladu nebo skrytá nedostupnost. <strong>Shora:</strong> špičky přes 2× medián se <strong>ořežou na strop</strong>. <strong>Velkoobchod zvlášť:</strong> nárazové B2B odběry (300 ks jednou za 2 měsíce) se nefiltrují, ale rozpustí do průměru a přičtou — v Odhadu jsou, e-shopové tempo nekřiví. U novinek jen týdny <strong>od prvního prodeje</strong>.</p>
+                    <h3>Co se nepočítá</h3>
+                    <p><strong>Výpadkové týdny</strong> — sklad byl na nule, nula v prodeji ≠ nezájem (stav se dopočítá zpětně z pohybů). <strong>Špičky přes 2× medián</strong> — akce a B2B nárazovky se vyloučí <strong>celé</strong>; mimořádná poptávka se místo modelování z historie <strong>přičítá dopředu</strong> (kalendář akcí + hlášené B2B odběry). U novinek jen týdny <strong>od prvního prodeje</strong>. <strong>Nulové týdny se počítají</strong> — táhnou průměr dolů záměrně.</p>
                 </div>
                 <div class="card card-gold">
-                    <h3>Kontrola zůstává</h3>
-                    <p>Průměry za 5 a 3 týdny se do čísla <strong>nepropisují</strong> — jsou jen kontrolní. Když krátkodobé tempo výrazně přeroste normál, řádek dostane <strong>⬆</strong> (prodej zrychluje). A každé číslo jde <strong>rozkliknout</strong>: který týden se počítal, který ne, proč — a celá aritmetika výpočtu.</p>
+                    <h3>Pozor trend — hlídač zrychlení</h3>
+                    <p>Průměry za 5 a 3 týdny běží <strong>na pozadí</strong> — do čísla se nepropisují. Když ale 20týdenní průměr klesne pod <strong>0,7 × krátké okno</strong> (krátkodobé tempo je o ~40 % a víc nad normálem), řádek dostane štítek <strong>Pozor trend</strong> a u čísla <strong>⬆</strong>. A každé číslo jde <strong>rozkliknout</strong>: který týden se počítal, který ne, proč — a celá aritmetika.</p>
                 </div>
             </div>
             <div class="formula" style="margin-top:10px;">Odhad/týden <span class="op">=</span> součet výdejů v běžných týdnech <span class="op">÷</span> počet běžných týdnů</div>
@@ -267,29 +269,29 @@
     <div class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-scroll">
-                <div class="label">Nejdůležitější · co určuje štítek</div>
-                <h2>Jeden štítek podle <span class="hl">naléhavosti</span></h2>
-                <p class="small" style="margin-bottom:14px;">Základ: <strong>týdenní projekce</strong> — od dnešního stavu se každý týden odečte odbyt a přičtou dodávky podle termínů z rozvrhů výrobců. Druhá hranice je samotný <strong>LT</strong> = nová objednávka položená dnes dorazí nejdřív za LT týdnů. Odtud úrovně naléhavosti:</p>
+                <div class="label">Nejdůležitější · co určují štítky</div>
+                <h2>Nezávislé štítky — řádek jich <span class="hl">může mít víc</span></h2>
+                <p class="small" style="margin-bottom:14px;">Základ: <strong>týdenní projekce</strong> — od dnešního stavu se každý týden odečte odbyt a přičtou dodávky podle termínů z rozvrhů výrobců. Hranice naléhavosti je <strong>LT</strong> = nová objednávka položená dnes dorazí nejdřív za LT týdnů. Každý štítek má <strong>vlastní logiku</strong> a klidně platí spolu (třeba Objednat + Hlídat). Dřívější „Objednat hned!" = dnes kombinace <strong>Objednat + Urychli</strong>.</p>
                 <div class="card-grid cols-2">
-                    <div class="card card-crit">
-                        <span class="badge badge-crit">Objednat hned!</span>
-                        <p style="margin-top:10px;">Projekce spadne pod nulu <strong>dřív, než by dorazila nová objednávka</strong> — a ani naplánované dodávky díru nezacelí. Objednej hned a zároveň urychluj. Řeš expresně.<br><span class="small">vyprodání &lt; LT a díra trvá i po dodávkách</span></p>
+                    <div class="card card-red">
+                        <span class="badge badge-red">Objednat</span>
+                        <p style="margin-top:10px;">I se vším, co je na cestě, vznikne ve výhledu díra (do prahu). Objednej — návrh množství říká kolik. Když je u toho i „Urychli", je to bývalé „Objednat hned!": objednej okamžitě a k tomu urychluj.<br><span class="small">díra v projekci v okně LT..práh → návrh &gt; 0</span></p>
                     </div>
                     <div class="card card-orange">
                         <span class="badge badge-orange">Urychli u výrobce</span>
-                        <p style="margin-top:10px;">Vyprodáno dřív, než dorazí nová objednávka, ALE naplánované dodávky pak díru zacelí → <strong>nová objednávka nepomůže</strong>. Jediné řešení: tlač výrobce, ať dodá dřív.<br><span class="small">vyprodání &lt; LT, dodávky pak stav srovnají</span></p>
-                    </div>
-                    <div class="card card-red">
-                        <span class="badge badge-red">Objednat</span>
-                        <p style="margin-top:10px;">V horizontu (do prahu) vznikne díra, kterou <strong>dnešní objednávka ještě stihne pokrýt</strong> (dorazí za LT). Objednej — návrh množství říká kolik.<br><span class="small">díra v projekci mezi LT a prahem</span></p>
+                        <p style="margin-top:10px;">Vyprodáno dřív, než by dorazila objednávka položená dnes — a na cestě je něco, co se dá urychlit. Tlač výrobce, ať dodá dřív, případně expres.<br><span class="small">vyprodání &lt; LT a existují dodávky k urychlení</span></p>
                     </div>
                     <div class="card card-gold">
                         <span class="badge badge-gold">Hlídat</span>
-                        <p style="margin-top:10px;">Projekce je čistá — dodávky dorazí včas. Ale samotný sklad je pod prahem, takže <strong>závisíš na tom, že dodávky dorazí</strong>. Sledovat.<br><span class="small">projekce ≥ 0, sám sklad pod prahem</span></p>
+                        <p style="margin-top:10px;">Samotný sklad (bez dodávek) je pod prahem — <strong>závisíš na tom, že dodávky dorazí</strong>. Sledovat.<br><span class="small">sklad ÷ odbyt &lt; práh</span></p>
+                    </div>
+                    <div class="card card-blue">
+                        <span class="badge badge-blue">Pozor trend</span>
+                        <p style="margin-top:10px;">Prodej zrychluje: 20týdenní průměr je menší než <strong>0,7 × průměr za 5 nebo 3 týdny</strong>. U čísla Odhadu je ⬆ — posuď, jestli jde o růst (dřívější/větší objednávka), nebo jednorázovku.<br><span class="small">20t &lt; 0,7 × krátké okno</span></p>
                     </div>
                     <div class="card card-green">
                         <span class="badge badge-green">OK</span>
-                        <p style="margin-top:10px;">Zásoby je dost — i samotný sklad vydrží přes práh.<br><span class="small">stav ≥ práh</span></p>
+                        <p style="margin-top:10px;">Žádný ze štítků výše neplatí — zásoby je dost.<br><span class="small">bez nálezu</span></p>
                     </div>
                     <div class="card card-muted">
                         <span class="badge badge-muted">Bez odbytu / Chybí LT/SS</span>
@@ -482,7 +484,7 @@
                 </div>
                 <div>
                     <div class="highlight-box" style="margin-top:0;">
-                        <p><strong>Realita:</strong> zásoba dojde ve <span class="hl">W33</span>, ale první dodávka až <span class="hl-gold">W36</span> → <strong>3 týdny výpadku</strong>. Projekce to ukáže a štítek dá <span class="badge badge-crit">Objednat hned!</span> — jeden pytel by mlčel (17,5 týdne).</p>
+                        <p><strong>Realita:</strong> zásoba dojde ve <span class="hl">W33</span>, ale první dodávka až <span class="hl-gold">W36</span> → <strong>3 týdny výpadku</strong>. Projekce to ukáže a řádek dostane <span class="badge badge-red">Objednat</span> + <span class="badge badge-orange">Urychli u výrobce</span> — jeden pytel by mlčel (17,5 týdne).</p>
                     </div>
                     <p class="small" style="margin-top:14px;">Bonus: stejná projekce umí říct <strong>„o kolik urychlit"</strong> dodávku W36, aby výpadek zmizel — a to je přesně to, co výrobce vidí ve svém rozvrhu.</p>
                 </div>
@@ -502,7 +504,7 @@
                 <div class="stat"><div class="stat-value green">2</div><div class="stat-label">Zásoba = stav ÷ odbyt</div></div>
                 <div class="stat"><div class="stat-value red">3</div><div class="stat-label">Objednat, když zásoba ≤ LT+SS</div></div>
             </div>
-            <p class="small">Hotovo: návrh <strong>objednacího množství</strong>, <strong>rozpad vydaných objednávek</strong> s rozvrhem dodávek pro výrobce, <strong>časově fázovaná projekce</strong> (štítky podle skutečných termínů dodání), <strong>očištěný normál odbytu</strong> (bez výpadků, akcí a špiček — každé číslo jde rozkliknout) i <strong>akční vrstva z kalendáře</strong> — plánované akce se přičítají do výhledu, „Objednat" vyskočí samo včas před akcí, 📣 rozklik ukáže projekční graf; globálky dostávají <strong>Pareto koš bestsellerů</strong>, po každé akci se měří <strong>plán × vs. realita ×</strong> a obchod zadává <strong>B2B odběry</strong> (pevné kusy) — nákup je vidí ve výhledu s předstihem Lead Time.<br>Celá plánovaná fáze „odbyt bez chaosu" je tím hotová.<br>Najdeš je v menu <strong>Zásoby</strong> (potřebuješ právo „Zásobování" — zaškrtává superadmin v Nastavení).</p>
+            <p class="small">Hotovo: návrh <strong>objednacího množství</strong>, <strong>rozpad vydaných objednávek</strong> s rozvrhem dodávek pro výrobce, <strong>časově fázovaná projekce</strong> (štítky podle skutečných termínů dodání), <strong>standardní tempo odbytu</strong> = 20týdenní průměr bez výpadků a špiček (každé číslo jde rozkliknout) se štítkem <strong>Pozor trend</strong> při zrychlení prodeje, <strong>nezávislé štítky</strong> (řádek jich může mít víc najednou) i <strong>akční vrstva z kalendáře</strong> — plánované akce se přičítají do výhledu, „Objednat" vyskočí samo včas před akcí, 📣 rozklik ukáže projekční graf; sloupce <strong>B2C akce / B2B odběry</strong> ukazují mimořádnou poptávku vedle Odhadu; globálky dostávají <strong>Pareto koš bestsellerů</strong>, po každé akci se měří <strong>plán × vs. realita ×</strong> a obchod zadává <strong>B2B odběry</strong> (pevné kusy) — nákup je vidí ve výhledu s předstihem Lead Time.<br>Celá plánovaná fáze „odbyt bez chaosu" je tím hotová.<br>Najdeš je v menu <strong>Zásoby</strong> (potřebuješ právo „Zásobování" — zaškrtává superadmin v Nastavení).</p>
         </div>
     </div>
 
